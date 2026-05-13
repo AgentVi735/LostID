@@ -1,0 +1,367 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c2cc3c9f77a9d7439a5d56bd830aa92, type: 3}
+  m_Name: TestGraph
+  m_EditorClassIdentifier: NewGraph::NewGraph.ScriptableGraphModel
+  baseModel:
+    nodes:
+    - rid: 6056200485695651912
+    - rid: 6056200485695651914
+    - rid: 6056200485695651918
+    - rid: 6056200488745173283
+    - rid: 6056200488745173292
+    - rid: 6056200506423640137
+    - rid: 6056200506423640142
+    - rid: 6056200506423640144
+    - rid: 6056200507354775665
+    - rid: 6056200507354775669
+    - rid: 6056200507354775671
+    - rid: 6056200507354775673
+    - rid: 6056200507354775676
+    - rid: 6056200507354775678
+    - rid: 6056200507354775680
+    - rid: 6056200507354775682
+    utilityNodes: []
+    tmpName: TestGraph
+    viewportInitiallySet: 1
+    viewPosition: {x: -315.14246, y: 151.25093, z: 0}
+    viewScale: {x: 0.43232757, y: 0.43232757, z: 1}
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 6056200485695651912
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 6056200485695651913
+        nodeX: 476
+        nodeY: 199
+        name: ControllerNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 6056200485695651913
+      type: {class: ControllerNode, ns: , asm: Assembly-CSharp}
+      data:
+        startingNode:
+          rid: 6056200485695651915
+        graphController: {fileID: 11400000, guid: 14b8b1f4c301e2b41ba84a2504be1342, type: 2}
+    - rid: 6056200485695651914
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 6056200485695651915
+        nodeX: 743
+        nodeY: 189
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
+    - rid: 6056200485695651915
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nextNode:
+          rid: 6056200488745173284
+        dialogueData:
+          dialogue: {fileID: 11400000, guid: 83e6a5413cc89ae479afae914bdf7b26, type: 2}
+          character: {fileID: 11400000, guid: 898b9173f16c76c42a03bbd1e459c7dd, type: 2}
+          overrideCharacterName: 
+          text: Freddy
+    - rid: 6056200485695651918
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 6056200485695651919
+        nodeX: 1859.9166
+        nodeY: -30.284918
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
+    - rid: 6056200485695651919
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nextNode:
+          rid: 6056200507354775666
+        dialogueData:
+          dialogue: {fileID: 11400000, guid: 37a2e5b913a8684408c02d854a948eca, type: 2}
+          character: {fileID: 11400000, guid: 898b9173f16c76c42a03bbd1e459c7dd, type: 2}
+          overrideCharacterName: 
+          text: Oh ok
+    - rid: 6056200488745173283
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 6056200488745173284
+        nodeX: 1003.8446
+        nodeY: 189.28009
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
+    - rid: 6056200488745173284
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nextNode:
+          rid: 6056200506423640138
+        dialogueData:
+          dialogue: {fileID: 11400000, guid: bd5943a3fdefe3e44b4409c1d8a53df2, type: 2}
+          character: {fileID: 11400000, guid: 898b9173f16c76c42a03bbd1e459c7dd, type: 2}
+          overrideCharacterName: 
+          text: Fuck jou
+    - rid: 6056200488745173292
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 6056200488745173293
+        nodeX: 1873.4287
+        nodeY: 223.66696
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
+    - rid: 6056200488745173293
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nextNode:
+          rid: 6056200507354775679
+        dialogueData:
+          dialogue: {fileID: 11400000, guid: b637a56e00f16204093ddf2fd14b3196, type: 2}
+          character: {fileID: 11400000, guid: 898b9173f16c76c42a03bbd1e459c7dd, type: 2}
+          overrideCharacterName: 
+          text: owh...
+    - rid: 6056200506423640137
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 6056200506423640138
+        nodeX: 1273.2795
+        nodeY: 174.17644
+        name: ResponseHolderNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 6056200506423640138
+      type: {class: ResponseHolderNode, ns: , asm: Assembly-CSharp}
+      data:
+        responseHolder: {fileID: 11400000, guid: 2b8252f5605611f429ea02434f636d1f, type: 2}
+        responses:
+        - rid: 6056200506423640143
+        - rid: 6056200506423640145
+    - rid: 6056200506423640142
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 6056200506423640143
+        nodeX: 1559.2295
+        nodeY: 64.17643
+        name: ResponseNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 6056200506423640143
+      type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
+      data:
+        response: {fileID: 11400000, guid: 6a17ec6da5500074f9e813a5a614ef42, type: 2}
+        nextNode:
+          rid: 6056200485695651919
+        text: Nee fuck jou
+    - rid: 6056200506423640144
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 6056200506423640145
+        nodeX: 1565.0294
+        nodeY: 268.3765
+        name: ResponseNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 6056200506423640145
+      type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
+      data:
+        response: {fileID: 11400000, guid: ff78c82729da93a44a6e207b44ddbd78, type: 2}
+        nextNode:
+          rid: 6056200488745173293
+        text: AAA
+    - rid: 6056200507354775665
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 6056200507354775666
+        nodeX: 2101.8667
+        nodeY: -24.334335
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
+    - rid: 6056200507354775666
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nextNode:
+          rid: 6056200507354775670
+        dialogueData:
+          dialogue: {fileID: 11400000, guid: 6a37f4be87255c146ad78126b6394ec9, type: 2}
+          character: {fileID: 11400000, guid: 898b9173f16c76c42a03bbd1e459c7dd, type: 2}
+          overrideCharacterName: bitch
+          text: fucking hater
+    - rid: 6056200507354775669
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 6056200507354775670
+        nodeX: 2362.8667
+        nodeY: -43.334335
+        name: ResponseHolderNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 6056200507354775670
+      type: {class: ResponseHolderNode, ns: , asm: Assembly-CSharp}
+      data:
+        responseHolder: {fileID: 11400000, guid: 029fc42212183914389fd311b81b8e08, type: 2}
+        responses:
+        - rid: 6056200507354775672
+    - rid: 6056200507354775671
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 6056200507354775672
+        nodeX: 2639.4722
+        nodeY: -69.867226
+        name: ResponseNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 6056200507354775672
+      type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
+      data:
+        response: {fileID: 11400000, guid: a909adbd9658a0c48b235f1bd24d9b09, type: 2}
+        nextNode:
+          rid: 6056200507354775674
+        text: wtf
+    - rid: 6056200507354775673
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 6056200507354775674
+        nodeX: 2890.7424
+        nodeY: -63.43222
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
+    - rid: 6056200507354775674
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nextNode:
+          rid: -2
+        dialogueData:
+          dialogue: {fileID: 11400000, guid: 1dced362ddf31d14f9955557ab31dc48, type: 2}
+          character: {fileID: 11400000, guid: 898b9173f16c76c42a03bbd1e459c7dd, type: 2}
+          overrideCharacterName: bitch
+          text: :)
+    - rid: 6056200507354775676
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 6056200507354775677
+        nodeX: 0
+        nodeY: 0
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
+    - rid: 6056200507354775677
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nextNode:
+          rid: -2
+        dialogueData:
+          dialogue: {fileID: 11400000, guid: 557b92570f7cebe49b4271155e4eed9a, type: 2}
+          character: {fileID: 0}
+          overrideCharacterName: 
+          text: 
+    - rid: 6056200507354775678
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 6056200507354775679
+        nodeX: 2131.2935
+        nodeY: 230.11203
+        name: ResponseHolderNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 6056200507354775679
+      type: {class: ResponseHolderNode, ns: , asm: Assembly-CSharp}
+      data:
+        responseHolder: {fileID: 11400000, guid: 149135780ec24f341b6d01ef89332618, type: 2}
+        responses:
+        - rid: 6056200507354775681
+    - rid: 6056200507354775680
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 6056200507354775681
+        nodeX: 2402.2935
+        nodeY: 235.11203
+        name: ResponseNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 6056200507354775681
+      type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
+      data:
+        response: {fileID: 11400000, guid: 6432a3660f2b5e9468e60391b38a387c, type: 2}
+        nextNode:
+          rid: 6056200507354775683
+        text: wat
+    - rid: 6056200507354775682
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 6056200507354775683
+        nodeX: 2327.2153
+        nodeY: 524.2637
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
+    - rid: 6056200507354775683
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nextNode:
+          rid: 6056200507354775679
+        dialogueData:
+          dialogue: {fileID: 11400000, guid: 508f4df1308609246a37cf2590f302d7, type: 2}
+          character: {fileID: 11400000, guid: 898b9173f16c76c42a03bbd1e459c7dd, type: 2}
+          overrideCharacterName: 
+          text: hm?
