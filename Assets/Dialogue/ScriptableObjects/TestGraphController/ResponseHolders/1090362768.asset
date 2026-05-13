@@ -15,5 +15,5 @@ MonoBehaviour:
   type: 2
   nextObj: {fileID: 0}
   responses:
-  - {fileID: 11400000, guid: 6a17ec6da5500074f9e813a5a614ef42, type: 2}
-  - {fileID: 11400000, guid: ff78c82729da93a44a6e207b44ddbd78, type: 2}
+  - {fileID: 11400000, guid: 0aa3bfd8f5522814b99a1f78d5824dbe, type: 2}
+  - {fileID: 11400000, guid: ca61be9e084cb1548810fcecbdec0ec2, type: 2}

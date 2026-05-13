@@ -26,6 +26,9 @@ public class DialogueNode : GenericNode
 
         [GraphDisplay(DisplayType.BothViews)]
         public string text;
+
+        [GraphDisplay(DisplayType.BothViews)]
+        public CharacterSprite sprite;
     }
     public DialogueData dialogueData;
 }

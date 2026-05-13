@@ -33,8 +33,8 @@ MonoBehaviour:
     utilityNodes: []
     tmpName: TestGraph
     viewportInitiallySet: 1
-    viewPosition: {x: -315.14246, y: 151.25093, z: 0}
-    viewScale: {x: 0.43232757, y: 0.43232757, z: 1}
+    viewPosition: {x: -864.9663, y: 87.02377, z: 0}
+    viewScale: {x: 1, y: 1, z: 1}
   references:
     version: 2
     RefIds:
@@ -80,6 +80,7 @@ MonoBehaviour:
           character: {fileID: 11400000, guid: 898b9173f16c76c42a03bbd1e459c7dd, type: 2}
           overrideCharacterName: 
           text: Freddy
+          sprite: 0
     - rid: 6056200485695651918
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -104,6 +105,7 @@ MonoBehaviour:
           character: {fileID: 11400000, guid: 898b9173f16c76c42a03bbd1e459c7dd, type: 2}
           overrideCharacterName: 
           text: Oh ok
+          sprite: 3
     - rid: 6056200488745173283
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -128,6 +130,7 @@ MonoBehaviour:
           character: {fileID: 11400000, guid: 898b9173f16c76c42a03bbd1e459c7dd, type: 2}
           overrideCharacterName: 
           text: Fuck jou
+          sprite: 2
     - rid: 6056200488745173292
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -152,6 +155,7 @@ MonoBehaviour:
           character: {fileID: 11400000, guid: 898b9173f16c76c42a03bbd1e459c7dd, type: 2}
           overrideCharacterName: 
           text: owh...
+          sprite: 0
     - rid: 6056200506423640137
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -182,7 +186,7 @@ MonoBehaviour:
     - rid: 6056200506423640143
       type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
       data:
-        response: {fileID: 11400000, guid: 6a17ec6da5500074f9e813a5a614ef42, type: 2}
+        response: {fileID: 11400000, guid: 0aa3bfd8f5522814b99a1f78d5824dbe, type: 2}
         nextNode:
           rid: 6056200485695651919
         text: Nee fuck jou
@@ -199,7 +203,7 @@ MonoBehaviour:
     - rid: 6056200506423640145
       type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
       data:
-        response: {fileID: 11400000, guid: ff78c82729da93a44a6e207b44ddbd78, type: 2}
+        response: {fileID: 11400000, guid: ca61be9e084cb1548810fcecbdec0ec2, type: 2}
         nextNode:
           rid: 6056200488745173293
         text: AAA
@@ -227,6 +231,7 @@ MonoBehaviour:
           character: {fileID: 11400000, guid: 898b9173f16c76c42a03bbd1e459c7dd, type: 2}
           overrideCharacterName: bitch
           text: fucking hater
+          sprite: 0
     - rid: 6056200507354775669
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -256,7 +261,7 @@ MonoBehaviour:
     - rid: 6056200507354775672
       type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
       data:
-        response: {fileID: 11400000, guid: a909adbd9658a0c48b235f1bd24d9b09, type: 2}
+        response: {fileID: 11400000, guid: b0ff7fe7b5ba4734ea0b52d80ea683fe, type: 2}
         nextNode:
           rid: 6056200507354775674
         text: wtf
@@ -284,6 +289,7 @@ MonoBehaviour:
           character: {fileID: 11400000, guid: 898b9173f16c76c42a03bbd1e459c7dd, type: 2}
           overrideCharacterName: bitch
           text: :)
+          sprite: 1
     - rid: 6056200507354775676
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -308,6 +314,7 @@ MonoBehaviour:
           character: {fileID: 0}
           overrideCharacterName: 
           text: 
+          sprite: 0
     - rid: 6056200507354775678
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -337,7 +344,7 @@ MonoBehaviour:
     - rid: 6056200507354775681
       type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
       data:
-        response: {fileID: 11400000, guid: 6432a3660f2b5e9468e60391b38a387c, type: 2}
+        response: {fileID: 11400000, guid: 42cf7626766f84940b3fc7a4102ee7ab, type: 2}
         nextNode:
           rid: 6056200507354775683
         text: wat
@@ -365,3 +372,4 @@ MonoBehaviour:
           character: {fileID: 11400000, guid: 898b9173f16c76c42a03bbd1e459c7dd, type: 2}
           overrideCharacterName: 
           text: hm?
+          sprite: 0

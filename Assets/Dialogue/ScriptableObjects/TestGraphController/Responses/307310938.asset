@@ -9,12 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a740f0bb9d889a347ac93554fdc30ae3, type: 3}
-  m_Name: 146300960
-  m_EditorClassIdentifier: Assembly-CSharp::Dialogue
-  type: 1
-  nextObj: {fileID: 0}
-  character: {fileID: 0}
-  overrideCharacterName: 
-  text: 
-  sprite: 0
+  m_Script: {fileID: 11500000, guid: 7441054a736fab84c8bbb82f651adf29, type: 3}
+  m_Name: 307310938
+  m_EditorClassIdentifier: Assembly-CSharp::Response
+  type: 3
+  nextObj: {fileID: 11400000, guid: b637a56e00f16204093ddf2fd14b3196, type: 2}
+  text: AAA

@@ -4,4 +4,8 @@ using UnityEngine;
 public class Character : ScriptableObject
 {
     public string characterName;
+    public Sprite neutralSprite;
+    public Sprite happySprite;
+    public Sprite angrySprite;
+    public Sprite sadSprite;
 }

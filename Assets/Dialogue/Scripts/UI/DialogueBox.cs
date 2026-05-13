@@ -1,4 +1,3 @@
-using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,6 +13,7 @@ public class DialogueBox : MonoBehaviour
     [SerializeField] private RectTransform nameBoxRTransform;
     [SerializeField] private float nameBoxSpacing;
     [SerializeField] private TMP_Text nameText;
+    [SerializeField] private Image characterImage;
 
     public void Setup() => responseManager.Setup();
 
@@ -33,21 +33,30 @@ public class DialogueBox : MonoBehaviour
         }
     }
 
-    private void LoadDialogue(Dialogue givenDialogue)
+    private void LoadDialogue(Dialogue dialogue)
     {
         dialogueManager.ToggleContinueButton(false);
-        string charName = givenDialogue.character.characterName;
-        if (givenDialogue.overrideCharacterName != string.Empty)
-            charName = givenDialogue.overrideCharacterName;
+        string charName = dialogue.character.characterName;
+        if (dialogue.overrideCharacterName != string.Empty)
+            charName = dialogue.overrideCharacterName;
         nameText.text = charName;
         nameBoxRTransform.sizeDelta = new Vector2(nameText.preferredWidth + nameBoxSpacing, nameBoxRTransform.sizeDelta.y);
-        dialogueText.text = givenDialogue.text;
+        Sprite charSprite = dialogue.sprite switch
+        {
+            CharacterSprite.Neutral => dialogue.character.neutralSprite,
+            CharacterSprite.Happy => dialogue.character.happySprite,
+            CharacterSprite.Angry => dialogue.character.angrySprite,
+            CharacterSprite.Sad => dialogue.character.sadSprite,
+            _ => characterImage.sprite
+        };
+        characterImage.sprite = charSprite;
+        dialogueText.text = dialogue.text;
         dialogueManager.ToggleContinueButton(true);
     }
 
-    private void LoadResponses(ResponseHolder givenHolder)
+    private void LoadResponses(ResponseHolder responseHolder)
     {
         dialogueManager.ToggleContinueButton(false);
-        responseManager.LoadResponses(givenHolder);
+        responseManager.LoadResponses(responseHolder);
     }
 }

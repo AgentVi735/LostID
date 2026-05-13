@@ -184,6 +184,7 @@ public class CustomMenu : NewGraph.ContextMenu
         dialogue.character = dialogueData.character;
         dialogue.overrideCharacterName = dialogueData.overrideCharacterName;
         dialogue.text = dialogueData.text;
+        dialogue.sprite = dialogueData.sprite;
 
         return dialogue;
     }
@@ -355,7 +356,9 @@ public class CustomMenu : NewGraph.ContextMenu
             Dialogue dialogue = dialogueData.dialogue;
 
             dialogueData.character = dialogue.character;
+            dialogueData.overrideCharacterName = dialogue.overrideCharacterName;
             dialogueData.text = dialogue.text;
+            dialogueData.sprite = dialogue.sprite;
         }
 
         foreach (NodeModel node in answerNodes)

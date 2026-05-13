@@ -17,3 +17,4 @@ MonoBehaviour:
   character: {fileID: 11400000, guid: 898b9173f16c76c42a03bbd1e459c7dd, type: 2}
   overrideCharacterName: 
   text: Fuck jou
+  sprite: 2

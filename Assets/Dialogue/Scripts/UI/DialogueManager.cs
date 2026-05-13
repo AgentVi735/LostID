@@ -31,8 +31,5 @@ public class DialogueManager : MonoBehaviour
         dialogueBox.LoadObj(currentObj);
     }
 
-    public void ToggleContinueButton(bool toggle)
-    {
-        continueButton.interactable = toggle;
-    }
+    public void ToggleContinueButton(bool toggle) => continueButton.interactable = toggle;
 }
