@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,9 +10,6 @@ public class DialogueBox : MonoBehaviour
 
     [SerializeField] private Image dialogueBoxImage;
     [SerializeField] private TMP_Text dialogueText;
-    [SerializeField] private Image nameBoxImage;
-    [SerializeField] private RectTransform nameBoxRTransform;
-    [SerializeField] private float nameBoxSpacing;
     [SerializeField] private TMP_Text nameText;
     [SerializeField] private Image characterImage;
 
@@ -26,6 +24,9 @@ public class DialogueBox : MonoBehaviour
                 break;
             case NodeType.ResponseHolder:
                 LoadResponses((ResponseHolder)givenObj);
+                break;
+            case NodeType.Event:
+                LoadEvent((Event)givenObj);
                 break;
             default:
                 Debug.LogError("Current dialogue object is invalid.");
@@ -45,8 +46,6 @@ public class DialogueBox : MonoBehaviour
         if (dialogue.overrideCharacterName != string.Empty)
             charName = dialogue.overrideCharacterName;
         nameText.text = charName;
-        nameBoxRTransform.sizeDelta =
-            new Vector2(nameText.preferredWidth + nameBoxSpacing, nameBoxRTransform.sizeDelta.y);
         Sprite charSprite = dialogue.sprite switch
         {
             CharacterSprite.None => null,
@@ -66,5 +65,60 @@ public class DialogueBox : MonoBehaviour
     {
         dialogueManager.ToggleContinueButton(false);
         responseManager.LoadResponses(responseHolder);
+    }
+
+    private void LoadEvent(Event eventObj)
+    {
+        dialogueManager.ToggleContinueButton(false);
+
+        switch (eventObj.eventType)
+        {
+            case EventType.None:
+                Debug.LogWarning("No event type selected on event node " + eventObj.name);
+                break;
+            case EventType.Delay:
+                StartCoroutine(Delay(eventObj));
+                break;
+        }
+    }
+
+    private IEnumerator Delay(Event eventObj)
+    {
+        Color dialogueTextColor = Color.black;
+        Color nameTextColor = Color.black;
+
+        if (eventObj.hideDialogueBox)
+        {
+            dialogueBoxImage.color = Color.clear;
+            dialogueTextColor = dialogueText.color;
+            dialogueText.color = Color.clear;
+            nameTextColor = nameText.color;
+            nameText.color = Color.clear;
+
+            if (!eventObj.keepText)
+            {
+                dialogueText.text = string.Empty;
+                nameText.text = string.Empty;
+            }
+        }
+
+        if (eventObj.hidePortrait)
+            characterImage.color = Color.clear;
+
+        WaitForSeconds delayTime = new(eventObj.delay);
+        yield return delayTime;
+
+        if (eventObj.hideDialogueBox)
+        {
+            dialogueBoxImage.color = Color.white;
+            dialogueText.color = dialogueTextColor;
+            nameText.color = nameTextColor;
+        }
+
+        if (eventObj.hidePortrait)
+            characterImage.color = Color.white;
+
+        if (eventObj.nextObj != null)
+            dialogueManager.Continue(eventObj.nextObj);
     }
 }

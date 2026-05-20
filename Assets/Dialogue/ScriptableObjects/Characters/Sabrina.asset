@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Sabrina
   m_EditorClassIdentifier: Assembly-CSharp::Character
   characterName: Sabrina
-  neutralSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  happySprite: {fileID: 0}
-  angrySprite: {fileID: 0}
-  sadSprite: {fileID: 0}
+  neutralSprite: {fileID: 21300000, guid: bd2caa81baf809440812b8da6e07c1f0, type: 3}
+  happySprite: {fileID: 21300000, guid: a6c97adaaf472cf4a94cf6e04c57acd9, type: 3}
+  angrySprite: {fileID: 21300000, guid: e8277a118c814f64eb8404550eb5556e, type: 3}
+  sadSprite: {fileID: 21300000, guid: 9bea396115c21434c8c9e03ecd2341ca, type: 3}

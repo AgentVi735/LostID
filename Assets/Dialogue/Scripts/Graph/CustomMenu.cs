@@ -1,10 +1,8 @@
-using System;
 using NewGraph;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using UnityEditor;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using Application = UnityEngine.Application;
 using GraphWindow = NewGraph.GraphWindow;
@@ -17,12 +15,13 @@ public class CustomMenu : NewGraph.ContextMenu
     private static GraphWindow window;
     private static readonly FieldInfo field;
 
-    private const string fullPath = "Assets/Dialogue/ScriptableObjects/";
-    private const string shortPath = "Dialogue/ScriptableObjects/";
+    private const string fullPath = "Assets/Dialogue/Graphs/";
+    private const string shortPath = "Dialogue/Graphs/";
 
     private const string dialogueFolder = "/Dialogues/";
     private const string responseHolderFolder = "/ResponseHolders/";
     private const string responseFolder = "/Responses/";
+    private const string eventFolder = "/Events/";
 
     private const string defaultGenericNodeName = "GenericNode";
     private const string defaultControllerNodeName = "ControllerNode";
@@ -37,6 +36,7 @@ public class CustomMenu : NewGraph.ContextMenu
     {
         base.AddNodeEntries();
         AddNodeEntry("Dialogues/Update Objects", (obj) => { UpdateObjects(); });
+        AddNodeEntry("Dialogues/Create Graph Directories", (obj) => { CreateGraphDirectories(); });
         AddNodeEntry("Dialogues/Old/Create Objects", (obj) => { CreateObjects(); });
         AddNodeEntry("Dialogues/Old/Refresh SOs", (obj) => { RefreshSO(); });
         AddNodeEntry("Dialogues/Utility/Remove unused SOs", (obj) => { RemoveUnusedSO(); });
@@ -54,6 +54,37 @@ public class CustomMenu : NewGraph.ContextMenu
     {
         CreateMissingSO();
         RefreshSO();
+    }
+
+    private static void CreateGraphDirectories()
+    {
+        ControllerNode controllerNode = null;
+        List<NodeModel> nodes = Window.graphController.graphData.Nodes;
+
+        foreach (var node in nodes)
+        {
+            GenericNode genericNode = (GenericNode)node.nodeData;
+
+            if (genericNode.ReturnType() != NodeType.Controller) continue;
+            ControllerNode nodeData = (ControllerNode)node.nodeData;
+            controllerNode = nodeData;
+            break;
+        }
+
+
+        if (controllerNode == null)
+        {
+            Debug.LogError("No ControllerNode found");
+            return;
+        }
+
+        Directory.CreateDirectory(fullPath + controllerNode.graphController.name);
+        Directory.CreateDirectory(fullPath + controllerNode.graphController.name + dialogueFolder);
+        Directory.CreateDirectory(fullPath + controllerNode.graphController.name + responseHolderFolder);
+        Directory.CreateDirectory(fullPath + controllerNode.graphController.name + responseFolder);
+        Directory.CreateDirectory(fullPath + controllerNode.graphController.name + eventFolder);
+
+        Debug.Log("Graph directories created at " + fullPath + controllerNode.graphController.name);
     }
 
     private static void CreateMissingSO()
@@ -82,6 +113,7 @@ public class CustomMenu : NewGraph.ContextMenu
         Directory.CreateDirectory(fullPath + controllerNode.graphController.name + dialogueFolder);
         Directory.CreateDirectory(fullPath + controllerNode.graphController.name + responseHolderFolder);
         Directory.CreateDirectory(fullPath + controllerNode.graphController.name + responseFolder);
+        Directory.CreateDirectory(fullPath + controllerNode.graphController.name + eventFolder);
 
         foreach (var node in nodes)
         {
@@ -135,6 +167,22 @@ public class CustomMenu : NewGraph.ContextMenu
                         assetName = nodeName;
                     AssetDatabase.CreateAsset(response, fullPath + controllerNode.graphController.name + responseFolder + assetName + ".asset");
                     EditorUtility.SetDirty(response);
+                    break;
+                }
+                case NodeType.Event:
+                {
+                    EventNode eventNode = (EventNode)node.nodeData;
+
+                    if (eventNode.eventData.eventObj != null) continue;
+                    Event eventObj = CreateInstance<Event>();
+                    eventObj.type = NodeType.Event;
+                    eventNode.eventData.eventObj = eventObj;
+                    string assetName = node.GetHashCode().ToString();
+                    string nodeName = node.GetName();
+                    if (nodeName != defaultEventNodeName)
+                        assetName = nodeName;
+                    AssetDatabase.CreateAsset(eventObj, fullPath + controllerNode.graphController.name + eventFolder + assetName + ".asset");
+                    EditorUtility.SetDirty(eventObj);
                     break;
                 }
             }
@@ -193,6 +241,10 @@ public class CustomMenu : NewGraph.ContextMenu
                     ResponseNode responseNode = (ResponseNode)node.nodeData;
                     nodeName = responseNode.response == null ? string.Empty : responseNode.response.name;
                     break;
+                case NodeType.Event:
+                    EventNode eventNode = (EventNode)node.nodeData;
+                    nodeName = eventNode.eventData.eventObj == null ? string.Empty : eventNode.eventData.eventObj.name;
+                    break;
             }
 
             nodeNames[i] = nodeName;
@@ -207,6 +259,7 @@ public class CustomMenu : NewGraph.ContextMenu
         string[] dialogueFiles = Directory.GetFiles(Application.dataPath + "/" + shortPath + controllerNode.graphController.name + dialogueFolder);
         string[] responseHolderFiles = Directory.GetFiles(Application.dataPath + "/" + shortPath + controllerNode.graphController.name + responseHolderFolder);
         string[] responseFiles = Directory.GetFiles(Application.dataPath + "/" + shortPath + controllerNode.graphController.name + responseFolder);
+        string[] eventFiles = Directory.GetFiles(Application.dataPath + "/" + shortPath + controllerNode.graphController.name + eventFolder);
 
         foreach (string file in dialogueFiles) 
             AssetDatabase.DeleteAsset(fullPath + controllerNode.graphController.name + "/" + dialogueFolder + GetFileName(file) + ".asset");
@@ -214,6 +267,8 @@ public class CustomMenu : NewGraph.ContextMenu
             AssetDatabase.DeleteAsset(fullPath + controllerNode.graphController.name + "/" + responseHolderFolder + GetFileName(file) + ".asset");
         foreach (string file in responseFiles)
             AssetDatabase.DeleteAsset(fullPath + controllerNode.graphController.name + "/" + responseFolder + GetFileName(file) + ".asset");
+        foreach (string file in eventFiles)
+            AssetDatabase.DeleteAsset(fullPath + controllerNode.graphController.name + "/" + eventFolder + GetFileName(file) + ".asset");
     }
 
     private static void RefreshSO()
@@ -259,6 +314,11 @@ public class CustomMenu : NewGraph.ContextMenu
                     graphController.dialogueObjs[i] = response;
                     EditorUtility.SetDirty(response);
                     break;
+                case NodeType.Event:
+                    Event eventObj = LoadEvent(nodeData);
+                    graphController.dialogueObjs[i] = eventObj;
+                    EditorUtility.SetDirty(eventObj);
+                    break;
             }
         }
 
@@ -278,6 +338,12 @@ public class CustomMenu : NewGraph.ContextMenu
                 {
                     ResponseHolderNode nodeData = (ResponseHolderNode)controllerNode.startingNode;
                     controllerNode.graphController.startingObj = nodeData.responseHolder;
+                    break;
+                }
+                case NodeType.Event:
+                {
+                    EventNode nodeData = (EventNode)controllerNode.startingNode;
+                    controllerNode.graphController.startingObj = nodeData.eventData.eventObj;
                     break;
                 }
             }
@@ -303,6 +369,9 @@ public class CustomMenu : NewGraph.ContextMenu
                     break;
                 case NodeType.ResponseHolder:
                     dialogue.nextObj = ((ResponseHolderNode)dialogueNode.nextNode).responseHolder;
+                    break;
+                case NodeType.Event:
+                    dialogue.nextObj = ((EventNode)dialogueNode.nextNode).eventData.eventObj;
                     break;
             }
         }
@@ -360,6 +429,9 @@ public class CustomMenu : NewGraph.ContextMenu
                     case NodeType.ResponseHolder:
                         response.nextObj = ((ResponseHolderNode)responseNode.nextNode).responseHolder;
                         break;
+                    case NodeType.Event:
+                        response.nextObj = ((EventNode)responseNode.nextNode).eventData.eventObj;
+                        break;
                 }
             }
 
@@ -367,6 +439,37 @@ public class CustomMenu : NewGraph.ContextMenu
         }
 
         return responseHolder;
+    }
+
+    private static Event LoadEvent(GenericNode nodeData)
+    {
+        EventNode eventNode = (EventNode)nodeData;
+        EventNode.EventData eventData = eventNode.eventData;
+        Event eventObj = eventData.eventObj;
+
+        if (eventNode.nextNode != null)
+        {
+            switch (eventNode.nextNode.ReturnType())
+            {
+                case NodeType.Dialogue:
+                    eventObj.nextObj = ((DialogueNode)eventNode.nextNode).dialogueData.dialogue;
+                    break;
+                case NodeType.ResponseHolder:
+                    eventObj.nextObj = ((ResponseHolderNode)eventNode.nextNode).responseHolder;
+                    break;
+                case NodeType.Event:
+                    eventObj.nextObj = ((EventNode)eventNode.nextNode).eventData.eventObj;
+                    break;
+            }
+        }
+
+        eventObj.eventType = eventData.eventType;
+        eventObj.hideDialogueBox = eventData.hideDialogueBox;
+        eventObj.keepText = eventData.keepText;
+        eventObj.hidePortrait = eventData.hidePortrait;
+        eventObj.delay = eventData.delay;
+
+        return eventObj;
     }
 
     private static void RefreshNames()
@@ -422,10 +525,9 @@ public class CustomMenu : NewGraph.ContextMenu
                     responseNode.nodeName = name;
                     break;
                 case NodeType.Generic:
-                    GenericNode genericNode = nodeData;
                     if (name == defaultGenericNodeName)
                         name = node.GetHashCode().ToString();
-                    genericNode.nodeName = name;
+                    nodeData.nodeName = name;
                     break;
                 case NodeType.Event:
                     EventNode eventNode = (EventNode)nodeData;
@@ -486,6 +588,10 @@ public class CustomMenu : NewGraph.ContextMenu
                     ResponseNode responseNode = (ResponseNode)node.nodeData;
                     nodeName = responseNode.response == null ? string.Empty : responseNode.response.name;
                     break;
+                case NodeType.Event:
+                    EventNode eventNode = (EventNode)node.nodeData;
+                    nodeName = eventNode.eventData.eventObj == null ? string.Empty : eventNode.eventData.eventObj.name;
+                    break;
             }
 
             nodeNames[i] = nodeName;
@@ -500,10 +606,12 @@ public class CustomMenu : NewGraph.ContextMenu
         string[] dialogueFiles = Directory.GetFiles(Application.dataPath + "/" + shortPath + controllerNode.graphController.name + dialogueFolder);
         string[] responseHolderFiles = Directory.GetFiles(Application.dataPath + "/" + shortPath + controllerNode.graphController.name + responseHolderFolder);
         string[] responseFiles = Directory.GetFiles(Application.dataPath + "/" + shortPath + controllerNode.graphController.name + responseFolder);
+        string[] eventFiles = Directory.GetFiles(Application.dataPath + "/" + shortPath + controllerNode.graphController.name + eventFolder);
 
         RemoveFiles(dialogueFiles, nodeNames, controllerNode.graphController.name + "/" + dialogueFolder);
         RemoveFiles(responseHolderFiles, nodeNames, controllerNode.graphController.name + "/" + responseHolderFolder);
         RemoveFiles(responseFiles, nodeNames, controllerNode.graphController.name + "/" + responseFolder);
+        RemoveFiles(eventFiles, nodeNames, controllerNode.graphController.name + "/" + eventFolder);
 
         Debug.Log("Successfully removed all unused objects");
     }
@@ -546,6 +654,7 @@ public class CustomMenu : NewGraph.ContextMenu
         List<NodeModel> dialogueNodes = new();
         List<NodeModel> responseHolderNodes = new();
         List<NodeModel> responseNodes = new();
+        List<NodeModel> eventNodes = new();
 
         foreach (NodeModel node in nodes)
         {
@@ -565,6 +674,7 @@ public class CustomMenu : NewGraph.ContextMenu
                     responseNodes.Add(node);
                     break;
                 case NodeType.Event:
+                    eventNodes.Add(node);
                     break;
                 case NodeType.Controller:
                     ControllerNode controllerNode = (ControllerNode)node.nodeData;
@@ -588,10 +698,10 @@ public class CustomMenu : NewGraph.ContextMenu
             DialogueNode.DialogueData dialogueData = nodeData.dialogueData;
             Dialogue dialogue = dialogueData.dialogue;
 
-            dialogue.character = dialogueData.character;
-            dialogue.overrideCharacterName = dialogueData.overrideCharacterName;
-            dialogue.text = dialogueData.text;
-            dialogue.sprite = dialogueData.sprite;
+            dialogueData.character = dialogue.character;
+            dialogueData.overrideCharacterName = dialogue.overrideCharacterName;
+            dialogueData.text = dialogue.text;
+            dialogueData.sprite = dialogue.sprite;
         }
 
         foreach (NodeModel node in responseNodes)
@@ -599,7 +709,20 @@ public class CustomMenu : NewGraph.ContextMenu
             ResponseNode responseNode = (ResponseNode)node.nodeData;
             Response response = responseNode.response;
 
-            response.text = responseNode.text;
+            responseNode.text = response.text;
+        }
+
+        foreach (NodeModel node in eventNodes)
+        {
+            EventNode nodeData = (EventNode)node.nodeData;
+            EventNode.EventData eventData = nodeData.eventData;
+            Event eventObj = eventData.eventObj;
+
+            eventData.eventType = eventObj.eventType;
+            eventData.hideDialogueBox = eventObj.hideDialogueBox;
+            eventData.keepText = eventObj.keepText;
+            eventData.hidePortrait = eventObj.hidePortrait;
+            eventData.delay = eventObj.delay;
         }
 
         Debug.Log("Saved nodes");
