@@ -36,13 +36,20 @@ public class DialogueBox : MonoBehaviour
     private void LoadDialogue(Dialogue dialogue)
     {
         dialogueManager.ToggleContinueButton(false);
+        if (dialogue.character == null)
+        {
+            Debug.LogError("Dialogue " + dialogue.name + " has no character selected");
+            return;
+        }
         string charName = dialogue.character.characterName;
         if (dialogue.overrideCharacterName != string.Empty)
             charName = dialogue.overrideCharacterName;
         nameText.text = charName;
-        nameBoxRTransform.sizeDelta = new Vector2(nameText.preferredWidth + nameBoxSpacing, nameBoxRTransform.sizeDelta.y);
+        nameBoxRTransform.sizeDelta =
+            new Vector2(nameText.preferredWidth + nameBoxSpacing, nameBoxRTransform.sizeDelta.y);
         Sprite charSprite = dialogue.sprite switch
         {
+            CharacterSprite.None => null,
             CharacterSprite.Neutral => dialogue.character.neutralSprite,
             CharacterSprite.Happy => dialogue.character.happySprite,
             CharacterSprite.Angry => dialogue.character.angrySprite,
@@ -51,7 +58,8 @@ public class DialogueBox : MonoBehaviour
         };
         characterImage.sprite = charSprite;
         dialogueText.text = dialogue.text;
-        dialogueManager.ToggleContinueButton(true);
+        if (dialogue.nextObj != null)
+            dialogueManager.ToggleContinueButton(true);
     }
 
     private void LoadResponses(ResponseHolder responseHolder)

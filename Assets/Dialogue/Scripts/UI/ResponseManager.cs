@@ -51,6 +51,7 @@ public class ResponseManager : MonoBehaviour
         foreach (ResponseButton button in buttons) 
             button.gameObject.SetActive(false);
 
-        dialogueManager.Continue(response.nextObj);
+        if (response.nextObj != null)
+            dialogueManager.Continue(response.nextObj);
     }
 }

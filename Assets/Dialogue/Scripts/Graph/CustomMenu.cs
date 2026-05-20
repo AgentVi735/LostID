@@ -1,8 +1,10 @@
+using System;
 using NewGraph;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using UnityEditor;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using Application = UnityEngine.Application;
 using GraphWindow = NewGraph.GraphWindow;
@@ -10,23 +12,48 @@ using GraphWindow = NewGraph.GraphWindow;
 [CustomContextMenu]
 public class CustomMenu : NewGraph.ContextMenu
 {
-    static CustomMenu()
-    {
-        field = typeof(NewGraph.GraphWindow).GetField("window", BindingFlags.NonPublic | BindingFlags.Static);
-    }
+    static CustomMenu() => field = typeof(GraphWindow).GetField("window", BindingFlags.NonPublic | BindingFlags.Static);
 
     private static GraphWindow window;
     private static readonly FieldInfo field;
+
+    private const string fullPath = "Assets/Dialogue/ScriptableObjects/";
+    private const string shortPath = "Dialogue/ScriptableObjects/";
+
+    private const string dialogueFolder = "/Dialogues/";
+    private const string responseHolderFolder = "/ResponseHolders/";
+    private const string responseFolder = "/Responses/";
+
+    private const string defaultGenericNodeName = "GenericNode";
+    private const string defaultControllerNodeName = "ControllerNode";
+    private const string defaultDialogueNodeName = "DialogueNode";
+    private const string defaultResponseHolderNodeName = "ResponseHolderNode";
+    private const string defaultResponseNodeName = "ResponseNode";
+    private const string defaultEventNodeName = "EventNode";
 
     private static GraphWindow Window => window ??= (GraphWindow)field!.GetValue(null);
 
     protected override void AddNodeEntries()
     {
         base.AddNodeEntries();
-        AddNodeEntry("Dialogues/Refresh SOs", (obj) => { RefreshSO(); });
-        AddNodeEntry("Dialogues/Create SOs", (obj) => { CreateMissingSO(); });
+        AddNodeEntry("Dialogues/Update Objects", (obj) => { UpdateObjects(); });
+        AddNodeEntry("Dialogues/Old/Create Objects", (obj) => { CreateObjects(); });
+        AddNodeEntry("Dialogues/Old/Refresh SOs", (obj) => { RefreshSO(); });
         AddNodeEntry("Dialogues/Utility/Remove unused SOs", (obj) => { RemoveUnusedSO(); });
         AddNodeEntry("Dialogues/Utility/Update SOs", (obj) => { UpdateSO(); });
+    }
+
+    private static void UpdateObjects()
+    {
+        RemoveAllSO();
+        CreateMissingSO();
+        RefreshSO();
+    }
+
+    private static void CreateObjects()
+    {
+        CreateMissingSO();
+        RefreshSO();
     }
 
     private static void CreateMissingSO()
@@ -51,10 +78,10 @@ public class CustomMenu : NewGraph.ContextMenu
             return;
         }
 
-        Directory.CreateDirectory("Assets/Dialogue/ScriptableObjects/" + controllerNode.graphController.name);
-        Directory.CreateDirectory("Assets/Dialogue/ScriptableObjects/" + controllerNode.graphController.name + "/Dialogues/");
-        Directory.CreateDirectory("Assets/Dialogue/ScriptableObjects/" + controllerNode.graphController.name + "/ResponseHolders/");
-        Directory.CreateDirectory("Assets/Dialogue/ScriptableObjects/" + controllerNode.graphController.name + "/Responses/");
+        Directory.CreateDirectory(fullPath + controllerNode.graphController.name);
+        Directory.CreateDirectory(fullPath + controllerNode.graphController.name + dialogueFolder);
+        Directory.CreateDirectory(fullPath + controllerNode.graphController.name + responseHolderFolder);
+        Directory.CreateDirectory(fullPath + controllerNode.graphController.name + responseFolder);
 
         foreach (var node in nodes)
         {
@@ -70,24 +97,123 @@ public class CustomMenu : NewGraph.ContextMenu
                     Dialogue dialogue = CreateInstance<Dialogue>();
                     dialogue.type = NodeType.Dialogue;
                     dialogueNode.dialogueData.dialogue = dialogue;
-                    AssetDatabase.CreateAsset(dialogue, "Assets/Dialogue/ScriptableObjects/" + controllerNode.graphController.name + "/Dialogues/" + node.GetHashCode() + ".asset");
+                    string assetName = node.GetHashCode().ToString();
+                    string nodeName = node.GetName();
+                    if (nodeName != defaultDialogueNodeName)
+                        assetName = nodeName;
+                    AssetDatabase.CreateAsset(dialogue, fullPath + controllerNode.graphController.name + dialogueFolder + assetName + ".asset");
                     EditorUtility.SetDirty(dialogue);
                     break;
                 }
                 case NodeType.ResponseHolder:
+                {
                     ResponseHolderNode responseHolderNode = (ResponseHolderNode)node.nodeData;
 
                     if (responseHolderNode.responseHolder != null) continue;
                     ResponseHolder responseHolder = CreateInstance<ResponseHolder>();
                     responseHolder.type = NodeType.ResponseHolder;
                     responseHolderNode.responseHolder = responseHolder;
-                    AssetDatabase.CreateAsset(responseHolder, "Assets/Dialogue/ScriptableObjects/" + controllerNode.graphController.name + "/ResponseHolders/" + node.GetHashCode() + ".asset");
+                    string assetName = node.GetHashCode().ToString();
+                    string nodeName = node.GetName();
+                    if (nodeName != defaultResponseHolderNodeName)
+                        assetName = nodeName;
+                    AssetDatabase.CreateAsset(responseHolder, fullPath + controllerNode.graphController.name + responseHolderFolder + assetName + ".asset");
                     EditorUtility.SetDirty(responseHolder);
                     break;
+                }
+                case NodeType.Response:
+                {
+                    ResponseNode responseNode = (ResponseNode)node.nodeData;
+
+                    if (responseNode.response != null) continue;
+                    Response response = CreateInstance<Response>();
+                    response.type = NodeType.Response;
+                    responseNode.response = response;
+                    string assetName = node.GetHashCode().ToString();
+                    string nodeName = node.GetName();
+                    if (nodeName != defaultResponseNodeName)
+                        assetName = nodeName;
+                    AssetDatabase.CreateAsset(response, fullPath + controllerNode.graphController.name + responseFolder + assetName + ".asset");
+                    EditorUtility.SetDirty(response);
+                    break;
+                }
             }
         }
+    }
 
-        RefreshSO();
+    private static void RemoveAllSO()
+    {
+        RefreshNames();
+
+        ControllerNode controllerNode = null;
+        GraphController graphController = null;
+
+        List<NodeModel> nodes = Window.graphController.graphData.Nodes;
+
+        foreach (var node in nodes)
+        {
+            GenericNode genericNode = (GenericNode)node.nodeData;
+
+            if (genericNode.ReturnType() != NodeType.Controller) continue;
+            ControllerNode nodeData = (ControllerNode)node.nodeData;
+            graphController = nodeData.graphController;
+            controllerNode = nodeData;
+            break;
+        }
+
+        if (graphController == null)
+        {
+            Debug.LogError("No GraphController found");
+            return;
+        }
+
+        string[] nodeNames = new string[nodes.Count];
+
+        if (nodeNames.Length == 0)
+            return;
+
+        for (int i = 0; i < nodeNames.Length; i++)
+        {
+            NodeModel node = nodes[i];
+
+            string nodeName = string.Empty;
+
+            GenericNode nodeData = (GenericNode)node.nodeData;
+            switch (nodeData.ReturnType())
+            {
+                case NodeType.Dialogue:
+                    DialogueNode dialogueNode = (DialogueNode)node.nodeData;
+                    nodeName = dialogueNode.dialogueData.dialogue == null ? string.Empty : dialogueNode.dialogueData.dialogue.name;
+                    break;
+                case NodeType.ResponseHolder:
+                    ResponseHolderNode responseHolderNode = (ResponseHolderNode)node.nodeData;
+                    nodeName = responseHolderNode.responseHolder == null ? string.Empty : responseHolderNode.responseHolder.name;
+                    break;
+                case NodeType.Response:
+                    ResponseNode responseNode = (ResponseNode)node.nodeData;
+                    nodeName = responseNode.response == null ? string.Empty : responseNode.response.name;
+                    break;
+            }
+
+            nodeNames[i] = nodeName;
+        }
+
+        if (controllerNode == null)
+        {
+            Debug.LogError("No ControllerNode found");
+            return;
+        }
+
+        string[] dialogueFiles = Directory.GetFiles(Application.dataPath + "/" + shortPath + controllerNode.graphController.name + dialogueFolder);
+        string[] responseHolderFiles = Directory.GetFiles(Application.dataPath + "/" + shortPath + controllerNode.graphController.name + responseHolderFolder);
+        string[] responseFiles = Directory.GetFiles(Application.dataPath + "/" + shortPath + controllerNode.graphController.name + responseFolder);
+
+        foreach (string file in dialogueFiles) 
+            AssetDatabase.DeleteAsset(fullPath + controllerNode.graphController.name + "/" + dialogueFolder + GetFileName(file) + ".asset");
+        foreach (string file in responseHolderFiles)
+            AssetDatabase.DeleteAsset(fullPath + controllerNode.graphController.name + "/" + responseHolderFolder + GetFileName(file) + ".asset");
+        foreach (string file in responseFiles)
+            AssetDatabase.DeleteAsset(fullPath + controllerNode.graphController.name + "/" + responseFolder + GetFileName(file) + ".asset");
     }
 
     private static void RefreshSO()
@@ -185,6 +311,7 @@ public class CustomMenu : NewGraph.ContextMenu
         dialogue.overrideCharacterName = dialogueData.overrideCharacterName;
         dialogue.text = dialogueData.text;
         dialogue.sprite = dialogueData.sprite;
+        dialogue.overrideSprite = dialogueData.overrideSprite;
 
         return dialogue;
     }
@@ -199,8 +326,8 @@ public class CustomMenu : NewGraph.ContextMenu
         {
             foreach (ResponseNode responseNode in responses)
             {
-                if (responseNode.response)
-                    AssetDatabase.DeleteAsset("Assets/Dialogue/ScriptableObjects/" + graphName + "/Responses/" + responseNode.GetHashCode() + ".asset");
+                if (responseNode.response) 
+                    AssetDatabase.DeleteAsset(fullPath + graphName + responseFolder + responseNode.nodeName + ".asset");
             }
 
             responseHolder.responses = new Response[responses.Count];
@@ -216,7 +343,7 @@ public class CustomMenu : NewGraph.ContextMenu
                 response = CreateInstance<Response>();
                 response.type = NodeType.Response;
                 responseNode.response = response;
-                AssetDatabase.CreateAsset(response, "Assets/Dialogue/ScriptableObjects/" + graphName + "/Responses/" + responseNode.GetHashCode() + ".asset");
+                AssetDatabase.CreateAsset(response, fullPath + graphName + responseFolder + responseNode.nodeName + ".asset");
                 responseHolder.responses[i] = response;
                 EditorUtility.SetDirty(response);
             }
@@ -242,34 +369,123 @@ public class CustomMenu : NewGraph.ContextMenu
         return responseHolder;
     }
 
-    private static void RemoveUnusedSO() // TODO: FIX THIS FUNCTION
+    private static void RefreshNames()
     {
-        ControllerNode controllerNode = null;
+        GraphController graphController = null;
 
         List<NodeModel> nodes = Window.graphController.graphData.Nodes;
+
+        foreach (NodeModel node in nodes)
+        {
+            GenericNode genericNode = (GenericNode)node.nodeData;
+
+            if (genericNode.ReturnType() != NodeType.Controller) continue;
+            ControllerNode nodeData = (ControllerNode)node.nodeData;
+            graphController = nodeData.graphController;
+            string name = node.GetName();
+            if (name == defaultEventNodeName)
+                name = node.GetHashCode().ToString();
+            nodeData.nodeName = name;
+            break;
+        }
+
+        if (graphController == null)
+        {
+            Debug.LogError("No GraphController found");
+            return;
+        }
+
+        graphController.dialogueObjs = new GenericObj[nodes.Count];
+
+        foreach (NodeModel node in nodes)
+        {
+            GenericNode nodeData = (GenericNode)node.nodeData;
+            string name = node.GetName();
+            switch (nodeData.ReturnType())
+            {
+                case NodeType.Dialogue:
+                    DialogueNode dialogueNode = (DialogueNode)nodeData;
+                    if (name == defaultDialogueNodeName)
+                        name = node.GetHashCode().ToString();
+                    dialogueNode.nodeName = name;
+                    break;
+                case NodeType.ResponseHolder:
+                    ResponseHolderNode responseHolderNode = (ResponseHolderNode)nodeData;
+                    if (name == defaultResponseHolderNodeName)
+                        name = node.GetHashCode().ToString();
+                    responseHolderNode.nodeName = name;
+                    break;
+                case NodeType.Response:
+                    ResponseNode responseNode = (ResponseNode)nodeData;
+                    if (name == defaultResponseNodeName)
+                        name = node.GetHashCode().ToString();
+                    responseNode.nodeName = name;
+                    break;
+                case NodeType.Generic:
+                    GenericNode genericNode = nodeData;
+                    if (name == defaultGenericNodeName)
+                        name = node.GetHashCode().ToString();
+                    genericNode.nodeName = name;
+                    break;
+                case NodeType.Event:
+                    EventNode eventNode = (EventNode)nodeData;
+                    if (name == defaultEventNodeName)
+                        name = node.GetHashCode().ToString();
+                    eventNode.nodeName = name;
+                    break;
+            }
+        }
+    }
+
+    private static void RemoveUnusedSO()
+    {
+        RefreshNames();
+
+        ControllerNode controllerNode = null;
+        GraphController graphController = null;
+
+        List<NodeModel> nodes = Window.graphController.graphData.Nodes;
+
+        foreach (var node in nodes)
+        {
+            GenericNode genericNode = (GenericNode)node.nodeData;
+
+            if (genericNode.ReturnType() != NodeType.Controller) continue;
+            ControllerNode nodeData = (ControllerNode)node.nodeData;
+            graphController = nodeData.graphController;
+            controllerNode = nodeData;
+            break;
+        }
+
+        if (graphController == null)
+        {
+            Debug.LogError("No GraphController found");
+            return;
+        }
+
         string[] nodeNames = new string[nodes.Count];
 
         for (int i = 0; i < nodeNames.Length; i++)
         {
             NodeModel node = nodes[i];
+
             string nodeName = string.Empty;
 
-            if (node.GetName() == "DialogueNode")
+            GenericNode nodeData = (GenericNode)node.nodeData;
+            switch (nodeData.ReturnType())
             {
-                DialogueNode nodeData = (DialogueNode)node.nodeData;
-
-                nodeName = nodeData.dialogueData.dialogue == null ? string.Empty : nodeData.dialogueData.dialogue.name;
-            }
-            else if (node.GetName() == "ResponseNode")
-            {
-                ResponseHolderNode nodeData = (ResponseHolderNode)node.nodeData;
-
-                nodeName = nodeData.responseHolder == null ? string.Empty : nodeData.responseHolder.name;
-            }
-            else if (node.GetName() == "ControllerNode")
-            {
-                ControllerNode nodeData = (ControllerNode)node.nodeData;
-                controllerNode = nodeData;
+                case NodeType.Dialogue:
+                    DialogueNode dialogueNode = (DialogueNode)node.nodeData;
+                    nodeName = dialogueNode.dialogueData.dialogue == null ? string.Empty : dialogueNode.dialogueData.dialogue.name;
+                    break;
+                case NodeType.ResponseHolder:
+                    ResponseHolderNode responseHolderNode = (ResponseHolderNode)node.nodeData;
+                    nodeName = responseHolderNode.responseHolder == null ? string.Empty : responseHolderNode.responseHolder.name;
+                    break;
+                case NodeType.Response:
+                    ResponseNode responseNode = (ResponseNode)node.nodeData;
+                    nodeName = responseNode.response == null ? string.Empty : responseNode.response.name;
+                    break;
             }
 
             nodeNames[i] = nodeName;
@@ -281,43 +497,43 @@ public class CustomMenu : NewGraph.ContextMenu
             return;
         }
 
-        string[] dialogueFiles = Directory.GetFiles(Application.dataPath + "Dialogue/ScriptableObjects/" + controllerNode.graphController.name + "/Dialogues/");
-        string[] answerFiles = Directory.GetFiles(Application.dataPath + "Dialogue/ScriptableObjects/" + controllerNode.graphController.name + "/ResponseHolders/");
-        string[] files = new string[dialogueFiles.Length + answerFiles.Length];
+        string[] dialogueFiles = Directory.GetFiles(Application.dataPath + "/" + shortPath + controllerNode.graphController.name + dialogueFolder);
+        string[] responseHolderFiles = Directory.GetFiles(Application.dataPath + "/" + shortPath + controllerNode.graphController.name + responseHolderFolder);
+        string[] responseFiles = Directory.GetFiles(Application.dataPath + "/" + shortPath + controllerNode.graphController.name + responseFolder);
 
-        for (int i = 0; i < dialogueFiles.Length; i++)
-            files[i] = dialogueFiles[i];
+        RemoveFiles(dialogueFiles, nodeNames, controllerNode.graphController.name + "/" + dialogueFolder);
+        RemoveFiles(responseHolderFiles, nodeNames, controllerNode.graphController.name + "/" + responseHolderFolder);
+        RemoveFiles(responseFiles, nodeNames, controllerNode.graphController.name + "/" + responseFolder);
 
-        for (int i = 0; i < answerFiles.Length; i++)
-            files[i + dialogueFiles.Length] = answerFiles[i];
+        Debug.Log("Successfully removed all unused objects");
+    }
 
-        bool isAnswer = false;
-        for (int i = 0; i < files.Length; i++)
+    private static string GetFileName(string fileName)
+    {
+        if (fileName.EndsWith(".meta")) return string.Empty;
+
+        string[] parsedName = fileName.Split("/");
+        fileName = parsedName[^1];
+        parsedName = fileName.Split(".");
+        return parsedName[0];
+    }
+
+    private static void RemoveFiles(string[] files, string[] nodeNames, string assetPath)
+    {
+        foreach (string file in files)
         {
-            if (i >= dialogueFiles.Length) isAnswer = true;
-
-            string fileName = files[i];
-
-            if (fileName.EndsWith(".meta")) continue;
-
-            string[] parsedName = fileName.Split("\\");
-            fileName = parsedName[^1];
-            parsedName = fileName.Split(".");
-            fileName = parsedName[0];
-            files[i] = fileName;
+            var fileName = GetFileName(file);
 
             bool foundName = false;
-            foreach (string t in nodeNames)
+            foreach (string nodeName in nodeNames)
             {
-                if (fileName != t) continue;
+                if (fileName != nodeName) continue;
                 foundName = true;
                 break;
             }
 
             if (foundName) continue;
-            string assetPath = isAnswer ? "ResponseHolders/" : "Dialogues/";
-            assetPath = controllerNode.graphController.name + "/" + assetPath;
-            AssetDatabase.DeleteAsset("Assets/Dialogue/ScriptableObjects/" + assetPath + fileName + ".asset");
+            AssetDatabase.DeleteAsset(fullPath + assetPath + fileName + ".asset");
         }
     }
 
@@ -328,18 +544,35 @@ public class CustomMenu : NewGraph.ContextMenu
         List<NodeModel> nodes = Window.graphController.graphData.Nodes;
 
         List<NodeModel> dialogueNodes = new();
-        List<NodeModel> answerNodes = new();
+        List<NodeModel> responseHolderNodes = new();
+        List<NodeModel> responseNodes = new();
 
         foreach (NodeModel node in nodes)
         {
-            if (node.GetName() == "DialogueNode")
-                dialogueNodes.Add(node);
-            else if (node.GetName() == "ResponseNode")
-                answerNodes.Add(node);
-            else if (node.GetName() == "ControllerNode")
+            GenericNode genericNode = (GenericNode)node.nodeData;
+
+            switch (genericNode.ReturnType())
             {
-                ControllerNode nodeData = (ControllerNode)node.nodeData;
-                graphController = nodeData.graphController;
+                case NodeType.Generic:
+                    break;
+                case NodeType.Dialogue:
+                    dialogueNodes.Add(node);
+                    break;
+                case NodeType.ResponseHolder:
+                    responseHolderNodes.Add(node);
+                    break;
+                case NodeType.Response:
+                    responseNodes.Add(node);
+                    break;
+                case NodeType.Event:
+                    break;
+                case NodeType.Controller:
+                    ControllerNode controllerNode = (ControllerNode)node.nodeData;
+                    graphController = controllerNode.graphController;
+                    break;
+                default:
+                    Debug.LogError("Node found with no type.");
+                    break;
             }
         }
 
@@ -355,24 +588,18 @@ public class CustomMenu : NewGraph.ContextMenu
             DialogueNode.DialogueData dialogueData = nodeData.dialogueData;
             Dialogue dialogue = dialogueData.dialogue;
 
-            dialogueData.character = dialogue.character;
-            dialogueData.overrideCharacterName = dialogue.overrideCharacterName;
-            dialogueData.text = dialogue.text;
-            dialogueData.sprite = dialogue.sprite;
+            dialogue.character = dialogueData.character;
+            dialogue.overrideCharacterName = dialogueData.overrideCharacterName;
+            dialogue.text = dialogueData.text;
+            dialogue.sprite = dialogueData.sprite;
         }
 
-        foreach (NodeModel node in answerNodes)
+        foreach (NodeModel node in responseNodes)
         {
-            ResponseHolderNode responseHolderNode = (ResponseHolderNode)node.nodeData;
-            List<ResponseNode> responses = responseHolderNode.responses;
-            ResponseHolder responseHolder = responseHolderNode.responseHolder;
+            ResponseNode responseNode = (ResponseNode)node.nodeData;
+            Response response = responseNode.response;
 
-            for (int i = 0; i < responses.Count; i++)
-            {
-                Response response = responseHolder.responses[i];
-                ResponseNode responseNode = responses[i];
-                responseNode.text = response.text;
-            }
+            response.text = responseNode.text;
         }
 
         Debug.Log("Saved nodes");

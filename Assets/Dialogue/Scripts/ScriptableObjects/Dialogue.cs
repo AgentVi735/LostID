@@ -7,4 +7,5 @@ public class Dialogue : GenericObj
     public string overrideCharacterName;
     public string text;
     public CharacterSprite sprite;
+    public Sprite overrideSprite;
 }

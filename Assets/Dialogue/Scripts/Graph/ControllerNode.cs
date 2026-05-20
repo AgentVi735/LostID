@@ -5,10 +5,7 @@ using UnityEngine;
 [Serializable, Node("#138160", "Dialogue", createInputPort = false)]
 public class ControllerNode : GenericNode
 {
-    public override NodeType ReturnType()
-    {
-        return NodeType.Controller;
-    }
+    public override NodeType ReturnType() => NodeType.Controller;
 
     [Port, SerializeReference]
     public GenericNode startingNode;

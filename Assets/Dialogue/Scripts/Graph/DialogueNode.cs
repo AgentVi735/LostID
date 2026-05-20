@@ -5,10 +5,7 @@ using UnityEngine;
 [Serializable, Node("#8d51c5", "Dialogue")]
 public class DialogueNode : GenericNode
 {
-    public override NodeType ReturnType()
-    {
-        return NodeType.Dialogue;
-    }
+    public override NodeType ReturnType() => NodeType.Dialogue;
 
     [Port, SerializeReference]
     public GenericNode nextNode;
@@ -29,6 +26,9 @@ public class DialogueNode : GenericNode
 
         [GraphDisplay(DisplayType.BothViews)]
         public CharacterSprite sprite;
+
+        [GraphDisplay(DisplayType.Inspector)]
+        public Sprite overrideSprite;
     }
     public DialogueData dialogueData;
 }
