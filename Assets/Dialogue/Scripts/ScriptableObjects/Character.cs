@@ -8,4 +8,12 @@ public class Character : ScriptableObject
     public Sprite happySprite;
     public Sprite angrySprite;
     public Sprite sadSprite;
+
+    public Sprite underpartRLayer;
+    public Sprite underpartLLayer;
+    public Sprite pocketLowRLayer;
+    public Sprite idCard;
+    public Sprite[] objects;
+    public Sprite phoneNumber;
+    public bool hasCharm;
 }

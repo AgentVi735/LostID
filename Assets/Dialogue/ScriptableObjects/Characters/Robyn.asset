@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e6d46a19215c634f917469b3b5a1a82, type: 3}
+  m_Name: Robyn
+  m_EditorClassIdentifier: Assembly-CSharp::Character
+  characterName: Robyn
+  neutralSprite: {fileID: 21300000, guid: 5cc3c22188dcaa44dba86a4246ae2a24, type: 3}
+  happySprite: {fileID: 21300000, guid: b01f5f8bd6211a941a6770c8a75c68a9, type: 3}
+  angrySprite: {fileID: 21300000, guid: df7db2f8207b11240922c3fbe8d81020, type: 3}
+  sadSprite: {fileID: 21300000, guid: ae9d123c98fb2364ea18e2162fa818d0, type: 3}
+  underpartRLayer: {fileID: 0}
+  underpartLLayer: {fileID: 0}
+  pocketLowRLayer: {fileID: 21300000, guid: c4f9a77e9cced254dbd1d36f5afc2876, type: 3}
+  idCard: {fileID: 21300000, guid: a42ab4726a5ac8e44980cb7d0837823e, type: 3}
+  objects:
+  - {fileID: 21300000, guid: a3c5191de57c033438268cc73767ebc7, type: 3}
+  phoneNumber: {fileID: 21300000, guid: d7b337e702d38f44d94eeb68da53d3af, type: 3}
+  hasCharm: 0
