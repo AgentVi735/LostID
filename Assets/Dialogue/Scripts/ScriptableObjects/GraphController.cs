@@ -5,8 +5,7 @@ using UnityEngine;
 public class GraphController : ScriptableObject
 {
     public ScriptableGraphModel graph;
-
+    public Character character;
     public GenericObj startingObj;
-
     public GenericObj[] dialogueObjs;
 }

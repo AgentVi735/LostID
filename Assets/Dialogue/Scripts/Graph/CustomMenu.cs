@@ -1,6 +1,7 @@
 using NewGraph;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using UnityEditor;
 using UnityEngine;
@@ -286,6 +287,8 @@ public class CustomMenu : NewGraph.ContextMenu
             ControllerNode nodeData = (ControllerNode)node.nodeData;
             graphController = nodeData.graphController;
             controllerNode = nodeData;
+            graphController.character = controllerNode.character;
+            graphController.character.graph = graphController.graph;
             break;
         }
 
@@ -310,9 +313,14 @@ public class CustomMenu : NewGraph.ContextMenu
                     EditorUtility.SetDirty(dialogue);
                     break;
                 case NodeType.ResponseHolder:
-                    ResponseHolder response = LoadResponseHolder(nodeData, graphController.name);
+                    ResponseHolder responseHolder = LoadResponseHolder(nodeData, graphController.name);
+                    graphController.dialogueObjs[i] = responseHolder;
+                    EditorUtility.SetDirty(responseHolder);
+                    break;
+                case NodeType.Response:
+                    ResponseNode responseNode = (ResponseNode)nodeData;
+                    Response response = responseNode.response;
                     graphController.dialogueObjs[i] = response;
-                    EditorUtility.SetDirty(response);
                     break;
                 case NodeType.Event:
                     Event eventObj = LoadEvent(nodeData);
@@ -472,7 +480,7 @@ public class CustomMenu : NewGraph.ContextMenu
         return eventObj;
     }
 
-    private static void RefreshNames()
+    private static bool RefreshNames()
     {
         GraphController graphController = null;
 
@@ -495,10 +503,12 @@ public class CustomMenu : NewGraph.ContextMenu
         if (graphController == null)
         {
             Debug.LogError("No GraphController found");
-            return;
+            return false;
         }
 
         graphController.dialogueObjs = new GenericObj[nodes.Count];
+
+        List<string> names = new();
 
         foreach (NodeModel node in nodes)
         {
@@ -508,40 +518,82 @@ public class CustomMenu : NewGraph.ContextMenu
             {
                 case NodeType.Dialogue:
                     DialogueNode dialogueNode = (DialogueNode)nodeData;
+
                     if (name == defaultDialogueNodeName)
                         name = node.GetHashCode().ToString();
+                    if (names.Contains(name))
+                    {
+                        Debug.LogError("Duplicate node name found: " + name);
+                        return false;
+                    }
+
                     dialogueNode.nodeName = name;
                     break;
                 case NodeType.ResponseHolder:
                     ResponseHolderNode responseHolderNode = (ResponseHolderNode)nodeData;
+
                     if (name == defaultResponseHolderNodeName)
                         name = node.GetHashCode().ToString();
+                    if (names.Contains(name))
+                    {
+                        Debug.LogError("Duplicate node name found: " + name);
+                        return false;
+                    }
+
                     responseHolderNode.nodeName = name;
                     break;
                 case NodeType.Response:
                     ResponseNode responseNode = (ResponseNode)nodeData;
+
                     if (name == defaultResponseNodeName)
                         name = node.GetHashCode().ToString();
+                    if (names.Contains(name))
+                    {
+                        Debug.LogError("Duplicate node name found: " + name);
+                        return false;
+                    }
+
                     responseNode.nodeName = name;
                     break;
                 case NodeType.Generic:
                     if (name == defaultGenericNodeName)
                         name = node.GetHashCode().ToString();
+                    if (names.Contains(name))
+                    {
+                        Debug.LogError("Duplicate node name found: " + name);
+                        return false;
+                    }
+
                     nodeData.nodeName = name;
                     break;
                 case NodeType.Event:
                     EventNode eventNode = (EventNode)nodeData;
                     if (name == defaultEventNodeName)
                         name = node.GetHashCode().ToString();
+                    if (names.Contains(name))
+                    {
+                        Debug.LogError("Duplicate node name found: " + name);
+                        return false;
+                    }
+
                     eventNode.nodeName = name;
                     break;
             }
+
+            names.Add(name);
         }
+
+        return true;
     }
 
     private static void RemoveUnusedSO()
     {
-        RefreshNames();
+        bool hasValidNames = RefreshNames();
+        if (!hasValidNames)
+        {
+            Debug.LogError("Could not remove objects due to invalid node names");
+            return;
+        }
 
         ControllerNode controllerNode = null;
         GraphController graphController = null;
@@ -679,6 +731,7 @@ public class CustomMenu : NewGraph.ContextMenu
                 case NodeType.Controller:
                     ControllerNode controllerNode = (ControllerNode)node.nodeData;
                     graphController = controllerNode.graphController;
+                    controllerNode.character = graphController.character;
                     break;
                 default:
                     Debug.LogError("Node found with no type.");

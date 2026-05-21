@@ -10,5 +10,8 @@ public class ControllerNode : GenericNode
     [Port, SerializeReference]
     public GenericNode startingNode;
 
+    [GraphDisplay(DisplayType.BothViews)]
+    public Character character;
+
     public GraphController graphController;
 }
