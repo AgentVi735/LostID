@@ -18,12 +18,23 @@ MonoBehaviour:
   angrySprite: {fileID: 21300000, guid: 20793d7c2ba6ab3419814fd6323e7147, type: 3}
   sadSprite: {fileID: 21300000, guid: b393dbdc85c046a44b68c31d02810f29, type: 3}
   underpartRLayer: {fileID: 21300000, guid: 35ad900fdde3d63459c69b1fd3a48eaa, type: 3}
+  underpartRLayerFade: {fileID: 21300000, guid: cbdec33963f9d6a44b39481a63b8db40, type: 3}
   underpartLLayer: {fileID: 21300000, guid: b3dd658c747bf674fa5af9155e1292ab, type: 3}
+  underpartLLayerFade: {fileID: 21300000, guid: 4e147d0d73b7b4c44bddc8d4c136af12, type: 3}
   pocketLowRLayer: {fileID: 21300000, guid: 61cc1c05ee1fdd242979272201143259, type: 3}
+  pocketLowRLayerFade: {fileID: 21300000, guid: bc66e8314f938d54c89fbe6f97f613d5, type: 3}
   idCard: {fileID: 21300000, guid: 8a35f7f42d62a9e41afcbbcd69c2a24f, type: 3}
   objects:
   - {fileID: 21300000, guid: 32cfdb8076e4a5540b71a7f47b92ff32, type: 3}
   - {fileID: 21300000, guid: 3bdcf7700274dee42ad8bc3906c65ef8, type: 3}
   - {fileID: 21300000, guid: 008072f66a20a774591fa5c983ab4b55, type: 3}
+  items:
+  - {fileID: 21300000, guid: 32cfdb8076e4a5540b71a7f47b92ff32, type: 3}
+  - {fileID: 21300000, guid: 3bdcf7700274dee42ad8bc3906c65ef8, type: 3}
+  - {fileID: 21300000, guid: 008072f66a20a774591fa5c983ab4b55, type: 3}
+  itemsFade:
+  - {fileID: 21300000, guid: b892cd583481df2408441bb66cfe88d9, type: 3}
+  - {fileID: 21300000, guid: 34e1f1e33d2c1fd488d7a23b551329bf, type: 3}
+  - {fileID: 21300000, guid: 332e81247e60fb447b577dbf36bd8e88, type: 3}
   phoneNumber: {fileID: 21300000, guid: 573a43f241b381f45aed551dd7d2d01f, type: 3}
   hasCharm: 0
