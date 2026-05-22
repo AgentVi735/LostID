@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,193 +6,227 @@ using UnityEngine.UI;
 public class MainMenuManager : MonoBehaviour
 {
     [SerializeField] private Character[] characters;
-    private int charIdx;
     private Character character;
     [SerializeField] private Character emptyCharacter;
 
+    private Character cardCharacter;
     private bool canSwitch;
 
+    [SerializeField] private Image membershipCard;
+    [SerializeField] private Image debitCard;
+    [SerializeField] private Image transportCard;
     [SerializeField] private Image underpartRLayer;
-    [SerializeField] private Image underpartRLayerFade;
     [SerializeField] private Image underpartLLayer;
-    [SerializeField] private Image underpartLLayerFade;
     [SerializeField] private Image pocketLowRLayer;
-    [SerializeField] private Image pocketLowRLayerFade;
     [SerializeField] private Image idCard;
-    [SerializeField] private Image idCardFade;
     [SerializeField] private Image[] items;
-    [SerializeField] private Image[] itemsFade;
     [SerializeField] private Image phoneNumber;
-    [SerializeField] private Image phoneNumberFade;
     [SerializeField] private Image[] charm;
-    [SerializeField] private Image[] charmFade;
 
     [SerializeField] private float fadeTime;
     [SerializeField] private float fadeDelayTime;
     private WaitForSeconds waitFadeDelayTime;
+
+    [SerializeField] private float delayBetweenSwitch;
+    private WaitForSeconds waitDelayBetweenSwitch;
 
     private readonly Color clearColour = new(255, 255, 255, 0);
 
     private void Awake()
     {
         waitFadeDelayTime = new WaitForSeconds(fadeDelayTime);
+        waitDelayBetweenSwitch = new WaitForSeconds(delayBetweenSwitch);
     }
 
     private void Start()
     {
-        character = characters[charIdx];
+        character = emptyCharacter;
         Load();
         canSwitch = true;
     }
 
-    private void Update()
+    public void NewCharacter(Character givenCharacter)
     {
-        if (canSwitch && Input.GetKeyDown(KeyCode.Return)) 
-            StartCoroutine(SwitchCharacters());
+        cardCharacter = givenCharacter;
+        if (canSwitch)
+            LoadCharacter();
     }
 
-    private IEnumerator SwitchCharacters()
+    public void RemoveCharacter()
     {
-        canSwitch = false;
-        charIdx++;
-        if (charIdx > characters.Length - 1)
-            charIdx = 0;
+        cardCharacter = emptyCharacter;
+        if (canSwitch)
+            UnloadCharacter();
+    }
 
-        yield return StartCoroutine(FadeEmpty());
+    private void UnloadCharacter()
+    {
+        StartCoroutine(FadeEmpty());
+    }
 
-        yield return new WaitForSeconds(0.5f);
-
-        character = characters[charIdx];
-
-        yield return StartCoroutine(FadeNew());
-
-        yield return new WaitForSeconds(0.5f);
-
-        canSwitch = true;
+    private void LoadCharacter()
+    {
+        character = cardCharacter;
+        StartCoroutine(FadeNew());
     }
 
     private IEnumerator FadeEmpty()
     {
-        List<Image> imagesToFade = new();
+        canSwitch = false;
 
+        List<Image> imagesToFade = new();
         if (character.underpartRLayer != null)
         {
-            imagesToFade.Add(underpartRLayerFade);
-            underpartRLayerFade.sprite = character.underpartRLayerFade;
+            imagesToFade.Add(underpartRLayer);
+            underpartRLayer.sprite = character.underpartRLayer;
         }
 
         if (character.underpartLLayer != null)
         {
-            imagesToFade.Add(underpartLLayerFade);
-            underpartLLayerFade.sprite = character.underpartLLayerFade;
+            imagesToFade.Add(underpartLLayer);
+            underpartLLayer.sprite = character.underpartLLayer;
         }
 
         if (character.pocketLowRLayer != null)
         {
-            imagesToFade.Add(pocketLowRLayerFade);
-            pocketLowRLayerFade.sprite = character.pocketLowRLayerFade;
+            imagesToFade.Add(pocketLowRLayer);
+            pocketLowRLayer.sprite = character.pocketLowRLayer;
         }
 
-        imagesToFade.Add(idCardFade);
-        imagesToFade.Add(phoneNumberFade);
+        if (character.idCard != null)
+        {
+            imagesToFade.Add(idCard);
+            imagesToFade.Add(membershipCard);
+            imagesToFade.Add(debitCard);
+            imagesToFade.Add(transportCard);
+            idCard.sprite = character.idCard;
+        }
 
-        for (int i = 0; i < itemsFade.Length; i++)
+        if (character.phoneNumber != null)
+        {
+            imagesToFade.Add(phoneNumber);
+            phoneNumber.sprite = character.phoneNumber;
+        }
+
+        for (int i = 0; i < items.Length; i++)
         {
             if (character.items.Length < i + 1)
                 continue;
 
-            Sprite charObj = character.itemsFade[i];
+            Sprite charObj = character.items[i];
             if (charObj == null)
                 continue;
 
-            Image img = itemsFade[i];
+            Image img = items[i];
             img.sprite = charObj;
             imagesToFade.Add(img);
         }
 
-        if (character.hasCharm) 
-            imagesToFade.AddRange(charmFade);
+        if (character.hasCharm)
+            imagesToFade.AddRange(charm);
 
         for (float i = 0; i < fadeTime; i += Time.deltaTime)
         {
             float fadeAmt = i / fadeTime;
-            Color currentColour = Color.Lerp(clearColour, Color.black, fadeAmt);
+            Color currentColour = Color.Lerp(Color.white, clearColour, fadeAmt);
 
-            foreach (Image img in imagesToFade) 
+            foreach (Image img in imagesToFade)
                 img.color = currentColour;
 
             yield return null;
         }
 
         foreach (Image img in imagesToFade) 
-            img.color = Color.black;
+            img.color = clearColour;
 
         character = emptyCharacter;
         Load();
 
-        yield return waitFadeDelayTime;
+        //yield return waitFadeDelayTime;
 
-        for (float i = 0; i < fadeTime; i += Time.deltaTime)
-        {
-            float fadeAmt = i / fadeTime;
-            Color currentColour = Color.Lerp(Color.black, clearColour, fadeAmt);
+        //for (float i = 0; i < fadeTime; i += Time.deltaTime)
+        //{
+        //    float fadeAmt = i / fadeTime;
+        //    Color currentColour = Color.Lerp(clearColour, Color.white, fadeAmt);
 
-            foreach (Image img in imagesToFade)
-                img.color = currentColour;
+        //    foreach (Image img in imagesToFade)
+        //        img.color = currentColour;
 
-            yield return null;
-        }
+        //    yield return null;
+        //}
 
-        foreach (Image img in imagesToFade)
-            img.color = clearColour;
+        //foreach (Image img in imagesToFade)
+        //    img.color = Color.white;
+
+        yield return waitDelayBetweenSwitch;
+
+        if (cardCharacter == character)
+            canSwitch = true;
+        else
+            LoadCharacter();
     }
 
     private IEnumerator FadeNew()
     {
-        List<Image> imagesToFade = new();
+        canSwitch = false;
 
+        Load();
+
+        List<Image> imagesToFade = new();
         if (character.underpartRLayer != null)
         {
-            imagesToFade.Add(underpartRLayerFade);
-            underpartRLayerFade.sprite = character.underpartRLayerFade;
+            imagesToFade.Add(underpartRLayer);
+            underpartRLayer.sprite = character.underpartRLayer;
         }
 
         if (character.underpartLLayer != null)
         {
-            imagesToFade.Add(underpartLLayerFade);
-            underpartLLayerFade.sprite = character.underpartLLayerFade;
+            imagesToFade.Add(underpartLLayer);
+            underpartLLayer.sprite = character.underpartLLayer;
         }
 
         if (character.pocketLowRLayer != null)
         {
-            imagesToFade.Add(pocketLowRLayerFade);
-            pocketLowRLayerFade.sprite = character.pocketLowRLayerFade;
+            imagesToFade.Add(pocketLowRLayer);
+            pocketLowRLayer.sprite = character.pocketLowRLayer;
         }
 
-        imagesToFade.Add(idCardFade);
-        imagesToFade.Add(phoneNumberFade);
+        if (character.idCard != null)
+        {
+            imagesToFade.Add(idCard);
+            imagesToFade.Add(membershipCard);
+            imagesToFade.Add(debitCard);
+            imagesToFade.Add(transportCard);
+            idCard.sprite = character.idCard;
+        }
 
-        for (int i = 0; i < itemsFade.Length; i++)
+        if (character.phoneNumber != null)
+        {
+            imagesToFade.Add(phoneNumber);
+            phoneNumber.sprite = character.phoneNumber;
+        }
+
+        for (int i = 0; i < items.Length; i++)
         {
             if (character.items.Length < i + 1)
                 continue;
 
-            Sprite charObj = character.itemsFade[i];
+            Sprite charObj = character.items[i];
             if (charObj == null)
                 continue;
 
-            Image img = itemsFade[i];
+            Image img = items[i];
             img.sprite = charObj;
             imagesToFade.Add(img);
         }
 
         if (character.hasCharm)
-            imagesToFade.AddRange(charmFade);
+            imagesToFade.AddRange(charm);
 
         for (float i = 0; i < fadeTime; i += Time.deltaTime)
         {
             float fadeAmt = i / fadeTime;
-            Color currentColour = Color.Lerp(clearColour, Color.black, fadeAmt);
+            Color currentColour = Color.Lerp(clearColour, Color.white, fadeAmt);
 
             foreach (Image img in imagesToFade)
                 img.color = currentColour;
@@ -202,91 +235,119 @@ public class MainMenuManager : MonoBehaviour
         }
 
         foreach (Image img in imagesToFade)
-            img.color = Color.black;
+            img.color = Color.white;
 
-        Load();
+        //yield return waitFadeDelayTime;
 
-        yield return waitFadeDelayTime;
+        //for (float i = 0; i < fadeTime; i += Time.deltaTime)
+        //{
+        //    float fadeAmt = i / fadeTime;
+        //    Color currentColour = Color.Lerp(clearColour, Color.white, fadeAmt);
 
-        for (float i = 0; i < fadeTime; i += Time.deltaTime)
-        {
-            float fadeAmt = i / fadeTime;
-            Color currentColour = Color.Lerp(Color.black, clearColour, fadeAmt);
+        //    foreach (Image img in imagesToFade)
+        //        img.color = currentColour;
 
-            foreach (Image img in imagesToFade)
-                img.color = currentColour;
+        //    yield return null;
+        //}
 
-            yield return null;
-        }
+        //foreach (Image img in imagesToFade)
+        //    img.color = Color.white;
 
-        foreach (Image img in imagesToFade)
-            img.color = clearColour;
+        yield return waitDelayBetweenSwitch;
+
+        if (cardCharacter == character)
+            canSwitch = true;
+        else
+            UnloadCharacter();
     }
 
     private void Load()
     {
-        if (character.underpartRLayer != null)
-        {
+        //if (character.underpartRLayer != null)
+        //{
             underpartRLayer.sprite = character.underpartRLayer;
-            underpartRLayer.color = Color.white;
-        }
-        else
-            underpartRLayer.color = Color.clear;
+        //    //underpartRLayer.color = Color.white;
+        //}
+        //else
+            underpartRLayer.color = clearColour;
 
-        if (character.underpartLLayer != null)
-        {
-            underpartLLayer.sprite = character.underpartLLayer;
-            underpartLLayer.color = Color.white;
-        }
-        else
-            underpartLLayer.color = Color.clear;
+        //if (character.underpartLLayer != null)
+        //{
+        underpartLLayer.sprite = character.underpartLLayer;
+        //    //underpartLLayer.color = Color.white;
+        //}
+        //else
+            underpartLLayer.color = clearColour;
 
-        if (character.pocketLowRLayer != null)
-        {
-            pocketLowRLayer.sprite = character.pocketLowRLayer;
-            pocketLowRLayer.color = Color.white;
-        }
-        else
-            pocketLowRLayer.color = Color.clear;
+        //if (character.pocketLowRLayer != null)
+        //{
+        pocketLowRLayer.sprite = character.pocketLowRLayer;
+        //    //pocketLowRLayer.color = Color.white;
+        //}
+        //else
+            pocketLowRLayer.color = clearColour;
 
-        if (character.idCard != null)
-        {
-            idCard.sprite = character.idCard;
-            idCard.color = Color.white;
-        }
-        else
-            idCard.color = Color.clear;
+        //if (character.idCard != null)
+        //{
+        idCard.sprite = character.idCard;
+        //    //idCard.color = Color.white;
+        //    //membershipCard.color = Color.white;
+        //    //debitCard.color = Color.white;
+        //    //transportCard.color = Color.white;
+        //}
+        //else
+        //{
+            idCard.color = clearColour;
+        idCard.color = clearColour;
+        membershipCard.color = clearColour;
+        debitCard.color = clearColour;
+        transportCard.color = clearColour;
+        //}
+        //if (character.idCard == null)
+        //{
+        //    membershipCard.color = clearColour;
+        //    debitCard.color = clearColour;
+        //    transportCard.color = clearColour;
+        //}
 
-        if (character.phoneNumber != null)
-        {
-            phoneNumber.sprite = character.phoneNumber;
-            phoneNumber.color = Color.white;
-        }
-        else
-            phoneNumber.color = Color.clear;
+        //if (character.phoneNumber != null)
+        //{
+        phoneNumber.sprite = character.phoneNumber;
+        //    //phoneNumber.color = Color.white;
+        //}
+        //else
+            phoneNumber.color = clearColour;
 
         for (int i = 0; i < items.Length; i++)
         {
             if (character.items.Length < i + 1)
             {
-                items[i].color = Color.clear;
+                items[i].color = clearColour;
+                items[i].sprite = null;
                 continue;
             }
 
             Sprite charObj = character.items[i];
             if (charObj == null)
             {
-                items[i].color = Color.clear;
+                items[i].color = clearColour;
+                items[i].sprite = null;
                 continue;
             }
 
             Image img = items[i];
             img.sprite = charObj;
-            img.color = Color.white;
+            //img.color = Color.white;
+            img.color = clearColour;
         }
 
-        Color charmColor = character.hasCharm ? Color.white : Color.clear;
-        foreach (Image img in charm) 
+        Color charmColor;
+        if (character.hasCharm)
+            charmColor = clearColour;
+        else
+            charmColor = clearColour;
+
+        foreach (Image img in charm)
             img.color = charmColor;
 
     }

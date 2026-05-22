@@ -398,7 +398,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SaveSystem
   charactersHolder: {fileID: 11400000, guid: ad60bb64b2843b94ba70a3610e5ec92d, type: 2}
-  savePath: /SaveData.json
 --- !u!4 &322347098
 Transform:
   m_ObjectHideFlags: 0
@@ -2450,6 +2449,81 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &1125058453
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1125058454}
+  - component: {fileID: 1125058456}
+  - component: {fileID: 1125058455}
+  m_Layer: 5
+  m_Name: Fade
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1125058454
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125058453}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1220968354}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1125058455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125058453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: e038ea987ef7c36498bb5f99ec1be0bd, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1125058456
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125058453}
+  m_CullTransparentMesh: 1
 --- !u!1 &1200214619
 GameObject:
   m_ObjectHideFlags: 0
@@ -2568,6 +2642,7 @@ RectTransform:
   - {fileID: 68897852}
   - {fileID: 1845016660}
   - {fileID: 1563529472}
+  - {fileID: 1125058454}
   - {fileID: 1266621338}
   m_Father: {fileID: 819841680}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2576,6 +2651,53 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1255432130
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1255432132}
+  - component: {fileID: 1255432131}
+  m_Layer: 0
+  m_Name: NFC System
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1255432131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255432130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d8ed9b9329ae9a4e988763deda81263, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NFCSystem
+  mainMenu: {fileID: 1930642229}
+  characters: {fileID: 11400000, guid: ad60bb64b2843b94ba70a3610e5ec92d, type: 2}
+  currentCharacter: {fileID: 0}
+--- !u!4 &1255432132
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255432130}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1266621337
 GameObject:
   m_ObjectHideFlags: 0
@@ -3838,24 +3960,22 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e8fc598a6bc6b7543a3385b6ef19c3b8, type: 2}
   - {fileID: 11400000, guid: 522d19877ee285c429c6bc25b2a680cb, type: 2}
   emptyCharacter: {fileID: 11400000, guid: 84675b89f109396498c33b7881828de4, type: 2}
+  walletFade: {fileID: 1125058455}
+  membershipCard: {fileID: 914809478}
+  membershipCardFade: {fileID: 1725028300}
+  debitCard: {fileID: 1868920055}
+  debitCardFade: {fileID: 983647645}
+  transportCard: {fileID: 1578125949}
+  transportCardFade: {fileID: 1362251800}
   underpartRLayer: {fileID: 1971002323}
-  underpartRLayerFade: {fileID: 1658471575}
   underpartLLayer: {fileID: 513076778}
-  underpartLLayerFade: {fileID: 414955023}
   pocketLowRLayer: {fileID: 1303592593}
-  pocketLowRLayerFade: {fileID: 1830835840}
   idCard: {fileID: 68897854}
-  idCardFade: {fileID: 1563529474}
   items:
   - {fileID: 1452753876}
   - {fileID: 385689754}
   - {fileID: 790699653}
-  itemsFade:
-  - {fileID: 1049413105}
-  - {fileID: 2067928927}
-  - {fileID: 331738476}
   phoneNumber: {fileID: 775052037}
-  phoneNumberFade: {fileID: 1109535677}
   charm:
   - {fileID: 858460837}
   - {fileID: 613971896}
@@ -3866,6 +3986,7 @@ MonoBehaviour:
   - {fileID: 464010621}
   fadeTime: 1
   fadeDelayTime: 0.3
+  delayBetweenSwitch: 0
 --- !u!4 &1930642230
 Transform:
   m_ObjectHideFlags: 0
@@ -4042,3 +4163,4 @@ SceneRoots:
   - {fileID: 1509630753}
   - {fileID: 1930642230}
   - {fileID: 322347098}
+  - {fileID: 1255432132}

@@ -13,18 +13,19 @@ MonoBehaviour:
   m_Name: None
   m_EditorClassIdentifier: Assembly-CSharp::Character
   characterName: 
+  graph: {fileID: 0}
+  nfcID: 
   neutralSprite: {fileID: 0}
   happySprite: {fileID: 0}
   angrySprite: {fileID: 0}
   sadSprite: {fileID: 0}
   underpartRLayer: {fileID: 0}
-  underpartRLayerFade: {fileID: 0}
   underpartLLayer: {fileID: 0}
-  underpartLLayerFade: {fileID: 0}
   pocketLowRLayer: {fileID: 0}
-  pocketLowRLayerFade: {fileID: 0}
   idCard: {fileID: 0}
-  items: []
-  itemsFade: []
+  items:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   phoneNumber: {fileID: 0}
   hasCharm: 0

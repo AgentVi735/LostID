@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Robyn
   m_EditorClassIdentifier: Assembly-CSharp::Character
   characterName: Robyn
+  graph: {fileID: 0}
+  nfcID: 3F-35-55-59
   neutralSprite: {fileID: 21300000, guid: 5cc3c22188dcaa44dba86a4246ae2a24, type: 3}
   happySprite: {fileID: 21300000, guid: b01f5f8bd6211a941a6770c8a75c68a9, type: 3}
   angrySprite: {fileID: 21300000, guid: df7db2f8207b11240922c3fbe8d81020, type: 3}
@@ -24,8 +26,6 @@ MonoBehaviour:
   pocketLowRLayer: {fileID: 21300000, guid: c4f9a77e9cced254dbd1d36f5afc2876, type: 3}
   pocketLowRLayerFade: {fileID: 21300000, guid: 469e0c56f7fdb174ab1689129cf7093f, type: 3}
   idCard: {fileID: 21300000, guid: a42ab4726a5ac8e44980cb7d0837823e, type: 3}
-  objects:
-  - {fileID: 21300000, guid: a3c5191de57c033438268cc73767ebc7, type: 3}
   items:
   - {fileID: 21300000, guid: a3c5191de57c033438268cc73767ebc7, type: 3}
   itemsFade:

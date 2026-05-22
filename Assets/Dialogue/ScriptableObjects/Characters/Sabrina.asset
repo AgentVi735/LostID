@@ -13,24 +13,19 @@ MonoBehaviour:
   m_Name: Sabrina
   m_EditorClassIdentifier: Assembly-CSharp::Character
   characterName: Sabrina
+  graph: {fileID: 0}
+  nfcID: 1F-94-15-64
   neutralSprite: {fileID: 21300000, guid: bd2caa81baf809440812b8da6e07c1f0, type: 3}
   happySprite: {fileID: 21300000, guid: a6c97adaaf472cf4a94cf6e04c57acd9, type: 3}
   angrySprite: {fileID: 21300000, guid: e8277a118c814f64eb8404550eb5556e, type: 3}
   sadSprite: {fileID: 21300000, guid: 9bea396115c21434c8c9e03ecd2341ca, type: 3}
   underpartRLayer: {fileID: 0}
-  underpartRLayerFade: {fileID: 0}
   underpartLLayer: {fileID: 0}
-  underpartLLayerFade: {fileID: 0}
   pocketLowRLayer: {fileID: 21300000, guid: be129526570ab9b43b74fa659bf66161, type: 3}
-  pocketLowRLayerFade: {fileID: 21300000, guid: deba576782efa7545b3bda32bb86db6e, type: 3}
   idCard: {fileID: 21300000, guid: 780f41395a736a4418cbdcfea4dbff30, type: 3}
   items:
   - {fileID: 21300000, guid: 1222d6438d74cd048896ee64bc8b54af, type: 3}
   - {fileID: 0}
   - {fileID: 21300000, guid: 3f3ae4ad5057f8e4eb596b6122e03d56, type: 3}
-  itemsFade:
-  - {fileID: 21300000, guid: 3a8b7b9a58269aa44b6cf7f33beb5aea, type: 3}
-  - {fileID: 0}
-  - {fileID: 21300000, guid: 8a7a070e1388fac4f9dc48ec64383259, type: 3}
   phoneNumber: {fileID: 21300000, guid: 9ca912e1e10dc084984107fcdf360ea6, type: 3}
   hasCharm: 1

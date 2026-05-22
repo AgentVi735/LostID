@@ -21,6 +21,12 @@
       "dependencies": {},
       "hash": "162f7fc612972842c7a7324bb785998ff10c4821"
     },
+    "com.ostium.lando": {
+      "version": "file:com.ostium.lando",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "com.unity.2d.sprite": {
       "version": "1.0.0",
       "depth": 0,

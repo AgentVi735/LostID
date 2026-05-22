@@ -1,0 +1,11 @@
+{
+  "name": "com.ostium.lando",
+  "displayName": "Lando",
+  "version": "0.1.0",
+  "unity": "2020.0",
+  "description": "Asynchronous client for ACR122U USB NFC and ACR1222L Readers.\r\nAllows to track statuses of contactless (mifare) cards.\r\n\r\nFeature list:\r\n\r\nTracks card events (connected, disconnected) associated with a particular cardreader\r\nTracks cardreader events (connected, disconnected)\r\nAllows manage let and buzzed by sending APDU commands",
+  "author": {
+    "name": "Vicky Bovendeur"
+  },
+  "documentationUrl": "https://ostium.nl/"
+}
