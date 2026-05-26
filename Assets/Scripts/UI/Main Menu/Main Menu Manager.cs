@@ -1,10 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MainMenuManager : MonoBehaviour
 {
+    [SerializeField] private SaveSystem saveSystem;
+
     [SerializeField] private Character[] characters;
     private Character character;
     [SerializeField] private Character emptyCharacter;
@@ -22,20 +28,25 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private Image[] items;
     [SerializeField] private Image phoneNumber;
     [SerializeField] private Image[] charm;
-
+    
     [SerializeField] private float fadeTime;
-    [SerializeField] private float fadeDelayTime;
-    private WaitForSeconds waitFadeDelayTime;
-
     [SerializeField] private float delayBetweenSwitch;
     private WaitForSeconds waitDelayBetweenSwitch;
+
+    [SerializeField] private Slider bgmSlider;
+    [SerializeField] private Slider sfxSlider;
+
+    [SerializeField] private string mainMenuScene;
+    [SerializeField] private string gameScene;
+
+    private bool hasLoaded;
 
     private readonly Color clearColour = new(255, 255, 255, 0);
 
     private void Awake()
     {
-        waitFadeDelayTime = new WaitForSeconds(fadeDelayTime);
         waitDelayBetweenSwitch = new WaitForSeconds(delayBetweenSwitch);
+        LoadSettings();
     }
 
     private void Start()
@@ -142,22 +153,6 @@ public class MainMenuManager : MonoBehaviour
         character = emptyCharacter;
         Load();
 
-        //yield return waitFadeDelayTime;
-
-        //for (float i = 0; i < fadeTime; i += Time.deltaTime)
-        //{
-        //    float fadeAmt = i / fadeTime;
-        //    Color currentColour = Color.Lerp(clearColour, Color.white, fadeAmt);
-
-        //    foreach (Image img in imagesToFade)
-        //        img.color = currentColour;
-
-        //    yield return null;
-        //}
-
-        //foreach (Image img in imagesToFade)
-        //    img.color = Color.white;
-
         yield return waitDelayBetweenSwitch;
 
         if (cardCharacter == character)
@@ -237,21 +232,6 @@ public class MainMenuManager : MonoBehaviour
         foreach (Image img in imagesToFade)
             img.color = Color.white;
 
-        //yield return waitFadeDelayTime;
-
-        //for (float i = 0; i < fadeTime; i += Time.deltaTime)
-        //{
-        //    float fadeAmt = i / fadeTime;
-        //    Color currentColour = Color.Lerp(clearColour, Color.white, fadeAmt);
-
-        //    foreach (Image img in imagesToFade)
-        //        img.color = currentColour;
-
-        //    yield return null;
-        //}
-
-        //foreach (Image img in imagesToFade)
-        //    img.color = Color.white;
 
         yield return waitDelayBetweenSwitch;
 
@@ -263,59 +243,23 @@ public class MainMenuManager : MonoBehaviour
 
     private void Load()
     {
-        //if (character.underpartRLayer != null)
-        //{
-            underpartRLayer.sprite = character.underpartRLayer;
-        //    //underpartRLayer.color = Color.white;
-        //}
-        //else
-            underpartRLayer.color = clearColour;
+        underpartRLayer.sprite = character.underpartRLayer;
+        underpartRLayer.color = clearColour;
 
-        //if (character.underpartLLayer != null)
-        //{
         underpartLLayer.sprite = character.underpartLLayer;
-        //    //underpartLLayer.color = Color.white;
-        //}
-        //else
             underpartLLayer.color = clearColour;
 
-        //if (character.pocketLowRLayer != null)
-        //{
         pocketLowRLayer.sprite = character.pocketLowRLayer;
-        //    //pocketLowRLayer.color = Color.white;
-        //}
-        //else
             pocketLowRLayer.color = clearColour;
 
-        //if (character.idCard != null)
-        //{
         idCard.sprite = character.idCard;
-        //    //idCard.color = Color.white;
-        //    //membershipCard.color = Color.white;
-        //    //debitCard.color = Color.white;
-        //    //transportCard.color = Color.white;
-        //}
-        //else
-        //{
             idCard.color = clearColour;
         idCard.color = clearColour;
         membershipCard.color = clearColour;
         debitCard.color = clearColour;
         transportCard.color = clearColour;
-        //}
-        //if (character.idCard == null)
-        //{
-        //    membershipCard.color = clearColour;
-        //    debitCard.color = clearColour;
-        //    transportCard.color = clearColour;
-        //}
 
-        //if (character.phoneNumber != null)
-        //{
         phoneNumber.sprite = character.phoneNumber;
-        //    //phoneNumber.color = Color.white;
-        //}
-        //else
             phoneNumber.color = clearColour;
 
         for (int i = 0; i < items.Length; i++)
@@ -337,18 +281,47 @@ public class MainMenuManager : MonoBehaviour
 
             Image img = items[i];
             img.sprite = charObj;
-            //img.color = Color.white;
             img.color = clearColour;
         }
 
-        Color charmColor;
-        if (character.hasCharm)
-            charmColor = clearColour;
-        else
-            charmColor = clearColour;
-
         foreach (Image img in charm)
-            img.color = charmColor;
+            img.color = clearColour;
 
+    }
+
+    private void LoadSettings()
+    {
+        hasLoaded = false;
+        bgmSlider.value = SaveSystem.save.bgmVolume;
+        sfxSlider.value = SaveSystem.save.sfxVolume;
+        hasLoaded = true;
+    }
+
+    public void SaveSettings()
+    {
+        if (!hasLoaded) return;
+        SaveSystem.save.bgmVolume = bgmSlider.value;
+        SaveSystem.save.sfxVolume = sfxSlider.value;
+        SaveSystem.Save();
+    }
+
+    public void OnStartButton() => SceneManager.LoadScene(gameScene);
+
+    public void OnQuitButton() => Quit();
+
+    private static void Quit()
+    {
+        SaveSystem.Save();
+#if UNITY_EDITOR
+        EditorApplication.ExitPlaymode();
+#else
+        Application.Quit();
+#endif
+    }
+
+    public void OnResetButton()
+    {
+        saveSystem.ResetSave();
+        SceneManager.LoadScene(mainMenuScene);
     }
 }

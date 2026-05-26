@@ -12,4 +12,7 @@ public class SaveFile
 
     public Dictionary<string, SaveData> saveData;
     public SaveData[] saves;
+
+    public float bgmVolume = 1;
+    public float sfxVolume = 1;
 }

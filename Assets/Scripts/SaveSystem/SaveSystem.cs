@@ -95,4 +95,6 @@ public class SaveSystem : MonoBehaviour
         }
         Debug.Log("Successfully saved data");
     }
+
+    public void ResetSave() => CreateSave();
 }
