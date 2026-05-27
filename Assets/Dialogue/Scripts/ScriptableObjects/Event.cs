@@ -8,4 +8,5 @@ public class Event : GenericObj
     public bool keepText;
     public bool hidePortrait;
     public float delay;
+    public Minigame minigame;
 }

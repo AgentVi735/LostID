@@ -1,5 +1,7 @@
 public enum EventType
 {
     None,
-    Delay
+    Delay,
+    StartMinigame,
+    EndDialogue
 }
