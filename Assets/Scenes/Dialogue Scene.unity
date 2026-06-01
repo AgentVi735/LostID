@@ -531,7 +531,7 @@ Transform:
   m_GameObject: {fileID: 432752459}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.63, z: -7.83}
+  m_LocalPosition: {x: 0.075, y: 0.63, z: -7.83}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1430,7 +1430,7 @@ MonoBehaviour:
   cam: {fileID: 330585545}
   cardHolder: {fileID: 11400000, guid: f4ec9230b4f5c8a4dbfdc39ca83421b1, type: 2}
   cardPrefab: {fileID: 8772553364020605244, guid: 082c865eb8334574eb9f692021f7814a, type: 3}
-  startingCards: 6
+  startingCards: 7
   cardsParent: {fileID: 506650261}
   opponentCardsParent: {fileID: 432752460}
   distanceBetweenCards: 0.11

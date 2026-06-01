@@ -21,6 +21,9 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private Image membershipCard;
     [SerializeField] private Image debitCard;
     [SerializeField] private Image transportCard;
+    [SerializeField] private CanvasGroup membershipCardGroup;
+    [SerializeField] private CanvasGroup debitCardGroup;
+    [SerializeField] private CanvasGroup transportCardGroup;
     [SerializeField] private Image underpartRLayer;
     [SerializeField] private Image underpartLLayer;
     [SerializeField] private Image pocketLowRLayer;
@@ -86,6 +89,7 @@ public class MainMenuManager : MonoBehaviour
         canSwitch = false;
 
         List<Image> imagesToFade = new();
+        List<CanvasGroup> groupsToFade = new();
         if (character.underpartRLayer != null)
         {
             imagesToFade.Add(underpartRLayer);
@@ -107,9 +111,9 @@ public class MainMenuManager : MonoBehaviour
         if (character.idCard != null)
         {
             imagesToFade.Add(idCard);
-            imagesToFade.Add(membershipCard);
-            imagesToFade.Add(debitCard);
-            imagesToFade.Add(transportCard);
+            groupsToFade.Add(membershipCardGroup);
+            groupsToFade.Add(debitCardGroup);
+            groupsToFade.Add(transportCardGroup);
             idCard.sprite = character.idCard;
         }
 
@@ -144,11 +148,17 @@ public class MainMenuManager : MonoBehaviour
             foreach (Image img in imagesToFade)
                 img.color = currentColour;
 
+            foreach (CanvasGroup grp in groupsToFade)
+                grp.alpha = currentColour.a;
+
             yield return null;
         }
 
         foreach (Image img in imagesToFade) 
             img.color = clearColour;
+
+        foreach (CanvasGroup grp in groupsToFade)
+            grp.alpha = clearColour.a;
 
         character = emptyCharacter;
         Load();
@@ -168,6 +178,7 @@ public class MainMenuManager : MonoBehaviour
         Load();
 
         List<Image> imagesToFade = new();
+        List<CanvasGroup> groupsToFade = new();
         if (character.underpartRLayer != null)
         {
             imagesToFade.Add(underpartRLayer);
@@ -189,9 +200,9 @@ public class MainMenuManager : MonoBehaviour
         if (character.idCard != null)
         {
             imagesToFade.Add(idCard);
-            imagesToFade.Add(membershipCard);
-            imagesToFade.Add(debitCard);
-            imagesToFade.Add(transportCard);
+            groupsToFade.Add(membershipCardGroup);
+            groupsToFade.Add(debitCardGroup);
+            groupsToFade.Add(transportCardGroup);
             idCard.sprite = character.idCard;
         }
 
@@ -226,11 +237,17 @@ public class MainMenuManager : MonoBehaviour
             foreach (Image img in imagesToFade)
                 img.color = currentColour;
 
+            foreach (CanvasGroup grp in groupsToFade)
+                grp.alpha = currentColour.a;
+
             yield return null;
         }
 
         foreach (Image img in imagesToFade)
             img.color = Color.white;
+
+        foreach (CanvasGroup grp in groupsToFade)
+            grp.alpha = Color.white.a;
 
 
         yield return waitDelayBetweenSwitch;
@@ -255,9 +272,9 @@ public class MainMenuManager : MonoBehaviour
         idCard.sprite = character.idCard;
             idCard.color = clearColour;
         idCard.color = clearColour;
-        membershipCard.color = clearColour;
-        debitCard.color = clearColour;
-        transportCard.color = clearColour;
+        membershipCardGroup.alpha = 0;
+        debitCardGroup.alpha = 0;
+        transportCardGroup.alpha = 0;
 
         phoneNumber.sprite = character.phoneNumber;
             phoneNumber.color = clearColour;

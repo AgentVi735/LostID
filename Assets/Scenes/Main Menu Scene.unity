@@ -2286,6 +2286,7 @@ GameObject:
   - component: {fileID: 914809477}
   - component: {fileID: 914809479}
   - component: {fileID: 914809478}
+  - component: {fileID: 914809480}
   m_Layer: 5
   m_Name: Membership Card
   m_TagString: Untagged
@@ -2351,6 +2352,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 914809476}
   m_CullTransparentMesh: 1
+--- !u!225 &914809480
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 914809476}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &923483378
 GameObject:
   m_ObjectHideFlags: 0
@@ -3853,6 +3866,7 @@ GameObject:
   - component: {fileID: 1578125948}
   - component: {fileID: 1578125950}
   - component: {fileID: 1578125949}
+  - component: {fileID: 1578125951}
   m_Layer: 5
   m_Name: Transport Card
   m_TagString: Untagged
@@ -3918,6 +3932,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1578125947}
   m_CullTransparentMesh: 1
+--- !u!225 &1578125951
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578125947}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1587826753
 GameObject:
   m_ObjectHideFlags: 0
@@ -4654,6 +4680,7 @@ GameObject:
   - component: {fileID: 1868920054}
   - component: {fileID: 1868920056}
   - component: {fileID: 1868920055}
+  - component: {fileID: 1868920057}
   m_Layer: 5
   m_Name: Debit Card
   m_TagString: Untagged
@@ -4719,6 +4746,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1868920053}
   m_CullTransparentMesh: 1
+--- !u!225 &1868920057
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868920053}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1880994907
 GameObject:
   m_ObjectHideFlags: 0
@@ -4832,6 +4871,9 @@ MonoBehaviour:
   membershipCard: {fileID: 914809478}
   debitCard: {fileID: 1868920055}
   transportCard: {fileID: 1578125949}
+  membershipCardGroup: {fileID: 914809480}
+  debitCardGroup: {fileID: 1868920057}
+  transportCardGroup: {fileID: 1578125951}
   underpartRLayer: {fileID: 1971002323}
   underpartLLayer: {fileID: 513076778}
   pocketLowRLayer: {fileID: 1303592593}
