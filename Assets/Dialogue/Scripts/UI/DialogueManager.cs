@@ -25,6 +25,10 @@ public class DialogueManager : MonoBehaviour
     private void Setup()
     {
         dialogueBox.Setup();
+#if UNITY_EDITOR
+        if (SaveSystem.save == null)
+            SaveSystem.CreateFakeDevSave();
+#endif
         graphController = graphs[SaveSystem.loadedPath];
         currentObj = graphController.startingObj;
         string savedObj = SaveSystem.save.saves[SaveSystem.loadedPath].currentNode;
@@ -44,7 +48,6 @@ public class DialogueManager : MonoBehaviour
 
     private void OnEscapeButton(InputAction.CallbackContext context)
     {
-        pauseAction.Disable();
         GoToMainMenu(true, false);
     }
 

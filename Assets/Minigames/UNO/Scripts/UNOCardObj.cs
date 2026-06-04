@@ -30,6 +30,8 @@ public class UNOCardObj : MonoBehaviour
     public void Load(UNOCard givenCard, InputActionAsset givenInputs, bool isPlayerCard, UNOManager givenUnoManager)
     {
         card = givenCard;
+        if (card.type == UNOCardType.Wildcard)
+            card.colour = UNOCardColor.None;
         cardText.text = card.colour + " " + card.type;
         if (card.type != UNOCardType.Wildcard || !isPlayerCard) return;
         wildcardBalls.SetActive(false);
@@ -66,16 +68,9 @@ public class UNOCardObj : MonoBehaviour
         wildcardBalls.SetActive(toggle);
 
         if (toggle)
-        {
-
-            Debug.Log("starting routine");
             StartCoroutine(LookForBalls());
-        }
         else
-        {
-            Debug.Log("stopping routine");
             lookForBalls = false;
-        }
     }
 
     private IEnumerator LookForBalls()

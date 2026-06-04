@@ -78,20 +78,20 @@ public class UNOManager : MonoBehaviour
     private void SetTurn(Turn newTurn)
     {
         turn = newTurn;
-        if (turn == Turn.Player)
+        switch (turn)
         {
-            grabCard.Enable();
-            CheckCards();
-            lookingForCardsCoroutine = StartCoroutine(LookForCard());
-        }
-        else if (turn == Turn.Opponent)
-        {
-            grabCard.Disable();
-            OpponentStart();
-        }
-        else
-        {
-            grabCard.Disable();
+            case Turn.Player:
+                grabCard.Enable();
+                CheckCards();
+                lookingForCardsCoroutine = StartCoroutine(LookForCard());
+                break;
+            case Turn.Opponent:
+                grabCard.Disable();
+                OpponentStart();
+                break;
+            default:
+                grabCard.Disable();
+                break;
         }
     }
 
@@ -198,8 +198,6 @@ public class UNOManager : MonoBehaviour
         cards.Remove(card.card);
         cardsObjs.Remove(card);
         card.transform.SetPositionAndRotation(disposeStackPos, Quaternion.identity);
-        //card.transform.position = disposeStackPos;
-        //card.transform.rotation = Quaternion.identity;
         card.transform.SetParent(transform);
         disposedStack.Add(disposedStackCard.card);
         Destroy(disposedStackCard.gameObject);
@@ -354,8 +352,36 @@ public class UNOManager : MonoBehaviour
 
     private void SortCards(bool forPlayer)
     {
-        List<UNOCard> cards = forPlayer ? playerCards : opponentCards;
-        List<UNOCardObj> cardsObjs = forPlayer ? playerCardObjs : opponentCardObjs;
+        List<UNOCard> cards;
+        List<UNOCardObj> cardsObjs;
+        if (forPlayer)
+        {
+            playerCards = playerCards
+                .OrderBy(c => (int)c.colour)
+                .ThenBy(c => (int)c.type)
+                .ToList();
+            cards = playerCards;
+
+            playerCardObjs = playerCardObjs
+                .OrderBy(c => (int)c.card.colour)
+                .ThenBy(c => (int)c.card.type)
+                .ToList();
+            cardsObjs = playerCardObjs;
+        }
+        else
+        {
+            opponentCards = opponentCards
+                .OrderBy(c => (int)c.colour)
+                .ThenBy(c => (int)c.type)
+                .ToList();
+            cards = opponentCards;
+
+            opponentCardObjs = opponentCardObjs
+                .OrderBy(c => (int)c.card.colour)
+                .ThenBy(c => (int)c.card.type)
+                .ToList();
+            cardsObjs = opponentCardObjs;
+        }
 
         Vector3 startingPoint = Vector3.zero;
 

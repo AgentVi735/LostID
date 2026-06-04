@@ -11,6 +11,7 @@ public class SaveSystem : MonoBehaviour
     private const string savePath = "/SaveData.json";
 
     private static bool isInitialized;
+    private static bool fakeSaveFile;
 
     private void Awake()
     {
@@ -25,6 +26,39 @@ public class SaveSystem : MonoBehaviour
             LoadSave();
         else
             CreateSave();
+    }
+
+    public static void CreateFakeDevSave()
+    {
+        Debug.Log("Creating new temporary save data");
+        save = new SaveFile
+        {
+            saveData = new Dictionary<string, SaveFile.SaveData>
+            {
+                {
+                    "Sabrina", new SaveFile.SaveData
+                    {
+                        character = "Sabrina",
+                        currentNode = null
+                    }
+                },
+                {
+                    "John", new SaveFile.SaveData
+                    {
+                        character = "John",
+                        currentNode = null
+                    }
+                },
+                { "Robyn", new SaveFile.SaveData
+                {
+                    character = "Robyn",
+                    currentNode = null
+                } }
+            }
+        };
+
+        fakeSaveFile = true;
+        Save();
     }
 
     private void CreateSave()
@@ -83,6 +117,8 @@ public class SaveSystem : MonoBehaviour
             idx++;
         }
 
+        if (fakeSaveFile)
+            return;
         string json = JsonUtility.ToJson(save);
         try
         {
