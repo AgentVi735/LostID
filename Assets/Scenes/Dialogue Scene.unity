@@ -287,8 +287,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
   dialogueBox: {fileID: 1774139638}
   graphController: {fileID: 11400000, guid: 14b8b1f4c301e2b41ba84a2504be1342, type: 2}
+  graphs:
+  - {fileID: 11400000, guid: 14b8b1f4c301e2b41ba84a2504be1342, type: 2}
   continueButton: {fileID: 1366632025}
   currentObj: {fileID: 0}
+  dialogueCanvas: {fileID: 819841676}
+  unoManager: {fileID: 1886578721}
+  inputs: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  mainMenuScene: Main Menu Scene
 --- !u!4 &353638986
 Transform:
   m_ObjectHideFlags: 0
@@ -531,7 +537,7 @@ Transform:
   m_GameObject: {fileID: 432752459}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.075, y: 0.63, z: -7.83}
+  m_LocalPosition: {x: 0.035, y: 0.63, z: -7.83}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -562,7 +568,7 @@ Transform:
   m_GameObject: {fileID: 506650260}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.075, y: 0.63, z: -9.15}
+  m_LocalPosition: {x: 0.035, y: 0.63, z: -9.15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -816,6 +822,59 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &852020475
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 852020476}
+  - component: {fileID: 852020477}
+  m_Layer: 0
+  m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &852020476
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852020475}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.031, y: 0.442, z: -9.015}
+  m_LocalScale: {x: 1.8212, y: 1.8438, z: 0.11887}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1886578722}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &852020477
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852020475}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1305971337
 GameObject:
   m_ObjectHideFlags: 0
@@ -1428,13 +1487,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UNOManager
   cam: {fileID: 330585545}
+  dialogueManager: {fileID: 353638985}
   cardHolder: {fileID: 11400000, guid: f4ec9230b4f5c8a4dbfdc39ca83421b1, type: 2}
-  cardPrefab: {fileID: 8772553364020605244, guid: 082c865eb8334574eb9f692021f7814a, type: 3}
+  cardPrefab: {fileID: 4995311037018705618, guid: e54359cdeb998d34aada9945f6766a43, type: 3}
   startingCards: 7
   cardsParent: {fileID: 506650261}
   opponentCardsParent: {fileID: 432752460}
-  distanceBetweenCards: 0.11
+  distanceBetweenCards: 0.07
+  cardTag: UNO Card
+  wildcardBallTag: Wildcard Ball
+  disposeStackPos: {x: 0, y: 0.62, z: -8.61}
   inputs: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  playerCardsThresholdForPlusCards: 4
 --- !u!4 &1886578722
 Transform:
   m_ObjectHideFlags: 0
@@ -1450,6 +1514,7 @@ Transform:
   m_Children:
   - {fileID: 506650261}
   - {fileID: 432752460}
+  - {fileID: 852020476}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807

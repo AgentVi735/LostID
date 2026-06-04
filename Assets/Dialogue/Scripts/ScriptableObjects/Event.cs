@@ -9,4 +9,6 @@ public class Event : GenericObj
     public bool hidePortrait;
     public float delay;
     public Minigame minigame;
+    public GenericObj wonMinigameObj;
+    public GenericObj loseMinigameObj;
 }

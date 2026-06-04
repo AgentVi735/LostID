@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -42,6 +44,10 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private string mainMenuScene;
     [SerializeField] private string gameScene;
 
+    [SerializeField] private InputActionAsset inputs;
+    private InputAction switchCharacter;
+    private int switchCharacterIdx;
+
     private bool hasLoaded;
 
     private readonly Color clearColour = new(255, 255, 255, 0);
@@ -56,7 +62,37 @@ public class MainMenuManager : MonoBehaviour
     {
         character = emptyCharacter;
         Load();
+
+        switchCharacter = inputs.FindAction("Player/Switch Character");
+
+        switchCharacter.performed += SwitchCharacter;
+        switchCharacterIdx = -1;
+
         canSwitch = true;
+    }
+
+    private void SwitchCharacter(InputAction.CallbackContext context)
+    {
+        switchCharacterIdx++;
+        if (switchCharacterIdx > characters.Length - 1)
+            switchCharacterIdx = 0;
+
+        StartCoroutine(SwitchChar());
+    }
+
+    private IEnumerator SwitchChar()
+    {
+        if (character)
+            RemoveCharacter();
+
+        yield return null;
+
+        NewCharacter(characters[switchCharacterIdx]);
+    }
+
+    private void OnDestroy()
+    {
+        switchCharacter.performed -= SwitchCharacter;
     }
 
     public void NewCharacter(Character givenCharacter)
@@ -322,7 +358,18 @@ public class MainMenuManager : MonoBehaviour
         SaveSystem.Save();
     }
 
-    public void OnStartButton() => SceneManager.LoadScene(gameScene);
+    public void OnStartButton()
+    {
+        for (int i = 0; i < characters.Length; i++)
+        {
+            if (characters[i].name != character.characterName) continue;
+            SaveSystem.loadedPath = i;
+            break;
+        }
+
+        SaveSystem.Save();
+        SceneManager.LoadScene(gameScene);
+    }
 
     public void OnQuitButton() => Quit();
 

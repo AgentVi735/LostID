@@ -8,6 +8,7 @@ using Random = UnityEngine.Random;
 public class UNOManager : MonoBehaviour
 {
     [SerializeField] private Camera cam;
+    [SerializeField] private DialogueManager dialogueManager;
 
     [SerializeField] private UNOCardHolder cardHolder;
 
@@ -17,6 +18,12 @@ public class UNOManager : MonoBehaviour
     [SerializeField] private Transform cardsParent;
     [SerializeField] private Transform opponentCardsParent;
     [SerializeField] private float distanceBetweenCards;
+
+    [SerializeField] private string cardTag;
+    [SerializeField] private string wildcardBallTag;
+
+    [SerializeField] private Vector3 disposeStackPos;
+    private UNOCardObj disposedStackCard;
 
     private List<UNOCard> playerCards;
     private List<UNOCardObj> playerCardObjs;
@@ -35,37 +42,237 @@ public class UNOManager : MonoBehaviour
 
     private Turn turn;
 
+    private Coroutine lookingForCardsCoroutine;
+
+    [Header("Opponent Settings")]
+    [SerializeField] private int playerCardsThresholdForPlusCards;
+
     private void Start()
     {
         Load();
+    }
 
+    private void LoadInput()
+    {
         leftClick = inputs.FindAction("Player/Attack");
         grabCard = inputs.FindAction("Player/Jump");
         mousePositionAction = inputs.FindAction("Player/MousePos");
 
-        leftClick.performed += OnLeftClick;
         grabCard.performed += GrabCard;
+        leftClick.performed += OnLeftClick;
+    }
 
-        StartCoroutine(LookForCard());
+    private void SwitchTurns()
+    {
+        switch (turn)
+        {
+            case Turn.Player:
+                SetTurn(Turn.Opponent);
+                break;
+            case Turn.Opponent:
+                SetTurn(Turn.Player);
+                break;
+        }
+    }
+
+    private void SetTurn(Turn newTurn)
+    {
+        turn = newTurn;
+        if (turn == Turn.Player)
+        {
+            grabCard.Enable();
+            CheckCards();
+            lookingForCardsCoroutine = StartCoroutine(LookForCard());
+        }
+        else if (turn == Turn.Opponent)
+        {
+            grabCard.Disable();
+            OpponentStart();
+        }
+        else
+        {
+            grabCard.Disable();
+        }
+    }
+
+    private void CheckCards()
+    {
+        if (disposedStackCard == null) return;
+        UNOCard topCard = disposedStackCard.card;
+        List<UNOCardObj> cardsObjs = turn == Turn.Player ? playerCardObjs : opponentCardObjs;
+
+        foreach (UNOCardObj card in cardsObjs) 
+            card.CheckCard(topCard);
     }
 
     private IEnumerator LookForCard()
     {
-        while (true)
+        bool isLookingAtCard = false;
+        UNOCardObj card = null;
+        UNOCardObj wildcard = null;
+        bool hasWildcardSelected = false;
+
+        while (turn == Turn.Player)
         {
             mousePos = mousePositionAction.ReadValue<Vector2>();
             Ray ray = cam.ScreenPointToRay(new Vector3(mousePos.x, mousePos.y, -10));
-            if (Physics.Raycast(ray, out RaycastHit hit))
+            if (Physics.Raycast(ray, out RaycastHit hit) && (hit.collider.CompareTag(cardTag) || hit.collider.CompareTag(wildcardBallTag)))
             {
-                if (hasLeftClicked)
+                if (!isLookingAtCard)
+                {
+                    leftClick.Enable();
+                    hasLeftClicked = false;
+                }
+
+                isLookingAtCard = true;
+                if (hasWildcardSelected && hit.collider.CompareTag(cardTag) && hit.collider.gameObject != wildcard.gameObject)
+                {
+                    wildcard.ShowWildcardBalls(false);
+                    wildcard = null;
+                    hasWildcardSelected = false;
+                }
+
+                if (hasLeftClicked && !hasWildcardSelected)
                 {
                     hasLeftClicked = false;
-                    print(hit.collider.name);
+                    UNOCardObj hitComponent = hit.collider.GetComponent<UNOCardObj>();
+                    if (hitComponent != null)
+                        card = hitComponent;
+                    if (card != null)
+                    {
+                        bool isWildcard;
+                        if (card.card.type == UNOCardType.Wildcard)
+                        {
+                            isWildcard = true;
+                            hasWildcardSelected = true;
+                            wildcard = card;
+                        }
+                        else
+                        {
+                            isWildcard = false;
+                        }
+                        bool canClick = card.canClick;
+                        if (canClick)
+                        {
+                            if (!isWildcard)
+                                PlayCard(card);
+                            else
+                                card.ShowWildcardBalls(true);
+                        }
+                    }
                 }
+            }
+            else
+            {
+                if (isLookingAtCard)
+                    leftClick.Disable();
+                if (hasWildcardSelected && wildcard != null)
+                {
+                    wildcard.ShowWildcardBalls(false);
+                    wildcard = null;
+                    hasWildcardSelected = false;
+                }
+                isLookingAtCard = false;
+                card = null;
+                hasLeftClicked = false;
             }
 
             yield return null;
         }
+    }
+
+    public void PlayWildcard(UNOCardObj card)
+    {
+        if (lookingForCardsCoroutine != null)
+            StopCoroutine(lookingForCardsCoroutine);
+        PlayCard(card);
+    }
+
+    private void PlayCard(UNOCardObj card)
+    {
+        if (lookingForCardsCoroutine != null)
+            StopCoroutine(lookingForCardsCoroutine);
+        card.OnPlay();
+        List<UNOCard> cards = turn == Turn.Player ? playerCards : opponentCards;
+        List<UNOCardObj> cardsObjs = turn == Turn.Player ? playerCardObjs : opponentCardObjs;
+        cards.Remove(card.card);
+        cardsObjs.Remove(card);
+        card.transform.SetPositionAndRotation(disposeStackPos, Quaternion.identity);
+        //card.transform.position = disposeStackPos;
+        //card.transform.rotation = Quaternion.identity;
+        card.transform.SetParent(transform);
+        disposedStack.Add(disposedStackCard.card);
+        Destroy(disposedStackCard.gameObject);
+        disposedStackCard = card;
+        card.DebugLogCard();
+        SortCards(turn == Turn.Player);
+
+        if (disposedStackCard.card.type == UNOCardType.PlusTwo) 
+            GrabCard(2, turn != Turn.Player);
+        if (disposedStackCard.card.type == UNOCardType.Wildcard)
+        {
+            if (turn == Turn.Opponent)
+            {
+                int redColours = 0;
+                int blueColours = 0;
+                int yellowColours = 0;
+                int greenColours = 0;
+                foreach (UNOCard opponentCard in opponentCards)
+                {
+                    switch (opponentCard.colour)
+                    {
+                        case UNOCardColor.Red:
+                            redColours++;
+                            break;
+                        case UNOCardColor.Blue:
+                            blueColours++;
+                            break;
+                        case UNOCardColor.Yellow:
+                            yellowColours++;
+                            break;
+                        case UNOCardColor.Green:
+                            greenColours++;
+                            break;
+                    }
+                }
+
+                UNOCardColor highestColour = UNOCardColor.Red;
+                int max = redColours;
+
+                if (blueColours > max)
+                {
+                    max = blueColours;
+                    highestColour = UNOCardColor.Blue;
+                }
+                if (yellowColours > max)
+                {
+                    max = yellowColours;
+                    highestColour = UNOCardColor.Yellow;
+                }
+                if (greenColours > max)
+                {
+                    highestColour = UNOCardColor.Green;
+                }
+
+                disposedStackCard.card.colour = highestColour;
+                Debug.Log("Opponent: changed colour to: " + highestColour);
+            }
+        }
+
+        if (cards.Count > 0)
+        {
+            SwitchTurns();
+            return;
+        }
+
+        gameObject.SetActive(false);
+        dialogueManager.ExitMinigame(turn == Turn.Player);
+    }
+
+    private void ShuffleNewStack()
+    {
+        cardsStack = disposedStack.OrderBy(i => Random.value).ToList();
+        disposedStack.Clear();
     }
 
     private void OnDestroy()
@@ -78,18 +285,13 @@ public class UNOManager : MonoBehaviour
     {
         if (turn != Turn.Player) return;
         GrabCard(1, true);
+        SwitchTurns();
     }
 
     private void OnLeftClick(InputAction.CallbackContext context)
     {
         if (hasLeftClicked) return;
         hasLeftClicked = true;
-        Invoke(nameof(ResetLeftClick), Time.deltaTime);
-    }
-
-    private void ResetLeftClick()
-    {
-        hasLeftClicked = false;
     }
 
     private void Load()
@@ -106,7 +308,21 @@ public class UNOManager : MonoBehaviour
         GrabCard(startingCards, true);
         GrabCard(startingCards, false);
 
-        turn = Turn.Player;
+        GrabStartCard();
+
+        LoadInput();
+
+        SetTurn(Turn.Player);
+    }
+
+    private void GrabStartCard()
+    {
+        UNOCardObj obj = Instantiate(cardPrefab, disposeStackPos, Quaternion.identity, transform).GetComponent<UNOCardObj>();
+
+        obj.Load(cardsStack[0], null, false, null);
+        cardsStack.RemoveAt(0);
+        disposedStackCard = obj;
+        disposedStackCard.DebugLogCard();
     }
 
     private void GrabCard(int amt, bool forPlayer)
@@ -116,20 +332,24 @@ public class UNOManager : MonoBehaviour
         for (int i = 0; i < amt; i++)
         {
             cards.Add(cardsStack[0]);
+            SpawnCard(forPlayer, cardsStack[0]);
             cardsStack.RemoveAt(0);
-            SpawnCard(forPlayer);
+            if (cardsStack.Count == 0)
+                ShuffleNewStack();
         }
 
         SortCards(forPlayer);
     }
 
-    private void SpawnCard(bool forPlayer)
+    private void SpawnCard(bool forPlayer, UNOCard card)
     {
         List<UNOCardObj> cardsObjs = forPlayer ? playerCardObjs : opponentCardObjs;
         Transform parent = forPlayer ? cardsParent : opponentCardsParent;
+        Quaternion rotation = Quaternion.Euler(new Vector3(forPlayer ? -90 : 90, 0, 0));
 
-        UNOCardObj obj = Instantiate(cardPrefab, parent.position, Quaternion.identity, parent).GetComponent<UNOCardObj>();
+        UNOCardObj obj = Instantiate(cardPrefab, parent.position, rotation, parent).GetComponent<UNOCardObj>();
         cardsObjs.Add(obj);
+        obj.Load(card, inputs, forPlayer, this);
     }
 
     private void SortCards(bool forPlayer)
@@ -146,5 +366,120 @@ public class UNOManager : MonoBehaviour
             card.transform.localPosition = startingPoint;
             startingPoint = new Vector3(startingPoint.x + distanceBetweenCards, startingPoint.y, startingPoint.z);
         }
+
+        CheckCards();
+    }
+
+    private void OpponentStart()
+    {
+        CheckCards();
+        OpponentCheckForCards();
+    }
+
+    private void OpponentCheckForCards()
+    {
+        if (opponentCards.Count == 0)
+        {
+            OpponentGrabCard();
+            return;
+        }
+
+        List<UNOCardObj> playableCards = new();
+        int hasPlusCards = 0;
+        int hasWildcards = 0;
+        int correctColours = 0;
+        int correctType = 0;
+        foreach (UNOCardObj card in opponentCardObjs.Where(card => card.canClick))
+        {
+            playableCards.Add(card);
+            switch (card.card.type)
+            {
+                case UNOCardType.PlusTwo:
+                    hasPlusCards++;
+                    break;
+                case UNOCardType.Wildcard:
+                    hasWildcards++;
+                    break;
+            }
+
+            if (card.card.colour == disposedStackCard.card.colour && card.card.type != UNOCardType.Wildcard)
+                correctColours++;
+
+            if (card.card.type == disposedStackCard.card.type)
+                correctType++;
+        }
+
+        if (playableCards.Count == 0)
+        {
+            OpponentGrabCard();
+            return;
+        }
+
+        if (playerCardObjs.Count <= playerCardsThresholdForPlusCards)
+        {
+            if (hasPlusCards > 0)
+            {
+                UNOCardObj cardToPlay = null;
+                foreach (UNOCardObj playableCard in playableCards.Where(playableCard => playableCard.card.type == UNOCardType.PlusTwo))
+                {
+                    if (cardToPlay == null)
+                        cardToPlay = playableCard;
+                    else
+                    {
+                        if (playableCard.card.colour != disposedStackCard.card.colour) continue;
+                        cardToPlay = playableCard;
+                        break;
+                    }
+                }
+
+                if (cardToPlay != null)
+                {
+                    OpponentPlayCard(cardToPlay);
+                    return;
+                }
+            }
+        }
+
+        if (correctColours == 0 && correctType == 0 && hasWildcards > 0)
+        {
+            UNOCardObj cardToPlay = playableCards.FirstOrDefault(playableCard => playableCard.card.type == UNOCardType.Wildcard);
+
+            if (cardToPlay != null)
+            {
+                OpponentPlayCard(cardToPlay);
+                return;
+            }
+        }
+
+        if (correctColours > 0 || correctType > 0)
+        {
+            List<UNOCardObj> correctPlayableCards = playableCards.Where(card => (card.card.colour == disposedStackCard.card.colour && card.card.type != UNOCardType.Wildcard) || card.card.type == disposedStackCard.card.type).ToList();
+
+            int rnd = Random.Range(0, correctPlayableCards.Count - 1);
+            UNOCardObj cardToPlay = correctPlayableCards[rnd];
+            OpponentPlayCard(cardToPlay);
+            return;
+        }
+
+        Debug.LogError("Couldn't play a card");
+        OpponentGrabCard();
+    }
+
+    private void OpponentPlayCard(UNOCardObj cardObj)
+    {
+        Debug.Log("Opponent: playing card");
+        PlayCard(cardObj);
+    }
+
+    private void OpponentGrabCard()
+    {
+        Debug.Log("Opponent: grabbing card");
+        GrabCard(1, false);
+        OpponentEndTurn();
+    }
+
+    private void OpponentEndTurn()
+    {
+        SwitchTurns();
     }
 }

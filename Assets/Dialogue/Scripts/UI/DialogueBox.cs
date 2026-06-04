@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -12,6 +13,8 @@ public class DialogueBox : MonoBehaviour
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField] private TMP_Text nameText;
     [SerializeField] private Image characterImage;
+
+    public string objToSave { get; private set; }
 
     public void Setup() => responseManager.Setup();
 
@@ -36,6 +39,7 @@ public class DialogueBox : MonoBehaviour
 
     private void LoadDialogue(Dialogue dialogue)
     {
+        objToSave = dialogue.name;
         dialogueManager.ToggleContinueButton(false);
         if (dialogue.character == null)
         {
@@ -46,6 +50,7 @@ public class DialogueBox : MonoBehaviour
         if (dialogue.overrideCharacterName != string.Empty)
             charName = dialogue.overrideCharacterName;
         nameText.text = charName;
+        dialogueBoxImage.color = Color.white;
         Sprite charSprite = dialogue.sprite switch
         {
             CharacterSprite.None => null,
@@ -56,6 +61,7 @@ public class DialogueBox : MonoBehaviour
             _ => characterImage.sprite
         };
         characterImage.sprite = charSprite;
+        characterImage.color = Color.white;
         dialogueText.text = dialogue.text;
         if (dialogue.nextObj != null)
             dialogueManager.ToggleContinueButton(true);
@@ -69,6 +75,7 @@ public class DialogueBox : MonoBehaviour
 
     private void LoadEvent(Event eventObj)
     {
+        objToSave = eventObj.name;
         dialogueManager.ToggleContinueButton(false);
 
         switch (eventObj.eventType)
@@ -79,6 +86,14 @@ public class DialogueBox : MonoBehaviour
             case EventType.Delay:
                 StartCoroutine(Delay(eventObj));
                 break;
+            case EventType.StartMinigame:
+                StartMinigame(eventObj);
+                break;
+            case EventType.EndDialogue:
+                EndDialogue(eventObj);
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
         }
     }
 
@@ -120,5 +135,37 @@ public class DialogueBox : MonoBehaviour
 
         if (eventObj.nextObj != null)
             dialogueManager.Continue(eventObj.nextObj);
+    }
+
+    private void StartMinigame(Event eventObj)
+    {
+        if (eventObj.hideDialogueBox)
+        {
+            dialogueBoxImage.color = Color.clear;
+
+            if (!eventObj.keepText)
+            {
+                dialogueText.text = string.Empty;
+                nameText.text = string.Empty;
+            }
+        }
+
+        if (eventObj.hidePortrait)
+            characterImage.color = Color.clear;
+
+        switch (eventObj.minigame)
+        {
+            case Minigame.None:
+                Debug.LogError("No minigame selected on node " + eventObj.name);
+                break;
+            case Minigame.UNO:
+                dialogueManager.DisableDialogue();
+                break;
+        }
+    }
+
+    private void EndDialogue(Event eventObj)
+    {
+        dialogueManager.GoToMainMenu(false, true);
     }
 }

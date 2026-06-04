@@ -4893,6 +4893,7 @@ MonoBehaviour:
   sfxSlider: {fileID: 1506261824}
   mainMenuScene: Main Menu Scene
   gameScene: Dialogue Scene
+  inputs: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
 --- !u!4 &1930642230
 Transform:
   m_ObjectHideFlags: 0

@@ -1,5 +1,4 @@
 using Lando;
-using System.Collections;
 using UnityEngine;
 
 public class NFCSystem : MonoBehaviour

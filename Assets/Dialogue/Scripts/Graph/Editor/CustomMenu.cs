@@ -475,6 +475,39 @@ public class CustomMenu : NewGraph.ContextMenu
         eventObj.keepText = eventData.keepText;
         eventObj.hidePortrait = eventData.hidePortrait;
         eventObj.delay = eventData.delay;
+        eventObj.minigame = eventData.minigame;
+
+        if (eventData.wonMinigameNode != null)
+        {
+            switch (eventData.wonMinigameNode.ReturnType())
+            {
+                case NodeType.Dialogue:
+                    eventObj.wonMinigameObj = ((DialogueNode)eventData.wonMinigameNode).dialogueData.dialogue;
+                    break;
+                case NodeType.ResponseHolder:
+                    eventObj.wonMinigameObj = ((ResponseHolderNode)eventData.wonMinigameNode).responseHolder;
+                    break;
+                case NodeType.Event:
+                    eventObj.wonMinigameObj = ((EventNode)eventData.wonMinigameNode).eventData.eventObj;
+                    break;
+            }
+        }
+
+        if (eventData.loseMinigameNode != null)
+        {
+            switch (eventData.loseMinigameNode.ReturnType())
+            {
+                case NodeType.Dialogue:
+                    eventObj.loseMinigameObj = ((DialogueNode)eventData.loseMinigameNode).dialogueData.dialogue;
+                    break;
+                case NodeType.ResponseHolder:
+                    eventObj.loseMinigameObj = ((ResponseHolderNode)eventData.loseMinigameNode).responseHolder;
+                    break;
+                case NodeType.Event:
+                    eventObj.loseMinigameObj = ((EventNode)eventData.loseMinigameNode).eventData.eventObj;
+                    break;
+            }
+        }
 
         return eventObj;
     }
@@ -775,6 +808,7 @@ public class CustomMenu : NewGraph.ContextMenu
             eventData.keepText = eventObj.keepText;
             eventData.hidePortrait = eventObj.hidePortrait;
             eventData.delay = eventObj.delay;
+            eventData.minigame = eventObj.minigame;
         }
 
         Debug.Log("Saved nodes");

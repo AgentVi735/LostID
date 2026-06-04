@@ -29,6 +29,15 @@ public class EventNode : GenericNode
 
         [GraphDisplay(DisplayType.Inspector)] 
         public float delay;
+
+        [GraphDisplay(DisplayType.Inspector)]
+        public Minigame minigame;
+
+        [Port, SerializeReference] 
+        public GenericNode wonMinigameNode;
+
+        [Port, SerializeReference]
+        public GenericNode loseMinigameNode;
     }
     public EventData eventData;
 }
