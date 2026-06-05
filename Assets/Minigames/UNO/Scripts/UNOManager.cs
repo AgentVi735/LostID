@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class UNOManager : MonoBehaviour
@@ -20,10 +21,12 @@ public class UNOManager : MonoBehaviour
     [SerializeField] private float distanceBetweenCards;
 
     [SerializeField] private string cardTag;
+    [SerializeField] private string disposedCardTag;
     [SerializeField] private string wildcardBallTag;
 
     [SerializeField] private Vector3 disposeStackPos;
     private UNOCardObj disposedStackCard;
+    [SerializeField] private Image bigDisposedStackCard;
 
     private List<UNOCard> playerCards;
     private List<UNOCardObj> playerCardObjs;
@@ -44,13 +47,9 @@ public class UNOManager : MonoBehaviour
 
     private Coroutine lookingForCardsCoroutine;
 
-    [Header("Opponent Settings")]
     [SerializeField] private int playerCardsThresholdForPlusCards;
 
-    private void Start()
-    {
-        Load();
-    }
+    private void Start() => Load();
 
     private void LoadInput()
     {
@@ -118,6 +117,7 @@ public class UNOManager : MonoBehaviour
             Ray ray = cam.ScreenPointToRay(new Vector3(mousePos.x, mousePos.y, -10));
             if (Physics.Raycast(ray, out RaycastHit hit) && (hit.collider.CompareTag(cardTag) || hit.collider.CompareTag(wildcardBallTag)))
             {
+
                 if (!isLookingAtCard)
                 {
                     leftClick.Enable();
@@ -125,7 +125,8 @@ public class UNOManager : MonoBehaviour
                 }
 
                 isLookingAtCard = true;
-                if (hasWildcardSelected && hit.collider.CompareTag(cardTag) && hit.collider.gameObject != wildcard.gameObject)
+                if (hasWildcardSelected && hit.collider.CompareTag(cardTag) &&
+                    hit.collider.gameObject != wildcard.gameObject)
                 {
                     wildcard.ShowWildcardBalls(false);
                     wildcard = null;
@@ -151,6 +152,7 @@ public class UNOManager : MonoBehaviour
                         {
                             isWildcard = false;
                         }
+
                         bool canClick = card.canClick;
                         if (canClick)
                         {
@@ -161,6 +163,7 @@ public class UNOManager : MonoBehaviour
                         }
                     }
                 }
+
             }
             else
             {
@@ -172,6 +175,7 @@ public class UNOManager : MonoBehaviour
                     wildcard = null;
                     hasWildcardSelected = false;
                 }
+
                 isLookingAtCard = false;
                 card = null;
                 hasLeftClicked = false;
@@ -202,6 +206,7 @@ public class UNOManager : MonoBehaviour
         disposedStack.Add(disposedStackCard.card);
         Destroy(disposedStackCard.gameObject);
         disposedStackCard = card;
+        bigDisposedStackCard.sprite = disposedStackCard.card.sprite;
         card.DebugLogCard();
         SortCards(turn == Turn.Player);
 
@@ -320,6 +325,7 @@ public class UNOManager : MonoBehaviour
         obj.Load(cardsStack[0], null, false, null);
         cardsStack.RemoveAt(0);
         disposedStackCard = obj;
+        bigDisposedStackCard.sprite = disposedStackCard.card.sprite;
         disposedStackCard.DebugLogCard();
     }
 
@@ -488,6 +494,7 @@ public class UNOManager : MonoBehaviour
         }
 
         Debug.LogError("Couldn't play a card");
+        disposedStackCard.DebugLogCard();
         OpponentGrabCard();
     }
 
@@ -500,6 +507,7 @@ public class UNOManager : MonoBehaviour
     private void OpponentGrabCard()
     {
         Debug.Log("Opponent: grabbing card");
+        disposedStackCard.DebugLogCard();
         GrabCard(1, false);
         OpponentEndTurn();
     }

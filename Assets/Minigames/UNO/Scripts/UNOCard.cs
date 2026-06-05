@@ -5,4 +5,5 @@ public class UNOCard : ScriptableObject
 {
     public UNOCardType type;
     public UNOCardColor colour;
+    public Sprite sprite;
 }

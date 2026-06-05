@@ -6,6 +6,7 @@ TagManager:
   tags:
   - UNO Card
   - Wildcard Ball
+  - Disposed Card
   layers:
   - Default
   - TransparentFX

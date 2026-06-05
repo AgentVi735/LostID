@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -32,7 +31,7 @@ public class UNOCardObj : MonoBehaviour
         card = givenCard;
         if (card.type == UNOCardType.Wildcard)
             card.colour = UNOCardColor.None;
-        cardText.text = card.colour + " " + card.type;
+        cardText.text = card.name;
         if (card.type != UNOCardType.Wildcard || !isPlayerCard) return;
         wildcardBalls.SetActive(false);
         cam = Camera.main;

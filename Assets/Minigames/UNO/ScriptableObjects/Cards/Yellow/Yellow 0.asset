@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UNOCard
   type: 1
   colour: 3
+  sprite: {fileID: 21300000, guid: f2c494855628970429d2df32950eeae0, type: 3}
