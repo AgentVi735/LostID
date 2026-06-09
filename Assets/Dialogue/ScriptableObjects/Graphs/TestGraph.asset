@@ -54,8 +54,8 @@ MonoBehaviour:
     utilityNodes: []
     tmpName: TestGraph
     viewportInitiallySet: 1
-    viewPosition: {x: -511.5395, y: 168.12329, z: 0}
-    viewScale: {x: 0.49717674, y: 0.49717674, z: 1}
+    viewPosition: {x: -800.88416, y: 132.49294, z: 0}
+    viewScale: {x: 0.57175326, y: 0.57175326, z: 1}
   references:
     version: 2
     RefIds:
@@ -111,6 +111,7 @@ MonoBehaviour:
             rid: 3518661610382033113
           loseMinigameNode:
             rid: 3518661610382033115
+          imageToSend: {fileID: 0}
     - rid: 3518661610382033112
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -231,7 +232,7 @@ MonoBehaviour:
         - relativePropertyPathHash: 500389349
           isExpanded: 1
         - relativePropertyPathHash: -867945469
-          isExpanded: 0
+          isExpanded: 1
     - rid: 3518661610382033195
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -250,6 +251,7 @@ MonoBehaviour:
             rid: -2
           loseMinigameNode:
             rid: -2
+          imageToSend: {fileID: 0}
     - rid: 3518661616588816513
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -309,6 +311,7 @@ MonoBehaviour:
             rid: -2
           loseMinigameNode:
             rid: -2
+          imageToSend: {fileID: 0}
     - rid: 3518661616588816517
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -368,6 +371,7 @@ MonoBehaviour:
             rid: -2
           loseMinigameNode:
             rid: -2
+          imageToSend: {fileID: 0}
     - rid: 6056200485695651912
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -733,6 +737,7 @@ MonoBehaviour:
             rid: -2
           loseMinigameNode:
             rid: -2
+          imageToSend: {fileID: 0}
     - rid: 6056200664907513938
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -792,6 +797,7 @@ MonoBehaviour:
             rid: -2
           loseMinigameNode:
             rid: -2
+          imageToSend: {fileID: 0}
     - rid: 6056200664907513942
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -824,6 +830,7 @@ MonoBehaviour:
             rid: -2
           loseMinigameNode:
             rid: -2
+          imageToSend: {fileID: 0}
     - rid: 6056200664907513944
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -910,6 +917,7 @@ MonoBehaviour:
             rid: -2
           loseMinigameNode:
             rid: -2
+          imageToSend: {fileID: 0}
     - rid: 6056200664907513952
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:

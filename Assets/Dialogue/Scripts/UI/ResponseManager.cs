@@ -14,14 +14,17 @@ public class ResponseManager : MonoBehaviour
 
     private ResponseHolder currentHolder;
 
-    public void Setup()
+    private bool isPhone;
+
+    public void Setup(bool phone)
     {
+        isPhone = phone;
         buttons = new ResponseButton[buttonCount];
         for (int i = 0; i < buttonCount; i++)
         {
             ResponseButton button = Instantiate(buttonPrefab, Vector3.zero, Quaternion.identity, buttonHolder).GetComponent<ResponseButton>();
             buttons[i] = button;
-            button.Setup(this);
+            button.Setup(this, isPhone);
         }
     }
 
@@ -50,6 +53,9 @@ public class ResponseManager : MonoBehaviour
 
         foreach (ResponseButton button in buttons) 
             button.gameObject.SetActive(false);
+
+        if (isPhone)
+            StartCoroutine(dialogueBox.CreatePlayerBubble(response.text));
 
         if (response.nextObj != null)
             dialogueManager.Continue(response.nextObj);

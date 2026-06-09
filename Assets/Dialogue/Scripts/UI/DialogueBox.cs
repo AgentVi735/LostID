@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,16 +15,37 @@ public class DialogueBox : MonoBehaviour
     [SerializeField] private TMP_Text nameText;
     [SerializeField] private Image characterImage;
 
+    [Header("Phone Settings")]
+    [SerializeField] private GameObject bubblePrefab;
+    [SerializeField] private Transform bubbleParent;
+    [SerializeField] private Vector2 offsetForTypingBubble;
+    [SerializeField] private Vector2 offsetForImageBubble;
+    private bool hasSpaceForNewBubble;
+    private Bubble newBubble;
+
+    private List<Bubble> bubbles;
+
+    private bool isPhone;
+
     public string objToSave { get; private set; }
 
-    public void Setup() => responseManager.Setup();
+    public void Setup(bool phone)
+    {
+        isPhone = phone;
+        if (phone)
+            bubbles = new List<Bubble>();
+        responseManager.Setup(phone);
+    }
 
     public void LoadObj(GenericObj givenObj)
     {
         switch (givenObj.type)
         {
             case NodeType.Dialogue:
-                LoadDialogue((Dialogue)givenObj);
+                if (isPhone)
+                    StartCoroutine(LoadDialoguePhone((Dialogue)givenObj));
+                else
+                    LoadDialogue((Dialogue)givenObj);
                 break;
             case NodeType.ResponseHolder:
                 LoadResponses((ResponseHolder)givenObj);
@@ -67,6 +89,27 @@ public class DialogueBox : MonoBehaviour
             dialogueManager.ToggleContinueButton(true);
     }
 
+    private IEnumerator LoadDialoguePhone(Dialogue dialogue)
+    {
+        if (!hasSpaceForNewBubble)
+            MoveBubblesUp(offsetForTypingBubble);
+
+        if (!newBubble)
+        {
+            newBubble = Instantiate(bubblePrefab, bubbleParent.position, Quaternion.identity, bubbleParent)
+                .GetComponent<Bubble>();
+            bubbles.Add(newBubble);
+        }
+
+        yield return StartCoroutine(newBubble.Load(this, dialogue.text, true));
+
+        hasSpaceForNewBubble = false;
+        newBubble = null;
+
+        if (dialogue.nextObj != null)
+            dialogueManager.Continue(dialogue.nextObj);
+    }
+
     private void LoadResponses(ResponseHolder responseHolder)
     {
         dialogueManager.ToggleContinueButton(false);
@@ -75,25 +118,39 @@ public class DialogueBox : MonoBehaviour
 
     private void LoadEvent(Event eventObj)
     {
-        objToSave = eventObj.name;
-        dialogueManager.ToggleContinueButton(false);
+        if (!isPhone)
+        {
+            objToSave = eventObj.name;
+            dialogueManager.ToggleContinueButton(false);
+        }
 
         switch (eventObj.eventType)
         {
-            case EventType.None:
-                Debug.LogWarning("No event type selected on event node " + eventObj.name);
-                break;
             case EventType.Delay:
-                StartCoroutine(Delay(eventObj));
+                StartCoroutine(isPhone ? DelayPhone(eventObj) : Delay(eventObj));
                 break;
             case EventType.StartMinigame:
+                if (isPhone)
+                {
+                    Debug.LogError("Invalid event type selected on event node " + eventObj.name);
+                    return;
+                }
                 StartMinigame(eventObj);
                 break;
             case EventType.EndDialogue:
                 EndDialogue(eventObj);
                 break;
+            case EventType.SendImage:
+                if (!isPhone)
+                {
+                    Debug.LogError("Invalid event type selected on event node " + eventObj.name);
+                    return;
+                }
+                SendImage(eventObj);
+                break;
             default:
-                throw new ArgumentOutOfRangeException();
+                Debug.LogError("No event type selected on event node " + eventObj.name);
+                break;
         }
     }
 
@@ -137,6 +194,21 @@ public class DialogueBox : MonoBehaviour
             dialogueManager.Continue(eventObj.nextObj);
     }
 
+    private IEnumerator DelayPhone(Event eventObj)
+    {
+        if (!hasSpaceForNewBubble && eventObj.hideDialogueBox)
+        {
+            MoveBubblesUp(offsetForTypingBubble);
+            CreateTypingBubble();
+        }
+
+        WaitForSeconds delayTime = new(eventObj.delay);
+        yield return delayTime;
+
+        if (eventObj.nextObj != null)
+            dialogueManager.Continue(eventObj.nextObj);
+    }
+
     private void StartMinigame(Event eventObj)
     {
         if (eventObj.hideDialogueBox)
@@ -166,6 +238,68 @@ public class DialogueBox : MonoBehaviour
 
     private void EndDialogue(Event eventObj)
     {
-        dialogueManager.GoToMainMenu(false, true);
+        if (isPhone)
+            dialogueManager.GoToDialogueScene();
+        else
+            dialogueManager.GoToMainMenu(false, true);
+    }
+
+    private void SendImage(Event eventObj)
+    {
+        if (!hasSpaceForNewBubble)
+            MoveBubblesUp(offsetForImageBubble);
+
+        if (!newBubble)
+        {
+            newBubble = Instantiate(bubblePrefab, bubbleParent.position, Quaternion.identity, bubbleParent)
+                .GetComponent<Bubble>();
+            bubbles.Add(newBubble);
+        }
+
+        StartCoroutine(newBubble.Load(eventObj.imageToSend));
+
+        newBubble = null;
+        hasSpaceForNewBubble = false;
+
+        if (eventObj.nextObj != null)
+            dialogueManager.Continue(eventObj.nextObj);
+    }
+
+    private void MoveBubblesUp(Vector2 amt)
+    {
+        hasSpaceForNewBubble = true;
+        foreach (Bubble bubble in bubbles)
+            bubble.rect.anchoredPosition += amt;
+    }
+
+    public void CheckIfShouldMoveBubbles(float amtToGoUpTotal)
+    {
+        if (offsetForTypingBubble.y >= amtToGoUpTotal) return;
+
+        amtToGoUpTotal -= offsetForTypingBubble.y;
+        MoveBubblesUp(new Vector2(offsetForTypingBubble.x, amtToGoUpTotal));
+    }
+
+    private void CreateTypingBubble()
+    {
+        Bubble bubble = Instantiate(bubblePrefab, bubbleParent.position, Quaternion.identity, bubbleParent)
+            .GetComponent<Bubble>();
+        bubbles.Add(bubble);
+        StartCoroutine(bubble.Load(null, null, true));
+        newBubble = bubble;
+    }
+
+    public IEnumerator CreatePlayerBubble(string text)
+    {
+        if (!hasSpaceForNewBubble)
+            MoveBubblesUp(offsetForTypingBubble);
+
+        Bubble bubble = Instantiate(bubblePrefab, bubbleParent.position, Quaternion.identity, bubbleParent)
+            .GetComponent<Bubble>();
+        bubbles.Add(bubble);
+        yield return StartCoroutine(bubble.Load(this, text, false));
+
+        hasSpaceForNewBubble = false;
+        newBubble = null;
     }
 }

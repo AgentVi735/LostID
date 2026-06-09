@@ -3,5 +3,10 @@ public enum EventType
     None,
     Delay,
     StartMinigame,
-    EndDialogue
+    EndDialogue,
+    SendImage,
+    NPCAppear,
+    ShowMenu,
+    ShowCat,
+    NPCLeave
 }

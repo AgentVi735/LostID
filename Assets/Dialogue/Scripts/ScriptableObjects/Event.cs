@@ -11,4 +11,5 @@ public class Event : GenericObj
     public Minigame minigame;
     public GenericObj wonMinigameObj;
     public GenericObj loseMinigameObj;
+    public Sprite imageToSend;
 }

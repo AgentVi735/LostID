@@ -14,24 +14,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GraphController
   graph: {fileID: 11400000, guid: 55762537f89602f4bb51cf17c97e6c87, type: 2}
   character: {fileID: 11400000, guid: 898b9173f16c76c42a03bbd1e459c7dd, type: 2}
-  startingObj: {fileID: 11400000, guid: c285b8d868b42a443af96178cf81d55a, type: 2}
+  startingObj: {fileID: 11400000, guid: 5afca95dd6f852247b9a6dc53c097295, type: 2}
   dialogueObjs:
   - {fileID: 0}
-  - {fileID: 11400000, guid: c285b8d868b42a443af96178cf81d55a, type: 2}
-  - {fileID: 11400000, guid: 8bf5d08885808044ea1557457d83f312, type: 2}
-  - {fileID: 11400000, guid: 608fe75534c087940aefaf0370638c37, type: 2}
-  - {fileID: 11400000, guid: 552d96fd1748c134089cca272931dcf9, type: 2}
-  - {fileID: 11400000, guid: cf7b575271a1811438e07b17ca1df8d8, type: 2}
-  - {fileID: 11400000, guid: 0e19f77eb02b58041aef1c10f46a99fd, type: 2}
-  - {fileID: 11400000, guid: f776322474b32784d8bd12ab582354a0, type: 2}
-  - {fileID: 11400000, guid: 3f57d4243b2b0f34294fdfe8ed6f5b7c, type: 2}
-  - {fileID: 11400000, guid: e0f97bcbc7f9f0845a8859a301b90f75, type: 2}
-  - {fileID: 11400000, guid: 1ce0c7b139099964bb755c58d8180af8, type: 2}
-  - {fileID: 11400000, guid: a1a54170da6139c408683d3314fe5e5c, type: 2}
-  - {fileID: 11400000, guid: 5e821deb768917342ab787197c5ae22c, type: 2}
-  - {fileID: 11400000, guid: fe17c26fd306b5c44a40a9ee92adc526, type: 2}
-  - {fileID: 11400000, guid: 1d095a75abd1bd74f964a9c36f431c0a, type: 2}
-  - {fileID: 11400000, guid: d1fbd01cc55ba9f4ba6c16815f4ec707, type: 2}
-  - {fileID: 11400000, guid: 0da9e0a66ec61e8479412c6ae0d54c41, type: 2}
-  - {fileID: 11400000, guid: d8a0d5709aa26bc40b94acc4ff239bd9, type: 2}
-  - {fileID: 11400000, guid: de8dd5dc0f8da1b4e941b03f07103d66, type: 2}
+  - {fileID: 11400000, guid: 5afca95dd6f852247b9a6dc53c097295, type: 2}
+  - {fileID: 11400000, guid: b9bb1e14288f58645a22e279df5dd454, type: 2}
+  - {fileID: 11400000, guid: d68e9b17934111c49aa2d0266f12598c, type: 2}
+  - {fileID: 11400000, guid: fe14f27919906c34fa8d8cacf565be1b, type: 2}
+  - {fileID: 11400000, guid: 58a2e027eec09a940a350992f409e3a3, type: 2}
+  - {fileID: 11400000, guid: 62b4daec928d8bd4bad8350763da669a, type: 2}
+  - {fileID: 11400000, guid: 381b90b33488fb749a32d8e039100f3a, type: 2}
+  - {fileID: 11400000, guid: ca455f47606a71f4fbafeab4f4bb4783, type: 2}
+  - {fileID: 11400000, guid: 4d9f190fc603c1140841afee2738a0e0, type: 2}
+  - {fileID: 11400000, guid: b3371a2322d06bb43bb9cff2763dd8dd, type: 2}
+  - {fileID: 11400000, guid: 93a2efd9fb93c994098e4434cb5a1bfd, type: 2}
+  - {fileID: 11400000, guid: 328075cd6343f6c45abcc2c6c9856974, type: 2}
+  - {fileID: 11400000, guid: 4c521d068bdac244f84b58f3b6a408b1, type: 2}
+  - {fileID: 11400000, guid: 443a12715899f684880c67a69a6a3177, type: 2}
+  - {fileID: 11400000, guid: 3be862f7504a60946b4bef100d2d3978, type: 2}
+  - {fileID: 11400000, guid: 7fcf1b13355eae34ca37e74f5449ab9b, type: 2}
+  - {fileID: 11400000, guid: a2b8ec826c3c67e4fb7db008d9cfee7d, type: 2}
+  - {fileID: 11400000, guid: a505ca22d5c371b4a891a4b52e6789ad, type: 2}
+  - {fileID: 11400000, guid: cc5c7ac2a3e7ff04bb375e5307a7fbc1, type: 2}
+  - {fileID: 11400000, guid: 3fd29ff0d1f07dc44a86fbbd3305dcc1, type: 2}
+  - {fileID: 11400000, guid: 8cf239952ee95e24ea3528e2c16d3c37, type: 2}
+  - {fileID: 11400000, guid: c69c0a8cef81ad447821a2ffd0d9f54d, type: 2}
+  - {fileID: 11400000, guid: 567449983a2e33044b31ba4d40e49d78, type: 2}
+  - {fileID: 11400000, guid: bc9f8269f21df0146ba2c7ac436d163a, type: 2}
+  - {fileID: 11400000, guid: 024453a9ccb707e4db8af2ae5c7093bb, type: 2}
+  - {fileID: 11400000, guid: fff3506f19f320948a429adb08479742, type: 2}
+  - {fileID: 11400000, guid: 6e42d020780ac5b41b81f70723b820e7, type: 2}
+  - {fileID: 11400000, guid: 566fb2b6693279f4c97f604782fd50be, type: 2}
+  - {fileID: 11400000, guid: 7c5a4024918c637459577405103af442, type: 2}
+  - {fileID: 11400000, guid: 92c8bfc2b4558aa4abd5fd8ea15a6a15, type: 2}
+  - {fileID: 11400000, guid: 605d07b0358461a4db5ad73539ed5c37, type: 2}
+  - {fileID: 11400000, guid: 78500474ae3a7eb499e62105ddc22c13, type: 2}

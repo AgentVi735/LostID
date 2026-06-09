@@ -509,6 +509,8 @@ public class CustomMenu : NewGraph.ContextMenu
             }
         }
 
+        eventObj.imageToSend = eventData.imageToSend;
+
         return eventObj;
     }
 
@@ -809,6 +811,7 @@ public class CustomMenu : NewGraph.ContextMenu
             eventData.hidePortrait = eventObj.hidePortrait;
             eventData.delay = eventObj.delay;
             eventData.minigame = eventObj.minigame;
+            eventData.imageToSend = eventObj.imageToSend;
         }
 
         Debug.Log("Saved nodes");

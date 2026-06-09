@@ -38,6 +38,9 @@ public class EventNode : GenericNode
 
         [Port, SerializeReference]
         public GenericNode loseMinigameNode;
+
+        [GraphDisplay(DisplayType.Inspector)]
+        public Sprite imageToSend;
     }
     public EventData eventData;
 }

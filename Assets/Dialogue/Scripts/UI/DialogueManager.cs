@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -7,12 +6,15 @@ using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour
 {
     [SerializeField] private PauseManager pauseManager;
+    [SerializeField] private MainMenuManager mainMenuManager;
+
+    [SerializeField] private bool isPhone;
 
     [SerializeField] private DialogueBox dialogueBox;
-    [SerializeField] private GraphController graphController;
+    private GraphController graphController;
     [SerializeField] private GraphController[] graphs;
     [SerializeField] private Button continueButton;
-    [SerializeField] private GenericObj currentObj;
+    private GenericObj currentObj;
     [SerializeField] private GameObject dialogueCanvas;
 
     [SerializeField] private UNOManager unoManager;
@@ -21,12 +23,19 @@ public class DialogueManager : MonoBehaviour
     private InputAction pauseAction;
 
     [SerializeField] private string mainMenuScene;
+    [SerializeField] private string dialogueScene;
 
-    private void Awake() => Setup();
+    private void Awake()
+    {
+        if (isPhone)
+            SetupPhone();
+        else
+            Setup();
+    }
 
     private void Setup()
     {
-        dialogueBox.Setup();
+        dialogueBox.Setup(false);
 #if UNITY_EDITOR
         if (SaveSystem.save == null)
             SaveSystem.CreateFakeDevSave();
@@ -46,6 +55,16 @@ public class DialogueManager : MonoBehaviour
 
         pauseAction = inputs.FindAction("UI/Cancel");
         pauseAction.performed += OnEscapeButton;
+
+        dialogueBox.LoadObj(currentObj);
+    }
+
+    private void SetupPhone()
+    {
+        dialogueBox.Setup(true);
+
+        graphController = graphs[SaveSystem.loadedPath];
+        currentObj = graphController.startingObj;
 
         dialogueBox.LoadObj(currentObj);
     }
@@ -80,7 +99,7 @@ public class DialogueManager : MonoBehaviour
 
     public void GoToMainMenu(bool shouldSaveObj, bool isEnding)
     {
-        if (isEnding) 
+        if (isEnding)
             SaveSystem.save.saves[SaveSystem.loadedPath].currentNode = null;
 
         if (shouldSaveObj) 
@@ -90,10 +109,17 @@ public class DialogueManager : MonoBehaviour
         SceneManager.LoadScene(mainMenuScene);
     }
 
-    public void ToggleContinueButton(bool toggle) => continueButton.interactable = toggle;
+    public void GoToDialogueScene() => mainMenuManager.StartGame();
+
+    public void ToggleContinueButton(bool toggle)
+    {
+        if (isPhone) return;
+        continueButton.interactable = toggle;
+    }
 
     private void OnDestroy()
     {
-        pauseAction.performed -= OnEscapeButton;
+        if (pauseAction != null)
+            pauseAction.performed -= OnEscapeButton;
     }
 }

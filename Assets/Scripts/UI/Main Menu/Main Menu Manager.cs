@@ -12,6 +12,7 @@ using UnityEngine.UI;
 public class MainMenuManager : MonoBehaviour
 {
     [SerializeField] private SaveSystem saveSystem;
+    [SerializeField] private DialogueManager dialogueManager;
 
     [SerializeField] private Character[] characters;
     private Character character;
@@ -19,6 +20,9 @@ public class MainMenuManager : MonoBehaviour
 
     private Character cardCharacter;
     private bool canSwitch;
+
+    [SerializeField] private GameObject wallet;
+    [SerializeField] private GameObject phone;
 
     [SerializeField] private Image membershipCard;
     [SerializeField] private Image debitCard;
@@ -366,7 +370,20 @@ public class MainMenuManager : MonoBehaviour
             SaveSystem.loadedPath = i;
             break;
         }
+        SaveSystem.Save();
 
+        if (string.IsNullOrEmpty(SaveSystem.save.saves[SaveSystem.loadedPath].currentNode))
+        {
+            wallet.SetActive(false);
+            phone.SetActive(true);
+            dialogueManager.gameObject.SetActive(true);
+        }
+        else
+            StartGame();
+    }
+
+    public void StartGame()
+    {
         SaveSystem.Save();
         SceneManager.LoadScene(gameScene);
     }
