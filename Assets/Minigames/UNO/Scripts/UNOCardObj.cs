@@ -132,11 +132,4 @@ public class UNOCardObj : MonoBehaviour
         if (leftClick != null)
             leftClick.performed -= OnLeftClick;
     }
-
-    public void DebugLogCard()
-    {
-#if UNITY_EDITOR
-        Debug.Log(card.colour + " " + card.type);
-#endif
-    }
 }

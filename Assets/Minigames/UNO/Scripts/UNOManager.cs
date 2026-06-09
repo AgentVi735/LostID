@@ -207,7 +207,6 @@ public class UNOManager : MonoBehaviour
         Destroy(disposedStackCard.gameObject);
         disposedStackCard = card;
         bigDisposedStackCard.sprite = disposedStackCard.card.sprite;
-        card.DebugLogCard();
         SortCards(turn == Turn.Player);
 
         if (disposedStackCard.card.type == UNOCardType.PlusTwo) 
@@ -326,7 +325,6 @@ public class UNOManager : MonoBehaviour
         cardsStack.RemoveAt(0);
         disposedStackCard = obj;
         bigDisposedStackCard.sprite = disposedStackCard.card.sprite;
-        disposedStackCard.DebugLogCard();
     }
 
     private void GrabCard(int amt, bool forPlayer)
@@ -494,7 +492,6 @@ public class UNOManager : MonoBehaviour
         }
 
         Debug.LogError("Couldn't play a card");
-        disposedStackCard.DebugLogCard();
         OpponentGrabCard();
     }
 
@@ -507,7 +504,6 @@ public class UNOManager : MonoBehaviour
     private void OpponentGrabCard()
     {
         Debug.Log("Opponent: grabbing card");
-        disposedStackCard.DebugLogCard();
         GrabCard(1, false);
         OpponentEndTurn();
     }
