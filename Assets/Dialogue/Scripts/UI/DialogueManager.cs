@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
+    [SerializeField] private PauseManager pauseManager;
+
     [SerializeField] private DialogueBox dialogueBox;
     [SerializeField] private GraphController graphController;
     [SerializeField] private GraphController[] graphs;
@@ -40,16 +42,15 @@ public class DialogueManager : MonoBehaviour
         }
         ToggleContinueButton(false);
 
+        pauseManager.Setup();
+
         pauseAction = inputs.FindAction("UI/Cancel");
         pauseAction.performed += OnEscapeButton;
 
         dialogueBox.LoadObj(currentObj);
     }
 
-    private void OnEscapeButton(InputAction.CallbackContext context)
-    {
-        GoToMainMenu(true, false);
-    }
+    private void OnEscapeButton(InputAction.CallbackContext context) => pauseManager.OpenPause();
 
     public void ContinueButton()
     {

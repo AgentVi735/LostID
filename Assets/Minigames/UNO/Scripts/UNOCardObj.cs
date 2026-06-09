@@ -20,9 +20,8 @@ public class UNOCardObj : MonoBehaviour
     private bool hasLeftClicked;
 
     [SerializeField] private string ballTag;
-    
-    //TEMP
-    [SerializeField] private TMP_Text cardText;
+
+    [SerializeField] private MeshRenderer mesh;
 
     private bool lookForBalls;
 
@@ -31,7 +30,7 @@ public class UNOCardObj : MonoBehaviour
         card = givenCard;
         if (card.type == UNOCardType.Wildcard)
             card.colour = UNOCardColor.None;
-        cardText.text = card.name;
+        mesh.material.mainTexture = card.texture;
         if (card.type != UNOCardType.Wildcard || !isPlayerCard) return;
         wildcardBalls.SetActive(false);
         cam = Camera.main;

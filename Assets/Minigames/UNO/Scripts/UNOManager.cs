@@ -349,7 +349,7 @@ public class UNOManager : MonoBehaviour
     {
         List<UNOCardObj> cardsObjs = forPlayer ? playerCardObjs : opponentCardObjs;
         Transform parent = forPlayer ? cardsParent : opponentCardsParent;
-        Quaternion rotation = Quaternion.Euler(new Vector3(forPlayer ? -90 : 90, 0, 0));
+        Quaternion rotation = Quaternion.Euler(forPlayer ? new Vector3(-90,0,0) : new Vector3(-90, 0, 180)); // TODO: Set these in a variable!!!!!
 
         UNOCardObj obj = Instantiate(cardPrefab, parent.position, rotation, parent).GetComponent<UNOCardObj>();
         cardsObjs.Add(obj);

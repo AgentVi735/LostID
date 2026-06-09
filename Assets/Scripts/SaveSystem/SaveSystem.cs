@@ -54,7 +54,9 @@ public class SaveSystem : MonoBehaviour
                     character = "Robyn",
                     currentNode = null
                 } }
-            }
+            },
+            bgmVolume = 1,
+            sfxVolume = 1
         };
 
         fakeSaveFile = true;

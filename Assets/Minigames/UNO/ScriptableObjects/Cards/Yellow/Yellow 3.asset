@@ -15,3 +15,4 @@ MonoBehaviour:
   type: 4
   colour: 3
   sprite: {fileID: 21300000, guid: cfae37883682bff4d9b391f75d5bd5ae, type: 3}
+  texture: {fileID: 2800000, guid: b39749f8d1e5acd4583fbd8fd36488d8, type: 3}
