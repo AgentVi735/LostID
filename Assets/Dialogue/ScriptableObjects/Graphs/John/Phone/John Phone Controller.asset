@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a3df95a077b15147ab90409fd99f52f, type: 3}
+  m_Name: John Phone Controller
+  m_EditorClassIdentifier: Assembly-CSharp::GraphController
+  graph: {fileID: 11400000, guid: 8dbc2a6a6df9abe428c14003b0162074, type: 2}
+  character: {fileID: 11400000, guid: e8fc598a6bc6b7543a3385b6ef19c3b8, type: 2}
+  startingObj: {fileID: 11400000, guid: f60c077a88226864f9a5a1fdcc83bccb, type: 2}
+  dialogueObjs:
+  - {fileID: 0}
+  - {fileID: 11400000, guid: f60c077a88226864f9a5a1fdcc83bccb, type: 2}
+  - {fileID: 11400000, guid: ede3ba2bfc92afe47a51cabc4ecb1d18, type: 2}
+  - {fileID: 11400000, guid: 7a3c2306241bffb47869344e028d14fa, type: 2}
+  - {fileID: 11400000, guid: 7ca7b92c9dc51044a9aff1fd607bca3a, type: 2}
+  - {fileID: 11400000, guid: 9c9c8ad54c12dd34d9e814440d2b2342, type: 2}
+  - {fileID: 11400000, guid: ca72403bd0461184e82dc7b3ba44dde8, type: 2}
+  - {fileID: 11400000, guid: d9bb00b038bf63d4988e58f13432851e, type: 2}
+  - {fileID: 11400000, guid: 8387429c5dabb9a4688639e8dab1120e, type: 2}
+  - {fileID: 11400000, guid: 9c16ae6d77ffe8144816b6ed77b8027c, type: 2}
+  - {fileID: 11400000, guid: b4c675935f0fc044f8a58813cb079bae, type: 2}
+  - {fileID: 11400000, guid: 14deb4022970ac243b31bada9c0827b9, type: 2}
+  - {fileID: 11400000, guid: 123e4683336091343a31beef275c489b, type: 2}
+  - {fileID: 11400000, guid: 1b18f88a18bead44a901e064a485ed14, type: 2}
+  - {fileID: 11400000, guid: ed5a4e9b6d045bc4e84e721c2e0d9b45, type: 2}
+  - {fileID: 11400000, guid: 5d0cec185604b1147bffaeca17ff6e08, type: 2}
+  - {fileID: 11400000, guid: d2fcc1c4d3b9d2640ae1915f9bc808ae, type: 2}
+  - {fileID: 11400000, guid: 1efa55c11f0a6d6408387568c9c8b3c2, type: 2}
+  - {fileID: 11400000, guid: d88ab2b346d156044b78db226e4e70b9, type: 2}

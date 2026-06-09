@@ -1,0 +1,428 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c2cc3c9f77a9d7439a5d56bd830aa92, type: 3}
+  m_Name: John Phone
+  m_EditorClassIdentifier: NewGraph::NewGraph.ScriptableGraphModel
+  baseModel:
+    nodes:
+    - rid: 4248539534647361578
+    - rid: 4248539534647361580
+    - rid: 4248539534647361582
+    - rid: 4248539534647361584
+    - rid: 4248539534647361586
+    - rid: 4248539534647361588
+    - rid: 4248539534647361590
+    - rid: 4248539534647361592
+    - rid: 4248539534647361594
+    - rid: 4248539534647361596
+    - rid: 4248539534647361598
+    - rid: 4248539534647361600
+    - rid: 4248539534647361602
+    - rid: 4248539534647361604
+    - rid: 4248539534647361606
+    - rid: 4248539534647361608
+    - rid: 4248539534647361610
+    - rid: 4248539534647361612
+    - rid: 4248539534647361614
+    utilityNodes: []
+    tmpName: John Phone
+    viewportInitiallySet: 0
+    viewPosition: {x: 0, y: 0, z: 0}
+    viewScale: {x: 0, y: 0, z: 0}
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 4248539534647361578
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539534647361579
+        nodeX: 3404.6953
+        nodeY: 133.81738
+        name: ControllerNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539534647361579
+      type: {class: ControllerNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: ControllerNode
+        startingNode:
+          rid: 4248539534647361581
+        character: {fileID: 11400000, guid: e8fc598a6bc6b7543a3385b6ef19c3b8, type: 2}
+        graphController: {fileID: 11400000, guid: ca11d04ab86cea340874ea6545f10187, type: 2}
+    - rid: 4248539534647361580
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539534647361581
+        nodeX: 3640.6064
+        nodeY: 133.77388
+        name: ResponseHolderNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539534647361581
+      type: {class: ResponseHolderNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: -644854960
+        responseHolder: {fileID: 11400000, guid: f60c077a88226864f9a5a1fdcc83bccb, type: 2}
+        responses:
+        - rid: 4248539534647361583
+    - rid: 4248539534647361582
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539534647361583
+        nodeX: 3861.5366
+        nodeY: 135.77388
+        name: ResponseNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539534647361583
+      type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: -941470112
+        response: {fileID: 11400000, guid: ede3ba2bfc92afe47a51cabc4ecb1d18, type: 2}
+        nextNode:
+          rid: 4248539534647361585
+        text: Hey, I found your wallet.
+    - rid: 4248539534647361584
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539534647361585
+        nodeX: 4085.5366
+        nodeY: 134.77388
+        name: EventNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539534647361585
+      type: {class: EventNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: -963715936
+        nextNode:
+          rid: 4248539534647361587
+        eventData:
+          eventObj: {fileID: 11400000, guid: 7a3c2306241bffb47869344e028d14fa, type: 2}
+          eventType: 0
+          hideDialogueBox: 0
+          keepText: 0
+          hidePortrait: 0
+          delay: 0
+          minigame: 0
+          wonMinigameNode:
+            rid: -2
+          loseMinigameNode:
+            rid: -2
+    - rid: 4248539534647361586
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539534647361587
+        nodeX: 4323.5366
+        nodeY: 136.77388
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539534647361587
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: -663300448
+        nextNode:
+          rid: 4248539534647361589
+        dialogueData:
+          dialogue: {fileID: 11400000, guid: 7ca7b92c9dc51044a9aff1fd607bca3a, type: 2}
+          character: {fileID: 0}
+          overrideCharacterName: 
+          text: Hey.
+          sprite: 0
+          overrideSprite: {fileID: 0}
+    - rid: 4248539534647361588
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539534647361589
+        nodeX: 4544.4453
+        nodeY: 138.77388
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539534647361589
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 340163600
+        nextNode:
+          rid: 4248539534647361591
+        dialogueData:
+          dialogue: {fileID: 11400000, guid: 9c9c8ad54c12dd34d9e814440d2b2342, type: 2}
+          character: {fileID: 0}
+          overrideCharacterName: 
+          text: That's ma wallet.
+          sprite: 0
+          overrideSprite: {fileID: 0}
+    - rid: 4248539534647361590
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539534647361591
+        nodeX: 4763.4453
+        nodeY: 141.77388
+        name: ResponseHolderNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539534647361591
+      type: {class: ResponseHolderNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 2046307232
+        responseHolder: {fileID: 11400000, guid: ca72403bd0461184e82dc7b3ba44dde8, type: 2}
+        responses:
+        - rid: 4248539534647361593
+    - rid: 4248539534647361592
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539534647361593
+        nodeX: 4984.4453
+        nodeY: 141.77388
+        name: ResponseNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539534647361593
+      type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 1891880432
+        response: {fileID: 11400000, guid: d9bb00b038bf63d4988e58f13432851e, type: 2}
+        nextNode:
+          rid: 4248539534647361595
+        text: Yeah...
+    - rid: 4248539534647361594
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539534647361595
+        nodeX: 5206.4453
+        nodeY: 140.77388
+        name: ResponseHolderNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539534647361595
+      type: {class: ResponseHolderNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: -438061600
+        responseHolder: {fileID: 11400000, guid: 8387429c5dabb9a4688639e8dab1120e, type: 2}
+        responses:
+        - rid: 4248539534647361597
+    - rid: 4248539534647361596
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539534647361597
+        nodeX: 5425.8833
+        nodeY: 139.77388
+        name: ResponseNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539534647361597
+      type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: -761315488
+        response: {fileID: 11400000, guid: 9c16ae6d77ffe8144816b6ed77b8027c, type: 2}
+        nextNode:
+          rid: 4248539534647361599
+        text: Is there a way I can return it to you?
+    - rid: 4248539534647361598
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539534647361599
+        nodeX: 5643.8833
+        nodeY: 141.77388
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539534647361599
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: -1731247152
+        nextNode:
+          rid: 4248539534647361601
+        dialogueData:
+          dialogue: {fileID: 11400000, guid: b4c675935f0fc044f8a58813cb079bae, type: 2}
+          character: {fileID: 0}
+          overrideCharacterName: 
+          text: Ya could meet me at this cat cafe, Paw-some Desserts.
+          sprite: 0
+          overrideSprite: {fileID: 0}
+    - rid: 4248539534647361600
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539534647361601
+        nodeX: 5874.8833
+        nodeY: 144.77388
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539534647361601
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 252538080
+        nextNode:
+          rid: 4248539534647361603
+        dialogueData:
+          dialogue: {fileID: 11400000, guid: 14deb4022970ac243b31bada9c0827b9, type: 2}
+          character: {fileID: 0}
+          overrideCharacterName: 
+          text: Do ya think ya can meet me there in an hour?
+          sprite: 0
+          overrideSprite: {fileID: 0}
+    - rid: 4248539534647361602
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539534647361603
+        nodeX: 6100.8833
+        nodeY: 144.77388
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539534647361603
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 1230754576
+        nextNode:
+          rid: 4248539534647361605
+        dialogueData:
+          dialogue: {fileID: 11400000, guid: 123e4683336091343a31beef275c489b, type: 2}
+          character: {fileID: 0}
+          overrideCharacterName: 
+          text: I go there often for lunch, you could join me.
+          sprite: 0
+          overrideSprite: {fileID: 0}
+    - rid: 4248539534647361604
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539534647361605
+        nodeX: 6340.8833
+        nodeY: 146.77388
+        name: ResponseHolderNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539534647361605
+      type: {class: ResponseHolderNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: -30452352
+        responseHolder: {fileID: 11400000, guid: 1b18f88a18bead44a901e064a485ed14, type: 2}
+        responses:
+        - rid: 4248539534647361607
+        - rid: 4248539534647361613
+    - rid: 4248539534647361606
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539534647361607
+        nodeX: 6598.8833
+        nodeY: 54.77388
+        name: ResponseNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539534647361607
+      type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 1056788176
+        response: {fileID: 11400000, guid: ed5a4e9b6d045bc4e84e721c2e0d9b45, type: 2}
+        nextNode:
+          rid: 4248539534647361609
+        text: Sure...
+    - rid: 4248539534647361608
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539534647361609
+        nodeX: 6827.8833
+        nodeY: 52.77388
+        name: ResponseHolderNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539534647361609
+      type: {class: ResponseHolderNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 39892960
+        responseHolder: {fileID: 11400000, guid: 5d0cec185604b1147bffaeca17ff6e08, type: 2}
+        responses:
+        - rid: 4248539534647361611
+    - rid: 4248539534647361610
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539534647361611
+        nodeX: 7048.8833
+        nodeY: 53.77388
+        name: ResponseNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539534647361611
+      type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 241457888
+        response: {fileID: 11400000, guid: d2fcc1c4d3b9d2640ae1915f9bc808ae, type: 2}
+        nextNode:
+          rid: 4248539534647361615
+        text: See ya there.
+    - rid: 4248539534647361612
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539534647361613
+        nodeX: 0
+        nodeY: 0
+        name: ResponseNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539534647361613
+      type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 619267568
+        response: {fileID: 11400000, guid: 1efa55c11f0a6d6408387568c9c8b3c2, type: 2}
+        nextNode:
+          rid: 4248539534647361615
+        text: "\U0001F44D"
+    - rid: 4248539534647361614
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539534647361615
+        nodeX: 7398.0146
+        nodeY: 309.37628
+        name: EventNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539534647361615
+      type: {class: EventNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 1729673296
+        nextNode:
+          rid: -2
+        eventData:
+          eventObj: {fileID: 11400000, guid: d88ab2b346d156044b78db226e4e70b9, type: 2}
+          eventType: 3
+          hideDialogueBox: 0
+          keepText: 0
+          hidePortrait: 0
+          delay: 0
+          minigame: 0
+          wonMinigameNode:
+            rid: -2
+          loseMinigameNode:
+            rid: -2

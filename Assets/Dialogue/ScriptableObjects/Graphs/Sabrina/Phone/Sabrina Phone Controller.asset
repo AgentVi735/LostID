@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a3df95a077b15147ab90409fd99f52f, type: 3}
+  m_Name: Sabrina Phone Controller
+  m_EditorClassIdentifier: Assembly-CSharp::GraphController
+  graph: {fileID: 11400000, guid: 55762537f89602f4bb51cf17c97e6c87, type: 2}
+  character: {fileID: 11400000, guid: 898b9173f16c76c42a03bbd1e459c7dd, type: 2}
+  startingObj: {fileID: 11400000, guid: c285b8d868b42a443af96178cf81d55a, type: 2}
+  dialogueObjs:
+  - {fileID: 0}
+  - {fileID: 11400000, guid: c285b8d868b42a443af96178cf81d55a, type: 2}
+  - {fileID: 11400000, guid: 8bf5d08885808044ea1557457d83f312, type: 2}
+  - {fileID: 11400000, guid: 608fe75534c087940aefaf0370638c37, type: 2}
+  - {fileID: 11400000, guid: 552d96fd1748c134089cca272931dcf9, type: 2}
+  - {fileID: 11400000, guid: cf7b575271a1811438e07b17ca1df8d8, type: 2}
+  - {fileID: 11400000, guid: 0e19f77eb02b58041aef1c10f46a99fd, type: 2}
+  - {fileID: 11400000, guid: f776322474b32784d8bd12ab582354a0, type: 2}
+  - {fileID: 11400000, guid: 3f57d4243b2b0f34294fdfe8ed6f5b7c, type: 2}
+  - {fileID: 11400000, guid: e0f97bcbc7f9f0845a8859a301b90f75, type: 2}
+  - {fileID: 11400000, guid: 1ce0c7b139099964bb755c58d8180af8, type: 2}
+  - {fileID: 11400000, guid: a1a54170da6139c408683d3314fe5e5c, type: 2}
+  - {fileID: 11400000, guid: 5e821deb768917342ab787197c5ae22c, type: 2}
+  - {fileID: 11400000, guid: fe17c26fd306b5c44a40a9ee92adc526, type: 2}
+  - {fileID: 11400000, guid: 1d095a75abd1bd74f964a9c36f431c0a, type: 2}
+  - {fileID: 11400000, guid: d1fbd01cc55ba9f4ba6c16815f4ec707, type: 2}
+  - {fileID: 11400000, guid: 0da9e0a66ec61e8479412c6ae0d54c41, type: 2}
+  - {fileID: 11400000, guid: d8a0d5709aa26bc40b94acc4ff239bd9, type: 2}
+  - {fileID: 11400000, guid: de8dd5dc0f8da1b4e941b03f07103d66, type: 2}
