@@ -88,6 +88,7 @@ MonoBehaviour:
           loseMinigameNode:
             rid: -2
           imageToSend: {fileID: 0}
+          graphToMoveTo: {fileID: 0}
     - rid: 3518661741492306605
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -121,6 +122,7 @@ MonoBehaviour:
           loseMinigameNode:
             rid: -2
           imageToSend: {fileID: 0}
+          graphToMoveTo: {fileID: 0}
     - rid: 3518661741492306607
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -154,6 +156,7 @@ MonoBehaviour:
           loseMinigameNode:
             rid: -2
           imageToSend: {fileID: 0}
+          graphToMoveTo: {fileID: 0}
     - rid: 3518661741492306609
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -187,6 +190,7 @@ MonoBehaviour:
           loseMinigameNode:
             rid: -2
           imageToSend: {fileID: 0}
+          graphToMoveTo: {fileID: 0}
     - rid: 3518661741492306611
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -220,6 +224,7 @@ MonoBehaviour:
           loseMinigameNode:
             rid: -2
           imageToSend: {fileID: 0}
+          graphToMoveTo: {fileID: 0}
     - rid: 3518661741492306613
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -253,6 +258,7 @@ MonoBehaviour:
           loseMinigameNode:
             rid: -2
           imageToSend: {fileID: 0}
+          graphToMoveTo: {fileID: 0}
     - rid: 3518661741492306615
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -286,6 +292,7 @@ MonoBehaviour:
           loseMinigameNode:
             rid: -2
           imageToSend: {fileID: 0}
+          graphToMoveTo: {fileID: 0}
     - rid: 3518661741492306617
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -319,6 +326,7 @@ MonoBehaviour:
           loseMinigameNode:
             rid: -2
           imageToSend: {fileID: 0}
+          graphToMoveTo: {fileID: 0}
     - rid: 3518661741492306619
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -352,6 +360,7 @@ MonoBehaviour:
           loseMinigameNode:
             rid: -2
           imageToSend: {fileID: 0}
+          graphToMoveTo: {fileID: 0}
     - rid: 3518661741492306621
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -385,6 +394,7 @@ MonoBehaviour:
           loseMinigameNode:
             rid: -2
           imageToSend: {fileID: 0}
+          graphToMoveTo: {fileID: 0}
     - rid: 3518661741492306623
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -418,6 +428,7 @@ MonoBehaviour:
           loseMinigameNode:
             rid: -2
           imageToSend: {fileID: 0}
+          graphToMoveTo: {fileID: 0}
     - rid: 3518661741492306625
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -451,6 +462,7 @@ MonoBehaviour:
           loseMinigameNode:
             rid: -2
           imageToSend: {fileID: 0}
+          graphToMoveTo: {fileID: 0}
     - rid: 4248539534647361616
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -537,6 +549,7 @@ MonoBehaviour:
           loseMinigameNode:
             rid: -2
           imageToSend: {fileID: 21300000, guid: 1f034a6109d73f144863c82a5fcb15f0, type: 3}
+          graphToMoveTo: {fileID: 0}
     - rid: 4248539534647361624
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -864,3 +877,4 @@ MonoBehaviour:
           loseMinigameNode:
             rid: -2
           imageToSend: {fileID: 0}
+          graphToMoveTo: {fileID: 0}
