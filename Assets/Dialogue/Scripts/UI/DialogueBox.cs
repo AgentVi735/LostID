@@ -66,7 +66,18 @@ public class DialogueBox : MonoBehaviour
         dialogueManager.ToggleContinueButton(false);
         objToSave = dialogue.name;
         if (dialogue.character == null)
+        {
             Debug.LogWarning("Dialogue " + dialogue.name + " has no character selected");
+            if (character == null)
+            {
+                character = dialogueManager.GetGraphCharacter();
+                if (character == null)
+                {
+                    Debug.LogError("Graph has no character selected.");
+                    return;
+                }
+            }
+        }
         else
             character = dialogue.character;
 

@@ -19,6 +19,7 @@ MonoBehaviour:
   happySprite: {fileID: 21300000, guid: a6c97adaaf472cf4a94cf6e04c57acd9, type: 3}
   angrySprite: {fileID: 21300000, guid: e8277a118c814f64eb8404550eb5556e, type: 3}
   sadSprite: {fileID: 21300000, guid: 9bea396115c21434c8c9e03ecd2341ca, type: 3}
+  smallWallet: {fileID: 21300000, guid: 0f3a7a7c5713423448659a28656fb6f6, type: 3}
   underpartRLayer: {fileID: 0}
   underpartLLayer: {fileID: 0}
   pocketLowRLayer: {fileID: 21300000, guid: be129526570ab9b43b74fa659bf66161, type: 3}

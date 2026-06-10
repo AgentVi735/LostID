@@ -19,16 +19,12 @@ MonoBehaviour:
   happySprite: {fileID: 21300000, guid: b01f5f8bd6211a941a6770c8a75c68a9, type: 3}
   angrySprite: {fileID: 21300000, guid: df7db2f8207b11240922c3fbe8d81020, type: 3}
   sadSprite: {fileID: 21300000, guid: ae9d123c98fb2364ea18e2162fa818d0, type: 3}
+  smallWallet: {fileID: 21300000, guid: 4200c628d00361b45b63875d1872807e, type: 3}
   underpartRLayer: {fileID: 0}
-  underpartRLayerFade: {fileID: 0}
   underpartLLayer: {fileID: 0}
-  underpartLLayerFade: {fileID: 0}
   pocketLowRLayer: {fileID: 21300000, guid: c4f9a77e9cced254dbd1d36f5afc2876, type: 3}
-  pocketLowRLayerFade: {fileID: 21300000, guid: 469e0c56f7fdb174ab1689129cf7093f, type: 3}
   idCard: {fileID: 21300000, guid: a42ab4726a5ac8e44980cb7d0837823e, type: 3}
   items:
   - {fileID: 21300000, guid: a3c5191de57c033438268cc73767ebc7, type: 3}
-  itemsFade:
-  - {fileID: 21300000, guid: 25adc9f28fd9a3d449284eb6a265c849, type: 3}
   phoneNumber: {fileID: 21300000, guid: d7b337e702d38f44d94eeb68da53d3af, type: 3}
   hasCharm: 0

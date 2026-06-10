@@ -11,19 +11,31 @@ using UnityEngine.UI;
 
 public class MainMenuManager : MonoBehaviour
 {
+    [Header("References")]
     [SerializeField] private SaveSystem saveSystem;
     [SerializeField] private DialogueManager dialogueManager;
+    [SerializeField] private Logo logo;
 
+    [Header("Characters")]
     [SerializeField] private Character[] characters;
     private Character character;
     [SerializeField] private Character emptyCharacter;
 
+    [Header("NFC")]
     private Character cardCharacter;
     private bool canSwitch;
 
+    [Header("Menus")]
+    [SerializeField] private GameObject station;
+    [SerializeField] private GameObject stationCloseUp;
     [SerializeField] private GameObject wallet;
     [SerializeField] private GameObject phone;
 
+    [Header("Station")]
+    [SerializeField] private Image smallWallet;
+    [SerializeField] private Button smallWalletButton;
+
+    [Header("Wallet")] 
     [SerializeField] private Image membershipCard;
     [SerializeField] private Image debitCard;
     [SerializeField] private Image transportCard;
@@ -37,21 +49,26 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private Image[] items;
     [SerializeField] private Image phoneNumber;
     [SerializeField] private Image[] charm;
-    
+
+    [Header("Fades")]
     [SerializeField] private float fadeTime;
     [SerializeField] private float delayBetweenSwitch;
     private WaitForSeconds waitDelayBetweenSwitch;
 
+    [Header("Sliders")]
     [SerializeField] private Slider bgmSlider;
     [SerializeField] private Slider sfxSlider;
 
+    [Header("Scenes")]
     [SerializeField] private string mainMenuScene;
     [SerializeField] private string gameScene;
 
+    [Header("Inputs")]
     [SerializeField] private InputActionAsset inputs;
     private InputAction switchCharacter;
     private int switchCharacterIdx;
 
+    [Header("Other")]
     private bool hasLoaded;
 
     private readonly Color clearColour = new(255, 255, 255, 0);
@@ -66,6 +83,9 @@ public class MainMenuManager : MonoBehaviour
     {
         character = emptyCharacter;
         Load();
+        smallWallet.sprite = null;
+        smallWallet.color = clearColour;
+        smallWalletButton.interactable = false;
 
         switchCharacter = inputs.FindAction("Player/Switch Character");
 
@@ -130,6 +150,14 @@ public class MainMenuManager : MonoBehaviour
 
         List<Image> imagesToFade = new();
         List<CanvasGroup> groupsToFade = new();
+
+        if (character.smallWallet != null)
+        {
+            imagesToFade.Add(smallWallet);
+            smallWallet.sprite = character.smallWallet;
+            smallWalletButton.interactable = false;
+        }
+
         if (character.underpartRLayer != null)
         {
             imagesToFade.Add(underpartRLayer);
@@ -219,6 +247,16 @@ public class MainMenuManager : MonoBehaviour
 
         List<Image> imagesToFade = new();
         List<CanvasGroup> groupsToFade = new();
+
+        if (character.smallWallet != null)
+        {
+            imagesToFade.Add(smallWallet);
+            smallWallet.sprite = character.smallWallet;
+            smallWalletButton.interactable = true;
+        }
+        else
+            smallWalletButton.interactable = false;
+
         if (character.underpartRLayer != null)
         {
             imagesToFade.Add(underpartRLayer);
@@ -300,24 +338,27 @@ public class MainMenuManager : MonoBehaviour
 
     private void Load()
     {
+        smallWallet.sprite = character.smallWallet;
+        smallWallet.color = clearColour;
+
         underpartRLayer.sprite = character.underpartRLayer;
         underpartRLayer.color = clearColour;
 
         underpartLLayer.sprite = character.underpartLLayer;
-            underpartLLayer.color = clearColour;
+        underpartLLayer.color = clearColour;
 
         pocketLowRLayer.sprite = character.pocketLowRLayer;
-            pocketLowRLayer.color = clearColour;
+        pocketLowRLayer.color = clearColour;
 
         idCard.sprite = character.idCard;
-            idCard.color = clearColour;
+        idCard.color = clearColour;
         idCard.color = clearColour;
         membershipCardGroup.alpha = 0;
         debitCardGroup.alpha = 0;
         transportCardGroup.alpha = 0;
 
         phoneNumber.sprite = character.phoneNumber;
-            phoneNumber.color = clearColour;
+        phoneNumber.color = clearColour;
 
         for (int i = 0; i < items.Length; i++)
         {
@@ -343,7 +384,13 @@ public class MainMenuManager : MonoBehaviour
 
         foreach (Image img in charm)
             img.color = clearColour;
+    }
 
+    public void OnSmallWallet()
+    {
+        Debug.Log("Click");
+        stationCloseUp.SetActive(true);
+        station.SetActive(false);
     }
 
     private void LoadSettings()

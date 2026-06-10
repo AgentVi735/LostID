@@ -25,6 +25,8 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private string mainMenuScene;
     [SerializeField] private string dialogueScene;
 
+    public Character GetGraphCharacter() => graphController.character;
+
     private void Awake()
     {
         if (isPhone)
