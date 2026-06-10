@@ -50,8 +50,8 @@ MonoBehaviour:
     utilityNodes: []
     tmpName: Sabrina Phone
     viewportInitiallySet: 1
-    viewPosition: {x: -2173.7725, y: 523.74554, z: 0}
-    viewScale: {x: 1, y: 1, z: 1}
+    viewPosition: {x: -1181.1924, y: 382.08185, z: 0}
+    viewScale: {x: 0.25, y: 0.25, z: 1}
   references:
     version: 2
     RefIds:
@@ -62,8 +62,8 @@ MonoBehaviour:
       data:
         nodeData:
           rid: 3518661729517568252
-        nodeX: 2085.4263
-        nodeY: -254.70813
+        nodeX: 5432.663
+        nodeY: -658.7081
         name: EventNode
         isUtilityNode: 0
         foldouts:
@@ -95,15 +95,15 @@ MonoBehaviour:
       data:
         nodeData:
           rid: 3518661729517568259
-        nodeX: 2600.7268
-        nodeY: -260.3935
+        nodeX: 5947.9634
+        nodeY: -664.3935
         name: EventNode
         isUtilityNode: 0
         foldouts:
         - relativePropertyPathHash: 500389349
           isExpanded: 1
         - relativePropertyPathHash: -867945469
-          isExpanded: 1
+          isExpanded: 0
     - rid: 3518661729517568259
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -128,15 +128,15 @@ MonoBehaviour:
       data:
         nodeData:
           rid: 3518661729517568261
-        nodeX: 2835.7268
-        nodeY: -259.3935
+        nodeX: 6182.9634
+        nodeY: -664.54346
         name: EventNode
         isUtilityNode: 0
         foldouts:
         - relativePropertyPathHash: 500389349
           isExpanded: 1
         - relativePropertyPathHash: -867945469
-          isExpanded: 1
+          isExpanded: 0
     - rid: 3518661729517568261
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -161,8 +161,8 @@ MonoBehaviour:
       data:
         nodeData:
           rid: 3518661729517568263
-        nodeX: 3308.7268
-        nodeY: -256.59637
+        nodeX: 6655.9634
+        nodeY: -660.5964
         name: EventNode
         isUtilityNode: 0
         foldouts:
@@ -194,8 +194,8 @@ MonoBehaviour:
       data:
         nodeData:
           rid: 3518661729517568265
-        nodeX: 3776.9492
-        nodeY: -254.21262
+        nodeX: 7124.1855
+        nodeY: -658.21265
         name: EventNode
         isUtilityNode: 0
         foldouts:
@@ -227,8 +227,8 @@ MonoBehaviour:
       data:
         nodeData:
           rid: 3518661729517568267
-        nodeX: 4462.4507
-        nodeY: -267.44376
+        nodeX: 7809.6865
+        nodeY: -671.4437
         name: EventNode
         isUtilityNode: 0
         foldouts:
@@ -491,8 +491,8 @@ MonoBehaviour:
       data:
         nodeData:
           rid: 3518661729517568287
-        nodeX: 8801.666
-        nodeY: -240.93915
+        nodeX: 6645.666
+        nodeY: 232.5955
         name: EventNode
         isUtilityNode: 0
         foldouts:
@@ -524,8 +524,8 @@ MonoBehaviour:
       data:
         nodeData:
           rid: 4248539534647361537
-        nodeX: 1304.3792
-        nodeY: -270.40662
+        nodeX: 4651.6157
+        nodeY: -674.4066
         name: ControllerNode
         isUtilityNode: 0
         foldouts: []
@@ -542,8 +542,8 @@ MonoBehaviour:
       data:
         nodeData:
           rid: 4248539534647361541
-        nodeX: 1546.4983
-        nodeY: -268.938
+        nodeX: 4893.735
+        nodeY: -672.938
         name: ResponseHolderNode
         isUtilityNode: 0
         foldouts: []
@@ -559,8 +559,8 @@ MonoBehaviour:
       data:
         nodeData:
           rid: 4248539534647361543
-        nodeX: 1824.4982
-        nodeY: -248.93797
+        nodeX: 5171.735
+        nodeY: -652.938
         name: ResponseNode
         isUtilityNode: 0
         foldouts: []
@@ -577,8 +577,8 @@ MonoBehaviour:
       data:
         nodeData:
           rid: 4248539534647361545
-        nodeX: 2344.4143
-        nodeY: -257.12927
+        nodeX: 5691.651
+        nodeY: -661.1293
         name: EventNode
         isUtilityNode: 0
         foldouts:
@@ -610,8 +610,8 @@ MonoBehaviour:
       data:
         nodeData:
           rid: 4248539534647361547
-        nodeX: 3073.9526
-        nodeY: -259.01996
+        nodeX: 6421.1895
+        nodeY: -663.01996
         name: DialogueNode
         isUtilityNode: 0
         foldouts:
@@ -637,8 +637,8 @@ MonoBehaviour:
       data:
         nodeData:
           rid: 4248539534647361549
-        nodeX: 3541.11
-        nodeY: -255.14142
+        nodeX: 6888.3467
+        nodeY: -659.1414
         name: DialogueNode
         isUtilityNode: 0
         foldouts:
@@ -664,8 +664,8 @@ MonoBehaviour:
       data:
         nodeData:
           rid: 4248539534647361551
-        nodeX: 4006.8965
-        nodeY: -261.47272
+        nodeX: 7354.1323
+        nodeY: -665.4727
         name: ResponseHolderNode
         isUtilityNode: 0
         foldouts: []
@@ -681,8 +681,8 @@ MonoBehaviour:
       data:
         nodeData:
           rid: 4248539534647361553
-        nodeX: 4233.8955
-        nodeY: -264.47272
+        nodeX: 7581.1313
+        nodeY: -668.4727
         name: ResponseNode
         isUtilityNode: 0
         foldouts: []
@@ -904,8 +904,8 @@ MonoBehaviour:
       data:
         nodeData:
           rid: 4248539534647361577
-        nodeX: 8575.779
-        nodeY: -246.10394
+        nodeX: 6419.7793
+        nodeY: 227.43071
         name: EventNode
         isUtilityNode: 0
         foldouts:

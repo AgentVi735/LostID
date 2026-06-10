@@ -117,6 +117,12 @@ public class DialogueManager : MonoBehaviour
         continueButton.interactable = toggle;
     }
 
+    public void SwitchToDifferentGraph(GraphController newController)
+    {
+        graphController = newController;
+        Continue(newController.startingObj);
+    }
+
     private void OnDestroy()
     {
         if (pauseAction != null)

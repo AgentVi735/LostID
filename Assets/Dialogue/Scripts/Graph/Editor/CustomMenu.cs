@@ -1,6 +1,7 @@
 using NewGraph;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using UnityEditor;
 using UnityEngine;
@@ -89,19 +90,13 @@ public class CustomMenu : NewGraph.ContextMenu
 
     private static void CreateMissingSO()
     {
-        ControllerNode controllerNode = null;
         List<NodeModel> nodes = Window.graphController.graphData.Nodes;
 
-        foreach (var node in nodes)
-        {
-            GenericNode genericNode = (GenericNode)node.nodeData;
-
-            if (genericNode.ReturnType() != NodeType.Controller) continue;
-            ControllerNode nodeData = (ControllerNode)node.nodeData;
-            controllerNode = nodeData;
-            break;
-        }
-
+        ControllerNode controllerNode =
+            (from node in nodes
+                let genericNode = (GenericNode)node.nodeData
+                where genericNode.ReturnType() == NodeType.Controller
+                select (ControllerNode)node.nodeData).FirstOrDefault();
 
         if (controllerNode == null)
         {
@@ -198,12 +193,11 @@ public class CustomMenu : NewGraph.ContextMenu
 
         List<NodeModel> nodes = Window.graphController.graphData.Nodes;
 
-        foreach (var node in nodes)
+        foreach (ControllerNode nodeData in from node in nodes
+                 let genericNode = (GenericNode)node.nodeData
+                 where genericNode.ReturnType() == NodeType.Controller
+                 select (ControllerNode)node.nodeData)
         {
-            GenericNode genericNode = (GenericNode)node.nodeData;
-
-            if (genericNode.ReturnType() != NodeType.Controller) continue;
-            ControllerNode nodeData = (ControllerNode)node.nodeData;
             graphController = nodeData.graphController;
             controllerNode = nodeData;
             break;
@@ -248,12 +242,6 @@ public class CustomMenu : NewGraph.ContextMenu
             }
 
             nodeNames[i] = nodeName;
-        }
-
-        if (controllerNode == null)
-        {
-            Debug.LogError("No ControllerNode found");
-            return;
         }
 
         string[] dialogueFiles = Directory.GetFiles(Application.dataPath + "/" + shortPath + controllerNode.graphController.name + dialogueFolder);
@@ -510,6 +498,7 @@ public class CustomMenu : NewGraph.ContextMenu
         }
 
         eventObj.imageToSend = eventData.imageToSend;
+        eventObj.graphToMoveTo = eventData.graphToMoveTo;
 
         return eventObj;
     }
@@ -812,6 +801,7 @@ public class CustomMenu : NewGraph.ContextMenu
             eventData.delay = eventObj.delay;
             eventData.minigame = eventObj.minigame;
             eventData.imageToSend = eventObj.imageToSend;
+            eventData.graphToMoveTo = eventObj.graphToMoveTo;
         }
 
         Debug.Log("Saved nodes");

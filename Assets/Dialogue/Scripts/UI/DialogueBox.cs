@@ -15,6 +15,8 @@ public class DialogueBox : MonoBehaviour
     [SerializeField] private TMP_Text nameText;
     [SerializeField] private Image characterImage;
 
+    private Character character;
+
     [Header("Phone Settings")]
     [SerializeField] private GameObject bubblePrefab;
     [SerializeField] private Transform bubbleParent;
@@ -61,14 +63,14 @@ public class DialogueBox : MonoBehaviour
 
     private void LoadDialogue(Dialogue dialogue)
     {
-        objToSave = dialogue.name;
         dialogueManager.ToggleContinueButton(false);
+        objToSave = dialogue.name;
         if (dialogue.character == null)
-        {
-            Debug.LogError("Dialogue " + dialogue.name + " has no character selected");
-            return;
-        }
-        string charName = dialogue.character.characterName;
+            Debug.LogWarning("Dialogue " + dialogue.name + " has no character selected");
+        else
+            character = dialogue.character;
+
+        string charName = character.characterName;
         if (dialogue.overrideCharacterName != string.Empty)
             charName = dialogue.overrideCharacterName;
         nameText.text = charName;
@@ -76,10 +78,10 @@ public class DialogueBox : MonoBehaviour
         Sprite charSprite = dialogue.sprite switch
         {
             CharacterSprite.None => null,
-            CharacterSprite.Neutral => dialogue.character.neutralSprite,
-            CharacterSprite.Happy => dialogue.character.happySprite,
-            CharacterSprite.Angry => dialogue.character.angrySprite,
-            CharacterSprite.Sad => dialogue.character.sadSprite,
+            CharacterSprite.Neutral => character.neutralSprite,
+            CharacterSprite.Happy => character.happySprite,
+            CharacterSprite.Angry => character.angrySprite,
+            CharacterSprite.Sad => character.sadSprite,
             _ => characterImage.sprite
         };
         characterImage.sprite = charSprite;
@@ -135,6 +137,7 @@ public class DialogueBox : MonoBehaviour
                     Debug.LogError("Invalid event type selected on event node " + eventObj.name);
                     return;
                 }
+
                 StartMinigame(eventObj);
                 break;
             case EventType.EndDialogue:
@@ -146,7 +149,17 @@ public class DialogueBox : MonoBehaviour
                     Debug.LogError("Invalid event type selected on event node " + eventObj.name);
                     return;
                 }
+
                 SendImage(eventObj);
+                break;
+            case EventType.MoveToDifferentGraph:
+                if (isPhone)
+                {
+                    Debug.LogError("Invalid event type selected on event node " + eventObj.name);
+                    return;
+                }
+
+                MoveToDifferentGraph(eventObj);
                 break;
             default:
                 Debug.LogError("No event type selected on event node " + eventObj.name);
@@ -263,6 +276,11 @@ public class DialogueBox : MonoBehaviour
 
         if (eventObj.nextObj != null)
             dialogueManager.Continue(eventObj.nextObj);
+    }
+
+    private void MoveToDifferentGraph(Event eventObj)
+    {
+        dialogueManager.SwitchToDifferentGraph(eventObj.graphToMoveTo);
     }
 
     private void MoveBubblesUp(Vector2 amt)

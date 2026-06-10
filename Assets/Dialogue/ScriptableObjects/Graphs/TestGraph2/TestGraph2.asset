@@ -1,0 +1,108 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c2cc3c9f77a9d7439a5d56bd830aa92, type: 3}
+  m_Name: TestGraph2
+  m_EditorClassIdentifier: NewGraph::NewGraph.ScriptableGraphModel
+  baseModel:
+    nodes:
+    - rid: 3518661741492306665
+    - rid: 3518661741492306667
+    - rid: 3518661741492306669
+    utilityNodes: []
+    tmpName: TestGraph2
+    viewportInitiallySet: 1
+    viewPosition: {x: -1605.1993, y: -93.69537, z: 0}
+    viewScale: {x: 1, y: 1, z: 1}
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 3518661741492306665
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 3518661741492306666
+        nodeX: 1716.0166
+        nodeY: 299.40533
+        name: ControllerNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 3518661741492306666
+      type: {class: ControllerNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: ControllerNode
+        startingNode:
+          rid: 3518661741492306668
+        character: {fileID: 11400000, guid: e8fc598a6bc6b7543a3385b6ef19c3b8, type: 2}
+        graphController: {fileID: 11400000, guid: 82ae36a56f207754ba931b982b0bda9f, type: 2}
+    - rid: 3518661741492306667
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 3518661741492306668
+        nodeX: 1999.1992
+        nodeY: 290.69537
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
+    - rid: 3518661741492306668
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: -1708189856
+        nextNode:
+          rid: 3518661741492306670
+        dialogueData:
+          dialogue: {fileID: 11400000, guid: a35328af8a91dae4bbf50bfcfb1105da, type: 2}
+          character: {fileID: 11400000, guid: e8fc598a6bc6b7543a3385b6ef19c3b8, type: 2}
+          overrideCharacterName: 
+          text: AAAAAAAA
+          sprite: 3
+          overrideSprite: {fileID: 0}
+    - rid: 3518661741492306669
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 3518661741492306670
+        nodeX: 2249.1992
+        nodeY: 297.69537
+        name: EventNode
+        isUtilityNode: 0
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
+    - rid: 3518661741492306670
+      type: {class: EventNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 336151680
+        nextNode:
+          rid: -2
+        eventData:
+          eventObj: {fileID: 11400000, guid: 5e61f9d714ef941428a30cc7a1090204, type: 2}
+          eventType: 3
+          hideDialogueBox: 0
+          keepText: 0
+          hidePortrait: 0
+          delay: 0
+          minigame: 0
+          wonMinigameNode:
+            rid: -2
+          loseMinigameNode:
+            rid: -2
+          imageToSend: {fileID: 0}
+          graphToMoveTo: {fileID: 0}
