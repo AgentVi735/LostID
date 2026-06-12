@@ -117,7 +117,6 @@ public class UNOManager : MonoBehaviour
             Ray ray = cam.ScreenPointToRay(new Vector3(mousePos.x, mousePos.y, -10));
             if (Physics.Raycast(ray, out RaycastHit hit) && (hit.collider.CompareTag(cardTag) || hit.collider.CompareTag(wildcardBallTag)))
             {
-
                 if (!isLookingAtCard)
                 {
                     leftClick.Enable();

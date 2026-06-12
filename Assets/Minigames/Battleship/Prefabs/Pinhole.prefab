@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &2761369930523179467
+--- !u!1001 &3672362898530070046
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -30,11 +30,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d1ee758a1b7bc7c45af5cdb34a858cd7, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d1ee758a1b7bc7c45af5cdb34a858cd7, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d1ee758a1b7bc7c45af5cdb34a858cd7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -54,10 +54,42 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 20ac62ca0117542429b9466222ef2a70, type: 2}
     - target: {fileID: 919132149155446097, guid: d1ee758a1b7bc7c45af5cdb34a858cd7, type: 3}
       propertyPath: m_Name
-      value: Pinnetje wit
+      value: Pinhole
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -5754084199372789682, guid: d1ee758a1b7bc7c45af5cdb34a858cd7, type: 3}
+    - {fileID: -7511558181221131132, guid: d1ee758a1b7bc7c45af5cdb34a858cd7, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d1ee758a1b7bc7c45af5cdb34a858cd7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4465439081330632061}
   m_SourcePrefab: {fileID: 100100000, guid: d1ee758a1b7bc7c45af5cdb34a858cd7, type: 3}
+--- !u!1 &4483249078057587535 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d1ee758a1b7bc7c45af5cdb34a858cd7, type: 3}
+  m_PrefabInstance: {fileID: 3672362898530070046}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4465439081330632061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4483249078057587535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13a9c530174b0fc44926cf5c42701694, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PinHole
+  whitePinPrefab: {fileID: 3067851312315647130, guid: 0136238923fe8044aa4dcdb251e8d033, type: 3}
+  redPinPrefab: {fileID: 5858848345180611150, guid: 052ef091d50154241924104cab103237, type: 3}
+  boat2Prefab: {fileID: 6892075221508576551, guid: a4c20259ce976cb48b9c642489a0af52, type: 3}
+  boat3Prefab: {fileID: 7488838360025592915, guid: 662a76366ff88e24bbd84f12198bf8c7, type: 3}
+  coordinates: {x: 0, y: 0}
+  boatOffset: {x: 0, y: 0.0123, z: 0}
+  boat2OffsetX: {x: 0, y: 0, z: 0.00774}
+  boat2OffsetZ: {x: 0.00939, y: 0, z: 0}
+  boat3OffsetX: {x: 0, y: 0, z: 0}
+  boat3OffsetZ: {x: 0, y: 0, z: 0}

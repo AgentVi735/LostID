@@ -7,6 +7,7 @@ TagManager:
   - UNO Card
   - Wildcard Ball
   - Disposed Card
+  - Boat
   layers:
   - Default
   - TransparentFX
