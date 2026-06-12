@@ -1,19 +1,17 @@
-using System;
 using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class TrainManager : MonoBehaviour
 {
+    [SerializeField] private MainMenuManager mainMenuManager;
+
     [SerializeField] private Train[] trains;
     private Train currentTrain;
 
     [SerializeField] private Vector2 timeBetweenTrains;
 
-    private void Start()
-    {
-        StartCoroutine(MoveTrains());
-    }
+    private void Start() => StartCoroutine(MoveTrains());
 
     private IEnumerator MoveTrains()
     {
@@ -27,4 +25,6 @@ public class TrainManager : MonoBehaviour
             yield return currentTrain.Move();
         }
     }
+
+    public void FinishWalletZoom() => StartCoroutine(mainMenuManager.Zoom(true));
 }

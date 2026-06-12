@@ -2060,7 +2060,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 57002228}
   m_Father: {fileID: 903713663}
@@ -2810,7 +2810,6 @@ GameObject:
   - component: {fileID: 714756105}
   - component: {fileID: 714756107}
   - component: {fileID: 714756106}
-  - component: {fileID: 714756108}
   m_Layer: 5
   m_Name: Train track
   m_TagString: Untagged
@@ -2828,7 +2827,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 670701452}
   - {fileID: 729090982}
@@ -2877,22 +2876,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 714756104}
   m_CullTransparentMesh: 1
---- !u!114 &714756108
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 714756104}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd638a31e97037946bd6c1f1aabf9f25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TrainManager
-  trains:
-  - {fileID: 670701453}
-  - {fileID: 729090983}
-  timeBetweenTrains: {x: 0, y: 0}
 --- !u!1 &716083543
 GameObject:
   m_ObjectHideFlags: 0
@@ -4098,7 +4081,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 1019.85, y: 185.72, z: 198.12, w: 510.9}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -4422,6 +4405,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 903713663}
+  - component: {fileID: 903713664}
+  - component: {fileID: 903713665}
   m_Layer: 5
   m_Name: Station
   m_TagString: Untagged
@@ -4451,6 +4436,45 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &903713664
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903713662}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e5d80417a9ad2364f911790e219791ed, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &903713665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903713662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd638a31e97037946bd6c1f1aabf9f25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TrainManager
+  mainMenuManager: {fileID: 1930642229}
+  trains:
+  - {fileID: 670701453}
+  - {fileID: 729090983}
+  timeBetweenTrains: {x: 60, y: 180}
 --- !u!1 &914809476
 GameObject:
   m_ObjectHideFlags: 0
@@ -6381,6 +6405,7 @@ GameObject:
   - component: {fileID: 1466621140}
   - component: {fileID: 1466621142}
   - component: {fileID: 1466621141}
+  - component: {fileID: 1466621143}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -6447,6 +6472,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1466621139}
   m_CullTransparentMesh: 1
+--- !u!225 &1466621143
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466621139}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1469800536
 GameObject:
   m_ObjectHideFlags: 0
@@ -8799,6 +8836,7 @@ MonoBehaviour:
   saveSystem: {fileID: 322347097}
   dialogueManager: {fileID: 1025519808}
   logo: {fileID: 922129674}
+  stationAnimator: {fileID: 903713664}
   characters:
   - {fileID: 11400000, guid: 898b9173f16c76c42a03bbd1e459c7dd, type: 2}
   - {fileID: 11400000, guid: e8fc598a6bc6b7543a3385b6ef19c3b8, type: 2}
@@ -8806,6 +8844,7 @@ MonoBehaviour:
   emptyCharacter: {fileID: 11400000, guid: 84675b89f109396498c33b7881828de4, type: 2}
   station: {fileID: 903713662}
   stationCloseUp: {fileID: 1466621139}
+  stationCloseUpGroup: {fileID: 1466621143}
   wallet: {fileID: 1220968353}
   phone: {fileID: 54083837}
   smallWallet: {fileID: 57002229}
@@ -8829,6 +8868,7 @@ MonoBehaviour:
   - {fileID: 858460837}
   - {fileID: 613971896}
   - {fileID: 1200214621}
+  stationCloseUpFade: 1
   fadeTime: 1
   delayBetweenSwitch: 0
   bgmSlider: {fileID: 716083545}

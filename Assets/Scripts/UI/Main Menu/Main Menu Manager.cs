@@ -11,10 +11,13 @@ using UnityEngine.UI;
 
 public class MainMenuManager : MonoBehaviour
 {
+    private static readonly int ZoomAnimation = Animator.StringToHash("Zoom");
+
     [Header("References")]
     [SerializeField] private SaveSystem saveSystem;
     [SerializeField] private DialogueManager dialogueManager;
     [SerializeField] private Logo logo;
+    [SerializeField] private Animator stationAnimator;
 
     [Header("Characters")]
     [SerializeField] private Character[] characters;
@@ -28,6 +31,7 @@ public class MainMenuManager : MonoBehaviour
     [Header("Menus")]
     [SerializeField] private GameObject station;
     [SerializeField] private GameObject stationCloseUp;
+    [SerializeField] private CanvasGroup stationCloseUpGroup;
     [SerializeField] private GameObject wallet;
     [SerializeField] private GameObject phone;
 
@@ -51,6 +55,7 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private Image[] charm;
 
     [Header("Fades")]
+    [SerializeField] private float stationCloseUpFade;
     [SerializeField] private float fadeTime;
     [SerializeField] private float delayBetweenSwitch;
     private WaitForSeconds waitDelayBetweenSwitch;
@@ -66,6 +71,7 @@ public class MainMenuManager : MonoBehaviour
     [Header("Inputs")]
     [SerializeField] private InputActionAsset inputs;
     private InputAction switchCharacter;
+    private InputAction leaveWallet;
     private int switchCharacterIdx;
 
     [Header("Other")]
@@ -87,8 +93,11 @@ public class MainMenuManager : MonoBehaviour
         smallWallet.color = clearColour;
         smallWalletButton.interactable = false;
 
+        leaveWallet = inputs.FindAction("UI/Cancel");
         switchCharacter = inputs.FindAction("Player/Switch Character");
 
+        leaveWallet.performed += LeaveWallet;
+        leaveWallet.Disable();
         switchCharacter.performed += SwitchCharacter;
         switchCharacterIdx = -1;
 
@@ -388,10 +397,44 @@ public class MainMenuManager : MonoBehaviour
 
     public void OnSmallWallet()
     {
-        Debug.Log("Click");
-        stationCloseUp.SetActive(true);
-        station.SetActive(false);
+        canSwitch = false;
+        smallWalletButton.interactable = false;
+        stationAnimator.SetBool(ZoomAnimation, true);
     }
+
+    private void LeaveWallet(InputAction.CallbackContext context) => StartCoroutine(Zoom(false));
+
+    public IEnumerator Zoom(bool toggle)
+    {
+        canSwitch = false;
+        stationCloseUpGroup.alpha = toggle ? 0 : 1;
+        stationCloseUpGroup.interactable = false;
+        stationCloseUp.SetActive(true);
+
+        for (float i = 0; i < stationCloseUpFade; i += Time.deltaTime)
+        {
+            if (toggle)
+                stationCloseUpGroup.alpha = i / stationCloseUpFade;
+            else
+                stationCloseUpGroup.alpha = 1 - i / stationCloseUpFade;
+            yield return null;
+        }
+
+        stationCloseUpGroup.alpha = toggle ? 1 : 0;
+        stationCloseUpGroup.interactable = toggle;
+        canSwitch = true;
+        if (toggle)
+            leaveWallet.Enable();
+        else
+        {
+            leaveWallet.Disable();
+            stationAnimator.SetBool(ZoomAnimation, false);
+            smallWalletButton.interactable = true;
+            stationCloseUp.SetActive(false);
+        }
+    }
+
+
 
     private void LoadSettings()
     {
