@@ -41,9 +41,6 @@ public class EventNode : GenericNode
 
         [GraphDisplay(DisplayType.Inspector)]
         public Sprite imageToSend;
-
-        [GraphDisplay(DisplayType.Inspector)]
-        public GraphController graphToMoveTo;
     }
     public EventData eventData;
 }

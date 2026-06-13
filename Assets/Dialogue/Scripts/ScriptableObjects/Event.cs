@@ -12,5 +12,4 @@ public class Event : GenericObj
     public GenericObj wonMinigameObj;
     public GenericObj loseMinigameObj;
     public Sprite imageToSend;
-    public GraphController graphToMoveTo;
 }

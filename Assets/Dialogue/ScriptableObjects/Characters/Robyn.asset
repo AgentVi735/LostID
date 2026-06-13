@@ -14,11 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Character
   characterName: Robyn
   graph: {fileID: 0}
+  phoneGraph: {fileID: 11400000, guid: 246eb12d5bbffee449442c8c65de949d, type: 2}
   nfcID: 3F-35-55-59
   neutralSprite: {fileID: 21300000, guid: 5cc3c22188dcaa44dba86a4246ae2a24, type: 3}
   happySprite: {fileID: 21300000, guid: b01f5f8bd6211a941a6770c8a75c68a9, type: 3}
   angrySprite: {fileID: 21300000, guid: df7db2f8207b11240922c3fbe8d81020, type: 3}
   sadSprite: {fileID: 21300000, guid: ae9d123c98fb2364ea18e2162fa818d0, type: 3}
+  prefab: {fileID: 0}
+  neutralMat: {fileID: 0}
+  happyMat: {fileID: 0}
+  sadMat: {fileID: 0}
+  angryMat: {fileID: 0}
   smallWallet: {fileID: 21300000, guid: 4200c628d00361b45b63875d1872807e, type: 3}
   underpartRLayer: {fileID: 0}
   underpartLLayer: {fileID: 0}

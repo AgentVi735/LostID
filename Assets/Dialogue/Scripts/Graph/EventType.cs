@@ -9,5 +9,5 @@ public enum EventType
     ShowMenu,
     ShowCat,
     NPCLeave,
-    MoveToDifferentGraph
+    MoveToBartGraph
 }

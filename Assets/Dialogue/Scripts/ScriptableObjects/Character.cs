@@ -6,7 +6,8 @@ public class Character : ScriptableObject
 {
     [Header("Info")]
     public string characterName;
-    public ScriptableGraphModel graph;
+    public GraphController graph;
+    public GraphController phoneGraph;
     public string nfcID;
 
     [Header("Sprites")]
@@ -14,6 +15,13 @@ public class Character : ScriptableObject
     public Sprite happySprite;
     public Sprite angrySprite;
     public Sprite sadSprite;
+
+    [Header("Model")]
+    public GameObject prefab;
+    public Material neutralMat;
+    public Material happyMat;
+    public Material sadMat;
+    public Material angryMat;
 
     [Header("Wallet")]
     public Sprite smallWallet;

@@ -275,7 +275,6 @@ public class CustomMenu : NewGraph.ContextMenu
             graphController = nodeData.graphController;
             controllerNode = nodeData;
             graphController.character = controllerNode.character;
-            graphController.character.graph = graphController.graph;
             break;
         }
 
@@ -498,7 +497,6 @@ public class CustomMenu : NewGraph.ContextMenu
         }
 
         eventObj.imageToSend = eventData.imageToSend;
-        eventObj.graphToMoveTo = eventData.graphToMoveTo;
 
         return eventObj;
     }
@@ -801,7 +799,6 @@ public class CustomMenu : NewGraph.ContextMenu
             eventData.delay = eventObj.delay;
             eventData.minigame = eventObj.minigame;
             eventData.imageToSend = eventObj.imageToSend;
-            eventData.graphToMoveTo = eventObj.graphToMoveTo;
         }
 
         Debug.Log("Saved nodes");

@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -6,27 +5,39 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
+    [Header("References")]
     [SerializeField] private PauseManager pauseManager;
     [SerializeField] private MainMenuManager mainMenuManager;
     [SerializeField] private CameraManager camManager;
-
-    [SerializeField] private bool isPhone;
-
     [SerializeField] private DialogueBox dialogueBox;
-    private GraphController graphController;
-    [SerializeField] private GraphController[] graphs;
-    [SerializeField] private Button continueButton;
-    private GenericObj currentObj;
     [SerializeField] private GameObject dialogueCanvas;
+    [SerializeField] private Button continueButton;
 
+    [Header("Graph")]
+    [SerializeField] private bool isPhone;
+    private GraphController graphController;
+    private GenericObj currentObj;
+
+    [Header("Minigames")]
     [SerializeField] private UNOManager unoManager;
     [SerializeField] private BattleshipManager battleshipManager;
 
+    [Header("Inputs")]
     [SerializeField] private InputActionAsset inputs;
     private InputAction pauseAction;
 
+    [Header("Scenes")]
     [SerializeField] private string mainMenuScene;
     [SerializeField] private string dialogueScene;
+
+    [Header("Character")]
+    [SerializeField] private CharactersHolder characters;
+    private Character character;
+    private CharacterManager characterManager;
+    [SerializeField] private Transform characterSpawn;
+
+    [Header("Bart")]
+    [SerializeField] private Character bart;
 
     public Character GetGraphCharacter() => graphController.character;
 
@@ -40,12 +51,27 @@ public class DialogueManager : MonoBehaviour
 
     private void Setup()
     {
-        dialogueBox.Setup(false);
 #if UNITY_EDITOR
         if (SaveSystem.save == null)
             SaveSystem.CreateFakeDevSave();
+        if (SaveSystem.save == null)
+            return;
 #endif
-        graphController = graphs[SaveSystem.loadedPath];
+
+        SaveFile.SaveData save = SaveSystem.save.saves[SaveSystem.loadedPath];
+        string nameToCheckFor = save.character;
+
+        foreach (Character c in characters.characters)
+        {
+            if (c.characterName != nameToCheckFor) continue;
+            character = c;
+            break;
+        }
+
+        SetupCharacter();
+        dialogueBox.Setup(false, characterManager);
+
+        graphController = character.graph;
         currentObj = graphController.startingObj;
         string savedObj = SaveSystem.save.saves[SaveSystem.loadedPath].currentNode;
         foreach (GenericObj obj in graphController.dialogueObjs)
@@ -64,11 +90,28 @@ public class DialogueManager : MonoBehaviour
         dialogueBox.LoadObj(currentObj);
     }
 
+    private void SetupCharacter()
+    {
+        characterManager = Instantiate(character.prefab, characterSpawn.position, characterSpawn.rotation, characterSpawn)
+            .GetComponent<CharacterManager>();
+
+        characterManager.Setup(characterSpawn);
+    }
+
     private void SetupPhone()
     {
-        dialogueBox.Setup(true);
+        string nameToCheckFor = SaveSystem.save.saves[SaveSystem.loadedPath].character;
 
-        graphController = graphs[SaveSystem.loadedPath];
+        foreach (Character c in characters.characters)
+        {
+            if (c.characterName != nameToCheckFor) continue;
+            character = c;
+            break;
+        }
+
+        dialogueBox.Setup(true, null);
+
+        graphController = character.phoneGraph;
         currentObj = graphController.startingObj;
 
         dialogueBox.LoadObj(currentObj);
@@ -137,10 +180,10 @@ public class DialogueManager : MonoBehaviour
         continueButton.interactable = toggle;
     }
 
-    public void SwitchToDifferentGraph(GraphController newController)
+    public void SwitchToBart()
     {
-        graphController = newController;
-        Continue(newController.startingObj);
+        graphController = bart.graph;
+        Continue(graphController.startingObj);
     }
 
     private void OnDestroy()

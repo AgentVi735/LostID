@@ -13,12 +13,18 @@ MonoBehaviour:
   m_Name: Sabrina
   m_EditorClassIdentifier: Assembly-CSharp::Character
   characterName: Sabrina
-  graph: {fileID: 0}
+  graph: {fileID: 11400000, guid: 14b8b1f4c301e2b41ba84a2504be1342, type: 2}
+  phoneGraph: {fileID: 11400000, guid: fa8cf4ac66fe765419df006b2ef1a79e, type: 2}
   nfcID: 1F-94-15-64
   neutralSprite: {fileID: 21300000, guid: bd2caa81baf809440812b8da6e07c1f0, type: 3}
   happySprite: {fileID: 21300000, guid: a6c97adaaf472cf4a94cf6e04c57acd9, type: 3}
   angrySprite: {fileID: 21300000, guid: e8277a118c814f64eb8404550eb5556e, type: 3}
   sadSprite: {fileID: 21300000, guid: 9bea396115c21434c8c9e03ecd2341ca, type: 3}
+  prefab: {fileID: 1728967642660754402, guid: 3e9f642f4a21ab644970f00076f987b7, type: 3}
+  neutralMat: {fileID: 2100000, guid: 9919b738058988849af8f629aeb646c8, type: 2}
+  happyMat: {fileID: 2100000, guid: 3a21edfde4bf68f4d93087624f62baaa, type: 2}
+  sadMat: {fileID: 2100000, guid: ead73d9c3c95a9441a2c3192f9d30b1a, type: 2}
+  angryMat: {fileID: 2100000, guid: efcb5744b783d704da0f9946d6b20a03, type: 2}
   smallWallet: {fileID: 21300000, guid: 0f3a7a7c5713423448659a28656fb6f6, type: 3}
   underpartRLayer: {fileID: 0}
   underpartLLayer: {fileID: 0}

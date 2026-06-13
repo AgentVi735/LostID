@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -16,6 +15,7 @@ public class DialogueBox : MonoBehaviour
     [SerializeField] private Image characterImage;
 
     private Character character;
+    private CharacterManager characterManager;
 
     [Header("Phone Settings")]
     [SerializeField] private GameObject bubblePrefab;
@@ -31,8 +31,9 @@ public class DialogueBox : MonoBehaviour
 
     public string objToSave { get; private set; }
 
-    public void Setup(bool phone)
+    public void Setup(bool phone, CharacterManager givenManager)
     {
+        characterManager = givenManager;
         isPhone = phone;
         if (phone)
             bubbles = new List<Bubble>();
@@ -82,7 +83,7 @@ public class DialogueBox : MonoBehaviour
             character = dialogue.character;
 
         string charName = character.characterName;
-        if (dialogue.overrideCharacterName != string.Empty)
+        if (dialogue.overrideCharacterName != "")
             charName = dialogue.overrideCharacterName;
         nameText.text = charName;
         dialogueBoxImage.color = Color.white;
@@ -96,6 +97,7 @@ public class DialogueBox : MonoBehaviour
             _ => characterImage.sprite
         };
         characterImage.sprite = charSprite;
+        characterManager.ChangeMaterial(dialogue.sprite);
         characterImage.color = Color.white;
         dialogueText.text = dialogue.text;
         if (dialogue.nextObj != null)
@@ -148,11 +150,10 @@ public class DialogueBox : MonoBehaviour
                     Debug.LogError("Invalid event type selected on event node " + eventObj.name);
                     return;
                 }
-
                 StartMinigame(eventObj);
                 break;
             case EventType.EndDialogue:
-                EndDialogue(eventObj);
+                EndDialogue();
                 break;
             case EventType.SendImage:
                 if (!isPhone)
@@ -160,17 +161,23 @@ public class DialogueBox : MonoBehaviour
                     Debug.LogError("Invalid event type selected on event node " + eventObj.name);
                     return;
                 }
-
                 SendImage(eventObj);
                 break;
-            case EventType.MoveToDifferentGraph:
+            case EventType.NPCAppear:
                 if (isPhone)
                 {
                     Debug.LogError("Invalid event type selected on event node " + eventObj.name);
                     return;
                 }
-
-                MoveToDifferentGraph(eventObj);
+                StartCoroutine(NPCAppear(eventObj));
+                break;
+            case EventType.MoveToBartGraph:
+                if (isPhone)
+                {
+                    Debug.LogError("Invalid event type selected on event node " + eventObj.name);
+                    return;
+                }
+                MoveToBartGraph();
                 break;
             default:
                 Debug.LogError("No event type selected on event node " + eventObj.name);
@@ -193,8 +200,8 @@ public class DialogueBox : MonoBehaviour
 
             if (!eventObj.keepText)
             {
-                dialogueText.text = string.Empty;
-                nameText.text = string.Empty;
+                dialogueText.text = "";
+                nameText.text = "";
             }
         }
 
@@ -241,8 +248,8 @@ public class DialogueBox : MonoBehaviour
 
             if (!eventObj.keepText)
             {
-                dialogueText.text = string.Empty;
-                nameText.text = string.Empty;
+                dialogueText.text = "";
+                nameText.text = "";
             }
         }
 
@@ -252,7 +259,7 @@ public class DialogueBox : MonoBehaviour
         dialogueManager.StartMinigame(eventObj.minigame);
     }
 
-    private void EndDialogue(Event eventObj)
+    private void EndDialogue()
     {
         if (isPhone)
             dialogueManager.GoToDialogueScene();
@@ -281,9 +288,31 @@ public class DialogueBox : MonoBehaviour
             dialogueManager.Continue(eventObj.nextObj);
     }
 
-    private void MoveToDifferentGraph(Event eventObj)
+    private void MoveToBartGraph()
     {
-        dialogueManager.SwitchToDifferentGraph(eventObj.graphToMoveTo);
+        dialogueManager.SwitchToBart();
+    }
+
+    private IEnumerator NPCAppear(Event eventObj)
+    {
+        if (eventObj.hideDialogueBox)
+        {
+            dialogueBoxImage.color = Color.clear;
+
+            if (!eventObj.keepText)
+            {
+                dialogueText.text = "";
+                nameText.text = "";
+            }
+        }
+
+        if (eventObj.hidePortrait)
+            characterImage.color = Color.clear;
+
+        yield return StartCoroutine(characterManager.StartWalkToSeat());
+
+        if (eventObj.nextObj != null)
+            dialogueManager.Continue(eventObj.nextObj);
     }
 
     private void MoveBubblesUp(Vector2 amt)
