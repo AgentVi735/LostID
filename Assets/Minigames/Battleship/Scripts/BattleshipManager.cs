@@ -23,7 +23,6 @@ public class BattleshipManager : MonoBehaviour
     [SerializeField] private BattleshipBoardButton[] playerBoardButtons;
     [SerializeField] private PinHole[] opponentHoles;
     [SerializeField] private BattleshipBoardButton[] opponentBoardButtons;
-    public PinHole[] abcPlayerHoles;
 
     [Header("Boats")]
     [SerializeField] private string boatTag;
@@ -89,7 +88,6 @@ public class BattleshipManager : MonoBehaviour
 
     private void Start()
     {
-        abcPlayerHoles = playerHoles;
         StartCoroutine(FindBoat());
         opponentManager.StartOpponent();
     }

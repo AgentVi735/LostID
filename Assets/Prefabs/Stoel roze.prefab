@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: bd12aea5fb27fe24990129d804cc0e69, type: 2}
     - target: {fileID: 919132149155446097, guid: ff4e4ff656943204281dd1b2e634756e, type: 3}
       propertyPath: m_Name
-      value: Roze stoel
+      value: Stoel roze
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

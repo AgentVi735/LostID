@@ -9,7 +9,6 @@ public class BattleshipOpponentManager : MonoBehaviour
 
     private PinHole[] holes;
     private List<int> playerHoles;
-    private PinHole[] abcPlayerHoles;
 
     [SerializeField] private Boat[] boats;
 
@@ -38,7 +37,6 @@ public class BattleshipOpponentManager : MonoBehaviour
         hasSunkThreeBoat = false;
         hitRotation = BoatRotation.None;
         rotations = new[] { BoatRotation.Up, BoatRotation.Right, BoatRotation.Down, BoatRotation.Left };
-        abcPlayerHoles = manager.abcPlayerHoles;
     }
 
     public void StartOpponent()
