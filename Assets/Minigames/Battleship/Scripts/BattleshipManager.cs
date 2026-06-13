@@ -5,8 +5,10 @@ using UnityEngine.InputSystem;
 public class BattleshipManager : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private Camera cam;
+    [SerializeField] private BattleshipOpponentManager opponentManager;
     [SerializeField] private GameObject startButton;
+    [SerializeField] private DialogueManager dialogueManager;
+    [SerializeField] private Camera cam;
 
     [Header("Board Settings")]
     [SerializeField] private int holesPerRow;
@@ -14,15 +16,18 @@ public class BattleshipManager : MonoBehaviour
     private BoatRotation currentRotation;
     private int currentBoatHoles;
     private Vector2Int coordsSelectedBoatIsShownOn;
+    private Turn turn;
 
     [Header("Boards")]
     [SerializeField] private PinHole[] playerHoles;
     [SerializeField] private BattleshipBoardButton[] playerBoardButtons;
     [SerializeField] private PinHole[] opponentHoles;
     [SerializeField] private BattleshipBoardButton[] opponentBoardButtons;
+    public PinHole[] abcPlayerHoles;
 
     [Header("Boats")]
     [SerializeField] private string boatTag;
+    [SerializeField] private Transform boatsParent;
     [SerializeField] private Boat[] boats2;
     [SerializeField] private Boat[] boats3;
     private Boat selectedBoat;
@@ -30,6 +35,8 @@ public class BattleshipManager : MonoBehaviour
     private bool canPutBoatDown;
     private int totalBoats;
     private int boatsPutDown;
+    private int playerBoatsSunk;
+    private int opponentBoatsSunk;
 
     [Header("Inputs")]
     [SerializeField] private InputActionAsset inputs;
@@ -38,6 +45,10 @@ public class BattleshipManager : MonoBehaviour
     private InputAction leftClick;
     private bool hasLeftClicked;
     private InputAction rightClick;
+
+    [Header("Animation Settings")]
+    [SerializeField] private float delayUntilExit;
+    private WaitForSeconds waitDelayUntilExit;
 
     private void Awake()
     {
@@ -49,13 +60,10 @@ public class BattleshipManager : MonoBehaviour
         leftClick.canceled += OnLeftClickRelease;
         rightClick.started += OnRightClick;
 
-    }
-
-    private void Start()
-    {
         startButton.SetActive(false);
         totalBoats = boats2.Length + boats3.Length;
         currentRotation = BoatRotation.Up;
+
         int holes = holesPerRow * totalRows;
         int currentX = 0;
         int currentY = 0;
@@ -74,8 +82,37 @@ public class BattleshipManager : MonoBehaviour
             if (currentY == totalRows) break;
         }
 
-        StartCoroutine(FindBoat());
+        opponentManager.Setup(new Vector2Int(holesPerRow, totalRows), opponentHoles);
+
+        waitDelayUntilExit = new WaitForSeconds(delayUntilExit);
     }
+
+    private void Start()
+    {
+        abcPlayerHoles = playerHoles;
+        StartCoroutine(FindBoat());
+        opponentManager.StartOpponent();
+    }
+
+    public bool CanShoot() => turn == Turn.Player;
+
+    private int GetIdx(Vector2Int coords)
+    {
+        int idx = 0;
+        if (coords.y == 0)
+        {
+            idx = coords.x;
+        }
+        else
+        {
+            idx += holesPerRow * coords.y;
+            idx += coords.x;
+        }
+
+        return idx;
+    }
+
+    public BoatRotation GetRotation() => currentRotation;
 
     private IEnumerator FindBoat()
     {
@@ -99,9 +136,13 @@ public class BattleshipManager : MonoBehaviour
                             OnDeselectBoat();
                         else
                         {
-                            OnDeselectBoat();
-                            selectedBoat = hit.collider.GetComponent<Boat>();
-                            OnSelectBoat();
+                            Boat otherBoat = hit.collider.GetComponent<Boat>();
+                            if (!otherBoat.IsInHole())
+                            {
+                                OnDeselectBoat();
+                                selectedBoat = otherBoat;
+                                OnSelectBoat();
+                            }
                         }
                     }
                     else
@@ -136,6 +177,11 @@ public class BattleshipManager : MonoBehaviour
             button.ToggleInteraction(false);
             button.enabled = false;
         }
+
+        foreach (BattleshipBoardButton b in opponentBoardButtons)
+            b.ToggleInteraction(true);
+
+        turn = Turn.Player;
     }
 
     private void OnSelectBoat()
@@ -172,7 +218,12 @@ public class BattleshipManager : MonoBehaviour
         Invoke(nameof(OnLeftClickReleaseFinish), Time.deltaTime);
     }
 
-    private void OnLeftClickReleaseFinish() => canPutBoatDown = true;
+    private void OnLeftClickReleaseFinish()
+    {
+        canPutBoatDown = true;
+        if (selectedBoat != null)
+            selectedBoat.SetCollider(false);
+    }
 
     private void OnRightClick(InputAction.CallbackContext context)
     {
@@ -180,6 +231,7 @@ public class BattleshipManager : MonoBehaviour
 
         currentRotation = currentRotation switch
         {
+            BoatRotation.None => BoatRotation.Up,
             BoatRotation.Up => BoatRotation.Right,
             BoatRotation.Right => BoatRotation.Down,
             BoatRotation.Down => BoatRotation.Left,
@@ -263,11 +315,8 @@ public class BattleshipManager : MonoBehaviour
             holes[2] = hole;
         }
 
-        playerHoles[GetIdx(coordinates)]
-            .SetBoat(selectedBoat, currentRotation, holes);
-
+        playerHoles[GetIdx(coordinates)].SetBoat(selectedBoat, currentRotation, holes);
         OnDeselectBoat();
-
         BoatPutDown();
 
         return true;
@@ -275,9 +324,53 @@ public class BattleshipManager : MonoBehaviour
 
     public void OnShootButton(Vector2Int coordinates)
     {
-        Debug.Log(coordinates);
+        BoatHitState hitState = opponentHoles[GetIdx(coordinates)].Shoot(false);
+        if (hitState == BoatHitState.Sunk)
+            SunkBoat();
+        SwitchTurn();
+    }
 
-        opponentHoles[GetIdx(coordinates)].Shoot();
+    public BoatHitState OpponentShoot(int idx)
+    {
+        BoatHitState hitState = playerHoles[idx].Shoot(true);
+        if (hitState == BoatHitState.Sunk)
+            SunkBoat();
+        SwitchTurn();
+        return hitState;
+    }
+
+    public void SunkBoat()
+    {
+        switch (turn)
+        {
+            case Turn.Player:
+            {
+                opponentBoatsSunk++;
+                if (opponentBoatsSunk == totalBoats)
+                {
+                    StartCoroutine(FinishMinigame(true));
+                        turn = Turn.None;
+                }
+                break;
+            }
+            case Turn.Opponent:
+            {
+                playerBoatsSunk++;
+                if (playerBoatsSunk == totalBoats)
+                {
+                    StartCoroutine(FinishMinigame(false));
+                    turn = Turn.None;
+                }
+                break;
+            }
+        }
+    }
+
+    private IEnumerator FinishMinigame(bool hasWon)
+    {
+        yield return waitDelayUntilExit;
+        dialogueManager.ExitMinigame(hasWon);
+        gameObject.SetActive(false);
     }
 
     public Boat CanBoatShow(Vector2Int coordinates)
@@ -352,34 +445,29 @@ public class BattleshipManager : MonoBehaviour
     private void BoatPutDown()
     {
         boatsPutDown++;
-
-        if (boatsPutDown == totalBoats) 
+        if (boatsPutDown == totalBoats)
             startButton.SetActive(true);
     }
 
     public void PutBoatBack()
     {
         if (selectedBoat != null)
-            selectedBoat.PutBack();
+            selectedBoat.PutBack(boatsParent);
     }
 
-    private int GetIdx(Vector2Int coords)
+    public void SwitchTurn()
     {
-        int idx = 0;
-        if (coords.y == 0)
+        switch (turn)
         {
-            idx = coords.x;
+            case Turn.Player:
+                turn = Turn.Opponent;
+                opponentManager.StartTurn();
+                break;
+            case Turn.Opponent:
+                turn = Turn.Player;
+                break;
         }
-        else
-        {
-            idx += holesPerRow * coords.y;
-            idx += coords.x;
-        }
-
-        return idx;
     }
-
-    public BoatRotation GetRotation() => currentRotation;
 
     private void OnDestroy()
     {

@@ -13,8 +13,6 @@ public class BattleshipBoardButton : MonoBehaviour, IPointerEnterHandler, IPoint
     private Vector2Int coordinates;
     [SerializeField] private bool isPlayerButton;
 
-    public BattleshipManager GetManager() => battleshipManager;
-
     public void OnPointerEnter(PointerEventData data)
     {
         if (!isPlayerButton) return;
@@ -43,6 +41,7 @@ public class BattleshipBoardButton : MonoBehaviour, IPointerEnterHandler, IPoint
 
     public void OnOpponentButton()
     {
+        if (!battleshipManager.CanShoot()) return;
         button.interactable = false;
         battleshipManager.OnShootButton(coordinates);
     }
@@ -51,5 +50,6 @@ public class BattleshipBoardButton : MonoBehaviour, IPointerEnterHandler, IPoint
     {
         pinHole = givenPinHole;
         coordinates = givenCoords;
+        button.interactable = isPlayerButton;
     }
 }

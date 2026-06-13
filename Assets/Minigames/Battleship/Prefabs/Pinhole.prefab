@@ -85,11 +85,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PinHole
   whitePinPrefab: {fileID: 3067851312315647130, guid: 0136238923fe8044aa4dcdb251e8d033, type: 3}
   redPinPrefab: {fileID: 5858848345180611150, guid: 052ef091d50154241924104cab103237, type: 3}
-  boat2Prefab: {fileID: 6892075221508576551, guid: a4c20259ce976cb48b9c642489a0af52, type: 3}
-  boat3Prefab: {fileID: 7488838360025592915, guid: 662a76366ff88e24bbd84f12198bf8c7, type: 3}
   coordinates: {x: 0, y: 0}
+  pinOffsetWhenBoat: {x: 0, y: 0.0094, z: 0}
   boatOffset: {x: 0, y: 0.0123, z: 0}
   boat2OffsetX: {x: 0, y: 0, z: 0.00774}
   boat2OffsetZ: {x: 0.00939, y: 0, z: 0}
-  boat3OffsetX: {x: 0, y: 0, z: 0}
-  boat3OffsetZ: {x: 0, y: 0, z: 0}

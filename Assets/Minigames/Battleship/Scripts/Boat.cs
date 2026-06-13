@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class Boat : MonoBehaviour
@@ -12,10 +11,13 @@ public class Boat : MonoBehaviour
     private BoatRotation rotation;
     private PinHole[] holes;
     private bool isSet;
+    private int hits;
 
     [Header("References")]
     [SerializeField] private MeshRenderer meshR;
     [SerializeField] private BoxCollider boxCollider;
+
+    private void Awake() => rotation = BoatRotation.Up;
 
     public int GetHoles() => boatHoles;
 
@@ -32,7 +34,7 @@ public class Boat : MonoBehaviour
 
     public void RemoveFromHole()
     {
-        foreach (PinHole hole in holes) 
+        foreach (PinHole hole in holes)
             hole.RemoveBoat();
 
         isSet = false;
@@ -44,9 +46,16 @@ public class Boat : MonoBehaviour
         return rotation;
     }
 
-    public void PutBack()
+    public void PutBack(Transform parent)
     {
+        transform.SetParent(parent);
         transform.SetLocalPositionAndRotation(defaultPos, Quaternion.Euler(defaultRot));
         boxCollider.enabled = true;
+    }
+
+    public bool Hit()
+    {
+        hits++;
+        return hits == boatHoles;
     }
 }

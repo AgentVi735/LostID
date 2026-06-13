@@ -249,15 +249,7 @@ public class DialogueBox : MonoBehaviour
         if (eventObj.hidePortrait)
             characterImage.color = Color.clear;
 
-        switch (eventObj.minigame)
-        {
-            case Minigame.None:
-                Debug.LogError("No minigame selected on node " + eventObj.name);
-                break;
-            case Minigame.UNO:
-                dialogueManager.DisableDialogue();
-                break;
-        }
+        dialogueManager.StartMinigame(eventObj.minigame);
     }
 
     private void EndDialogue(Event eventObj)

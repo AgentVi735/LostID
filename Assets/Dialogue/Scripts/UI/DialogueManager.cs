@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -7,6 +8,7 @@ public class DialogueManager : MonoBehaviour
 {
     [SerializeField] private PauseManager pauseManager;
     [SerializeField] private MainMenuManager mainMenuManager;
+    [SerializeField] private CameraManager camManager;
 
     [SerializeField] private bool isPhone;
 
@@ -18,6 +20,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject dialogueCanvas;
 
     [SerializeField] private UNOManager unoManager;
+    [SerializeField] private BattleshipManager battleshipManager;
 
     [SerializeField] private InputActionAsset inputs;
     private InputAction pauseAction;
@@ -86,14 +89,29 @@ public class DialogueManager : MonoBehaviour
         dialogueBox.LoadObj(currentObj);
     }
 
-    public void DisableDialogue()
+    public void StartMinigame(Minigame minigame)
     {
         dialogueCanvas.SetActive(false);
-        unoManager.gameObject.SetActive(true);
+
+        switch (minigame)
+        {
+            default:
+            case Minigame.None:
+                Debug.LogError("No minigame selected on node " + currentObj.name);
+                return;
+            case Minigame.UNO:
+                unoManager.gameObject.SetActive(true);
+                break;
+            case Minigame.Battleship:
+                camManager.ChangePosition(CameraPositions.Battleship);
+                battleshipManager.gameObject.SetActive(true);
+                break;
+        }
     }
 
     public void ExitMinigame(bool hasWon)
     {
+        camManager.ChangePosition(CameraPositions.Default);
         dialogueCanvas.SetActive(true);
         Event obj = (Event)currentObj;
         Continue(hasWon ? obj.wonMinigameObj : obj.loseMinigameObj);
@@ -104,7 +122,7 @@ public class DialogueManager : MonoBehaviour
         if (isEnding)
             SaveSystem.save.saves[SaveSystem.loadedPath].currentNode = null;
 
-        if (shouldSaveObj) 
+        if (shouldSaveObj)
             SaveSystem.save.saves[SaveSystem.loadedPath].currentNode = dialogueBox.objToSave;
 
         SaveSystem.Save();

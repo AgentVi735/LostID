@@ -10,9 +10,9 @@ public class PinHole : MonoBehaviour
     [SerializeField] private GameObject redPinPrefab;
 
     [Header("Pin")]
-    private GameObject pin;
     private bool hasRedPin;
     [SerializeField] private Vector2Int coordinates;
+    [SerializeField] private Vector3 pinOffsetWhenBoat;
 
     [Header("Boat")]
     private Boat boat;
@@ -71,18 +71,27 @@ public class PinHole : MonoBehaviour
         selectedBoat.SetCollider(false);
     }
 
-    public void SetBoat(Boat givenBoat)
+    public void SetBoat(Boat givenBoat, bool shouldDisableInteraction)
     {
         boat = givenBoat;
         hasBoat = true;
-        button.ToggleInteraction(false);
+        if (shouldDisableInteraction)
+            button.ToggleInteraction(false);
     }
 
-    public bool Shoot()
+    public BoatHitState Shoot(bool isFromOpponent)
     {
+        BoatHitState hitState = BoatHitState.Miss;
         hasRedPin = hasBoat;
-        pin = Instantiate(hasRedPin ? redPinPrefab : whitePinPrefab, transform.position, transform.rotation, transform);
-        return hasBoat;
+        if (hasRedPin)
+            hitState = BoatHitState.Hit;
+        Vector3 pos = transform.position;
+        if (isFromOpponent && hasRedPin)
+            pos += pinOffsetWhenBoat;
+        Instantiate(hasRedPin ? redPinPrefab : whitePinPrefab, pos, transform.rotation, transform);
+        if (boat != null && boat.Hit())
+            hitState = BoatHitState.Sunk;
+        return hitState;
     }
 
     public void SetBoat(Boat givenBoat, BoatRotation rotation, PinHole[] otherHoles)
@@ -123,13 +132,24 @@ public class PinHole : MonoBehaviour
         boat = givenBoat;
         boat.transform.parent = transform;
         boat.transform.SetPositionAndRotation(pos, rotationPos);
-        boat.Setup(button.GetManager().GetRotation(), otherHoles);
+        boat.Setup(rotation, otherHoles);
         boat.ToggleSelection(true);
 
         hasBoat = true;
 
         foreach (PinHole hole in otherHoles)
-            hole.SetBoat(boat);
+            hole.SetBoat(boat, true);
+    }
+
+    public void SetBoatOpponent(Boat givenBoat, BoatRotation rotation, PinHole[] holes)
+    {
+        boat = givenBoat;
+        boat.Setup(rotation, holes);
+
+        hasBoat = true;
+
+        foreach (PinHole hole in holes)
+            hole.SetBoat(boat, false);
     }
 
     public void RemoveBoat()
