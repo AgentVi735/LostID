@@ -14,6 +14,7 @@ public class MainMenuManager : MonoBehaviour
     private static readonly int ZoomAnimation = Animator.StringToHash("Zoom");
 
     [Header("References")]
+    private SceneSwitcher sceneSwitcher;
     [SerializeField] private SaveSystem saveSystem;
     [SerializeField] private DialogueManager dialogueManager;
     [SerializeField] private Logo logo;
@@ -81,6 +82,7 @@ public class MainMenuManager : MonoBehaviour
 
     private void Awake()
     {
+        sceneSwitcher = FindFirstObjectByType<SceneSwitcher>();
         waitDelayBetweenSwitch = new WaitForSeconds(delayBetweenSwitch);
         LoadSettings();
     }
@@ -126,6 +128,7 @@ public class MainMenuManager : MonoBehaviour
     private void OnDestroy()
     {
         switchCharacter.performed -= SwitchCharacter;
+        leaveWallet.performed -= LeaveWallet;
     }
 
     public void NewCharacter(Character givenCharacter)
@@ -434,8 +437,6 @@ public class MainMenuManager : MonoBehaviour
         }
     }
 
-
-
     private void LoadSettings()
     {
         hasLoaded = false;
@@ -475,7 +476,7 @@ public class MainMenuManager : MonoBehaviour
     public void StartGame()
     {
         SaveSystem.Save();
-        SceneManager.LoadScene(gameScene);
+        sceneSwitcher.ChangeScene(Scenes.Cafe, Scenes.MainMenu);
     }
 
     public void OnQuitButton() => Quit();
@@ -493,6 +494,6 @@ public class MainMenuManager : MonoBehaviour
     public void OnResetButton()
     {
         saveSystem.ResetSave();
-        SceneManager.LoadScene(mainMenuScene);
+        sceneSwitcher.ChangeScene(Scenes.MainMenu, Scenes.MainMenu);
     }
 }

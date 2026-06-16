@@ -13,6 +13,8 @@ public class BattleshipBoardButton : MonoBehaviour, IPointerEnterHandler, IPoint
     private Vector2Int coordinates;
     [SerializeField] private bool isPlayerButton;
 
+    public BattleshipManager GetManager() => battleshipManager;
+
     public void OnPointerEnter(PointerEventData data)
     {
         if (!isPlayerButton) return;

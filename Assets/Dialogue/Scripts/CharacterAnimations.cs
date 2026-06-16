@@ -2,5 +2,10 @@ public enum CharacterAnimations
 {
     None,
     Walk,
-    Sit
+    Sit,
+    Happy,
+    Sad,
+    BattleshipInteraction,
+    HoldCards,
+    LayCardDown
 }

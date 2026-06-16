@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class CameraManager : MonoBehaviour
@@ -12,7 +11,8 @@ public class CameraManager : MonoBehaviour
 
     private void Awake()
     {
-        ChangePosition(CameraPositions.Default);
+        if (cam != null)
+            ChangePosition(CameraPositions.Default);
     }
 
     public void ChangePosition(CameraPositions newPos)

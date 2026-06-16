@@ -14,6 +14,11 @@ public class CharacterManager : MonoBehaviour
     [Header("Animations")]
     [SerializeField] private string walkAnimation;
     [SerializeField] private string sitAnimation;
+    [SerializeField] private string happyAnimation;
+    [SerializeField] private string sadAnimation;
+    [SerializeField] private string battleshipInteractionAnimation;
+    [SerializeField] private string holdCardsAnimation;
+    [SerializeField] private string layCardDownAnimation;
 
     private bool finishedAnimation;
 
@@ -21,6 +26,8 @@ public class CharacterManager : MonoBehaviour
     {
         characterHolder = givenHolder.GetComponent<CharacterParent>();
         characterHolder.Setup(this);
+        animator.SetLayerWeight(1, 1);
+        animator.SetLayerWeight(2, 1);
     }
 
     public void ChangeMaterial(CharacterSprite sprite)
@@ -39,7 +46,7 @@ public class CharacterManager : MonoBehaviour
         meshR.material = charMat;
     }
 
-    public void StartAnimation(CharacterAnimations sentAnimation, bool toggle)
+    public void SetAnimation(CharacterAnimations sentAnimation, bool toggle)
     {
         switch (sentAnimation)
         {
@@ -53,16 +60,40 @@ public class CharacterManager : MonoBehaviour
             case CharacterAnimations.Sit:
                 animator.SetBool(sitAnimation, toggle);
                 break;
+            case CharacterAnimations.Happy:
+                animator.SetBool(happyAnimation, toggle);
+                break;
+            case CharacterAnimations.Sad:
+                animator.SetBool(sadAnimation, toggle);
+                break;
+            case CharacterAnimations.BattleshipInteraction:
+                animator.SetTrigger(battleshipInteractionAnimation);
+                break;
+            case CharacterAnimations.HoldCards:
+                animator.SetBool(holdCardsAnimation, toggle);
+                break;
+            case CharacterAnimations.LayCardDown:
+                animator.SetTrigger(layCardDownAnimation);
+                break;
         }
     }
 
     public IEnumerator StartWalkToSeat()
     {
-        StartAnimation(CharacterAnimations.Walk, true);
+        finishedAnimation = false;
+        SetAnimation(CharacterAnimations.Walk, true);
         characterHolder.WalkToChair();
         while (!finishedAnimation)
             yield return null;
-        StartAnimation(CharacterAnimations.Sit, true);
+        SetAnimation(CharacterAnimations.Sit, true);
+    }
+
+    public IEnumerator LeaveSeat()
+    {
+        finishedAnimation = false;
+        characterHolder.LeaveChair();
+        while (!finishedAnimation)
+            yield return null;
     }
 
     public void FinishedAnimation() => finishedAnimation = true;

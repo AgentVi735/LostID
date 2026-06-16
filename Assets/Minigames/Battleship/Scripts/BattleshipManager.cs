@@ -9,6 +9,7 @@ public class BattleshipManager : MonoBehaviour
     [SerializeField] private GameObject startButton;
     [SerializeField] private DialogueManager dialogueManager;
     [SerializeField] private Camera cam;
+    [SerializeField] private CharacterParent characterManager;
 
     [Header("Board Settings")]
     [SerializeField] private int holesPerRow;
@@ -36,6 +37,8 @@ public class BattleshipManager : MonoBehaviour
     private int boatsPutDown;
     private int playerBoatsSunk;
     private int opponentBoatsSunk;
+    private bool didPlayerFinish;
+    private bool didOpponentFinish;
 
     [Header("Inputs")]
     [SerializeField] private InputActionAsset inputs;
@@ -48,6 +51,8 @@ public class BattleshipManager : MonoBehaviour
     [Header("Animation Settings")]
     [SerializeField] private float delayUntilExit;
     private WaitForSeconds waitDelayUntilExit;
+    [SerializeField] private float interactionAnimTime;
+    private WaitForSeconds waitInteractionAnimTime;
 
     private void Awake()
     {
@@ -84,15 +89,33 @@ public class BattleshipManager : MonoBehaviour
         opponentManager.Setup(new Vector2Int(holesPerRow, totalRows), opponentHoles);
 
         waitDelayUntilExit = new WaitForSeconds(delayUntilExit);
+        waitInteractionAnimTime = new WaitForSeconds(interactionAnimTime);
     }
 
     private void Start()
     {
         StartCoroutine(FindBoat());
-        opponentManager.StartOpponent();
+        StartCoroutine(opponentManager.StartOpponent());
     }
 
     public bool CanShoot() => turn == Turn.Player;
+
+    public void OpponentFinishedPlacingBoats()
+    {
+        didOpponentFinish = true;
+        TryEnablingStartButton();
+    }
+
+    private void TryEnablingStartButton()
+    {
+        if (boatsPutDown == totalBoats)
+            didPlayerFinish = true;
+
+        if (didOpponentFinish && didPlayerFinish)
+            startButton.SetActive(true);
+        else
+            startButton.SetActive(false);
+    }
 
     private int GetIdx(Vector2Int coords)
     {
@@ -333,7 +356,6 @@ public class BattleshipManager : MonoBehaviour
         BoatHitState hitState = playerHoles[idx].Shoot(true);
         if (hitState == BoatHitState.Sunk)
             SunkBoat();
-        SwitchTurn();
         return hitState;
     }
 
@@ -437,14 +459,14 @@ public class BattleshipManager : MonoBehaviour
     private void BoatPickedUp()
     {
         boatsPutDown--;
+        TryEnablingStartButton();
         startButton.SetActive(false);
     }
 
     private void BoatPutDown()
     {
         boatsPutDown++;
-        if (boatsPutDown == totalBoats)
-            startButton.SetActive(true);
+        TryEnablingStartButton();
     }
 
     public void PutBoatBack()
@@ -465,6 +487,12 @@ public class BattleshipManager : MonoBehaviour
                 turn = Turn.Player;
                 break;
         }
+    }
+
+    public IEnumerator PlayAnimation()
+    {
+        characterManager.SetAnimation(CharacterAnimations.BattleshipInteraction, true);
+        yield return waitInteractionAnimTime;
     }
 
     private void OnDestroy()

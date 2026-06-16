@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -24,6 +25,8 @@ public class BattleshipOpponentManager : MonoBehaviour
 
     private BoatRotation[] rotations;
 
+    [SerializeField] private Vector2 timeBetweenBoatSpawning;
+
     public void Setup(Vector2Int givenBounds, PinHole[] givenHoles)
     {
         bounds = givenBounds;
@@ -39,7 +42,7 @@ public class BattleshipOpponentManager : MonoBehaviour
         rotations = new[] { BoatRotation.Up, BoatRotation.Right, BoatRotation.Down, BoatRotation.Left };
     }
 
-    public void StartOpponent()
+    public IEnumerator StartOpponent()
     {
         List<int> emptyHoles = new(64);
         for (int i = 0; i < emptyHoles.Capacity; i++)
@@ -79,7 +82,8 @@ public class BattleshipOpponentManager : MonoBehaviour
 
             if (!fits) continue;
             Debug.Log("Fits!");
-            SpawnBoat(idx, i, rotation);
+            yield return new WaitForSeconds(Random.Range(timeBetweenBoatSpawning.x, timeBetweenBoatSpawning.y));
+            yield return StartCoroutine(SpawnBoat(idx, i, rotation));
             List<int> idxToRemove = new();
 
             switch (rotation)
@@ -111,6 +115,7 @@ public class BattleshipOpponentManager : MonoBehaviour
         }
 
         Debug.Log("Finished");
+        manager.OpponentFinishedPlacingBoats();
     }
 
     private bool CanBoatFit(int idx, int boatHoles, BoatRotation rotation)
@@ -168,7 +173,7 @@ public class BattleshipOpponentManager : MonoBehaviour
         return canSetBoat;
     }
 
-    private void SpawnBoat(int idx, int boatIdx, BoatRotation rotation)
+    private IEnumerator SpawnBoat(int idx, int boatIdx, BoatRotation rotation)
     {
         Boat boat = boats[boatIdx];
 
@@ -203,6 +208,7 @@ public class BattleshipOpponentManager : MonoBehaviour
         }
 
         hole.SetBoatOpponent(boat, rotation, boatHoles);
+        yield return StartCoroutine(manager.PlayAnimation());
     }
 
     public void StartTurn()

@@ -1001,6 +1001,7 @@ GameObject:
   - component: {fileID: 330585545}
   - component: {fileID: 330585544}
   - component: {fileID: 330585547}
+  - component: {fileID: 330585548}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1126,6 +1127,18 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &330585548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330585543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5ba7b02b5c305248ad2e603fb635617, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraKeeper
 --- !u!1 &347291114
 GameObject:
   m_ObjectHideFlags: 0
@@ -4474,7 +4487,7 @@ MonoBehaviour:
   trains:
   - {fileID: 670701453}
   - {fileID: 729090983}
-  timeBetweenTrains: {x: 60, y: 180}
+  timeBetweenTrains: {x: 30, y: 120}
 --- !u!1 &914809476
 GameObject:
   m_ObjectHideFlags: 0
@@ -5009,18 +5022,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
   pauseManager: {fileID: 0}
   mainMenuManager: {fileID: 1930642229}
-  isPhone: 1
+  camManager: {fileID: 0}
   dialogueBox: {fileID: 54083841}
-  graphs:
-  - {fileID: 11400000, guid: fa8cf4ac66fe765419df006b2ef1a79e, type: 2}
-  - {fileID: 11400000, guid: ca11d04ab86cea340874ea6545f10187, type: 2}
-  - {fileID: 11400000, guid: 246eb12d5bbffee449442c8c65de949d, type: 2}
-  continueButton: {fileID: 0}
   dialogueCanvas: {fileID: 0}
+  continueButton: {fileID: 0}
+  isPhone: 1
   unoManager: {fileID: 0}
+  battleshipManager: {fileID: 0}
   inputs: {fileID: 0}
   mainMenuScene: 
   dialogueScene: Dialogue Scene
+  characters: {fileID: 11400000, guid: ad60bb64b2843b94ba70a3610e5ec92d, type: 2}
+  characterSpawn: {fileID: 0}
+  bart: {fileID: 0}
 --- !u!4 &1025519809
 Transform:
   m_ObjectHideFlags: 0
@@ -6672,6 +6686,7 @@ GameObject:
   - component: {fileID: 1509630753}
   - component: {fileID: 1509630752}
   - component: {fileID: 1509630751}
+  - component: {fileID: 1509630754}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -6740,6 +6755,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1509630754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1509630750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bec3c9eb7381f634bab2c2197051a1df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EventSystemManager
 --- !u!1 &1518160643
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PinHole : MonoBehaviour
@@ -85,13 +86,23 @@ public class PinHole : MonoBehaviour
         hasRedPin = hasBoat;
         if (hasRedPin)
             hitState = BoatHitState.Hit;
-        Vector3 pos = transform.position;
-        if (isFromOpponent && hasRedPin)
-            pos += pinOffsetWhenBoat;
-        Instantiate(hasRedPin ? redPinPrefab : whitePinPrefab, pos, transform.rotation, transform);
+        if (!isFromOpponent)
+            Instantiate(hasRedPin ? redPinPrefab : whitePinPrefab, transform.position, transform.rotation, transform);
+        else
+            StartCoroutine(PlayInteractAnimation());
         if (boat != null && boat.Hit())
             hitState = BoatHitState.Sunk;
         return hitState;
+    }
+
+    private IEnumerator PlayInteractAnimation()
+    {
+        Vector3 pos = transform.position;
+        if (hasRedPin)
+            pos += pinOffsetWhenBoat;
+        yield return StartCoroutine(button.GetManager().PlayAnimation());
+        Instantiate(hasRedPin ? redPinPrefab : whitePinPrefab, pos, transform.rotation, transform);
+        button.GetManager().SwitchTurn();
     }
 
     public void SetBoat(Boat givenBoat, BoatRotation rotation, PinHole[] otherHoles)

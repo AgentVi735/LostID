@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour
 {
     [Header("References")]
+    private SceneSwitcher sceneSwitcher;
     [SerializeField] private PauseManager pauseManager;
     [SerializeField] private MainMenuManager mainMenuManager;
     [SerializeField] private CameraManager camManager;
@@ -43,6 +44,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Awake()
     {
+        sceneSwitcher = FindFirstObjectByType<SceneSwitcher>();
         if (isPhone)
             SetupPhone();
         else
@@ -169,7 +171,7 @@ public class DialogueManager : MonoBehaviour
             SaveSystem.save.saves[SaveSystem.loadedPath].currentNode = dialogueBox.objToSave;
 
         SaveSystem.Save();
-        SceneManager.LoadScene(mainMenuScene);
+        sceneSwitcher.ChangeScene(Scenes.MainMenu, Scenes.Cafe);
     }
 
     public void GoToDialogueScene() => mainMenuManager.StartGame();

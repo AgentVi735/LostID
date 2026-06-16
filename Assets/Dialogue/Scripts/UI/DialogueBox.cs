@@ -171,6 +171,14 @@ public class DialogueBox : MonoBehaviour
                 }
                 StartCoroutine(NPCAppear(eventObj));
                 break;
+            case EventType.NPCLeave:
+                if (isPhone)
+                {
+                    Debug.LogError("Invalid event type selected on event node " + eventObj.name);
+                    return;
+                }
+                StartCoroutine(NPCLeave(eventObj));
+                break;
             case EventType.MoveToBartGraph:
                 if (isPhone)
                 {
@@ -310,6 +318,28 @@ public class DialogueBox : MonoBehaviour
             characterImage.color = Color.clear;
 
         yield return StartCoroutine(characterManager.StartWalkToSeat());
+
+        if (eventObj.nextObj != null)
+            dialogueManager.Continue(eventObj.nextObj);
+    }
+
+    private IEnumerator NPCLeave(Event eventObj)
+    {
+        if (eventObj.hideDialogueBox)
+        {
+            dialogueBoxImage.color = Color.clear;
+
+            if (!eventObj.keepText)
+            {
+                dialogueText.text = "";
+                nameText.text = "";
+            }
+        }
+
+        if (eventObj.hidePortrait)
+            characterImage.color = Color.clear;
+
+        yield return StartCoroutine(characterManager.LeaveSeat());
 
         if (eventObj.nextObj != null)
             dialogueManager.Continue(eventObj.nextObj);
