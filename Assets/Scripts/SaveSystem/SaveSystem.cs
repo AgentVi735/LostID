@@ -60,6 +60,7 @@ public class SaveSystem : MonoBehaviour
         };
 
         fakeSaveFile = true;
+        loadedPath = 1;
         Save();
     }
 

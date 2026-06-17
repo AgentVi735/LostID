@@ -2352,6 +2352,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e11ee760ffa5f9f4491d95aafe8e8d4b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2ba3bd1ec50caf74abf701c1b7f3a372, type: 2}
     - target: {fileID: 919132149155446097, guid: e11ee760ffa5f9f4491d95aafe8e8d4b, type: 3}
       propertyPath: m_Name
       value: CafeTafel (1)
@@ -2611,6 +2615,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e11ee760ffa5f9f4491d95aafe8e8d4b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2ba3bd1ec50caf74abf701c1b7f3a372, type: 2}
     - target: {fileID: 919132149155446097, guid: e11ee760ffa5f9f4491d95aafe8e8d4b, type: 3}
       propertyPath: m_Name
       value: CafeTafel (7)
@@ -7965,6 +7973,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e11ee760ffa5f9f4491d95aafe8e8d4b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2ba3bd1ec50caf74abf701c1b7f3a372, type: 2}
     - target: {fileID: 919132149155446097, guid: e11ee760ffa5f9f4491d95aafe8e8d4b, type: 3}
       propertyPath: m_Name
       value: CafeTafel (6)
@@ -12582,11 +12594,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 819841680}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 591.5, y: -15.0619}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -481.6, y: -173}
   m_SizeDelta: {x: 0, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &599684071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12618,7 +12630,7 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 5
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
@@ -12643,7 +12655,7 @@ MonoBehaviour:
   dialogueBox: {fileID: 1774139638}
   buttonPrefab: {fileID: 7103405998526389898, guid: 6ab5b78f7e1cf7243b43620381600b5f, type: 3}
   buttonHolder: {fileID: 599684070}
-  buttonCount: 3
+  buttonCount: 5
 --- !u!1 &601822510
 GameObject:
   m_ObjectHideFlags: 0
@@ -19715,6 +19727,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e11ee760ffa5f9f4491d95aafe8e8d4b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2ba3bd1ec50caf74abf701c1b7f3a372, type: 2}
     - target: {fileID: 919132149155446097, guid: e11ee760ffa5f9f4491d95aafe8e8d4b, type: 3}
       propertyPath: m_Name
       value: CafeTafel (2)
@@ -21252,6 +21268,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e11ee760ffa5f9f4491d95aafe8e8d4b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2ba3bd1ec50caf74abf701c1b7f3a372, type: 2}
     - target: {fileID: 919132149155446097, guid: e11ee760ffa5f9f4491d95aafe8e8d4b, type: 3}
       propertyPath: m_Name
       value: CafeTafel (4)
@@ -25421,6 +25441,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e11ee760ffa5f9f4491d95aafe8e8d4b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2ba3bd1ec50caf74abf701c1b7f3a372, type: 2}
     - target: {fileID: 919132149155446097, guid: e11ee760ffa5f9f4491d95aafe8e8d4b, type: 3}
       propertyPath: m_Name
       value: CafeTafel (3)
@@ -30271,98 +30295,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8678f6cea7c7e0a4c8c97b6e94b5d25a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BattleshipBoardButton
---- !u!1001 &1431487110
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 2010848660}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: e11ee760ffa5f9f4491d95aafe8e8d4b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e11ee760ffa5f9f4491d95aafe8e8d4b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e11ee760ffa5f9f4491d95aafe8e8d4b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e11ee760ffa5f9f4491d95aafe8e8d4b, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e11ee760ffa5f9f4491d95aafe8e8d4b, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e11ee760ffa5f9f4491d95aafe8e8d4b, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e11ee760ffa5f9f4491d95aafe8e8d4b, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e11ee760ffa5f9f4491d95aafe8e8d4b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e11ee760ffa5f9f4491d95aafe8e8d4b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e11ee760ffa5f9f4491d95aafe8e8d4b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: e11ee760ffa5f9f4491d95aafe8e8d4b, type: 3}
-      propertyPath: m_Name
-      value: CafeTafel
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e11ee760ffa5f9f4491d95aafe8e8d4b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1431487113}
-  m_SourcePrefab: {fileID: 100100000, guid: e11ee760ffa5f9f4491d95aafe8e8d4b, type: 3}
 --- !u!4 &1431487111 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e11ee760ffa5f9f4491d95aafe8e8d4b, type: 3}
-  m_PrefabInstance: {fileID: 1431487110}
+  m_CorrespondingSourceObject: {fileID: 2657697808551250414, guid: ac3518edee42fd74fb377d7d24492a03, type: 3}
+  m_PrefabInstance: {fileID: 3879101037476533154}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1431487112 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e11ee760ffa5f9f4491d95aafe8e8d4b, type: 3}
-  m_PrefabInstance: {fileID: 1431487110}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &1431487113
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1431487112}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: e11ee760ffa5f9f4491d95aafe8e8d4b, type: 3}
 --- !u!1 &1438318178
 GameObject:
   m_ObjectHideFlags: 0
@@ -43972,6 +43909,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e11ee760ffa5f9f4491d95aafe8e8d4b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2ba3bd1ec50caf74abf701c1b7f3a372, type: 2}
     - target: {fileID: 919132149155446097, guid: e11ee760ffa5f9f4491d95aafe8e8d4b, type: 3}
       propertyPath: m_Name
       value: CafeTafel (5)
@@ -44846,6 +44787,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8273512618315625553, guid: f48ee927ebce39041b9eece45a65296e, type: 3}
   m_PrefabInstance: {fileID: 3156737792394971845}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3879101037476533154
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2010848660}
+    m_Modifications:
+    - target: {fileID: 2657697808551250414, guid: ac3518edee42fd74fb377d7d24492a03, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2657697808551250414, guid: ac3518edee42fd74fb377d7d24492a03, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2657697808551250414, guid: ac3518edee42fd74fb377d7d24492a03, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2657697808551250414, guid: ac3518edee42fd74fb377d7d24492a03, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2657697808551250414, guid: ac3518edee42fd74fb377d7d24492a03, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2657697808551250414, guid: ac3518edee42fd74fb377d7d24492a03, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2657697808551250414, guid: ac3518edee42fd74fb377d7d24492a03, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2657697808551250414, guid: ac3518edee42fd74fb377d7d24492a03, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2657697808551250414, guid: ac3518edee42fd74fb377d7d24492a03, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2657697808551250414, guid: ac3518edee42fd74fb377d7d24492a03, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3434516708977038164, guid: ac3518edee42fd74fb377d7d24492a03, type: 3}
+      propertyPath: m_Name
+      value: CafeTafel
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ac3518edee42fd74fb377d7d24492a03, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

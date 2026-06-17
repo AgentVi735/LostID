@@ -27,7 +27,6 @@ public class ResponseButton : MonoBehaviour
         text.text = response.text;
         gameObject.SetActive(true);
 
-        if (!isForPhone) return;
         textRect.sizeDelta = text.GetPreferredValues();
         rect.sizeDelta = text.GetPreferredValues() + paddedArea;
     }
