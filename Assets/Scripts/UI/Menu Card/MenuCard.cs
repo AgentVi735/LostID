@@ -81,6 +81,8 @@ public class MenuCard : MonoBehaviour
     public void OnConfirmButton()
     {
         card.SetActive(false);
+        save.selectedDessert = selectedDessert;
+        save.selectedDrink = selectedDrinks;
         itemSpawner.SpawnItems(selectedDessert, selectedDrinks, npcDessert, npcDrink);
         dialogueBox.FinishMenu();
     }
