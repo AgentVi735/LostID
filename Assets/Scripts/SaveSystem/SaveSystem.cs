@@ -79,6 +79,7 @@ public class SaveSystem : MonoBehaviour
 
         Save();
     }
+
     private void LoadSave()
     {
         string json = File.ReadAllText(Application.persistentDataPath + savePath);

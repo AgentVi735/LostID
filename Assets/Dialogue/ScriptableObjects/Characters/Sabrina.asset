@@ -36,3 +36,5 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 3f3ae4ad5057f8e4eb596b6122e03d56, type: 3}
   phoneNumber: {fileID: 21300000, guid: 9ca912e1e10dc084984107fcdf360ea6, type: 3}
   hasCharm: 1
+  dessert: 4
+  drink: 6

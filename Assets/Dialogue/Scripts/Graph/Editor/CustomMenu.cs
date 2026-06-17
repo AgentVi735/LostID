@@ -25,7 +25,6 @@ public class CustomMenu : NewGraph.ContextMenu
     private const string eventFolder = "/Events/";
 
     private const string defaultGenericNodeName = "GenericNode";
-    private const string defaultControllerNodeName = "ControllerNode";
     private const string defaultDialogueNodeName = "DialogueNode";
     private const string defaultResponseHolderNodeName = "ResponseHolderNode";
     private const string defaultResponseNodeName = "ResponseNode";
@@ -36,12 +35,12 @@ public class CustomMenu : NewGraph.ContextMenu
     protected override void AddNodeEntries()
     {
         base.AddNodeEntries();
-        AddNodeEntry("Dialogues/Update Objects", (obj) => { UpdateObjects(); });
-        AddNodeEntry("Dialogues/Create Graph Directories", (obj) => { CreateGraphDirectories(); });
-        AddNodeEntry("Dialogues/Old/Create Objects", (obj) => { CreateObjects(); });
-        AddNodeEntry("Dialogues/Old/Refresh SOs", (obj) => { RefreshSO(); });
-        AddNodeEntry("Dialogues/Utility/Remove unused SOs", (obj) => { RemoveUnusedSO(); });
-        AddNodeEntry("Dialogues/Utility/Update SOs", (obj) => { UpdateSO(); });
+        AddNodeEntry("Dialogues/Update Objects", _ => { UpdateObjects(); });
+        AddNodeEntry("Dialogues/Create Graph Directories", _ => { CreateGraphDirectories(); });
+        AddNodeEntry("Dialogues/Old/Create Objects", _ => { CreateObjects(); });
+        AddNodeEntry("Dialogues/Old/Refresh SOs", _ => { RefreshSO(); });
+        AddNodeEntry("Dialogues/Utility/Remove unused SOs", _ => { RemoveUnusedSO(); });
+        AddNodeEntry("Dialogues/Utility/Update SOs", _ => { UpdateSO(); });
     }
 
     private static void UpdateObjects()
@@ -209,40 +208,40 @@ public class CustomMenu : NewGraph.ContextMenu
             return;
         }
 
-        string[] nodeNames = new string[nodes.Count];
+        //string[] nodeNames = new string[nodes.Count];
 
-        if (nodeNames.Length == 0)
-            return;
+        //if (nodeNames.Length == 0)
+        //    return;
 
-        for (int i = 0; i < nodeNames.Length; i++)
-        {
-            NodeModel node = nodes[i];
+        //for (int i = 0; i < nodeNames.Length; i++)
+        //{
+        //    NodeModel node = nodes[i];
 
-            string nodeName = string.Empty;
+        //    string nodeName = "";
 
-            GenericNode nodeData = (GenericNode)node.nodeData;
-            switch (nodeData.ReturnType())
-            {
-                case NodeType.Dialogue:
-                    DialogueNode dialogueNode = (DialogueNode)node.nodeData;
-                    nodeName = dialogueNode.dialogueData.dialogue == null ? string.Empty : dialogueNode.dialogueData.dialogue.name;
-                    break;
-                case NodeType.ResponseHolder:
-                    ResponseHolderNode responseHolderNode = (ResponseHolderNode)node.nodeData;
-                    nodeName = responseHolderNode.responseHolder == null ? string.Empty : responseHolderNode.responseHolder.name;
-                    break;
-                case NodeType.Response:
-                    ResponseNode responseNode = (ResponseNode)node.nodeData;
-                    nodeName = responseNode.response == null ? string.Empty : responseNode.response.name;
-                    break;
-                case NodeType.Event:
-                    EventNode eventNode = (EventNode)node.nodeData;
-                    nodeName = eventNode.eventData.eventObj == null ? string.Empty : eventNode.eventData.eventObj.name;
-                    break;
-            }
+        //    GenericNode nodeData = (GenericNode)node.nodeData;
+        //    switch (nodeData.ReturnType())
+        //    {
+        //        case NodeType.Dialogue:
+        //            DialogueNode dialogueNode = (DialogueNode)node.nodeData;
+        //            nodeName = dialogueNode.dialogueData.dialogue == null ? "" : dialogueNode.dialogueData.dialogue.name;
+        //            break;
+        //        case NodeType.ResponseHolder:
+        //            ResponseHolderNode responseHolderNode = (ResponseHolderNode)node.nodeData;
+        //            nodeName = responseHolderNode.responseHolder == null ? "" : responseHolderNode.responseHolder.name;
+        //            break;
+        //        case NodeType.Response:
+        //            ResponseNode responseNode = (ResponseNode)node.nodeData;
+        //            nodeName = responseNode.response == null ? "" : responseNode.response.name;
+        //            break;
+        //        case NodeType.Event:
+        //            EventNode eventNode = (EventNode)node.nodeData;
+        //            nodeName = eventNode.eventData.eventObj == null ? "" : eventNode.eventData.eventObj.name;
+        //            break;
+        //    }
 
-            nodeNames[i] = nodeName;
-        }
+        //    nodeNames[i] = nodeName;
+        //}
 
         string[] dialogueFiles = Directory.GetFiles(Application.dataPath + "/" + shortPath + controllerNode.graphController.name + dialogueFolder);
         string[] responseHolderFiles = Directory.GetFiles(Application.dataPath + "/" + shortPath + controllerNode.graphController.name + responseHolderFolder);
@@ -355,20 +354,13 @@ public class CustomMenu : NewGraph.ContextMenu
         Dialogue dialogue = dialogueData.dialogue;
 
         if (dialogueNode.nextNode != null)
-        {
-            switch (dialogueNode.nextNode.ReturnType())
+            dialogue.nextObj = dialogueNode.nextNode.ReturnType() switch
             {
-                case NodeType.Dialogue:
-                    dialogue.nextObj = ((DialogueNode)dialogueNode.nextNode).dialogueData.dialogue;
-                    break;
-                case NodeType.ResponseHolder:
-                    dialogue.nextObj = ((ResponseHolderNode)dialogueNode.nextNode).responseHolder;
-                    break;
-                case NodeType.Event:
-                    dialogue.nextObj = ((EventNode)dialogueNode.nextNode).eventData.eventObj;
-                    break;
-            }
-        }
+                NodeType.Dialogue => ((DialogueNode)dialogueNode.nextNode).dialogueData.dialogue,
+                NodeType.ResponseHolder => ((ResponseHolderNode)dialogueNode.nextNode).responseHolder,
+                NodeType.Event => ((EventNode)dialogueNode.nextNode).eventData.eventObj,
+                _ => dialogue.nextObj
+            };
 
         dialogue.character = dialogueData.character;
         dialogue.overrideCharacterName = dialogueData.overrideCharacterName;
@@ -387,11 +379,8 @@ public class CustomMenu : NewGraph.ContextMenu
 
         if (responseHolder.responses == null || responseHolder.responses.Length <= responses.Count)
         {
-            foreach (ResponseNode responseNode in responses)
-            {
-                if (responseNode.response) 
-                    AssetDatabase.DeleteAsset(fullPath + graphName + responseFolder + responseNode.nodeName + ".asset");
-            }
+            foreach (ResponseNode responseNode in responses.Where(responseNode => responseNode.response))
+                AssetDatabase.DeleteAsset(fullPath + graphName + responseFolder + responseNode.nodeName + ".asset");
 
             responseHolder.responses = new Response[responses.Count];
         }
@@ -414,20 +403,13 @@ public class CustomMenu : NewGraph.ContextMenu
             response = responseHolder.responses[i];
 
             if (responseNode.nextNode != null)
-            {
-                switch (responseNode.nextNode.ReturnType())
+                response.nextObj = responseNode.nextNode.ReturnType() switch
                 {
-                    case NodeType.Dialogue:
-                        response.nextObj = ((DialogueNode)responseNode.nextNode).dialogueData.dialogue;
-                        break;
-                    case NodeType.ResponseHolder:
-                        response.nextObj = ((ResponseHolderNode)responseNode.nextNode).responseHolder;
-                        break;
-                    case NodeType.Event:
-                        response.nextObj = ((EventNode)responseNode.nextNode).eventData.eventObj;
-                        break;
-                }
-            }
+                    NodeType.Dialogue => ((DialogueNode)responseNode.nextNode).dialogueData.dialogue,
+                    NodeType.ResponseHolder => ((ResponseHolderNode)responseNode.nextNode).responseHolder,
+                    NodeType.Event => ((EventNode)responseNode.nextNode).eventData.eventObj,
+                    _ => response.nextObj
+                };
 
             response.text = responseNode.text;
         }
@@ -442,59 +424,39 @@ public class CustomMenu : NewGraph.ContextMenu
         Event eventObj = eventData.eventObj;
 
         if (eventNode.nextNode != null)
-        {
-            switch (eventNode.nextNode.ReturnType())
+            eventObj.nextObj = eventNode.nextNode.ReturnType() switch
             {
-                case NodeType.Dialogue:
-                    eventObj.nextObj = ((DialogueNode)eventNode.nextNode).dialogueData.dialogue;
-                    break;
-                case NodeType.ResponseHolder:
-                    eventObj.nextObj = ((ResponseHolderNode)eventNode.nextNode).responseHolder;
-                    break;
-                case NodeType.Event:
-                    eventObj.nextObj = ((EventNode)eventNode.nextNode).eventData.eventObj;
-                    break;
-            }
-        }
+                NodeType.Dialogue => ((DialogueNode)eventNode.nextNode).dialogueData.dialogue,
+                NodeType.ResponseHolder => ((ResponseHolderNode)eventNode.nextNode).responseHolder,
+                NodeType.Event => ((EventNode)eventNode.nextNode).eventData.eventObj,
+                _ => eventObj.nextObj
+            };
 
         eventObj.eventType = eventData.eventType;
         eventObj.hideDialogueBox = eventData.hideDialogueBox;
         eventObj.keepText = eventData.keepText;
         eventObj.hidePortrait = eventData.hidePortrait;
+        eventObj.removeItems = eventData.removeItems;
         eventObj.delay = eventData.delay;
         eventObj.minigame = eventData.minigame;
 
         if (eventData.wonMinigameNode != null)
-        {
-            switch (eventData.wonMinigameNode.ReturnType())
+            eventObj.wonMinigameObj = eventData.wonMinigameNode.ReturnType() switch
             {
-                case NodeType.Dialogue:
-                    eventObj.wonMinigameObj = ((DialogueNode)eventData.wonMinigameNode).dialogueData.dialogue;
-                    break;
-                case NodeType.ResponseHolder:
-                    eventObj.wonMinigameObj = ((ResponseHolderNode)eventData.wonMinigameNode).responseHolder;
-                    break;
-                case NodeType.Event:
-                    eventObj.wonMinigameObj = ((EventNode)eventData.wonMinigameNode).eventData.eventObj;
-                    break;
-            }
-        }
+                NodeType.Dialogue => ((DialogueNode)eventData.wonMinigameNode).dialogueData.dialogue,
+                NodeType.ResponseHolder => ((ResponseHolderNode)eventData.wonMinigameNode).responseHolder,
+                NodeType.Event => ((EventNode)eventData.wonMinigameNode).eventData.eventObj,
+                _ => eventObj.wonMinigameObj
+            };
 
         if (eventData.loseMinigameNode != null)
-        {
-            switch (eventData.loseMinigameNode.ReturnType())
+            eventObj.loseMinigameObj = eventData.loseMinigameNode.ReturnType() switch
             {
-                case NodeType.Dialogue:
-                    eventObj.loseMinigameObj = ((DialogueNode)eventData.loseMinigameNode).dialogueData.dialogue;
-                    break;
-                case NodeType.ResponseHolder:
-                    eventObj.loseMinigameObj = ((ResponseHolderNode)eventData.loseMinigameNode).responseHolder;
-                    break;
-                case NodeType.Event:
-                    eventObj.loseMinigameObj = ((EventNode)eventData.loseMinigameNode).eventData.eventObj;
-                    break;
-            }
-        }
+                NodeType.Dialogue => ((DialogueNode)eventData.loseMinigameNode).dialogueData.dialogue,
+                NodeType.ResponseHolder => ((ResponseHolderNode)eventData.loseMinigameNode).responseHolder,
+                NodeType.Event => ((EventNode)eventData.loseMinigameNode).eventData.eventObj,
+                _ => eventObj.loseMinigameObj
+            };
 
         eventObj.imageToSend = eventData.imageToSend;
 
@@ -644,26 +606,26 @@ public class CustomMenu : NewGraph.ContextMenu
         {
             NodeModel node = nodes[i];
 
-            string nodeName = string.Empty;
+            string nodeName = "";
 
             GenericNode nodeData = (GenericNode)node.nodeData;
             switch (nodeData.ReturnType())
             {
                 case NodeType.Dialogue:
                     DialogueNode dialogueNode = (DialogueNode)node.nodeData;
-                    nodeName = dialogueNode.dialogueData.dialogue == null ? string.Empty : dialogueNode.dialogueData.dialogue.name;
+                    nodeName = dialogueNode.dialogueData.dialogue == null ? "" : dialogueNode.dialogueData.dialogue.name;
                     break;
                 case NodeType.ResponseHolder:
                     ResponseHolderNode responseHolderNode = (ResponseHolderNode)node.nodeData;
-                    nodeName = responseHolderNode.responseHolder == null ? string.Empty : responseHolderNode.responseHolder.name;
+                    nodeName = responseHolderNode.responseHolder == null ? "" : responseHolderNode.responseHolder.name;
                     break;
                 case NodeType.Response:
                     ResponseNode responseNode = (ResponseNode)node.nodeData;
-                    nodeName = responseNode.response == null ? string.Empty : responseNode.response.name;
+                    nodeName = responseNode.response == null ? "" : responseNode.response.name;
                     break;
                 case NodeType.Event:
                     EventNode eventNode = (EventNode)node.nodeData;
-                    nodeName = eventNode.eventData.eventObj == null ? string.Empty : eventNode.eventData.eventObj.name;
+                    nodeName = eventNode.eventData.eventObj == null ? "" : eventNode.eventData.eventObj.name;
                     break;
             }
 
@@ -691,7 +653,7 @@ public class CustomMenu : NewGraph.ContextMenu
 
     private static string GetFileName(string fileName)
     {
-        if (fileName.EndsWith(".meta")) return string.Empty;
+        if (fileName.EndsWith(".meta")) return "";
 
         string[] parsedName = fileName.Split("/");
         fileName = parsedName[^1];
@@ -725,7 +687,6 @@ public class CustomMenu : NewGraph.ContextMenu
         List<NodeModel> nodes = Window.graphController.graphData.Nodes;
 
         List<NodeModel> dialogueNodes = new();
-        List<NodeModel> responseHolderNodes = new();
         List<NodeModel> responseNodes = new();
         List<NodeModel> eventNodes = new();
 
@@ -739,9 +700,6 @@ public class CustomMenu : NewGraph.ContextMenu
                     break;
                 case NodeType.Dialogue:
                     dialogueNodes.Add(node);
-                    break;
-                case NodeType.ResponseHolder:
-                    responseHolderNodes.Add(node);
                     break;
                 case NodeType.Response:
                     responseNodes.Add(node);
@@ -796,6 +754,7 @@ public class CustomMenu : NewGraph.ContextMenu
             eventData.hideDialogueBox = eventObj.hideDialogueBox;
             eventData.keepText = eventObj.keepText;
             eventData.hidePortrait = eventObj.hidePortrait;
+            eventData.removeItems = eventObj.removeItems;
             eventData.delay = eventObj.delay;
             eventData.minigame = eventObj.minigame;
             eventData.imageToSend = eventObj.imageToSend;

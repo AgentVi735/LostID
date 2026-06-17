@@ -1,4 +1,3 @@
-using NewGraph;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Dialogue/Character")]
@@ -32,4 +31,8 @@ public class Character : ScriptableObject
     public Sprite[] items;
     public Sprite phoneNumber;
     public bool hasCharm;
+
+    [Header("Other Info")]
+    public MenuItems dessert;
+    public MenuItems drink;
 }

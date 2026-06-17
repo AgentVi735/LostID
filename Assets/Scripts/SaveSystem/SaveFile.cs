@@ -8,6 +8,8 @@ public class SaveFile
     {
         public string character;
         public string currentNode;
+        public MenuItems selectedDessert;
+        public MenuItems selectedDrink;
     }
 
     public Dictionary<string, SaveData> saveData;

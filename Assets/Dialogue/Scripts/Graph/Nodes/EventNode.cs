@@ -27,7 +27,10 @@ public class EventNode : GenericNode
         [GraphDisplay(DisplayType.Inspector)]
         public bool hidePortrait;
 
-        [GraphDisplay(DisplayType.Inspector)] 
+        [GraphDisplay(DisplayType.Inspector)]
+        public bool removeItems;
+
+        [GraphDisplay(DisplayType.Inspector)]
         public float delay;
 
         [GraphDisplay(DisplayType.Inspector)]

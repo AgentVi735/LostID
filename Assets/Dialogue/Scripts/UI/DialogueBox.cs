@@ -6,14 +6,18 @@ using UnityEngine.UI;
 
 public class DialogueBox : MonoBehaviour
 {
+    [Header("References")]
     [SerializeField] private DialogueManager dialogueManager;
     [SerializeField] private ResponseManager responseManager;
+    [SerializeField] private MenuCard menuCard;
 
+    [Header("Objects")]
     [SerializeField] private Image dialogueBoxImage;
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField] private TMP_Text nameText;
     [SerializeField] private Image characterImage;
 
+    [Header("Characters")]
     private Character character;
     private CharacterManager characterManager;
 
@@ -22,12 +26,11 @@ public class DialogueBox : MonoBehaviour
     [SerializeField] private Transform bubbleParent;
     [SerializeField] private Vector2 offsetForTypingBubble;
     [SerializeField] private Vector2 offsetForImageBubble;
-    private bool hasSpaceForNewBubble;
-    private Bubble newBubble;
-
     private List<Bubble> bubbles;
-
+    private Bubble newBubble;
+    private bool hasSpaceForNewBubble;
     private bool isPhone;
+    private bool isInCardMenu;
 
     public string objToSave { get; private set; }
 
@@ -179,6 +182,14 @@ public class DialogueBox : MonoBehaviour
                 }
                 StartCoroutine(NPCLeave(eventObj));
                 break;
+            case EventType.ShowMenu:
+                if (isPhone)
+                {
+                    Debug.LogError("Invalid event type selected on event node " + eventObj.name);
+                    return;
+                }
+                StartCoroutine(ShowMenu(eventObj));
+                break;
             case EventType.MoveToBartGraph:
                 if (isPhone)
                 {
@@ -197,6 +208,9 @@ public class DialogueBox : MonoBehaviour
     {
         Color dialogueTextColor = Color.black;
         Color nameTextColor = Color.black;
+
+        if (eventObj.removeItems)
+            menuCard.RemoveItems();
 
         if (eventObj.hideDialogueBox)
         {
@@ -250,6 +264,9 @@ public class DialogueBox : MonoBehaviour
 
     private void StartMinigame(Event eventObj)
     {
+        if (eventObj.removeItems)
+            menuCard.RemoveItems();
+
         if (eventObj.hideDialogueBox)
         {
             dialogueBoxImage.color = Color.clear;
@@ -325,6 +342,9 @@ public class DialogueBox : MonoBehaviour
 
     private IEnumerator NPCLeave(Event eventObj)
     {
+        if (eventObj.removeItems)
+            menuCard.RemoveItems();
+
         if (eventObj.hideDialogueBox)
         {
             dialogueBoxImage.color = Color.clear;
@@ -344,6 +364,40 @@ public class DialogueBox : MonoBehaviour
         if (eventObj.nextObj != null)
             dialogueManager.Continue(eventObj.nextObj);
     }
+
+    private IEnumerator ShowMenu(Event eventObj)
+    {
+        dialogueManager.ToggleEscapeButton(false);
+
+        if (eventObj.removeItems)
+            menuCard.RemoveItems();
+
+        if (eventObj.hideDialogueBox)
+        {
+            dialogueBoxImage.color = Color.clear;
+
+            if (!eventObj.keepText)
+            {
+                dialogueText.text = "";
+                nameText.text = "";
+            }
+        }
+
+        if (eventObj.hidePortrait)
+            characterImage.color = Color.clear;
+
+        menuCard.Show(character.dessert, character.drink);
+        isInCardMenu = true;
+        while (isInCardMenu)
+            yield return null;
+
+        dialogueManager.ToggleEscapeButton(true);
+
+        if (eventObj.nextObj != null)
+            dialogueManager.Continue(eventObj.nextObj);
+    }
+
+    public void FinishMenu() => isInCardMenu = false;
 
     private void MoveBubblesUp(Vector2 amt)
     {

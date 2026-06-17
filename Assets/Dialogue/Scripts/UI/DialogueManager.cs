@@ -119,6 +119,14 @@ public class DialogueManager : MonoBehaviour
         dialogueBox.LoadObj(currentObj);
     }
 
+    public void ToggleEscapeButton(bool toggle)
+    {
+        if (toggle)
+            pauseAction.Disable();
+        else
+            pauseAction.Enable();
+    }
+
     private void OnEscapeButton(InputAction.CallbackContext context) => pauseManager.OpenPause();
 
     public void ContinueButton()
