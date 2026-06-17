@@ -285,8 +285,8 @@ MonoBehaviour:
     utilityNodes: []
     tmpName: John main
     viewportInitiallySet: 1
-    viewPosition: {x: -39664.805, y: -937.72595, z: 0}
-    viewScale: {x: 1, y: 1, z: 1}
+    viewPosition: {x: -15616.586, y: -3526.2666, z: 0}
+    viewScale: {x: 0.43232757, y: 0.43232757, z: 1}
   references:
     version: 2
     RefIds:
@@ -411,7 +411,7 @@ MonoBehaviour:
         - relativePropertyPathHash: 500389349
           isExpanded: 1
         - relativePropertyPathHash: -867945469
-          isExpanded: 1
+          isExpanded: 0
     - rid: 4248539713482784777
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -422,7 +422,7 @@ MonoBehaviour:
           eventObj: {fileID: 11400000, guid: 2b85cdb508fb7a94c9e1c9c6e870d0a8, type: 2}
           eventType: 1
           hideDialogueBox: 1
-          keepText: 1
+          keepText: 0
           hidePortrait: 1
           removeItems: 0
           delay: 1
@@ -480,7 +480,7 @@ MonoBehaviour:
         - relativePropertyPathHash: 500389349
           isExpanded: 1
         - relativePropertyPathHash: -867945469
-          isExpanded: 1
+          isExpanded: 0
     - rid: 4248539713482784783
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -541,7 +541,7 @@ MonoBehaviour:
       data:
         nodeData:
           rid: 4248539713482784789
-        nodeX: 12183.162
+        nodeX: 12184.162
         nodeY: 200.39838
         name: EventNode
         isUtilityNode: 0
@@ -549,7 +549,7 @@ MonoBehaviour:
         - relativePropertyPathHash: 500389349
           isExpanded: 1
         - relativePropertyPathHash: -867945469
-          isExpanded: 1
+          isExpanded: 0
     - rid: 4248539713482784789
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -560,7 +560,7 @@ MonoBehaviour:
           eventObj: {fileID: 11400000, guid: 9eaeced6533af8647b86dbba0993c6ec, type: 2}
           eventType: 1
           hideDialogueBox: 1
-          keepText: 1
+          keepText: 0
           hidePortrait: 1
           removeItems: 0
           delay: 1
@@ -610,7 +610,7 @@ MonoBehaviour:
         - relativePropertyPathHash: 500389349
           isExpanded: 1
         - relativePropertyPathHash: -867945469
-          isExpanded: 1
+          isExpanded: 0
     - rid: 4248539713482784793
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -621,7 +621,7 @@ MonoBehaviour:
           eventObj: {fileID: 11400000, guid: ac726d43ec6805540a3e6c05838fd567, type: 2}
           eventType: 1
           hideDialogueBox: 1
-          keepText: 1
+          keepText: 0
           hidePortrait: 1
           removeItems: 0
           delay: 1
@@ -679,7 +679,7 @@ MonoBehaviour:
         - relativePropertyPathHash: 500389349
           isExpanded: 1
         - relativePropertyPathHash: -867945469
-          isExpanded: 1
+          isExpanded: 0
     - rid: 4248539713482784799
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -767,7 +767,7 @@ MonoBehaviour:
         - relativePropertyPathHash: 500389349
           isExpanded: 1
         - relativePropertyPathHash: -867945469
-          isExpanded: 1
+          isExpanded: 0
     - rid: 4248539713482784805
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -863,7 +863,7 @@ MonoBehaviour:
         - relativePropertyPathHash: 500389349
           isExpanded: 1
         - relativePropertyPathHash: -867945469
-          isExpanded: 1
+          isExpanded: 0
     - rid: 4248539713482784813
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -874,7 +874,7 @@ MonoBehaviour:
           eventObj: {fileID: 11400000, guid: 1d2bb9a087ed28b419e997d23d10a751, type: 2}
           eventType: 1
           hideDialogueBox: 1
-          keepText: 1
+          keepText: 0
           hidePortrait: 1
           removeItems: 0
           delay: 1.5
@@ -932,7 +932,7 @@ MonoBehaviour:
         - relativePropertyPathHash: 500389349
           isExpanded: 1
         - relativePropertyPathHash: -867945469
-          isExpanded: 1
+          isExpanded: 0
     - rid: 4248539713482784819
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -943,7 +943,7 @@ MonoBehaviour:
           eventObj: {fileID: 11400000, guid: 46da5e945eb04974e9b11f3076bd1026, type: 2}
           eventType: 1
           hideDialogueBox: 1
-          keepText: 1
+          keepText: 0
           hidePortrait: 1
           removeItems: 0
           delay: 1.5
@@ -993,7 +993,7 @@ MonoBehaviour:
         - relativePropertyPathHash: 500389349
           isExpanded: 1
         - relativePropertyPathHash: -867945469
-          isExpanded: 1
+          isExpanded: 0
     - rid: 4248539713482784823
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -1004,7 +1004,7 @@ MonoBehaviour:
           eventObj: {fileID: 11400000, guid: 107bacd27da79de45bf5d47aff0488f8, type: 2}
           eventType: 1
           hideDialogueBox: 1
-          keepText: 1
+          keepText: 0
           hidePortrait: 1
           removeItems: 0
           delay: 1.5
@@ -1054,7 +1054,7 @@ MonoBehaviour:
         - relativePropertyPathHash: 500389349
           isExpanded: 1
         - relativePropertyPathHash: -867945469
-          isExpanded: 1
+          isExpanded: 0
     - rid: 4248539713482784827
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -1142,7 +1142,7 @@ MonoBehaviour:
         - relativePropertyPathHash: 500389349
           isExpanded: 1
         - relativePropertyPathHash: -867945469
-          isExpanded: 1
+          isExpanded: 0
     - rid: 4248539713482784835
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
