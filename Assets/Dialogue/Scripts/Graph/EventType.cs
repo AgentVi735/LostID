@@ -7,7 +7,8 @@ public enum EventType
     SendImage,
     NPCAppear,
     ShowMenu,
-    ShowCat,
+    WalletSlide,
     NPCLeave,
-    MoveToBartGraph
+    MoveToBartGraph,
+    ShowCat
 }

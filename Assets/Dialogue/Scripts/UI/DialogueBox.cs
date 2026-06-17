@@ -16,6 +16,7 @@ public class DialogueBox : MonoBehaviour
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField] private TMP_Text nameText;
     [SerializeField] private Image characterImage;
+    [SerializeField] private Wallet wallet;
 
     [Header("Characters")]
     private Character character;
@@ -190,13 +191,21 @@ public class DialogueBox : MonoBehaviour
                 }
                 StartCoroutine(ShowMenu(eventObj));
                 break;
+            case EventType.WalletSlide:
+                if (isPhone)
+                {
+                    Debug.LogError("Invalid event type selected on event node " + eventObj.name);
+                    return;
+                }
+                StartCoroutine(SlideWallet(eventObj));
+                break;
             case EventType.MoveToBartGraph:
                 if (isPhone)
                 {
                     Debug.LogError("Invalid event type selected on event node " + eventObj.name);
                     return;
                 }
-                MoveToBartGraph();
+                MoveToBartGraph(eventObj);
                 break;
             default:
                 Debug.LogError("No event type selected on event node " + eventObj.name);
@@ -264,22 +273,7 @@ public class DialogueBox : MonoBehaviour
 
     private void StartMinigame(Event eventObj)
     {
-        if (eventObj.removeItems)
-            menuCard.RemoveItems();
-
-        if (eventObj.hideDialogueBox)
-        {
-            dialogueBoxImage.color = Color.clear;
-
-            if (!eventObj.keepText)
-            {
-                dialogueText.text = "";
-                nameText.text = "";
-            }
-        }
-
-        if (eventObj.hidePortrait)
-            characterImage.color = Color.clear;
+        PreEventCheck(eventObj);
 
         dialogueManager.StartMinigame(eventObj.minigame);
     }
@@ -313,26 +307,16 @@ public class DialogueBox : MonoBehaviour
             dialogueManager.Continue(eventObj.nextObj);
     }
 
-    private void MoveToBartGraph()
+    private void MoveToBartGraph(Event eventObj)
     {
+        PreEventCheck(eventObj);
+
         dialogueManager.SwitchToBart();
     }
 
     private IEnumerator NPCAppear(Event eventObj)
     {
-        if (eventObj.hideDialogueBox)
-        {
-            dialogueBoxImage.color = Color.clear;
-
-            if (!eventObj.keepText)
-            {
-                dialogueText.text = "";
-                nameText.text = "";
-            }
-        }
-
-        if (eventObj.hidePortrait)
-            characterImage.color = Color.clear;
+        PreEventCheck(eventObj);
 
         yield return StartCoroutine(characterManager.StartWalkToSeat());
 
@@ -342,22 +326,7 @@ public class DialogueBox : MonoBehaviour
 
     private IEnumerator NPCLeave(Event eventObj)
     {
-        if (eventObj.removeItems)
-            menuCard.RemoveItems();
-
-        if (eventObj.hideDialogueBox)
-        {
-            dialogueBoxImage.color = Color.clear;
-
-            if (!eventObj.keepText)
-            {
-                dialogueText.text = "";
-                nameText.text = "";
-            }
-        }
-
-        if (eventObj.hidePortrait)
-            characterImage.color = Color.clear;
+        PreEventCheck(eventObj);
 
         yield return StartCoroutine(characterManager.LeaveSeat());
 
@@ -369,22 +338,7 @@ public class DialogueBox : MonoBehaviour
     {
         dialogueManager.ToggleEscapeButton(false);
 
-        if (eventObj.removeItems)
-            menuCard.RemoveItems();
-
-        if (eventObj.hideDialogueBox)
-        {
-            dialogueBoxImage.color = Color.clear;
-
-            if (!eventObj.keepText)
-            {
-                dialogueText.text = "";
-                nameText.text = "";
-            }
-        }
-
-        if (eventObj.hidePortrait)
-            characterImage.color = Color.clear;
+        PreEventCheck(eventObj);
 
         menuCard.Show(character.dessert, character.drink);
         isInCardMenu = true;
@@ -398,6 +352,36 @@ public class DialogueBox : MonoBehaviour
     }
 
     public void FinishMenu() => isInCardMenu = false;
+
+    private IEnumerator SlideWallet(Event eventObj)
+    {
+        PreEventCheck(eventObj);
+
+        yield return wallet.StartSlide(character.hasCharm);
+
+        if (eventObj.nextObj != null)
+            dialogueManager.Continue(eventObj.nextObj);
+    }
+
+    private void PreEventCheck(Event eventObj)
+    {
+        if (eventObj.removeItems)
+            menuCard.RemoveItems();
+
+        if (eventObj.hideDialogueBox)
+        {
+            dialogueBoxImage.color = Color.clear;
+
+            if (!eventObj.keepText)
+            {
+                dialogueText.text = "";
+                nameText.text = "";
+            }
+        }
+
+        if (eventObj.hidePortrait)
+            characterImage.color = Color.clear;
+    }
 
     private void MoveBubblesUp(Vector2 amt)
     {

@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class PauseManager : MonoBehaviour
 {
     [SerializeField] private DialogueManager dialogueManager;
+    [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject pauseHolder;
     [SerializeField] private GameObject settingsHolder;
 
@@ -23,7 +24,7 @@ public class PauseManager : MonoBehaviour
         isActive = !isActive;
         pauseHolder.SetActive(true);
         settingsHolder.SetActive(false);
-        gameObject.SetActive(isActive);
+        pauseMenu.SetActive(isActive);
     }
 
     public void OnContinue() => OpenPause();
