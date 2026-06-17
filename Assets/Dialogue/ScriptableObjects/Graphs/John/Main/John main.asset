@@ -282,6 +282,7 @@ MonoBehaviour:
     - rid: 4248539713482785372
     - rid: 4248539713482785374
     - rid: 4248539713482785376
+    - rid: 4248539713482785382
     utilityNodes: []
     tmpName: John main
     viewportInitiallySet: 1
@@ -297,8 +298,8 @@ MonoBehaviour:
       data:
         nodeData:
           rid: 4248539713482784769
-        nodeX: 9876.775
-        nodeY: 176.7172
+        nodeX: 9666.774
+        nodeY: 180.95232
         name: ControllerNode
         isUtilityNode: 0
         foldouts: []
@@ -307,7 +308,7 @@ MonoBehaviour:
       data:
         nodeName: ControllerNode
         startingNode:
-          rid: 4248539713482784771
+          rid: 4248539713482785383
         character: {fileID: 11400000, guid: e8fc598a6bc6b7543a3385b6ef19c3b8, type: 2}
         graphController: {fileID: 11400000, guid: 90acfb117e3618b41a8e4e5bb8f48dc2, type: 2}
     - rid: 4248539713482784770
@@ -7128,6 +7129,40 @@ MonoBehaviour:
           removeItems: 0
           delay: 0
           minigame: 1
+          wonMinigameNode:
+            rid: -2
+          loseMinigameNode:
+            rid: -2
+          imageToSend: {fileID: 0}
+    - rid: 4248539713482785382
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539713482785383
+        nodeX: 9896.84
+        nodeY: 183.4687
+        name: EventNode
+        isUtilityNode: 0
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 0
+    - rid: 4248539713482785383
+      type: {class: EventNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539713482784771
+        eventData:
+          eventObj: {fileID: 0}
+          eventType: 5
+          hideDialogueBox: 0
+          keepText: 0
+          hidePortrait: 0
+          removeItems: 0
+          delay: 0
+          minigame: 0
           wonMinigameNode:
             rid: -2
           loseMinigameNode:
