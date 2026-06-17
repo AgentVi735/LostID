@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: John
   m_EditorClassIdentifier: Assembly-CSharp::Character
   characterName: John
-  graph: {fileID: 11400000, guid: 82ae36a56f207754ba931b982b0bda9f, type: 2}
+  graph: {fileID: 11400000, guid: 90acfb117e3618b41a8e4e5bb8f48dc2, type: 2}
   phoneGraph: {fileID: 11400000, guid: ca11d04ab86cea340874ea6545f10187, type: 2}
   nfcID: 9F-4D-70-4B
   neutralSprite: {fileID: 21300000, guid: 58ce29c81960f2d4d8ac9cfd84309cd2, type: 3}
