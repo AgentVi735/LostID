@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using Vector2 = UnityEngine.Vector2;
 
 public class Logo : MonoBehaviour
 {

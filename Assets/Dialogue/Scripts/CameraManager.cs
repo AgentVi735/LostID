@@ -21,15 +21,12 @@ public class CameraManager : MonoBehaviour
             return;
 
         currentPosition = newPos;
-        switch (currentPosition)
+        cam.transform.parent = currentPosition switch
         {
-            case CameraPositions.Default:
-                cam.transform.parent = defaultCamPos;
-                break;
-            case CameraPositions.Battleship:
-                cam.transform.parent = battleshipCamPos;
-                break;
-        }
+            CameraPositions.Default => defaultCamPos,
+            CameraPositions.Battleship => battleshipCamPos,
+            _ => cam.transform.parent
+        };
 
         cam.transform.localPosition = Vector3.zero;
         cam.transform.localEulerAngles = Vector3.zero;

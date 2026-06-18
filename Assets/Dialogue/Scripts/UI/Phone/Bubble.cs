@@ -30,6 +30,8 @@ public class Bubble : MonoBehaviour
 
     private bool isTyping;
 
+    private static readonly int ToggleAnim = Animator.StringToHash("Toggle");
+
     public IEnumerator Load(DialogueBox givenDialogueBox, string givenText, bool isNPC)
     {
         if (isTyping)
@@ -66,13 +68,13 @@ public class Bubble : MonoBehaviour
         isTyping = true;
         text.gameObject.SetActive(false);
         typingBubblesAnimator.gameObject.SetActive(true);
-        typingBubblesAnimator.SetBool("Toggle", true);
+        typingBubblesAnimator.SetBool(ToggleAnim, true);
     }
 
     private void StopTypingAnimation()
     {
         isTyping = false;
-        typingBubblesAnimator.SetBool("Toggle", false);
+        typingBubblesAnimator.SetBool(ToggleAnim, false);
         typingBubblesAnimator.gameObject.SetActive(false);
     }
 
@@ -87,7 +89,6 @@ public class Bubble : MonoBehaviour
 
         yield return null;
 
-        //rect.sizeDelta = new Vector2(sentImage.preferredWidth, sentImage.preferredHeight) + paddedArea;
         rect.sizeDelta = sentImage.rectTransform.sizeDelta + paddedArea;
         rect.anchorMin = playerAnchor;
         rect.anchorMax = playerAnchor;

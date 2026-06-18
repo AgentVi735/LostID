@@ -1,7 +1,6 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using Vector2 = UnityEngine.Vector2;
 
 public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
@@ -34,7 +33,7 @@ public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         Vector2 startPos = card.localPosition;
         Vector2 endPos = Vector2.zero;
-        if (isHovering) 
+        if (isHovering)
             endPos = moveOnHover;
 
         for (float i = 0; i < moveTime; i += Time.deltaTime)

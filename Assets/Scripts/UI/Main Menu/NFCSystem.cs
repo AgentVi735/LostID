@@ -6,7 +6,6 @@ public class NFCSystem : MonoBehaviour
     [SerializeField] private MainMenuManager mainMenu;
 
     [SerializeField] private CharactersHolder characters;
-    [SerializeField] private Character currentCharacter;
 
     private Cardreader cardReader;
 
@@ -20,25 +19,14 @@ public class NFCSystem : MonoBehaviour
         EnableCardReader();
     }
 
-    public void EnableCardReader()
-    {
-        cardReader.StartWatch();
+    public void EnableCardReader() => cardReader.StartWatch();
 
-        Debug.Log("Lando: Started watching for cards");
-    }
-
-    public void DisableCardReader()
-    {
-        cardReader.StopWatch();
-
-        Debug.Log("Lando: Stopped watching for cards");
-    }
+    public void DisableCardReader() => cardReader.StopWatch();
 
     private void OnCardConnected(object sender, CardreaderEventArgs e)
     {
         cardReader.SetBuzzerOutputForCardDetection(e.Card, false);
         string cardId = e.Card.Id;
-        Debug.Log($"ACR122U: Card connected with UID: {cardId}");
 
         foreach (Character character in characters.characters)
         {
@@ -49,25 +37,14 @@ public class NFCSystem : MonoBehaviour
         }
     }
 
-    private void FoundChar(Character character)
-    {
-        currentCharacter = character;
-        Debug.Log(currentCharacter);
-        mainMenu.NewCharacter(character);
-    }
+    private void FoundChar(Character character) => mainMenu.NewCharacter(character);
 
-    private void OnCardDisconnected(object sender, CardreaderEventArgs e)
-    {
-        Debug.Log($"ACR122U: Card disconnected");
-        currentCharacter = null;
-        mainMenu.RemoveCharacter();
-    }
+    private void OnCardDisconnected(object sender, CardreaderEventArgs e) => mainMenu.RemoveCharacter();
 
     private void OnDestroy()
     {
         DisableCardReader();
-        cardReader.Dispose();
-        Debug.Log("Lando: Stopped watching and disposed reader");
+        cardReader.Dispose();;
 
         cardReader.CardConnected -= OnCardConnected;
         cardReader.CardDisconnected -= OnCardDisconnected;

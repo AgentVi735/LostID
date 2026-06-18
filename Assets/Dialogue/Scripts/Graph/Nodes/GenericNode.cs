@@ -1,6 +1,5 @@
 using NewGraph;
 using System;
-using UnityEngine;
 
 [Serializable, Node("#007F00FF", "Dialogue")]
 public class GenericNode : INode

@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -16,10 +15,7 @@ public class SceneSwitcher : MonoBehaviour
 
     private void Start() => ChangeScene(Scenes.MainMenu, Scenes.None);
 
-    public void ChangeScene(Scenes sceneToLoad, Scenes sceneToUnload)
-    {
-        StartCoroutine(ChangeSceneCoroutine(sceneToLoad, sceneToUnload));
-    }
+    public void ChangeScene(Scenes sceneToLoad, Scenes sceneToUnload) => StartCoroutine(ChangeSceneCoroutine(sceneToLoad, sceneToUnload));
 
     private IEnumerator ChangeSceneCoroutine(Scenes sceneToLoad, Scenes sceneToUnload)
     {

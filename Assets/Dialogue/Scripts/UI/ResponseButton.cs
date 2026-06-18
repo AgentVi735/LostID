@@ -9,16 +9,14 @@ public class ResponseButton : MonoBehaviour
     private Response response;
 
     [Header("Phone Settings")]
-    [SerializeField] private bool isForPhone;
     [SerializeField] private RectTransform textRect;
     [SerializeField] private RectTransform rect;
     [SerializeField] private Vector2 paddedArea;
 
-    public void Setup(ResponseManager givenManager, bool givenPhone)
+    public void Setup(ResponseManager givenManager)
     {
         gameObject.SetActive(false);
         responseManager = givenManager;
-        isForPhone = givenPhone;
     }
 
     public void LoadButton(Response givenResponse)
@@ -31,8 +29,5 @@ public class ResponseButton : MonoBehaviour
         rect.sizeDelta = text.GetPreferredValues() + paddedArea;
     }
 
-    public void OnClick()
-    {
-        responseManager.GotResponse(response);
-    }
+    public void OnClick() => responseManager.GotResponse(response);
 }

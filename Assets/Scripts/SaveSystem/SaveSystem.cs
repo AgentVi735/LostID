@@ -66,7 +66,6 @@ public class SaveSystem : MonoBehaviour
 
     private void CreateSave()
     {
-        Debug.Log("Creating new save data");
         save = new SaveFile
         {
             saveData = new Dictionary<string, SaveFile.SaveData>()
@@ -104,10 +103,8 @@ public class SaveSystem : MonoBehaviour
         }
 
         save.saveData = new Dictionary<string, SaveFile.SaveData>();
-        foreach (SaveFile.SaveData data in save.saves) 
+        foreach (SaveFile.SaveData data in save.saves)
             save.saveData.Add(data.character, data);
-
-        Debug.Log("Save loaded");
     }
 
     public static void Save()
@@ -131,9 +128,7 @@ public class SaveSystem : MonoBehaviour
         catch
         {
             Debug.LogError("Save data could not be saved");
-            return;
         }
-        Debug.Log("Successfully saved data");
     }
 
     public void ResetSave() => CreateSave();

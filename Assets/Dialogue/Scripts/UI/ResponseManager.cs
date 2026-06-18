@@ -24,7 +24,7 @@ public class ResponseManager : MonoBehaviour
         {
             ResponseButton button = Instantiate(buttonPrefab, Vector3.zero, Quaternion.identity, buttonHolder).GetComponent<ResponseButton>();
             buttons[i] = button;
-            button.Setup(this, isPhone);
+            button.Setup(this);
         }
     }
 

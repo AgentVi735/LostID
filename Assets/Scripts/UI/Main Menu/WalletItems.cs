@@ -1,7 +1,6 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using Vector2 = UnityEngine.Vector2;
 
 public class WalletItems : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
@@ -44,10 +43,8 @@ public class WalletItems : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         for (float i = 0; i < moveTime; i += Time.deltaTime)
         {
             float moveAmt = i / moveTime;
-            for (int j = 0; j < items.Length; j++)
-            {
+            for (int j = 0; j < items.Length; j++) 
                 items[j].localPosition = Vector2.Lerp(startPos[j], endPos[j], moveAmt);
-            }
             yield return null;
         }
     }

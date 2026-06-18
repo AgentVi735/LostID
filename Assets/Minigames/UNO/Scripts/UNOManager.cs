@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -276,7 +275,7 @@ public class UNOManager : MonoBehaviour
 
     private void ShuffleNewStack()
     {
-        cardsStack = disposedStack.OrderBy(i => Random.value).ToList();
+        cardsStack = disposedStack.OrderBy(_ => Random.value).ToList();
         disposedStack.Clear();
     }
 
@@ -312,7 +311,7 @@ public class UNOManager : MonoBehaviour
         cardsStack = new List<UNOCard>();
         disposedStack = new List<UNOCard>();
         cardsStack = cardHolder.cards.ToList();
-        cardsStack = cardsStack.OrderBy(i => Random.value).ToList();
+        cardsStack = cardsStack.OrderBy(_ => Random.value).ToList();
 
         GrabCard(startingCards, true);
         GrabCard(startingCards, false);
@@ -502,21 +501,13 @@ public class UNOManager : MonoBehaviour
         OpponentGrabCard();
     }
 
-    private void OpponentPlayCard(UNOCardObj cardObj)
-    {
-        Debug.Log("Opponent: playing card");
-        PlayCard(cardObj);
-    }
+    private void OpponentPlayCard(UNOCardObj cardObj) => PlayCard(cardObj);
 
     private void OpponentGrabCard()
     {
-        Debug.Log("Opponent: grabbing card");
         GrabCard(1, false);
         OpponentEndTurn();
     }
 
-    private void OpponentEndTurn()
-    {
-        SwitchTurns();
-    }
+    private void OpponentEndTurn() => SwitchTurns();
 }

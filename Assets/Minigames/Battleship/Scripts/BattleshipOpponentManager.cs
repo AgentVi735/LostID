@@ -55,7 +55,6 @@ public class BattleshipOpponentManager : MonoBehaviour
             Boat boat = boats[i];
             int boatHoles = boat.GetHoles();
             int idx = -1;
-            Debug.Log("Beginning with boat " + i);
 
             BoatRotation rotation = BoatRotation.Up;
             bool fits = false;
@@ -63,7 +62,6 @@ public class BattleshipOpponentManager : MonoBehaviour
             while (!fits)
             {
                 idx = emptyHoles[Random.Range(0, emptyHoles.Count)];
-                Debug.Log("Checking on idx " + idx);
                 emptyHoles.Remove(idx);
                 List<BoatRotation> rotationsToTry = new(baseRotations);
                 rotationsToTry = rotationsToTry.OrderBy(_ => Random.value).ToList();
@@ -75,13 +73,11 @@ public class BattleshipOpponentManager : MonoBehaviour
                 {
                     rotation = rotationsToTry[Random.Range(0, rotationsToTry.Count)];
                     rotationsToTry.Remove(rotation);
-                    Debug.Log("Checking with rot " + rotation);
                     fits = CanBoatFit(idx, boatHoles, rotation);
                 }
             }
 
             if (!fits) continue;
-            Debug.Log("Fits!");
             yield return new WaitForSeconds(Random.Range(timeBetweenBoatSpawning.x, timeBetweenBoatSpawning.y));
             yield return StartCoroutine(SpawnBoat(idx, i, rotation));
             List<int> idxToRemove = new();
@@ -114,7 +110,6 @@ public class BattleshipOpponentManager : MonoBehaviour
                 emptyHoles.Remove(t);
         }
 
-        Debug.Log("Finished");
         manager.OpponentFinishedPlacingBoats();
     }
 
@@ -359,12 +354,10 @@ public class BattleshipOpponentManager : MonoBehaviour
                     notTriedDirectionsForHit.Remove(rotation);
                 if (notTriedDirectionsForHit.Count != 0) continue;
                 Debug.LogError("Pin can't be placed at idx " + idxToHit);
-                Debug.LogWarning("Couldn't find any directions to head with idx " + idxToHit);
                 shouldLoop = false;
             }
         }
 
-        Debug.Log("Try hitting at " + idxToHit + " with direction " + rotation);
         BoatHitState hitState = manager.OpponentShoot(idxToHit);
         notTriedDirectionsForHit.Remove(rotation);
         playerHoles.Remove(idxToHit);

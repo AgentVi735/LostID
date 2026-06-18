@@ -16,7 +16,6 @@ public class TrainManager : MonoBehaviour
         while (true)
         {
             float delay = Random.Range(timeBetweenTrains.x, timeBetweenTrains.y);
-            Debug.Log(delay);
 
             yield return new WaitForSeconds(delay);
 

@@ -5,8 +5,6 @@ using System.Linq;
 using System.Reflection;
 using UnityEditor;
 using UnityEngine;
-using Application = UnityEngine.Application;
-using GraphWindow = NewGraph.GraphWindow;
 
 [CustomContextMenu]
 public class CustomMenu : NewGraph.ContextMenu
@@ -207,41 +205,6 @@ public class CustomMenu : NewGraph.ContextMenu
             Debug.LogError("No GraphController found");
             return;
         }
-
-        //string[] nodeNames = new string[nodes.Count];
-
-        //if (nodeNames.Length == 0)
-        //    return;
-
-        //for (int i = 0; i < nodeNames.Length; i++)
-        //{
-        //    NodeModel node = nodes[i];
-
-        //    string nodeName = "";
-
-        //    GenericNode nodeData = (GenericNode)node.nodeData;
-        //    switch (nodeData.ReturnType())
-        //    {
-        //        case NodeType.Dialogue:
-        //            DialogueNode dialogueNode = (DialogueNode)node.nodeData;
-        //            nodeName = dialogueNode.dialogueData.dialogue == null ? "" : dialogueNode.dialogueData.dialogue.name;
-        //            break;
-        //        case NodeType.ResponseHolder:
-        //            ResponseHolderNode responseHolderNode = (ResponseHolderNode)node.nodeData;
-        //            nodeName = responseHolderNode.responseHolder == null ? "" : responseHolderNode.responseHolder.name;
-        //            break;
-        //        case NodeType.Response:
-        //            ResponseNode responseNode = (ResponseNode)node.nodeData;
-        //            nodeName = responseNode.response == null ? "" : responseNode.response.name;
-        //            break;
-        //        case NodeType.Event:
-        //            EventNode eventNode = (EventNode)node.nodeData;
-        //            nodeName = eventNode.eventData.eventObj == null ? "" : eventNode.eventData.eventObj.name;
-        //            break;
-        //    }
-
-        //    nodeNames[i] = nodeName;
-        //}
 
         string[] dialogueFiles = Directory.GetFiles(Application.dataPath + "/" + shortPath + controllerNode.graphController.name + dialogueFolder);
         string[] responseHolderFiles = Directory.GetFiles(Application.dataPath + "/" + shortPath + controllerNode.graphController.name + responseHolderFolder);

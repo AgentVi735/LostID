@@ -1,5 +1,4 @@
 using System.Collections;
-using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -35,17 +34,14 @@ public class UNOCardObj : MonoBehaviour
         wildcardBalls.SetActive(false);
         cam = Camera.main;
         unoManager = givenUnoManager;
-        inputs = givenInputs; 
+        inputs = givenInputs;
         leftClick = inputs.FindAction("Player/Attack");
         mousePositionAction = inputs.FindAction("Player/MousePos");
 
         leftClick.performed += OnLeftClick;
     }
 
-    public void OnPlay()
-    {
-        wildcardBalls.SetActive(false);
-    }
+    public void OnPlay() => wildcardBalls.SetActive(false);
 
     public void CheckCard(UNOCard cardToCheckWith)
     {

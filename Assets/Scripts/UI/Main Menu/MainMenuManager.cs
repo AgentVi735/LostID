@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 #if UNITY_EDITOR
@@ -6,7 +5,6 @@ using UnityEditor;
 #endif
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MainMenuManager : MonoBehaviour
@@ -40,7 +38,7 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private Image smallWallet;
     [SerializeField] private Button smallWalletButton;
 
-    [Header("Wallet")] 
+    [Header("Wallet")]
     [SerializeField] private Image membershipCard;
     [SerializeField] private Image debitCard;
     [SerializeField] private Image transportCard;
@@ -64,10 +62,6 @@ public class MainMenuManager : MonoBehaviour
     [Header("Sliders")]
     [SerializeField] private Slider bgmSlider;
     [SerializeField] private Slider sfxSlider;
-
-    [Header("Scenes")]
-    [SerializeField] private string mainMenuScene;
-    [SerializeField] private string gameScene;
 
     [Header("Inputs")]
     [SerializeField] private InputActionAsset inputs;
