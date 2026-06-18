@@ -10,6 +10,7 @@ public class BattleshipManager : MonoBehaviour
     [SerializeField] private DialogueManager dialogueManager;
     [SerializeField] private Camera cam;
     [SerializeField] private CharacterParent characterManager;
+    [SerializeField] private CharacterParent bartManager;
 
     [Header("Board Settings")]
     [SerializeField] private int holesPerRow;
@@ -53,6 +54,7 @@ public class BattleshipManager : MonoBehaviour
     private WaitForSeconds waitDelayUntilExit;
     [SerializeField] private float interactionAnimTime;
     private WaitForSeconds waitInteractionAnimTime;
+    private bool isBart;
 
     private void Awake()
     {
@@ -90,6 +92,10 @@ public class BattleshipManager : MonoBehaviour
 
         waitDelayUntilExit = new WaitForSeconds(delayUntilExit);
         waitInteractionAnimTime = new WaitForSeconds(interactionAnimTime);
+
+        isBart = SaveSystem.save.saves[SaveSystem.loadedPath].choseBart;
+        if (isBart)
+            characterManager = bartManager;
     }
 
     private void Start()

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -21,6 +22,7 @@ public class DialogueBox : MonoBehaviour
     [Header("Characters")]
     private Character character;
     private CharacterManager characterManager;
+    private CharacterSprite currentSprite;
 
     [Header("Phone Settings")]
     [SerializeField] private GameObject bubblePrefab;
@@ -46,6 +48,16 @@ public class DialogueBox : MonoBehaviour
 
     public void LoadObj(GenericObj givenObj)
     {
+        switch (currentSprite)
+        {
+            case CharacterSprite.Happy:
+                characterManager.SetAnimation(CharacterAnimations.Happy, false);
+                break;
+            case CharacterSprite.Sad:
+                characterManager.SetAnimation(CharacterAnimations.Sad, false);
+                break;
+        }
+
         switch (givenObj.type)
         {
             case NodeType.Dialogue:
@@ -90,7 +102,8 @@ public class DialogueBox : MonoBehaviour
             charName = dialogue.overrideCharacterName;
         nameText.text = charName;
         dialogueBoxImage.color = Color.white;
-        Sprite charSprite = dialogue.sprite switch
+        currentSprite = dialogue.sprite;
+        Sprite charSprite = currentSprite switch
         {
             CharacterSprite.None => null,
             CharacterSprite.Neutral => character.neutralSprite,
@@ -99,8 +112,20 @@ public class DialogueBox : MonoBehaviour
             CharacterSprite.Sad => character.sadSprite,
             _ => characterImage.sprite
         };
+        if (dialogue.overrideSprite != null)
+            charSprite = dialogue.overrideSprite;
         characterImage.sprite = charSprite;
-        characterManager.ChangeMaterial(dialogue.sprite);
+        characterManager.ChangeMaterial(currentSprite);
+        switch (currentSprite)
+        {
+            case CharacterSprite.Happy:
+                characterManager.SetAnimation(CharacterAnimations.Happy, true);
+                break;
+            case CharacterSprite.Sad:
+                characterManager.SetAnimation(CharacterAnimations.Sad, true);
+                break;
+        }
+
         characterImage.color = Color.white;
         dialogueText.text = dialogue.text;
         if (dialogue.nextObj != null)
@@ -205,6 +230,38 @@ public class DialogueBox : MonoBehaviour
                     return;
                 }
                 MoveToBartGraph(eventObj);
+                break;
+            case EventType.ShowCat:
+                if (isPhone)
+                {
+                    Debug.LogError("Invalid event type selected on event node " + eventObj.name);
+                    return;
+                }
+                ShowCat(eventObj);
+                break;
+            case EventType.CatLeave:
+                if (isPhone)
+                {
+                    Debug.LogError("Invalid event type selected on event node " + eventObj.name);
+                    return;
+                }
+                CatLeave(eventObj);
+                break;
+            case EventType.SwitchSettingsToBart:
+                if (isPhone)
+                {
+                    Debug.LogError("Invalid event type selected on event node " + eventObj.name);
+                    return;
+                }
+                SwitchSettingsToBart(eventObj);
+                break;
+            case EventType.BartSitDown:
+                if (isPhone)
+                {
+                    Debug.LogError("Invalid event type selected on event node " + eventObj.name);
+                    return;
+                }
+                StartCoroutine(BartSitDown(eventObj));
                 break;
             default:
                 Debug.LogError("No event type selected on event node " + eventObj.name);
@@ -313,6 +370,37 @@ public class DialogueBox : MonoBehaviour
         dialogueManager.SwitchToBart();
     }
 
+    private void SwitchSettingsToBart(Event eventObj)
+    {
+        PreEventCheck(eventObj);
+
+        dialogueManager.SwitchSettingsToBart();
+        character = dialogueManager.GetGraphCharacter();
+
+        if (eventObj.nextObj != null)
+            dialogueManager.Continue(eventObj.nextObj);
+    }
+
+    private void ShowCat(Event eventObj)
+    {
+        PreEventCheck(eventObj);
+
+        dialogueManager.ShowCat();
+
+        if (eventObj.nextObj != null)
+            dialogueManager.Continue(eventObj.nextObj);
+    }
+
+    private void CatLeave(Event eventObj)
+    {
+        PreEventCheck(eventObj);
+
+        dialogueManager.CatLeave();
+
+        if (eventObj.nextObj != null)
+            dialogueManager.Continue(eventObj.nextObj);
+    }
+
     private IEnumerator NPCAppear(Event eventObj)
     {
         PreEventCheck(eventObj);
@@ -345,6 +433,16 @@ public class DialogueBox : MonoBehaviour
             yield return null;
 
         dialogueManager.ToggleEscapeButton(true);
+
+        if (eventObj.nextObj != null)
+            dialogueManager.Continue(eventObj.nextObj);
+    }
+
+    private IEnumerator BartSitDown(Event eventObj)
+    {
+        yield return StartCoroutine(dialogueManager.BartSitDown());
+
+        characterManager = dialogueManager.GetCharacterManager();
 
         if (eventObj.nextObj != null)
             dialogueManager.Continue(eventObj.nextObj);

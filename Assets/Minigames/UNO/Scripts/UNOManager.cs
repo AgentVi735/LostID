@@ -49,6 +49,9 @@ public class UNOManager : MonoBehaviour
     private Coroutine lookingForCardsCoroutine;
 
     [SerializeField] private int playerCardsThresholdForPlusCards;
+    private bool isBart;
+    [SerializeField] private CharacterParent characterManager;
+    [SerializeField] private CharacterParent bartManager;
 
     private void Start() => Load();
 
@@ -298,6 +301,10 @@ public class UNOManager : MonoBehaviour
 
     private void Load()
     {
+        isBart = SaveSystem.save.saves[SaveSystem.loadedPath].choseBart;
+        if (isBart)
+            characterManager = bartManager;
+
         playerCards = new List<UNOCard>();
         playerCardObjs = new List<UNOCardObj>();
         opponentCards = new List<UNOCard>();

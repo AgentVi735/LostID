@@ -22,9 +22,9 @@ public class CharacterManager : MonoBehaviour
 
     private bool finishedAnimation;
 
-    public void Setup(Transform givenHolder)
+    public void Setup(CharacterParent givenHolder)
     {
-        characterHolder = givenHolder.GetComponent<CharacterParent>();
+        characterHolder = givenHolder;
         characterHolder.Setup(this);
         animator.SetLayerWeight(1, 1);
         animator.SetLayerWeight(2, 1);

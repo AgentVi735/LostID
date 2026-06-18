@@ -10,5 +10,8 @@ public enum EventType
     WalletSlide,
     NPCLeave,
     MoveToBartGraph,
-    ShowCat
+    ShowCat,
+    CatLeave,
+    SwitchSettingsToBart,
+    BartSitDown
 }

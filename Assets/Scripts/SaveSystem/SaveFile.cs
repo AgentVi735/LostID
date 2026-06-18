@@ -10,6 +10,7 @@ public class SaveFile
         public string currentNode;
         public MenuItems selectedDessert;
         public MenuItems selectedDrink;
+        public bool choseBart;
     }
 
     public Dictionary<string, SaveData> saveData;

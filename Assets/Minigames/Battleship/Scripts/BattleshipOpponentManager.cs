@@ -223,7 +223,6 @@ public class BattleshipOpponentManager : MonoBehaviour
     {
         int idx = Random.Range(0, playerHoles.Count);
         int holeIdx = playerHoles[idx];
-        Debug.Log(holeIdx + " | " + idx);
         BoatHitState hitState = manager.OpponentShoot(holeIdx);
         playerHoles.RemoveAt(idx);
 

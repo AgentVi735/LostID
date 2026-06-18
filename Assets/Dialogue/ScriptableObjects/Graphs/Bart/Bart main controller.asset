@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a3df95a077b15147ab90409fd99f52f, type: 3}
+  m_Name: Bart main controller
+  m_EditorClassIdentifier: Assembly-CSharp::GraphController
+  graph: {fileID: 11400000, guid: 86447cc49998f5444abeab847045c879, type: 2}
+  character: {fileID: 11400000, guid: e1ecc8eb386d4a746a49ac2fe3b7c966, type: 2}
+  startingObj: {fileID: 11400000, guid: 3fb9b4f2eb1d420489b1ded9e5ffcd45, type: 2}
+  dialogueObjs:
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 3fb9b4f2eb1d420489b1ded9e5ffcd45, type: 2}
+  - {fileID: 11400000, guid: 145d23d7048e2b04f85e49e72d4877c8, type: 2}
+  - {fileID: 11400000, guid: 4f57789f3b129fd46b6003b74cc80bef, type: 2}
+  - {fileID: 11400000, guid: a16f0e7bebe69e849925a0b34fa74ab1, type: 2}
+  - {fileID: 11400000, guid: a81deb1e9470f0e4b9bc5d9931f7b150, type: 2}
+  - {fileID: 11400000, guid: 3e832025a77dc7244b385f53f7273ca5, type: 2}
+  - {fileID: 11400000, guid: b172bcc6df74c344293f40f32d73155e, type: 2}
+  - {fileID: 11400000, guid: c66945013b14a5744a39d27abc1fba1e, type: 2}
+  - {fileID: 11400000, guid: fd4ca4537566d7742982496ed762c9b4, type: 2}

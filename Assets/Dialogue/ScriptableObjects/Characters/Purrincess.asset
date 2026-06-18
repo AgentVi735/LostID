@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e6d46a19215c634f917469b3b5a1a82, type: 3}
+  m_Name: Purrincess
+  m_EditorClassIdentifier: Assembly-CSharp::Character
+  characterName: Purrincess
+  graph: {fileID: 11400000, guid: f67a43359ecd10b4690f4da959b78cf9, type: 2}
+  phoneGraph: {fileID: 0}
+  nfcID: 
+  neutralSprite: {fileID: 21300000, guid: 945af0c618f4ac74c8a333f321026820, type: 3}
+  happySprite: {fileID: 21300000, guid: 160a8b93c73ce2a478d77d475607cab2, type: 3}
+  angrySprite: {fileID: 21300000, guid: 63e2665cfc43e6d4e915209e13de849a, type: 3}
+  sadSprite: {fileID: 21300000, guid: 4897b61b2ac758848b6aa7f06c406728, type: 3}
+  prefab: {fileID: 7812223307579451006, guid: 592c233b5ea10db4dbb346aeb349767a, type: 3}
+  neutralMat: {fileID: 2100000, guid: b2704d1d340fbd44cb4662f664bd2523, type: 2}
+  happyMat: {fileID: 2100000, guid: 6374fd267f25e044b97d9da892fbbfaa, type: 2}
+  sadMat: {fileID: 2100000, guid: a9a4cf9e9ae756f40b3ddb641b64ffe3, type: 2}
+  angryMat: {fileID: 2100000, guid: 32dc33466228fa04c95e9e0cb91f1416, type: 2}
+  smallWallet: {fileID: 0}
+  underpartRLayer: {fileID: 0}
+  underpartLLayer: {fileID: 0}
+  pocketLowRLayer: {fileID: 0}
+  idCard: {fileID: 0}
+  items: []
+  phoneNumber: {fileID: 0}
+  hasCharm: 0
+  dessert: 3
+  drink: 6

@@ -6,9 +6,20 @@ public class CharacterParent : MonoBehaviour
     private static readonly int LeaveFromChair = Animator.StringToHash("LeaveFromChair");
     [SerializeField] private Animator animator;
 
+    [SerializeField] private Vector3 bartSpawnPos;
+    [SerializeField] private Vector3 bartSitPos;
+
     private CharacterManager character;
 
     public void Setup(CharacterManager givenCharacter) => character = givenCharacter;
+
+    public void ResetForBart()
+    {
+        animator.enabled = false;
+        transform.SetPositionAndRotation(bartSpawnPos, Quaternion.Euler(0, 180, 0));
+    }
+
+    public void SetBartSitPos() => transform.position = bartSitPos;
 
     public void SetAnimation(CharacterAnimations sentAnimation, bool toggle) => character.SetAnimation(sentAnimation, toggle);
 

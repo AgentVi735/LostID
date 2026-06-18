@@ -20,11 +20,11 @@ MonoBehaviour:
   happySprite: {fileID: 21300000, guid: b01f5f8bd6211a941a6770c8a75c68a9, type: 3}
   angrySprite: {fileID: 21300000, guid: df7db2f8207b11240922c3fbe8d81020, type: 3}
   sadSprite: {fileID: 21300000, guid: ae9d123c98fb2364ea18e2162fa818d0, type: 3}
-  prefab: {fileID: 0}
-  neutralMat: {fileID: 0}
-  happyMat: {fileID: 0}
-  sadMat: {fileID: 0}
-  angryMat: {fileID: 0}
+  prefab: {fileID: 675109726146983582, guid: 13096635df733fa4f9002e4a2e44e838, type: 3}
+  neutralMat: {fileID: 2100000, guid: 3dfc870ca72cff74bb8a9a30ec7ca948, type: 2}
+  happyMat: {fileID: 2100000, guid: 1e130b2a716635d47a194f78b712d862, type: 2}
+  sadMat: {fileID: 2100000, guid: 4edf59012ee337d48b8c49e8bf0eba6c, type: 2}
+  angryMat: {fileID: 2100000, guid: e6e87954638ddc548b24b0fb95b4ba70, type: 2}
   smallWallet: {fileID: 21300000, guid: 4200c628d00361b45b63875d1872807e, type: 3}
   underpartRLayer: {fileID: 0}
   underpartLLayer: {fileID: 0}

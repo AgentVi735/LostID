@@ -28,7 +28,7 @@ public class SaveSystem : MonoBehaviour
             CreateSave();
     }
 
-    public static void CreateFakeDevSave()
+    public static void CreateFakeDevSave(int path)
     {
         Debug.Log("Creating new temporary save data");
         save = new SaveFile
@@ -60,7 +60,7 @@ public class SaveSystem : MonoBehaviour
         };
 
         fakeSaveFile = true;
-        loadedPath = 1;
+        loadedPath = path;
         Save();
     }
 

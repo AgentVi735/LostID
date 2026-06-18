@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -5,18 +6,21 @@ using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour
 {
     [Header("References")]
-    private SceneSwitcher sceneSwitcher;
     [SerializeField] private PauseManager pauseManager;
     [SerializeField] private MainMenuManager mainMenuManager;
     [SerializeField] private CameraManager camManager;
     [SerializeField] private DialogueBox dialogueBox;
     [SerializeField] private GameObject dialogueCanvas;
     [SerializeField] private Button continueButton;
+    private SceneSwitcher sceneSwitcher;
 
     [Header("Graph")]
     [SerializeField] private bool isPhone;
     private GraphController graphController;
     private GenericObj currentObj;
+#if UNITY_EDITOR
+    [SerializeField] private int editorPathToLoad;
+#endif
 
     [Header("Minigames")]
     [SerializeField] private UNOManager unoManager;
@@ -26,20 +30,23 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private InputActionAsset inputs;
     private InputAction pauseAction;
 
-    [Header("Scenes")]
-    [SerializeField] private string mainMenuScene;
-    [SerializeField] private string dialogueScene;
-
     [Header("Character")]
     [SerializeField] private CharactersHolder characters;
     private Character character;
     private CharacterManager characterManager;
-    [SerializeField] private Transform characterSpawn;
+    [SerializeField] private CharacterParent characterParent;
 
     [Header("Bart")]
-    [SerializeField] private Character bart;
+    [SerializeField] private CharacterParent bartParent;
+    private CharacterManager bartManager;
+    [SerializeField] private Animator catAnimator;
+    [SerializeField] private string catShowAnim;
+    [SerializeField] private string catLeaveAnim;
+    [SerializeField] private PoofParticle poofParticle;
 
     public Character GetGraphCharacter() => graphController.character;
+
+    public CharacterManager GetCharacterManager() => characterManager;
 
     private void Awake()
     {
@@ -54,7 +61,7 @@ public class DialogueManager : MonoBehaviour
     {
 #if UNITY_EDITOR
         if (SaveSystem.save == null)
-            SaveSystem.CreateFakeDevSave();
+            SaveSystem.CreateFakeDevSave(editorPathToLoad);
         if (SaveSystem.save == null)
             return;
 #endif
@@ -93,10 +100,10 @@ public class DialogueManager : MonoBehaviour
 
     private void SetupCharacter()
     {
-        characterManager = Instantiate(character.prefab, characterSpawn.position, characterSpawn.rotation, characterSpawn)
+        characterManager = Instantiate(character.prefab, characterParent.transform.position, characterParent.transform.rotation, characterParent.transform)
             .GetComponent<CharacterManager>();
 
-        characterManager.Setup(characterSpawn);
+        characterManager.Setup(characterParent);
     }
 
     private void SetupPhone()
@@ -189,10 +196,54 @@ public class DialogueManager : MonoBehaviour
         continueButton.interactable = toggle;
     }
 
+    public void ShowCat() => catAnimator.SetTrigger(catShowAnim);
+
+    public void CatLeave() => catAnimator.SetTrigger(catLeaveAnim);
+
     public void SwitchToBart()
     {
-        graphController = bart.graph;
+        graphController = characters.bart.graph;
+        SaveSystem.save.saves[SaveSystem.loadedPath].choseBart = true;
         Continue(graphController.startingObj);
+    }
+
+    public void SwitchSettingsToBart() => StartCoroutine(SpawnBart());
+
+    private IEnumerator SpawnBart()
+    {
+        poofParticle.Play(3);
+
+        Destroy(catAnimator.gameObject);
+
+        character = characters.bart;
+
+        bartManager = Instantiate(character.prefab, bartParent.transform.position, bartParent.transform.rotation, bartParent.transform)
+            .GetComponent<CharacterManager>();
+
+        bartManager.Setup(bartParent);
+        bartManager.SetAnimation(CharacterAnimations.Walk, true);
+
+        yield return null;
+
+        bartParent.ResetForBart();
+    }
+
+    public IEnumerator BartSitDown()
+    {
+        poofParticle.Play(3);
+        bartParent.transform.position = Vector3.down * 2;
+
+        yield return null;
+
+        Destroy(characterManager.gameObject);
+        characterManager = bartManager;
+
+        characterManager.SetAnimation(CharacterAnimations.Walk, false);
+        characterManager.SetAnimation(CharacterAnimations.Sit, true);
+
+        yield return new WaitForSeconds(0.6f);
+
+        bartParent.SetBartSitPos();
     }
 
     private void OnDestroy()

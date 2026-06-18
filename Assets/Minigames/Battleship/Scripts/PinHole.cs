@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -21,6 +22,10 @@ public class PinHole : MonoBehaviour
     [SerializeField] private Vector3 boatOffset;
     [SerializeField] private Vector3 boat2OffsetX;
     [SerializeField] private Vector3 boat2OffsetZ;
+
+    private WaitForSeconds wait1Sec;
+
+    private void Awake() => wait1Sec = new WaitForSeconds(1);
 
     public Vector2Int GetCoords() => coordinates;
 
@@ -102,6 +107,7 @@ public class PinHole : MonoBehaviour
             pos += pinOffsetWhenBoat;
         yield return StartCoroutine(button.GetManager().PlayAnimation());
         Instantiate(hasRedPin ? redPinPrefab : whitePinPrefab, pos, transform.rotation, transform);
+        yield return wait1Sec;
         button.GetManager().SwitchTurn();
     }
 
