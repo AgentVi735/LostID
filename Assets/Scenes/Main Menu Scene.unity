@@ -1503,7 +1503,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -202.1, y: 0}
-  m_SizeDelta: {x: 129.0164, y: 30}
+  m_SizeDelta: {x: 140.35, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &450660142
 MonoBehaviour:
@@ -4872,6 +4872,7 @@ MonoBehaviour:
   pauseManager: {fileID: 0}
   mainMenuManager: {fileID: 1930642229}
   camManager: {fileID: 0}
+  itemSpawner: {fileID: 0}
   dialogueBox: {fileID: 54083841}
   dialogueCanvas: {fileID: 0}
   continueButton: {fileID: 0}
@@ -4879,13 +4880,14 @@ MonoBehaviour:
   editorPathToLoad: 0
   unoManager: {fileID: 0}
   battleshipManager: {fileID: 0}
-  inputs: {fileID: 0}
+  inputs: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   characters: {fileID: 11400000, guid: ad60bb64b2843b94ba70a3610e5ec92d, type: 2}
   characterParent: {fileID: 0}
   bartParent: {fileID: 0}
   catAnimator: {fileID: 0}
   catShowAnim: 
   catLeaveAnim: 
+  catSkipAnim: 
   poofParticle: {fileID: 0}
 --- !u!4 &1025519809
 Transform:
@@ -5277,7 +5279,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_TextWrappingMode: 1
+  m_TextWrappingMode: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}

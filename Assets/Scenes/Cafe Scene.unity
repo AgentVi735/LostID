@@ -8318,6 +8318,7 @@ MonoBehaviour:
   pauseManager: {fileID: 676345773}
   mainMenuManager: {fileID: 0}
   camManager: {fileID: 2100001272}
+  itemSpawner: {fileID: 748723377}
   dialogueBox: {fileID: 1774139638}
   dialogueCanvas: {fileID: 819841676}
   continueButton: {fileID: 1366632025}
@@ -8332,6 +8333,7 @@ MonoBehaviour:
   catAnimator: {fileID: 1526546307}
   catShowAnim: CatIntro
   catLeaveAnim: CatOutro
+  catSkipAnim: CatSkip
   poofParticle: {fileID: 1078351752}
 --- !u!4 &353638986
 Transform:
@@ -37540,8 +37542,13 @@ MonoBehaviour:
   defaultTypingSpeed: 0.04
   bubblePrefab: {fileID: 0}
   bubbleParent: {fileID: 0}
+  bubbleSpawnPos: {x: 0, y: 0}
   offsetForTypingBubble: {x: 0, y: 0}
   offsetForImageBubble: {x: 0, y: 0}
+  sendButton: {fileID: 0}
+  sendImage: {fileID: 0}
+  voiceImage: {fileID: 0}
+  maxCharacters: 0
 --- !u!1 &1777091098
 GameObject:
   m_ObjectHideFlags: 0

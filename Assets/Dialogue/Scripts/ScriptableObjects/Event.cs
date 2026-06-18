@@ -4,6 +4,7 @@ using UnityEngine;
 public class Event : GenericObj
 {
     public EventType eventType;
+    public bool disableSaving;
     public bool hideDialogueBox;
     public bool keepText;
     public bool hidePortrait;

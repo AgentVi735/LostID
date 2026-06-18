@@ -28,12 +28,13 @@ public class ItemSpawner : MonoBehaviour
 
     private void Awake() => waitTimeBetweenPoofAndSpawning = new WaitForSeconds(timeBetweenPoofAndSpawning);
 
-    public void SpawnItems(MenuItems dessert, MenuItems drink, MenuItems npcDessert, MenuItems npcDrink) =>
-        StartCoroutine(CreateItems(dessert, drink, npcDessert, npcDrink));
+    public void SpawnItems(MenuItems dessert, MenuItems drink, MenuItems npcDessert, MenuItems npcDrink, bool poof) =>
+        StartCoroutine(CreateItems(dessert, drink, npcDessert, npcDrink, poof));
 
-    private IEnumerator CreateItems(MenuItems dessert, MenuItems drink, MenuItems npcDessert, MenuItems npcDrink)
+    private IEnumerator CreateItems(MenuItems dessert, MenuItems drink, MenuItems npcDessert, MenuItems npcDrink, bool poof)
     {
-        particle.Play(-1);
+        if (poof)
+            particle.Play(-1);
         hasSpawnedItems = true;
         plates = new GameObject[2];
         items = new GameObject[4];
@@ -66,6 +67,7 @@ public class ItemSpawner : MonoBehaviour
         foreach (GameObject plate in plates)
             Destroy(plate);
         hasSpawnedItems = false;
+        SaveSystem.currentSave.hasItems = false;
     }
 
     private GameObject GetItem(MenuItems item)

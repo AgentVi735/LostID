@@ -19,6 +19,9 @@ public class EventNode : GenericNode
         public EventType eventType;
 
         [GraphDisplay(DisplayType.Inspector)]
+        public bool disableSaving;
+
+        [GraphDisplay(DisplayType.Inspector)]
         public bool hideDialogueBox;
 
         [GraphDisplay(DisplayType.Inspector)]

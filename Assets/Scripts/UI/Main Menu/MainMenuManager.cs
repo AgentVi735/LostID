@@ -457,6 +457,7 @@ public class MainMenuManager : MonoBehaviour
         {
             if (characters.characters[i].name != character.characterName) continue;
             SaveSystem.loadedPath = i;
+            SaveSystem.currentSave = SaveSystem.save.saves[i];
             break;
         }
         SaveSystem.Save();
@@ -469,6 +470,7 @@ public class MainMenuManager : MonoBehaviour
 
     private IEnumerator ShowPhone()
     {
+        leaveWallet.performed -= LeaveWallet;
         canSwitch = false;
         wallet.alpha = 1;
         wallet.interactable = false;

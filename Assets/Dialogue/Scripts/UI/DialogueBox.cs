@@ -48,6 +48,7 @@ public class DialogueBox : MonoBehaviour
     public void Setup(bool phone, CharacterManager givenManager)
     {
         characterManager = givenManager;
+        character = dialogueManager.GetGraphCharacter();
         isPhone = phone;
         if (phone)
             bubbles = new List<Bubble>();
@@ -198,7 +199,8 @@ public class DialogueBox : MonoBehaviour
     {
         if (!isPhone)
         {
-            objToSave = eventObj.name;
+            if (!eventObj.disableSaving)
+                objToSave = eventObj.name;
             dialogueManager.ToggleContinueButton(false);
         }
 

@@ -81,7 +81,8 @@ public class MenuCard : MonoBehaviour
         card.SetActive(false);
         SaveSystem.currentSave.selectedDessert = selectedDessert;
         SaveSystem.currentSave.selectedDrink = selectedDrinks;
-        itemSpawner.SpawnItems(selectedDessert, selectedDrinks, npcDessert, npcDrink);
+        SaveSystem.currentSave.hasItems = true;
+        itemSpawner.SpawnItems(selectedDessert, selectedDrinks, npcDessert, npcDrink, true);
         dialogueBox.FinishMenu();
     }
 

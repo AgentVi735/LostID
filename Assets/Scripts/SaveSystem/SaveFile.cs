@@ -10,6 +10,7 @@ public class SaveFile
         public string currentNode;
         public MenuItems selectedDessert;
         public MenuItems selectedDrink;
+        public bool hasItems;
         public bool choseBart;
         public bool isBartLaying;
         public bool hasCat;

@@ -119,6 +119,8 @@ public class SaveSystem : MonoBehaviour
             idx++;
         }
 
+        currentSave = save.saves[loadedPath];
+
         if (fakeSaveFile)
             return;
         string json = JsonUtility.ToJson(save);

@@ -4,6 +4,7 @@ public class CharacterParent : MonoBehaviour
 {
     private static readonly int ToChair = Animator.StringToHash("WalkToChair");
     private static readonly int LeaveFromChair = Animator.StringToHash("LeaveFromChair");
+    private static readonly int Idle = Animator.StringToHash("Idle");
     [SerializeField] private Animator animator;
 
     [SerializeField] private Vector3 bartSpawnPos;
@@ -22,6 +23,8 @@ public class CharacterParent : MonoBehaviour
     public void SetBartSitPos() => transform.position = bartSitPos;
 
     public void SetAnimation(CharacterAnimations sentAnimation, bool toggle) => character.SetAnimation(sentAnimation, toggle);
+
+    public void SpawnAtChair() => animator.SetTrigger(Idle);
 
     public void WalkToChair() => animator.SetTrigger(ToChair);
 

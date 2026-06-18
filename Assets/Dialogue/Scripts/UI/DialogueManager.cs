@@ -9,6 +9,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private PauseManager pauseManager;
     [SerializeField] private MainMenuManager mainMenuManager;
     [SerializeField] private CameraManager camManager;
+    [SerializeField] private ItemSpawner itemSpawner;
     [SerializeField] private DialogueBox dialogueBox;
     [SerializeField] private GameObject dialogueCanvas;
     [SerializeField] private Button continueButton;
@@ -62,13 +63,16 @@ public class DialogueManager : MonoBehaviour
     {
 #if UNITY_EDITOR
         if (SaveSystem.save == null)
+        {
             SaveSystem.CreateFakeDevSave(editorPathToLoad);
-        if (SaveSystem.save == null)
-            yield break;
+            if (SaveSystem.save == null)
+                yield break;
+
+            SaveSystem.currentSave = SaveSystem.save.saves[SaveSystem.loadedPath];
+        }
 #endif
 
-        SaveFile.SaveData save = SaveSystem.save.saves[SaveSystem.loadedPath];
-        SaveSystem.currentSave = save;
+        SaveFile.SaveData save = SaveSystem.currentSave;
         string nameToCheckFor = save.character;
 
         foreach (Character c in characters.characters)
@@ -79,19 +83,28 @@ public class DialogueManager : MonoBehaviour
         }
 
         SetupCharacter();
-        dialogueBox.Setup(false, characterManager);
+
+        if (save.choseBart)
+            character = characters.bart;
 
         graphController = character.graph;
-        currentObj = graphController.startingObj;
+        dialogueBox.Setup(false, characterManager);
         string savedObj = save.currentNode;
-        foreach (GenericObj obj in graphController.dialogueObjs)
+        if (!string.IsNullOrEmpty(savedObj))
         {
-            if (obj == null || obj.name != savedObj) continue;
-            currentObj = obj;
-            break;
+            foreach (GenericObj obj in graphController.dialogueObjs)
+            {
+                if (obj == null || obj.name != savedObj) continue;
+                currentObj = obj;
+                break;
+            }
+
+            if (currentObj != null)
+                yield return StartCoroutine(SetupSavedCharacter());
         }
-        if (savedObj != "")
-            yield return StartCoroutine(SetupSavedCharacter());
+        else
+            currentObj = graphController.startingObj;
+
         ToggleContinueButton(false);
 
         pauseManager.Setup();
@@ -114,6 +127,9 @@ public class DialogueManager : MonoBehaviour
     {
         if (SaveSystem.currentSave.isBartLaying)
         {
+            characterManager.SetAnimation(CharacterAnimations.Sit, true);
+            characterParent.SpawnAtChair();
+
             Destroy(catAnimator.gameObject);
 
             character = characters.bart;
@@ -143,10 +159,16 @@ public class DialogueManager : MonoBehaviour
             bartParent.SetBartSitPos();
         }
         else
+        {
             characterManager.SetAnimation(CharacterAnimations.Sit, true);
+            characterParent.SpawnAtChair();
+        }
 
         if (SaveSystem.currentSave.hasCat)
             catAnimator.SetTrigger(catSkipAnim);
+
+        if (SaveSystem.currentSave.hasItems)
+            itemSpawner.SpawnItems(SaveSystem.currentSave.selectedDessert, SaveSystem.currentSave.selectedDrink, character.dessert, character.drink, false);
     }
 
     private void SetupPhone()
@@ -160,10 +182,12 @@ public class DialogueManager : MonoBehaviour
             break;
         }
 
-        dialogueBox.Setup(true, null);
-
         graphController = character.phoneGraph;
         currentObj = graphController.startingObj;
+        dialogueBox.Setup(true, null);
+
+        pauseAction = inputs.FindAction("UI/Cancel");
+        pauseAction.performed += OnEscapeButtonPhone;
 
         dialogueBox.LoadObj(currentObj);
     }
@@ -177,6 +201,8 @@ public class DialogueManager : MonoBehaviour
     }
 
     private void OnEscapeButton(InputAction.CallbackContext context) => pauseManager.OpenPause();
+
+    private void OnEscapeButtonPhone(InputAction.CallbackContext context) => GoToDialogueScene();
 
     public void ContinueButton()
     {
@@ -254,7 +280,7 @@ public class DialogueManager : MonoBehaviour
     public void SwitchToBart()
     {
         graphController = characters.bart.graph;
-        SaveSystem.currentSave.choseBart = false;
+        SaveSystem.currentSave.choseBart = true;
         Continue(graphController.startingObj);
     }
 
@@ -277,6 +303,7 @@ public class DialogueManager : MonoBehaviour
 
         yield return null;
 
+        SaveSystem.currentSave.isBartLaying = true;
         bartParent.ResetForBart();
     }
 
@@ -295,12 +322,13 @@ public class DialogueManager : MonoBehaviour
 
         yield return new WaitForSeconds(0.6f);
 
+        SaveSystem.currentSave.isBartLaying = false;
         bartParent.SetBartSitPos();
     }
 
     private void OnDestroy()
     {
-        if (pauseAction != null)
-            pauseAction.performed -= OnEscapeButton;
+        pauseAction.performed -= OnEscapeButton;
+        pauseAction.performed -= OnEscapeButtonPhone;
     }
 }

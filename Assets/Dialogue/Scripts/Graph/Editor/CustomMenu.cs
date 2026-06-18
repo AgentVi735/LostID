@@ -56,18 +56,13 @@ public class CustomMenu : NewGraph.ContextMenu
 
     private static void CreateGraphDirectories()
     {
-        ControllerNode controllerNode = null;
         List<NodeModel> nodes = Window.graphController.graphData.Nodes;
 
-        foreach (var node in nodes)
-        {
-            GenericNode genericNode = (GenericNode)node.nodeData;
-
-            if (genericNode.ReturnType() != NodeType.Controller) continue;
-            ControllerNode nodeData = (ControllerNode)node.nodeData;
-            controllerNode = nodeData;
-            break;
-        }
+        ControllerNode controllerNode =
+            (from node in nodes
+                let genericNode = (GenericNode)node.nodeData
+                where genericNode.ReturnType() == NodeType.Controller
+                select (ControllerNode)node.nodeData).FirstOrDefault();
 
 
         if (controllerNode == null)
@@ -396,6 +391,7 @@ public class CustomMenu : NewGraph.ContextMenu
             };
 
         eventObj.eventType = eventData.eventType;
+        eventObj.disableSaving = eventData.disableSaving;
         eventObj.hideDialogueBox = eventData.hideDialogueBox;
         eventObj.keepText = eventData.keepText;
         eventObj.hidePortrait = eventData.hidePortrait;
@@ -714,6 +710,7 @@ public class CustomMenu : NewGraph.ContextMenu
             Event eventObj = eventData.eventObj;
 
             eventData.eventType = eventObj.eventType;
+            eventData.disableSaving = eventObj.disableSaving;
             eventData.hideDialogueBox = eventObj.hideDialogueBox;
             eventData.keepText = eventObj.keepText;
             eventData.hidePortrait = eventObj.hidePortrait;
