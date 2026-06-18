@@ -1,13 +1,11 @@
 using System.Collections;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 public class TrainManager : MonoBehaviour
 {
     [SerializeField] private MainMenuManager mainMenuManager;
 
-    [SerializeField] private Train[] trains;
-    private Train currentTrain;
+    [SerializeField] private Train train;
 
     [SerializeField] private Vector2 timeBetweenTrains;
 
@@ -18,11 +16,11 @@ public class TrainManager : MonoBehaviour
         while (true)
         {
             float delay = Random.Range(timeBetweenTrains.x, timeBetweenTrains.y);
+            Debug.Log(delay);
 
             yield return new WaitForSeconds(delay);
 
-            currentTrain = trains[Random.Range(0, trains.Length)];
-            yield return currentTrain.Move();
+            train.PlayAnimation();
         }
     }
 
