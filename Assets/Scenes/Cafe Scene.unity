@@ -37537,6 +37537,7 @@ MonoBehaviour:
   nameText: {fileID: 1385794803}
   characterImage: {fileID: 398657870}
   wallet: {fileID: 452641796}
+  defaultTypingSpeed: 0.04
   bubblePrefab: {fileID: 0}
   bubbleParent: {fileID: 0}
   offsetForTypingBubble: {x: 0, y: 0}

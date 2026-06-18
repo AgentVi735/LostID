@@ -6,7 +6,6 @@ public class MenuCard : MonoBehaviour
     [Header("References")]
     [SerializeField] private ItemSpawner itemSpawner;
     [SerializeField] private DialogueBox dialogueBox;
-    private SaveFile.SaveData save;
 
     [Header("Menu")]
     [SerializeField] private GameObject card;
@@ -24,7 +23,6 @@ public class MenuCard : MonoBehaviour
     {
         npcDessert = sentDessert;
         npcDrink = sentDrink;
-        save = SaveSystem.save.saves[SaveSystem.loadedPath];
         card.SetActive(true);
     }
 
@@ -81,8 +79,8 @@ public class MenuCard : MonoBehaviour
     public void OnConfirmButton()
     {
         card.SetActive(false);
-        save.selectedDessert = selectedDessert;
-        save.selectedDrink = selectedDrinks;
+        SaveSystem.currentSave.selectedDessert = selectedDessert;
+        SaveSystem.currentSave.selectedDrink = selectedDrinks;
         itemSpawner.SpawnItems(selectedDessert, selectedDrinks, npcDessert, npcDrink);
         dialogueBox.FinishMenu();
     }

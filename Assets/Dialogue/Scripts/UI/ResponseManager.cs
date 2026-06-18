@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -51,11 +52,22 @@ public class ResponseManager : MonoBehaviour
     {
         EventSystem.current.SetSelectedGameObject(null);
 
-        foreach (ResponseButton button in buttons) 
+        foreach (ResponseButton button in buttons)
             button.gameObject.SetActive(false);
 
         if (isPhone)
-            StartCoroutine(dialogueBox.CreatePlayerBubble(response.text));
+        {
+            StartCoroutine(GotResponsePhone(response));
+            return;
+        }
+
+        if (response.nextObj != null)
+            dialogueManager.Continue(response.nextObj);
+    }
+
+    private IEnumerator GotResponsePhone(Response response)
+    {
+        yield return StartCoroutine(dialogueBox.CreatePlayerBubble(response.text));
 
         if (response.nextObj != null)
             dialogueManager.Continue(response.nextObj);

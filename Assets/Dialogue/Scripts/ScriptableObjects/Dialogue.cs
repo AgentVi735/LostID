@@ -8,4 +8,5 @@ public class Dialogue : GenericObj
     public string text;
     public CharacterSprite sprite;
     public Sprite overrideSprite;
+    public float overrideTextSpeed;
 }

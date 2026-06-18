@@ -147,7 +147,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ResponseButton
   text: {fileID: 5952372527007940291}
-  isForPhone: 1
   textRect: {fileID: 8954677048017607111}
   rect: {fileID: 8954677048017607111}
   paddedArea: {x: 10.15, y: 10.15}
@@ -218,8 +217,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a23e0818a48fde346aec3ab30a0e7630, type: 2}
+  m_sharedMaterial: {fileID: -8400695427780586137, guid: a23e0818a48fde346aec3ab30a0e7630, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

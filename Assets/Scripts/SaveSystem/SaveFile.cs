@@ -11,6 +11,8 @@ public class SaveFile
         public MenuItems selectedDessert;
         public MenuItems selectedDrink;
         public bool choseBart;
+        public bool isBartLaying;
+        public bool hasCat;
     }
 
     public Dictionary<string, SaveData> saveData;

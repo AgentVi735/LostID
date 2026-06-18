@@ -5,31 +5,32 @@ using UnityEngine.UI;
 
 public class Bubble : MonoBehaviour
 {
+    [Header("Bubble References")]
     [SerializeField] private TMP_Text text;
-    [SerializeField] private RectTransform textRect;
     public RectTransform rect;
+    [SerializeField] private RectTransform bubbleRect;
+    [SerializeField] private HorizontalLayoutGroup layoutGroup;
     [SerializeField] private Image bubbleImage;
     [SerializeField] private Image sentImage;
 
-    [SerializeField] private Vector2 paddedArea;
-
-    [SerializeField] private Color npcColor;
+    [Header("Player")]
     [SerializeField] private Color playerColor;
-
-    [SerializeField] private Vector2 npcAnchor;
     [SerializeField] private Vector2 playerAnchor;
-
-    [SerializeField] private Vector2 npcPos;
     [SerializeField] private Vector2 playerPos;
-
-    [SerializeField] private Sprite npcImage;
+    [SerializeField] private TextAnchor playerLayoutAnchor;
     [SerializeField] private Sprite playerImage;
 
+    [Header("NPC")]
+    [SerializeField] private Color npcColor;
+    [SerializeField] private Vector2 npcAnchor;
+    [SerializeField] private Vector2 npcPos;
+    [SerializeField] private TextAnchor npcLayoutAnchor;
+    [SerializeField] private Sprite npcImage;
+
+    [Header("Typing Animation")]
+    [SerializeField] private GameObject typingBubblesParent;
     [SerializeField] private Animator typingBubblesAnimator;
-    [SerializeField] private Vector2 typingBubbleSize;
-
     private bool isTyping;
-
     private static readonly int ToggleAnim = Animator.StringToHash("Toggle");
 
     public IEnumerator Load(DialogueBox givenDialogueBox, string givenText, bool isNPC)
@@ -45,13 +46,7 @@ public class Bubble : MonoBehaviour
 
         yield return null;
 
-        Vector2 newSize = text.GetPreferredValues();
-        if (newSize.y is > 61 and < 62 && !text.text.Contains("<br>"))
-            newSize = new Vector2(newSize.x, 30);
-        textRect.sizeDelta = newSize;
-        rect.sizeDelta = text.GetPreferredValues() + paddedArea;
-        if (givenText == null) 
-            rect.sizeDelta = typingBubbleSize;
+        layoutGroup.childAlignment = isNPC ? npcLayoutAnchor : playerLayoutAnchor;
         rect.anchorMin = isNPC ? npcAnchor : playerAnchor;
         rect.anchorMax = isNPC ? npcAnchor : playerAnchor;
         rect.pivot = isNPC ? npcAnchor : playerAnchor;
@@ -60,14 +55,14 @@ public class Bubble : MonoBehaviour
         if (givenText == null)
             StartTypingAnimation();
         else
-            givenDialogueBox.CheckIfShouldMoveBubbles(rect.sizeDelta.y);
+            givenDialogueBox.MoveBubblesExceptForLast(bubbleRect.sizeDelta.y);
     }
 
     private void StartTypingAnimation()
     {
         isTyping = true;
         text.gameObject.SetActive(false);
-        typingBubblesAnimator.gameObject.SetActive(true);
+        typingBubblesParent.SetActive(true);
         typingBubblesAnimator.SetBool(ToggleAnim, true);
     }
 
@@ -75,7 +70,7 @@ public class Bubble : MonoBehaviour
     {
         isTyping = false;
         typingBubblesAnimator.SetBool(ToggleAnim, false);
-        typingBubblesAnimator.gameObject.SetActive(false);
+        typingBubblesParent.SetActive(false);
     }
 
     public IEnumerator Load(Sprite givenSprite)
@@ -89,7 +84,6 @@ public class Bubble : MonoBehaviour
 
         yield return null;
 
-        rect.sizeDelta = sentImage.rectTransform.sizeDelta + paddedArea;
         rect.anchorMin = playerAnchor;
         rect.anchorMax = playerAnchor;
         rect.pivot = playerAnchor;

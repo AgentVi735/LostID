@@ -18,6 +18,10 @@ public class DialogueBox : MonoBehaviour
     [SerializeField] private Image characterImage;
     [SerializeField] private Wallet wallet;
 
+    [Header("Typing Animation")]
+    [SerializeField] private float defaultTypingSpeed;
+    private WaitForSeconds typingSpeedWait;
+
     [Header("Characters")]
     private Character character;
     private CharacterManager characterManager;
@@ -26,8 +30,13 @@ public class DialogueBox : MonoBehaviour
     [Header("Phone Settings")]
     [SerializeField] private GameObject bubblePrefab;
     [SerializeField] private Transform bubbleParent;
+    [SerializeField] private Vector2 bubbleSpawnPos;
     [SerializeField] private Vector2 offsetForTypingBubble;
     [SerializeField] private Vector2 offsetForImageBubble;
+    [SerializeField] private Image sendButton;
+    [SerializeField] private Sprite sendImage;
+    [SerializeField] private Sprite voiceImage;
+    [SerializeField] private int maxCharacters;
     private List<Bubble> bubbles;
     private Bubble newBubble;
     private bool hasSpaceForNewBubble;
@@ -42,6 +51,7 @@ public class DialogueBox : MonoBehaviour
         isPhone = phone;
         if (phone)
             bubbles = new List<Bubble>();
+        typingSpeedWait = new WaitForSeconds(defaultTypingSpeed);
         responseManager.Setup(phone);
     }
 
@@ -60,10 +70,7 @@ public class DialogueBox : MonoBehaviour
         switch (givenObj.type)
         {
             case NodeType.Dialogue:
-                if (isPhone)
-                    StartCoroutine(LoadDialoguePhone((Dialogue)givenObj));
-                else
-                    LoadDialogue((Dialogue)givenObj);
+                StartCoroutine(isPhone ? LoadDialoguePhone((Dialogue)givenObj) : LoadDialogue((Dialogue)givenObj));
                 break;
             case NodeType.ResponseHolder:
                 LoadResponses((ResponseHolder)givenObj);
@@ -77,7 +84,7 @@ public class DialogueBox : MonoBehaviour
         }
     }
 
-    private void LoadDialogue(Dialogue dialogue)
+    private IEnumerator LoadDialogue(Dialogue dialogue)
     {
         dialogueManager.ToggleContinueButton(false);
         objToSave = dialogue.name;
@@ -89,7 +96,7 @@ public class DialogueBox : MonoBehaviour
                 if (character == null)
                 {
                     Debug.LogError("Graph has no character selected.");
-                    return;
+                    yield break;
                 }
             }
         }
@@ -124,9 +131,38 @@ public class DialogueBox : MonoBehaviour
                 characterManager.SetAnimation(CharacterAnimations.Sad, true);
                 break;
         }
-
         characterImage.color = Color.white;
-        dialogueText.text = dialogue.text;
+
+        float typingSpeed = defaultTypingSpeed;
+        if (dialogue.overrideTextSpeed > 0)
+            typingSpeed = dialogue.overrideTextSpeed;
+        typingSpeedWait = new WaitForSeconds(typingSpeed);
+        string fullText = dialogue.text;
+        int textLength = fullText.Length;
+        for (int i = 1; i < textLength + 1; i++)
+        {
+            string text = fullText[..i];
+            if (i < textLength)
+            {
+                if (fullText[i - 1].ToString() == "<")
+                {
+                    int charsTillEnd = 0;
+                    while (true)
+                    {
+                        charsTillEnd++;
+                        if (fullText[i - 1 + charsTillEnd].ToString() == ">")
+                            break;
+                    }
+
+                    i += charsTillEnd;
+                    text = fullText[..i];
+                }
+            }
+
+            dialogueText.text = text;
+            yield return typingSpeedWait;
+        }
+
         if (dialogue.nextObj != null)
             dialogueManager.ToggleContinueButton(true);
     }
@@ -138,7 +174,7 @@ public class DialogueBox : MonoBehaviour
 
         if (!newBubble)
         {
-            newBubble = Instantiate(bubblePrefab, bubbleParent.position, Quaternion.identity, bubbleParent)
+            newBubble = Instantiate(bubblePrefab, bubbleSpawnPos, Quaternion.identity, bubbleParent)
                 .GetComponent<Bubble>();
             bubbles.Add(newBubble);
         }
@@ -348,7 +384,7 @@ public class DialogueBox : MonoBehaviour
 
         if (!newBubble)
         {
-            newBubble = Instantiate(bubblePrefab, bubbleParent.position, Quaternion.identity, bubbleParent)
+            newBubble = Instantiate(bubblePrefab, bubbleSpawnPos, Quaternion.identity, bubbleParent)
                 .GetComponent<Bubble>();
             bubbles.Add(newBubble);
         }
@@ -479,6 +515,21 @@ public class DialogueBox : MonoBehaviour
             characterImage.color = Color.clear;
     }
 
+    public void MoveBubblesExceptForLast(float bubbleHeight)
+    {
+        if (offsetForTypingBubble.y >= bubbleHeight) return;
+
+        bubbleHeight -= offsetForTypingBubble.y;
+        Vector2 amt = new(offsetForTypingBubble.x, bubbleHeight);
+
+        hasSpaceForNewBubble = true;
+        for (int i = 0; i < bubbles.Count; i++)
+        {
+            if (i == bubbles.Count - 1) break;
+            bubbles[i].rect.anchoredPosition += amt;
+        }
+    }
+
     private void MoveBubblesUp(Vector2 amt)
     {
         hasSpaceForNewBubble = true;
@@ -486,32 +537,77 @@ public class DialogueBox : MonoBehaviour
             bubble.rect.anchoredPosition += amt;
     }
 
-    public void CheckIfShouldMoveBubbles(float amtToGoUpTotal)
-    {
-        if (offsetForTypingBubble.y >= amtToGoUpTotal) return;
-
-        amtToGoUpTotal -= offsetForTypingBubble.y;
-        MoveBubblesUp(new Vector2(offsetForTypingBubble.x, amtToGoUpTotal));
-    }
-
     private void CreateTypingBubble()
     {
-        Bubble bubble = Instantiate(bubblePrefab, bubbleParent.position, Quaternion.identity, bubbleParent)
+        Bubble bubble = Instantiate(bubblePrefab, bubbleSpawnPos, Quaternion.identity, bubbleParent)
             .GetComponent<Bubble>();
         bubbles.Add(bubble);
         StartCoroutine(bubble.Load(null, null, true));
         newBubble = bubble;
     }
 
-    public IEnumerator CreatePlayerBubble(string text)
+    public IEnumerator CreatePlayerBubble(string sentText)
     {
+        int textLength = sentText.Length;
+        sendButton.sprite = sendImage;
+        for (int i = 1; i < textLength + 1; i++)
+        {
+            string text = i > maxCharacters ? sentText[(i - maxCharacters)..i] : sentText[..i];
+            if (i < textLength)
+            {
+                switch (sentText[i - 1].ToString())
+                {
+                    case "<":
+                    {
+                        int charsTillEnd = 0;
+                        while (true)
+                        {
+                            charsTillEnd++;
+                            if (sentText[i - 1 + charsTillEnd].ToString() == ">")
+                                break;
+                        }
+
+                        i += charsTillEnd;
+                        text = i > maxCharacters ? sentText[(i - maxCharacters)..i] : sentText[..i];
+                        break;
+                    }
+                    case "\\":
+                    {
+                        int charsTillEnd = 0;
+                        while (true)
+                        {
+                            charsTillEnd++;
+                            int newIdx = i - 1 + charsTillEnd;
+                            if (newIdx >= textLength)
+                            {
+                                charsTillEnd--;
+                                break;
+                            }
+                            if (sentText[newIdx].ToString() == " ")
+                                break;
+                        }
+
+                        i += charsTillEnd;
+                        text = i > maxCharacters ? sentText[(i - maxCharacters)..i] : sentText[..i];
+                        break;
+                    }
+                }
+            }
+
+            dialogueText.text = text;
+            yield return typingSpeedWait;
+        }
+
         if (!hasSpaceForNewBubble)
             MoveBubblesUp(offsetForTypingBubble);
 
-        Bubble bubble = Instantiate(bubblePrefab, bubbleParent.position, Quaternion.identity, bubbleParent)
+        Bubble bubble = Instantiate(bubblePrefab, bubbleSpawnPos, Quaternion.identity, bubbleParent)
             .GetComponent<Bubble>();
         bubbles.Add(bubble);
-        yield return StartCoroutine(bubble.Load(this, text, false));
+        dialogueText.text = "";
+        sendButton.sprite = voiceImage;
+
+        yield return StartCoroutine(bubble.Load(this, sentText, false));
 
         hasSpaceForNewBubble = false;
         newBubble = null;

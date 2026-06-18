@@ -5,6 +5,7 @@ using UnityEngine;
 public class SaveSystem : MonoBehaviour
 {
     public static SaveFile save;
+    public static SaveFile.SaveData currentSave;
     public static int loadedPath;
 
     [SerializeField] private CharactersHolder charactersHolder;

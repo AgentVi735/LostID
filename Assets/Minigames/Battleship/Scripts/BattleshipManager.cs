@@ -93,7 +93,7 @@ public class BattleshipManager : MonoBehaviour
         waitDelayUntilExit = new WaitForSeconds(delayUntilExit);
         waitInteractionAnimTime = new WaitForSeconds(interactionAnimTime);
 
-        isBart = SaveSystem.save.saves[SaveSystem.loadedPath].choseBart;
+        isBart = SaveSystem.currentSave.choseBart;
         if (isBart)
             characterManager = bartManager;
     }

@@ -19,9 +19,8 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private Animator stationAnimator;
 
     [Header("Characters")]
-    [SerializeField] private Character[] characters;
+    [SerializeField] private CharactersHolder characters;
     private Character character;
-    [SerializeField] private Character emptyCharacter;
 
     [Header("NFC")]
     private Character cardCharacter;
@@ -31,8 +30,8 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private GameObject station;
     [SerializeField] private GameObject stationCloseUp;
     [SerializeField] private CanvasGroup stationCloseUpGroup;
-    [SerializeField] private GameObject wallet;
-    [SerializeField] private GameObject phone;
+    [SerializeField] private CanvasGroup wallet;
+    [SerializeField] private CanvasGroup phone;
 
     [Header("Station")]
     [SerializeField] private Image smallWallet;
@@ -55,6 +54,10 @@ public class MainMenuManager : MonoBehaviour
 
     [Header("Fades")]
     [SerializeField] private float stationCloseUpFade;
+    [SerializeField] private float walletFade;
+    [SerializeField] private float phoneFade;
+    [SerializeField] private float delayBetweenWalletAndPhone;
+    private WaitForSeconds waitDelayBetweenWalletAndPhone;
     [SerializeField] private float fadeTime;
     [SerializeField] private float delayBetweenSwitch;
     private WaitForSeconds waitDelayBetweenSwitch;
@@ -77,13 +80,14 @@ public class MainMenuManager : MonoBehaviour
     private void Awake()
     {
         sceneSwitcher = FindFirstObjectByType<SceneSwitcher>();
+        waitDelayBetweenWalletAndPhone = new WaitForSeconds(delayBetweenWalletAndPhone);
         waitDelayBetweenSwitch = new WaitForSeconds(delayBetweenSwitch);
         LoadSettings();
     }
 
     private void Start()
     {
-        character = emptyCharacter;
+        character = characters.empty;
         Load();
         smallWallet.sprite = null;
         smallWallet.color = clearColour;
@@ -103,7 +107,7 @@ public class MainMenuManager : MonoBehaviour
     private void SwitchCharacter(InputAction.CallbackContext context)
     {
         switchCharacterIdx++;
-        if (switchCharacterIdx > characters.Length - 1)
+        if (switchCharacterIdx > characters.characters.Length - 1)
             switchCharacterIdx = 0;
 
         StartCoroutine(SwitchChar());
@@ -116,7 +120,7 @@ public class MainMenuManager : MonoBehaviour
 
         yield return null;
 
-        NewCharacter(characters[switchCharacterIdx]);
+        NewCharacter(characters.characters[switchCharacterIdx]);
     }
 
     private void OnDestroy()
@@ -134,7 +138,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void RemoveCharacter()
     {
-        cardCharacter = emptyCharacter;
+        cardCharacter = characters.empty;
         if (canSwitch)
             UnloadCharacter();
     }
@@ -228,13 +232,13 @@ public class MainMenuManager : MonoBehaviour
             yield return null;
         }
 
-        foreach (Image img in imagesToFade) 
+        foreach (Image img in imagesToFade)
             img.color = clearColour;
 
         foreach (CanvasGroup grp in groupsToFade)
             grp.alpha = clearColour.a;
 
-        character = emptyCharacter;
+        character = characters.empty;
         Load();
 
         yield return waitDelayBetweenSwitch;
@@ -449,22 +453,50 @@ public class MainMenuManager : MonoBehaviour
 
     public void OnStartButton()
     {
-        for (int i = 0; i < characters.Length; i++)
+        for (int i = 0; i < characters.characters.Length; i++)
         {
-            if (characters[i].name != character.characterName) continue;
+            if (characters.characters[i].name != character.characterName) continue;
             SaveSystem.loadedPath = i;
             break;
         }
         SaveSystem.Save();
 
-        if (string.IsNullOrEmpty(SaveSystem.save.saves[SaveSystem.loadedPath].currentNode))
-        {
-            wallet.SetActive(false);
-            phone.SetActive(true);
-            dialogueManager.gameObject.SetActive(true);
-        }
+        if (string.IsNullOrEmpty(SaveSystem.currentSave.currentNode))
+            StartCoroutine(ShowPhone());
         else
             StartGame();
+    }
+
+    private IEnumerator ShowPhone()
+    {
+        canSwitch = false;
+        wallet.alpha = 1;
+        wallet.interactable = false;
+
+        for (float i = 0; i < walletFade; i += Time.deltaTime)
+        {
+            wallet.alpha = 1 - i / walletFade;
+            yield return null;
+        }
+
+        wallet.alpha = 0;
+        wallet.gameObject.SetActive(false);
+
+        yield return waitDelayBetweenWalletAndPhone;
+
+        phone.alpha = 0;
+        phone.interactable = false;
+        phone.gameObject.SetActive(true);
+
+        for (float i = 0; i < phoneFade; i += Time.deltaTime)
+        {
+            phone.alpha = i / phoneFade;
+            yield return null;
+        }
+
+        phone.alpha = 1;
+        phone.interactable = true;
+        dialogueManager.gameObject.SetActive(true);
     }
 
     public void StartGame()

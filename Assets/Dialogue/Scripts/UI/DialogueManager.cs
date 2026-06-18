@@ -42,6 +42,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private Animator catAnimator;
     [SerializeField] private string catShowAnim;
     [SerializeField] private string catLeaveAnim;
+    [SerializeField] private string catSkipAnim;
     [SerializeField] private PoofParticle poofParticle;
 
     public Character GetGraphCharacter() => graphController.character;
@@ -54,19 +55,20 @@ public class DialogueManager : MonoBehaviour
         if (isPhone)
             SetupPhone();
         else
-            Setup();
+            StartCoroutine(Setup());
     }
 
-    private void Setup()
+    private IEnumerator Setup()
     {
 #if UNITY_EDITOR
         if (SaveSystem.save == null)
             SaveSystem.CreateFakeDevSave(editorPathToLoad);
         if (SaveSystem.save == null)
-            return;
+            yield break;
 #endif
 
         SaveFile.SaveData save = SaveSystem.save.saves[SaveSystem.loadedPath];
+        SaveSystem.currentSave = save;
         string nameToCheckFor = save.character;
 
         foreach (Character c in characters.characters)
@@ -81,13 +83,15 @@ public class DialogueManager : MonoBehaviour
 
         graphController = character.graph;
         currentObj = graphController.startingObj;
-        string savedObj = SaveSystem.save.saves[SaveSystem.loadedPath].currentNode;
+        string savedObj = save.currentNode;
         foreach (GenericObj obj in graphController.dialogueObjs)
         {
             if (obj == null || obj.name != savedObj) continue;
             currentObj = obj;
             break;
         }
+        if (savedObj != "")
+            yield return StartCoroutine(SetupSavedCharacter());
         ToggleContinueButton(false);
 
         pauseManager.Setup();
@@ -106,9 +110,48 @@ public class DialogueManager : MonoBehaviour
         characterManager.Setup(characterParent);
     }
 
+    private IEnumerator SetupSavedCharacter()
+    {
+        if (SaveSystem.currentSave.isBartLaying)
+        {
+            Destroy(catAnimator.gameObject);
+
+            character = characters.bart;
+
+            bartManager = Instantiate(character.prefab, bartParent.transform.position, bartParent.transform.rotation, bartParent.transform)
+                .GetComponent<CharacterManager>();
+
+            bartManager.Setup(bartParent);
+            bartManager.SetAnimation(CharacterAnimations.Walk, true);
+
+            yield return null;
+
+            bartParent.ResetForBart();
+        }
+        else if (SaveSystem.currentSave.choseBart)
+        {
+            character = characters.bart;
+            bartManager = Instantiate(character.prefab, bartParent.transform.position, bartParent.transform.rotation, bartParent.transform)
+                .GetComponent<CharacterManager>();
+            characterManager = bartManager;
+            bartManager.Setup(bartParent);
+
+            characterManager.SetAnimation(CharacterAnimations.Sit, true);
+
+            yield return new WaitForSeconds(0.6f);
+
+            bartParent.SetBartSitPos();
+        }
+        else
+            characterManager.SetAnimation(CharacterAnimations.Sit, true);
+
+        if (SaveSystem.currentSave.hasCat)
+            catAnimator.SetTrigger(catSkipAnim);
+    }
+
     private void SetupPhone()
     {
-        string nameToCheckFor = SaveSystem.save.saves[SaveSystem.loadedPath].character;
+        string nameToCheckFor = SaveSystem.currentSave.character;
 
         foreach (Character c in characters.characters)
         {
@@ -179,10 +222,10 @@ public class DialogueManager : MonoBehaviour
     public void GoToMainMenu(bool shouldSaveObj, bool isEnding)
     {
         if (isEnding)
-            SaveSystem.save.saves[SaveSystem.loadedPath].currentNode = null;
+            SaveSystem.currentSave.currentNode = null;
 
         if (shouldSaveObj)
-            SaveSystem.save.saves[SaveSystem.loadedPath].currentNode = dialogueBox.objToSave;
+            SaveSystem.currentSave.currentNode = dialogueBox.objToSave;
 
         SaveSystem.Save();
         sceneSwitcher.ChangeScene(Scenes.MainMenu, Scenes.Cafe);
@@ -196,14 +239,22 @@ public class DialogueManager : MonoBehaviour
         continueButton.interactable = toggle;
     }
 
-    public void ShowCat() => catAnimator.SetTrigger(catShowAnim);
+    public void ShowCat()
+    {
+        catAnimator.SetTrigger(catShowAnim);
+        SaveSystem.currentSave.hasCat = true;
+    }
 
-    public void CatLeave() => catAnimator.SetTrigger(catLeaveAnim);
+    public void CatLeave()
+    {
+        catAnimator.SetTrigger(catLeaveAnim);
+        SaveSystem.currentSave.hasCat = true;
+    }
 
     public void SwitchToBart()
     {
         graphController = characters.bart.graph;
-        SaveSystem.save.saves[SaveSystem.loadedPath].choseBart = true;
+        SaveSystem.currentSave.choseBart = false;
         Continue(graphController.startingObj);
     }
 
@@ -214,6 +265,7 @@ public class DialogueManager : MonoBehaviour
         poofParticle.Play(3);
 
         Destroy(catAnimator.gameObject);
+        SaveSystem.currentSave.hasCat = false;
 
         character = characters.bart;
 

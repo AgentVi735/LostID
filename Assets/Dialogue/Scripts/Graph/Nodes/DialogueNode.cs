@@ -29,6 +29,9 @@ public class DialogueNode : GenericNode
 
         [GraphDisplay(DisplayType.Inspector)]
         public Sprite overrideSprite;
+
+        [GraphDisplay(DisplayType.Inspector)]
+        public float overrideTextSpeed;
     }
     public DialogueData dialogueData;
 }

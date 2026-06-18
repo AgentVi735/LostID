@@ -48,8 +48,8 @@ MonoBehaviour:
     utilityNodes: []
     tmpName: Robyn Phone
     viewportInitiallySet: 1
-    viewPosition: {x: -2260.1938, y: 89.8207, z: 0}
-    viewScale: {x: 0.25, y: 0.25, z: 1}
+    viewPosition: {x: -8569.937, y: 270.27762, z: 0}
+    viewScale: {x: 1, y: 1, z: 1}
   references:
     version: 2
     RefIds:
@@ -72,15 +72,16 @@ MonoBehaviour:
     - rid: 3518661741492306604
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -1731794864
+        nodeName: 1435242272
         nextNode:
           rid: 4248539534647361623
         eventData:
-          eventObj: {fileID: 11400000, guid: bc1adb5e8dcf66d4ca5f03525a75a576, type: 2}
+          eventObj: {fileID: 11400000, guid: b9511d9ece73c9b47af78046c4fc613f, type: 2}
           eventType: 1
           hideDialogueBox: 0
           keepText: 0
           hidePortrait: 0
+          removeItems: 0
           delay: 0.6
           minigame: 0
           wonMinigameNode:
@@ -88,7 +89,6 @@ MonoBehaviour:
           loseMinigameNode:
             rid: -2
           imageToSend: {fileID: 0}
-          graphToMoveTo: {fileID: 0}
     - rid: 3518661741492306605
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -106,15 +106,16 @@ MonoBehaviour:
     - rid: 3518661741492306606
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -716239504
+        nodeName: 1913943056
         nextNode:
           rid: 3518661741492306608
         eventData:
-          eventObj: {fileID: 11400000, guid: 8c8ee60b599da164496928e71cc5f64a, type: 2}
+          eventObj: {fileID: 11400000, guid: b20753b34fba5ce4d8e1006d7af6a253, type: 2}
           eventType: 1
           hideDialogueBox: 0
           keepText: 0
           hidePortrait: 0
+          removeItems: 0
           delay: 0.6
           minigame: 0
           wonMinigameNode:
@@ -122,7 +123,6 @@ MonoBehaviour:
           loseMinigameNode:
             rid: -2
           imageToSend: {fileID: 0}
-          graphToMoveTo: {fileID: 0}
     - rid: 3518661741492306607
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -140,15 +140,16 @@ MonoBehaviour:
     - rid: 3518661741492306608
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: 1332536416
+        nodeName: -1902323456
         nextNode:
           rid: 4248539534647361625
         eventData:
-          eventObj: {fileID: 11400000, guid: abdfd2c194aefc5418bdd284046d808c, type: 2}
+          eventObj: {fileID: 11400000, guid: 4c97c34ce1ae3684eae72b226777423b, type: 2}
           eventType: 1
           hideDialogueBox: 1
           keepText: 0
           hidePortrait: 0
+          removeItems: 0
           delay: 1.1
           minigame: 0
           wonMinigameNode:
@@ -156,7 +157,6 @@ MonoBehaviour:
           loseMinigameNode:
             rid: -2
           imageToSend: {fileID: 0}
-          graphToMoveTo: {fileID: 0}
     - rid: 3518661741492306609
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -174,15 +174,16 @@ MonoBehaviour:
     - rid: 3518661741492306610
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: 1824906592
+        nodeName: -1423622672
         nextNode:
           rid: 4248539534647361627
         eventData:
-          eventObj: {fileID: 11400000, guid: f2cbd64a9c95fb24ba76fd6dff6461ae, type: 2}
+          eventObj: {fileID: 11400000, guid: 3d8eed455d2573d4e9c4c51a427a5c3a, type: 2}
           eventType: 1
           hideDialogueBox: 1
           keepText: 0
           hidePortrait: 0
+          removeItems: 0
           delay: 0.8
           minigame: 0
           wonMinigameNode:
@@ -190,7 +191,6 @@ MonoBehaviour:
           loseMinigameNode:
             rid: -2
           imageToSend: {fileID: 0}
-          graphToMoveTo: {fileID: 0}
     - rid: 3518661741492306611
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -208,15 +208,16 @@ MonoBehaviour:
     - rid: 3518661741492306612
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: 129766160
+        nodeName: -944921888
         nextNode:
           rid: 3518661741492306614
         eventData:
-          eventObj: {fileID: 11400000, guid: 2165cddaf37d1df4fad5f48d6de5d293, type: 2}
+          eventObj: {fileID: 11400000, guid: 1028412860979ce49905c523842a571e, type: 2}
           eventType: 1
           hideDialogueBox: 0
           keepText: 0
           hidePortrait: 0
+          removeItems: 0
           delay: 6.1
           minigame: 0
           wonMinigameNode:
@@ -224,7 +225,6 @@ MonoBehaviour:
           loseMinigameNode:
             rid: -2
           imageToSend: {fileID: 0}
-          graphToMoveTo: {fileID: 0}
     - rid: 3518661741492306613
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -242,15 +242,16 @@ MonoBehaviour:
     - rid: 3518661741492306614
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: 1952604304
+        nodeName: -466221104
         nextNode:
           rid: 4248539534647361629
         eventData:
-          eventObj: {fileID: 11400000, guid: 1e5fb6a61fe5fc54f8fa2c684240e7e4, type: 2}
+          eventObj: {fileID: 11400000, guid: eb8a7f172a4b04e49ac62bfcbe190ac7, type: 2}
           eventType: 1
           hideDialogueBox: 1
           keepText: 0
           hidePortrait: 0
+          removeItems: 0
           delay: 0.9
           minigame: 0
           wonMinigameNode:
@@ -258,7 +259,6 @@ MonoBehaviour:
           loseMinigameNode:
             rid: -2
           imageToSend: {fileID: 0}
-          graphToMoveTo: {fileID: 0}
     - rid: 3518661741492306615
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -276,15 +276,16 @@ MonoBehaviour:
     - rid: 3518661741492306616
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: 1157866176
+        nodeName: 12479680
         nextNode:
           rid: 4248539534647361639
         eventData:
-          eventObj: {fileID: 11400000, guid: 1dfa4895c85873044bff10a0c7137bb1, type: 2}
+          eventObj: {fileID: 11400000, guid: 8274eef444f70fd45a67784d65c45599, type: 2}
           eventType: 1
           hideDialogueBox: 0
           keepText: 0
           hidePortrait: 0
+          removeItems: 0
           delay: 1.1
           minigame: 0
           wonMinigameNode:
@@ -292,7 +293,6 @@ MonoBehaviour:
           loseMinigameNode:
             rid: -2
           imageToSend: {fileID: 0}
-          graphToMoveTo: {fileID: 0}
     - rid: 3518661741492306617
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -310,15 +310,16 @@ MonoBehaviour:
     - rid: 3518661741492306618
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: 968099744
+        nodeName: 491180464
         nextNode:
           rid: 3518661741492306620
         eventData:
-          eventObj: {fileID: 11400000, guid: 374f7250eb65bbf44a3209e2740a1a10, type: 2}
+          eventObj: {fileID: 11400000, guid: 7be4ce3744162d14c8c59f2f1e82ca7a, type: 2}
           eventType: 1
           hideDialogueBox: 0
           keepText: 0
           hidePortrait: 0
+          removeItems: 0
           delay: 0.8
           minigame: 0
           wonMinigameNode:
@@ -326,7 +327,6 @@ MonoBehaviour:
           loseMinigameNode:
             rid: -2
           imageToSend: {fileID: 0}
-          graphToMoveTo: {fileID: 0}
     - rid: 3518661741492306619
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -344,15 +344,16 @@ MonoBehaviour:
     - rid: 3518661741492306620
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: 1533759776
+        nodeName: 969881248
         nextNode:
           rid: 4248539534647361643
         eventData:
-          eventObj: {fileID: 11400000, guid: 16b44c5c18489e241b279f518b44f5c1, type: 2}
+          eventObj: {fileID: 11400000, guid: 1ec7d31a37ceacc4d89e551c92f72a89, type: 2}
           eventType: 1
           hideDialogueBox: 1
           keepText: 0
           hidePortrait: 0
+          removeItems: 0
           delay: 4.2
           minigame: 0
           wonMinigameNode:
@@ -360,7 +361,6 @@ MonoBehaviour:
           loseMinigameNode:
             rid: -2
           imageToSend: {fileID: 0}
-          graphToMoveTo: {fileID: 0}
     - rid: 3518661741492306621
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -378,15 +378,16 @@ MonoBehaviour:
     - rid: 3518661741492306622
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -2061418880
+        nodeName: 1927282816
         nextNode:
           rid: 3518661741492306624
         eventData:
-          eventObj: {fileID: 11400000, guid: 2cafafb7c6893ed4eb4da6bd1e102196, type: 2}
+          eventObj: {fileID: 11400000, guid: 1fda5b8767ca8b140803475298d545e8, type: 2}
           eventType: 1
           hideDialogueBox: 0
           keepText: 0
           hidePortrait: 0
+          removeItems: 0
           delay: 1.4
           minigame: 0
           wonMinigameNode:
@@ -394,7 +395,6 @@ MonoBehaviour:
           loseMinigameNode:
             rid: -2
           imageToSend: {fileID: 0}
-          graphToMoveTo: {fileID: 0}
     - rid: 3518661741492306623
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -412,15 +412,16 @@ MonoBehaviour:
     - rid: 3518661741492306624
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -291155424
+        nodeName: -1410282912
         nextNode:
           rid: 4248539534647361645
         eventData:
-          eventObj: {fileID: 11400000, guid: 5cd94ae01210db14d80382c33c18c5c4, type: 2}
+          eventObj: {fileID: 11400000, guid: 2452e39c770783246a6c78898b641a18, type: 2}
           eventType: 1
           hideDialogueBox: 1
           keepText: 0
           hidePortrait: 0
+          removeItems: 0
           delay: 4.5
           minigame: 0
           wonMinigameNode:
@@ -428,7 +429,6 @@ MonoBehaviour:
           loseMinigameNode:
             rid: -2
           imageToSend: {fileID: 0}
-          graphToMoveTo: {fileID: 0}
     - rid: 3518661741492306625
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -446,15 +446,16 @@ MonoBehaviour:
     - rid: 3518661741492306626
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: 126832272
+        nodeName: -931582128
         nextNode:
           rid: -2
         eventData:
-          eventObj: {fileID: 11400000, guid: 1650ac9247ab5924085e4ad263280eec, type: 2}
+          eventObj: {fileID: 11400000, guid: a50b5854df469f544bb5ad6267f93e88, type: 2}
           eventType: 3
           hideDialogueBox: 0
           keepText: 0
           hidePortrait: 0
+          removeItems: 0
           delay: 0
           minigame: 0
           wonMinigameNode:
@@ -462,7 +463,6 @@ MonoBehaviour:
           loseMinigameNode:
             rid: -2
           imageToSend: {fileID: 0}
-          graphToMoveTo: {fileID: 0}
     - rid: 4248539534647361616
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -494,8 +494,8 @@ MonoBehaviour:
     - rid: 4248539534647361619
       type: {class: ResponseHolderNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: 1116315472
-        responseHolder: {fileID: 11400000, guid: 0348d82321368f14fa128bf5057982d8, type: 2}
+        nodeName: 1461921792
+        responseHolder: {fileID: 11400000, guid: d76ae8855c3e324408655fb8cedaa314, type: 2}
         responses:
         - rid: 4248539534647361621
     - rid: 4248539534647361620
@@ -511,8 +511,8 @@ MonoBehaviour:
     - rid: 4248539534647361621
       type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: 1595016256
-        response: {fileID: 11400000, guid: ecd0184187f990740be3a670eede70eb, type: 2}
+        nodeName: 2085829360
+        response: {fileID: 11400000, guid: 370ea1dab1ab74f4a920d19b1aa404d2, type: 2}
         nextNode:
           rid: 3518661741492306604
         text: Hey, I found your wallet.
@@ -533,15 +533,16 @@ MonoBehaviour:
     - rid: 4248539534647361623
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: 2073717040
+        nodeName: -1730437152
         nextNode:
           rid: 3518661741492306606
         eventData:
-          eventObj: {fileID: 11400000, guid: 93f39adca92a9c140b68bc4c716a36b8, type: 2}
+          eventObj: {fileID: 11400000, guid: 1c441a8168d4f574cbf11a992b7a9d65, type: 2}
           eventType: 4
           hideDialogueBox: 0
           keepText: 0
           hidePortrait: 0
+          removeItems: 0
           delay: 0
           minigame: 0
           wonMinigameNode:
@@ -549,7 +550,6 @@ MonoBehaviour:
           loseMinigameNode:
             rid: -2
           imageToSend: {fileID: 21300000, guid: 1f034a6109d73f144863c82a5fcb15f0, type: 3}
-          graphToMoveTo: {fileID: 0}
     - rid: 4248539534647361624
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -567,16 +567,17 @@ MonoBehaviour:
     - rid: 4248539534647361625
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -1263848688
+        nodeName: -1251736368
         nextNode:
           rid: 3518661741492306610
         dialogueData:
-          dialogue: {fileID: 11400000, guid: 0e4e05a460a03534ea4ab2de10badc95, type: 2}
+          dialogue: {fileID: 11400000, guid: c374374f08445fa4ca3d7ed99fded600, type: 2}
           character: {fileID: 0}
           overrideCharacterName: 
           text: That's mine yeah.
           sprite: 0
           overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
     - rid: 4248539534647361626
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -594,16 +595,17 @@ MonoBehaviour:
     - rid: 4248539534647361627
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -785147904
+        nodeName: -773035584
         nextNode:
           rid: 3518661741492306612
         dialogueData:
-          dialogue: {fileID: 11400000, guid: db14740d058b1654c80c67e15e5e062e, type: 2}
+          dialogue: {fileID: 11400000, guid: d6311affa7bfb6c498b57d6af9b0028a, type: 2}
           character: {fileID: 0}
           overrideCharacterName: 
           text: Keep it.
           sprite: 0
           overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
     - rid: 4248539534647361628
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -621,16 +623,17 @@ MonoBehaviour:
     - rid: 4248539534647361629
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -1441857296
+        nodeName: -204268304
         nextNode:
           rid: 4248539534647361635
         dialogueData:
-          dialogue: {fileID: 11400000, guid: a7cea75b3e768a847bfad6c01f3e6b4d, type: 2}
+          dialogue: {fileID: 11400000, guid: 0522ef724feef8f4ca112fe86a1a8fc8, type: 2}
           character: {fileID: 0}
           overrideCharacterName: 
           text: JK, I do want it back.
           sprite: 0
           overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
     - rid: 4248539534647361634
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -644,8 +647,8 @@ MonoBehaviour:
     - rid: 4248539534647361635
       type: {class: ResponseHolderNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -963156512
-        responseHolder: {fileID: 11400000, guid: cdaafa09f6aadb3419cc8442840e5edf, type: 2}
+        nodeName: 274432480
+        responseHolder: {fileID: 11400000, guid: 6e0513c8e2917394ca275b86441add84, type: 2}
         responses:
         - rid: 4248539534647361637
     - rid: 4248539534647361636
@@ -661,8 +664,8 @@ MonoBehaviour:
     - rid: 4248539534647361637
       type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -484455728
-        response: {fileID: 11400000, guid: e61f739591b607d48a49350f1e777f3d, type: 2}
+        nodeName: 753133264
+        response: {fileID: 11400000, guid: 40a58fcb91c3e9b4491a039b5c0674ff, type: 2}
         nextNode:
           rid: 3518661741492306616
         text: LMAO
@@ -679,8 +682,8 @@ MonoBehaviour:
     - rid: 4248539534647361639
       type: {class: ResponseHolderNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -5754944
-        responseHolder: {fileID: 11400000, guid: ab7feccd91469a34e914cf6de046630f, type: 2}
+        nodeName: 1231834048
+        responseHolder: {fileID: 11400000, guid: cdfd894cf2de04a45a3a65adcc774f3b, type: 2}
         responses:
         - rid: 4248539534647361641
     - rid: 4248539534647361640
@@ -696,8 +699,8 @@ MonoBehaviour:
     - rid: 4248539534647361641
       type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: 472945840
-        response: {fileID: 11400000, guid: aa3e2a043b3ca8147abbaed1e4c67c03, type: 2}
+        nodeName: 1710534832
+        response: {fileID: 11400000, guid: 18cf345619174e4408f8df6c821f8e89, type: 2}
         nextNode:
           rid: 3518661741492306618
         text: How can I return it to you?
@@ -718,16 +721,17 @@ MonoBehaviour:
     - rid: 4248539534647361643
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: 951646624
+        nodeName: -2105731680
         nextNode:
           rid: 3518661741492306622
         dialogueData:
-          dialogue: {fileID: 11400000, guid: c77ad2568e848664f8c659f3a9de3a67, type: 2}
+          dialogue: {fileID: 11400000, guid: 89917fde8a65f214f912fdd8304aa817, type: 2}
           character: {fileID: 0}
           overrideCharacterName: 
-          text: You could meet me at this cafe,<br>Paw-some Desserts in an hour..?
+          text: You could meet me at this cafe, Paw-some Desserts in an hour..?
           sprite: 0
           overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
     - rid: 4248539534647361644
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -745,16 +749,17 @@ MonoBehaviour:
     - rid: 4248539534647361645
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: 1430347408
+        nodeName: -1627030896
         nextNode:
           rid: 4248539534647361647
         dialogueData:
-          dialogue: {fileID: 11400000, guid: 30c3c11c802bb6944ba245f31b83464b, type: 2}
+          dialogue: {fileID: 11400000, guid: 3ad4ea6480a44aa4ab683f5043833242, type: 2}
           character: {fileID: 0}
           overrideCharacterName: 
-          text: I go there often for lunch,<br>you could join me :)
+          text: I go there often for lunch, you could join me :)
           sprite: 0
           overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
     - rid: 4248539534647361646
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -768,8 +773,8 @@ MonoBehaviour:
     - rid: 4248539534647361647
       type: {class: ResponseHolderNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: 1909048192
-        responseHolder: {fileID: 11400000, guid: 7c9d001489ed97a4688e99ff9af99aa7, type: 2}
+        nodeName: -1148330112
+        responseHolder: {fileID: 11400000, guid: 31cd840a2739dfb4682dbf563edd7d01, type: 2}
         responses:
         - rid: 4248539534647361649
         - rid: 4248539534647361655
@@ -786,8 +791,8 @@ MonoBehaviour:
     - rid: 4248539534647361649
       type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -1907218320
-        response: {fileID: 11400000, guid: 70b7f46d4244e7b42bc3b18e86ff0578, type: 2}
+        nodeName: -669629328
+        response: {fileID: 11400000, guid: a7a286c6a1d43b24889931098d50b384, type: 2}
         nextNode:
           rid: 4248539534647361651
         text: Sure!
@@ -804,8 +809,8 @@ MonoBehaviour:
     - rid: 4248539534647361651
       type: {class: ResponseHolderNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -1428517536
-        responseHolder: {fileID: 11400000, guid: e56e2883aaee5b54ea8589335f7b40b8, type: 2}
+        nodeName: -190928544
+        responseHolder: {fileID: 11400000, guid: 3f54475ee9ce13d498e4fe5f37408bbb, type: 2}
         responses:
         - rid: 4248539534647361653
     - rid: 4248539534647361652
@@ -821,8 +826,8 @@ MonoBehaviour:
     - rid: 4248539534647361653
       type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -949816752
-        response: {fileID: 11400000, guid: ec1bf2d79ff788140ba071b5e3360637, type: 2}
+        nodeName: 287772240
+        response: {fileID: 11400000, guid: 351f4aa29e758954e83ca179da401e91, type: 2}
         nextNode:
           rid: 4248539534647361657
         text: Sounds fun!
@@ -839,11 +844,11 @@ MonoBehaviour:
     - rid: 4248539534647361655
       type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -471115968
-        response: {fileID: 11400000, guid: f64ff5b51b29eaa4385701005116cea1, type: 2}
+        nodeName: 766473024
+        response: {fileID: 11400000, guid: 37c50b3a645f5c046a3544cb58ceaf8c, type: 2}
         nextNode:
           rid: 4248539534647361657
-        text: "\U0001F44D"
+        text: \U0001F44D
     - rid: 4248539534647361656
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -861,15 +866,16 @@ MonoBehaviour:
     - rid: 4248539534647361657
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: 7584816
+        nodeName: 1245173808
         nextNode:
           rid: 3518661741492306626
         eventData:
-          eventObj: {fileID: 11400000, guid: fdef7dbf76dd638409566a1c65a421c2, type: 2}
+          eventObj: {fileID: 11400000, guid: a2e6abdaaced5414a8684f412d5c1645, type: 2}
           eventType: 1
           hideDialogueBox: 0
           keepText: 0
           hidePortrait: 0
+          removeItems: 0
           delay: 2
           minigame: 0
           wonMinigameNode:
@@ -877,4 +883,3 @@ MonoBehaviour:
           loseMinigameNode:
             rid: -2
           imageToSend: {fileID: 0}
-          graphToMoveTo: {fileID: 0}

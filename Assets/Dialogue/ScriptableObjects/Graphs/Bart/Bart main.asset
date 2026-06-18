@@ -27,8 +27,8 @@ MonoBehaviour:
     utilityNodes: []
     tmpName: Bart main
     viewportInitiallySet: 1
-    viewPosition: {x: -1606.4908, y: 17.696259, z: 0}
-    viewScale: {x: 1, y: 1, z: 1}
+    viewPosition: {x: -1106.7096, y: 97.7552, z: 0}
+    viewScale: {x: 0.7561437, y: 0.7561437, z: 1}
   references:
     version: 2
     RefIds:
@@ -147,6 +147,7 @@ MonoBehaviour:
           text: heyyyyyy
           sprite: 1
           overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
     - rid: 3518661924126195922
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -276,6 +277,7 @@ MonoBehaviour:
           text: GRRR
           sprite: 3
           overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
     - rid: 3518661924126195969
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -303,6 +305,7 @@ MonoBehaviour:
           text: :(
           sprite: 4
           overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
     - rid: 3518661924126195972
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:

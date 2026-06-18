@@ -5,4 +5,5 @@ public class CharactersHolder : ScriptableObject
 {
     public Character[] characters;
     public Character bart;
+    public Character empty;
 }

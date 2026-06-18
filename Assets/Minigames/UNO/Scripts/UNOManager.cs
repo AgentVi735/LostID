@@ -300,7 +300,7 @@ public class UNOManager : MonoBehaviour
 
     private void Load()
     {
-        isBart = SaveSystem.save.saves[SaveSystem.loadedPath].choseBart;
+        isBart = SaveSystem.currentSave.choseBart;
         if (isBart)
             characterManager = bartManager;
 
