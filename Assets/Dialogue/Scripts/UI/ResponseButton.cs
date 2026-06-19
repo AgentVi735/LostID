@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ResponseButton : MonoBehaviour
 {
@@ -8,11 +9,6 @@ public class ResponseButton : MonoBehaviour
 
     [SerializeField] private TMP_Text text;
     private Response response;
-
-    [Header("Phone Settings")]
-    [SerializeField] private RectTransform textRect;
-    [SerializeField] private RectTransform rect;
-    [SerializeField] private Vector2 paddedArea;
 
     public void Setup(ResponseManager givenManager)
     {
