@@ -58,16 +58,6 @@ public class DialogueBox : MonoBehaviour
 
     public void LoadObj(GenericObj givenObj)
     {
-        switch (currentSprite)
-        {
-            case CharacterSprite.Happy:
-                characterManager.SetAnimation(CharacterAnimations.Happy, false);
-                break;
-            case CharacterSprite.Sad:
-                characterManager.SetAnimation(CharacterAnimations.Sad, false);
-                break;
-        }
-
         switch (givenObj.type)
         {
             case NodeType.Dialogue:
@@ -109,6 +99,8 @@ public class DialogueBox : MonoBehaviour
             charName = dialogue.overrideCharacterName;
         nameText.text = charName;
         dialogueBoxImage.color = Color.white;
+        if (currentSprite != CharacterSprite.None && currentSprite != dialogue.sprite)
+            ResetAnimations();
         currentSprite = dialogue.sprite;
         Sprite charSprite = currentSprite switch
         {
@@ -499,6 +491,8 @@ public class DialogueBox : MonoBehaviour
 
     private void PreEventCheck(Event eventObj)
     {
+        ResetAnimations();
+
         if (eventObj.removeItems)
             menuCard.RemoveItems();
 
@@ -515,6 +509,21 @@ public class DialogueBox : MonoBehaviour
 
         if (eventObj.hidePortrait)
             characterImage.color = Color.clear;
+    }
+
+    private void ResetAnimations()
+    {
+        switch (currentSprite)
+        {
+            case CharacterSprite.Happy:
+                characterManager.SetAnimation(CharacterAnimations.Happy, false);
+                break;
+            case CharacterSprite.Sad:
+                characterManager.SetAnimation(CharacterAnimations.Sad, false);
+                break;
+        }
+
+        currentSprite = CharacterSprite.None;
     }
 
     public void MoveBubblesExceptForLast(float bubbleHeight)

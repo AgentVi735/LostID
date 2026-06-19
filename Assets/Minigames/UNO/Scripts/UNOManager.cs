@@ -151,9 +151,7 @@ public class UNOManager : MonoBehaviour
                             wildcard = card;
                         }
                         else
-                        {
                             isWildcard = false;
-                        }
 
                         bool canClick = card.canClick;
                         if (canClick)
@@ -187,12 +185,7 @@ public class UNOManager : MonoBehaviour
         }
     }
 
-    public void PlayWildcard(UNOCardObj card)
-    {
-        if (lookingForCardsCoroutine != null)
-            StopCoroutine(lookingForCardsCoroutine);
-        PlayCard(card);
-    }
+    public void PlayWildcard(UNOCardObj card) => PlayCard(card);
 
     private void PlayCard(UNOCardObj card)
     {
@@ -211,7 +204,7 @@ public class UNOManager : MonoBehaviour
         bigDisposedStackCard.sprite = disposedStackCard.card.sprite;
         SortCards(turn == Turn.Player);
 
-        if (disposedStackCard.card.type == UNOCardType.PlusTwo) 
+        if (disposedStackCard.card.type == UNOCardType.PlusTwo)
             GrabCard(2, turn != Turn.Player);
         if (disposedStackCard.card.type == UNOCardType.Wildcard)
         {
@@ -254,13 +247,13 @@ public class UNOManager : MonoBehaviour
                     highestColour = UNOCardColor.Yellow;
                 }
                 if (greenColours > max)
-                {
                     highestColour = UNOCardColor.Green;
-                }
 
                 disposedStackCard.card.colour = highestColour;
                 Debug.Log("Opponent: changed colour to: " + highestColour);
             }
+
+            disposedStackCard.ShowWildcardColour();
         }
 
         if (cards.Count > 0)

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -8,6 +9,7 @@ public class UNOCardObj : MonoBehaviour
     public bool canClick { get; private set; }
 
     [SerializeField] private GameObject wildcardBalls;
+    [SerializeField] private GameObject[] colourBalls;
 
     private Camera cam;
     private UNOManager unoManager;
@@ -65,6 +67,15 @@ public class UNOCardObj : MonoBehaviour
             StartCoroutine(LookForBalls());
         else
             lookForBalls = false;
+    }
+
+    public void ShowWildcardColour()
+    {
+        foreach (GameObject ball in colourBalls)
+            ball.SetActive(false);
+
+        colourBalls[(int)card.colour - 1].SetActive(true);
+        wildcardBalls.SetActive(true);
     }
 
     private IEnumerator LookForBalls()

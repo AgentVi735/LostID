@@ -95,8 +95,8 @@ MonoBehaviour:
     utilityNodes: []
     tmpName: TestGraph
     viewportInitiallySet: 1
-    viewPosition: {x: -516.74756, y: 2.2365112, z: 0}
-    viewScale: {x: 0.57175326, y: 0.57175326, z: 1}
+    viewPosition: {x: -170.51138, y: 141.49313, z: 0}
+    viewScale: {x: 1, y: 1, z: 1}
   references:
     version: 2
     RefIds:
@@ -659,7 +659,7 @@ MonoBehaviour:
         - relativePropertyPathHash: 500389349
           isExpanded: 1
         - relativePropertyPathHash: -867945469
-          isExpanded: 1
+          isExpanded: 0
     - rid: 3518661812502397189
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:

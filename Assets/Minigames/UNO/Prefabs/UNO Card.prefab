@@ -715,6 +715,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UNOCardObj
   wildcardBalls: {fileID: 6751328391389856964}
+  colourBalls:
+  - {fileID: 119926849404510016}
+  - {fileID: 913032282802281886}
+  - {fileID: 2986051858591470020}
+  - {fileID: 6425695241548252344}
   ballTag: Wildcard Ball
   mesh: {fileID: 2927524748041218620}
 --- !u!4 &4101517999535984979 stripped

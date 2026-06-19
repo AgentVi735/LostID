@@ -9,11 +9,20 @@ public class SceneSwitcher : MonoBehaviour
     [SerializeField] private Image fadeImage;
     [SerializeField] private float fadeTime;
 
+    [Header("Logo")]
+    [SerializeField] private Image logo;
+    private bool isInitialized;
+
     [Header("Scenes")]
     [SerializeField] private string mainMenuScene;
     [SerializeField] private string cafeScene;
 
-    private void Start() => ChangeScene(Scenes.MainMenu, Scenes.None);
+    private void Start()
+    {
+        logo.gameObject.SetActive(true);
+        logo.color = Color.white;
+        ChangeScene(Scenes.MainMenu, Scenes.None);
+    }
 
     public void ChangeScene(Scenes sceneToLoad, Scenes sceneToUnload) => StartCoroutine(ChangeSceneCoroutine(sceneToLoad, sceneToUnload));
 
@@ -64,5 +73,41 @@ public class SceneSwitcher : MonoBehaviour
 
         fadeImage.color = Color.clear;
         fadeImage.gameObject.SetActive(false);
+
+        if (isInitialized) yield break;
+        isInitialized = true;
+        logo.gameObject.SetActive(false);
+    }
+
+    private IEnumerator StartChangeScene()
+    {
+        fadeImage.gameObject.SetActive(true);
+        fadeImage.color = Color.clear;
+
+        for (float i = 0; i < fadeTime; i += Time.deltaTime)
+        {
+            fadeImage.color = Color.Lerp(Color.clear, Color.black, i / fadeTime);
+            yield return null;
+        }
+
+        fadeImage.color = Color.black;
+
+        yield return SceneManager.LoadSceneAsync(mainMenuScene, LoadSceneMode.Additive);
+
+        Color clearWhite = new(255, 255, 255, 0);
+        for (float i = 0; i < fadeTime; i += Time.deltaTime)
+        {
+            float amt = i / fadeTime;
+            fadeImage.color = Color.Lerp(Color.black, Color.clear, amt);
+            logo.color = Color.Lerp(Color.white, clearWhite, amt);
+            yield return null;
+        }
+
+        fadeImage.color = Color.clear;
+        fadeImage.gameObject.SetActive(false);
+
+        fadeImage.color = clearWhite;
+        isInitialized = true;
+        logo.gameObject.SetActive(false);
     }
 }

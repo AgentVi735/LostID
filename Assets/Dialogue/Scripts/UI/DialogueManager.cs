@@ -105,6 +105,12 @@ public class DialogueManager : MonoBehaviour
         else
             currentObj = graphController.startingObj;
 
+        if (currentObj == null)
+        {
+            Debug.LogError("No saved object could be found. Might be a corrupt save?");
+            yield break;
+        }
+
         ToggleContinueButton(false);
 
         pauseManager.Setup();
