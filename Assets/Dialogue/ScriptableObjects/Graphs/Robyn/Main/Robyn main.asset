@@ -914,7 +914,7 @@ MonoBehaviour:
         response: {fileID: 11400000, guid: 556a6c61693f3484a84bd71f2828ac7c, type: 2}
         nextNode:
           rid: 4248539754468999225
-        text: Yeah I'm hungry.
+        text: Yeah, I'm hungry.
     - rid: 4248539754468999222
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -1103,7 +1103,7 @@ MonoBehaviour:
         response: {fileID: 11400000, guid: 733b0110aa4c90c4fa1119efc9b83147, type: 2}
         nextNode:
           rid: 4248539754468999239
-        text: It's really tasty
+        text: It's really tasty.
     - rid: 4248539754468999238
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -1475,7 +1475,7 @@ MonoBehaviour:
           character: {fileID: 0}
           overrideCharacterName: 
           text: Currently I like listening to muscial songs. So, Hamilton, Heathers,
-            Epic the musical and Little shop of horrors.
+            Epic the musical and Little Shop of Horrors.
           sprite: 1
           overrideSprite: {fileID: 0}
           overrideTextSpeed: 0
@@ -1795,7 +1795,7 @@ MonoBehaviour:
         response: {fileID: 11400000, guid: 82dc3c50701e76d44923ead01a30ac0a, type: 2}
         nextNode:
           rid: 4248539754468999361
-        text: Classical
+        text: Classical.
     - rid: 4248539754468999294
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -1813,7 +1813,7 @@ MonoBehaviour:
         response: {fileID: 11400000, guid: e78d4dc44951a464f9f3ee2be9273e1f, type: 2}
         nextNode:
           rid: 4248539754468999363
-        text: Opera
+        text: Opera.
     - rid: 4248539754468999296
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -1831,7 +1831,7 @@ MonoBehaviour:
         response: {fileID: 11400000, guid: 8a43a6a871f928d43949bfec867c40c2, type: 2}
         nextNode:
           rid: 4248539754468999365
-        text: Intrumental
+        text: Intrumental.
     - rid: 4248539754468999298
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -1849,7 +1849,7 @@ MonoBehaviour:
         response: {fileID: 11400000, guid: bab2470aede740f419126fd7e6b894d3, type: 2}
         nextNode:
           rid: 4248539754468999367
-        text: Lo-fi
+        text: Lo-fi.
     - rid: 4248539754468999300
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -1906,7 +1906,7 @@ MonoBehaviour:
         response: {fileID: 11400000, guid: c5127b100c6a53445a3b947d444a11fc, type: 2}
         nextNode:
           rid: 4248539754468999369
-        text: Industrial
+        text: Industrial.
     - rid: 4248539754468999306
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -1924,7 +1924,7 @@ MonoBehaviour:
         response: {fileID: 11400000, guid: 9b2666813396b4345be6bcb8872bad0c, type: 2}
         nextNode:
           rid: 4248539754468999371
-        text: Blues
+        text: Blues.
     - rid: 4248539754468999308
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -1942,7 +1942,7 @@ MonoBehaviour:
         response: {fileID: 11400000, guid: 4600ad7fb51d68f44a924c93dbe3cf91, type: 2}
         nextNode:
           rid: 4248539754468999373
-        text: Country
+        text: Country.
     - rid: 4248539754468999310
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -1960,7 +1960,7 @@ MonoBehaviour:
         response: {fileID: 11400000, guid: 79dbbe1a68170574d8beb3947fa0badb, type: 2}
         nextNode:
           rid: 4248539754468999375
-        text: Electronic
+        text: Electronic.
     - rid: 4248539754468999312
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -2017,7 +2017,7 @@ MonoBehaviour:
         response: {fileID: 11400000, guid: a60f7108e5147304a8e78beb113d6806, type: 2}
         nextNode:
           rid: 4248539754468999377
-        text: Hip-hop
+        text: Hip-hop.
     - rid: 4248539754468999318
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -2035,7 +2035,7 @@ MonoBehaviour:
         response: {fileID: 11400000, guid: 3a433802e66db9048a96cf4bd5e8c4c4, type: 2}
         nextNode:
           rid: 4248539754468999379
-        text: Disco
+        text: Disco.
     - rid: 4248539754468999320
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -2053,7 +2053,7 @@ MonoBehaviour:
         response: {fileID: 11400000, guid: 3886a48a130ecbf48bac249f0f8d4336, type: 2}
         nextNode:
           rid: 4248539754468999381
-        text: House
+        text: House.
     - rid: 4248539754468999322
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -2071,7 +2071,7 @@ MonoBehaviour:
         response: {fileID: 11400000, guid: 4c06f721103c7634ca138afa05fe72bd, type: 2}
         nextNode:
           rid: 4248539754468999383
-        text: Folk
+        text: Folk.
     - rid: 4248539754468999324
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -2117,7 +2117,7 @@ MonoBehaviour:
         nodeData:
           rid: 4248539754468999329
         nodeX: 48556.92
-        nodeY: 1203.7429
+        nodeY: 1202.7429
         name: ResponseNode
         isUtilityNode: 0
         foldouts: []
@@ -2128,7 +2128,7 @@ MonoBehaviour:
         response: {fileID: 11400000, guid: aedfcc8e5ecf86e49b4ab8afec66f49f, type: 2}
         nextNode:
           rid: 4248539754468999385
-        text: Pop
+        text: Pop.
     - rid: 4248539754468999330
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -2146,7 +2146,7 @@ MonoBehaviour:
         response: {fileID: 11400000, guid: bf9476c3d1592a241a22a9b03fc967ab, type: 2}
         nextNode:
           rid: 4248539754468999387
-        text: K-pop
+        text: K-pop.
     - rid: 4248539754468999332
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -2164,7 +2164,7 @@ MonoBehaviour:
         response: {fileID: 11400000, guid: 101243435ebbdc441ad61665ab5c5713, type: 2}
         nextNode:
           rid: 4248539754468999389
-        text: J-pop
+        text: J-pop.
     - rid: 4248539754468999334
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -2182,7 +2182,7 @@ MonoBehaviour:
         response: {fileID: 11400000, guid: cfc13e781c0267a44ab26006361780c8, type: 2}
         nextNode:
           rid: 4248539754468999391
-        text: Vocaloid
+        text: Vocaloid.
     - rid: 4248539754468999336
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -2239,7 +2239,7 @@ MonoBehaviour:
         response: {fileID: 11400000, guid: eb4ea136a2ddf8a47b0afa47294fe916, type: 2}
         nextNode:
           rid: 4248539754468999393
-        text: Rock
+        text: Rock.
     - rid: 4248539754468999342
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -2257,7 +2257,7 @@ MonoBehaviour:
         response: {fileID: 11400000, guid: c288ef83724831b408d1fbf0ba0734cf, type: 2}
         nextNode:
           rid: 4248539754468999395
-        text: Metal
+        text: Metal.
     - rid: 4248539754468999344
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -2275,7 +2275,7 @@ MonoBehaviour:
         response: {fileID: 11400000, guid: 94740702e53ba1b4d85d0c5c5036afbd, type: 2}
         nextNode:
           rid: 4248539754468999397
-        text: Jazz
+        text: Jazz.
     - rid: 4248539754468999346
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -2293,7 +2293,7 @@ MonoBehaviour:
         response: {fileID: 11400000, guid: 296a99b2cd924874e9f9fb6add66e6a3, type: 2}
         nextNode:
           rid: 4248539754468999397
-        text: R&B/Soul
+        text: R&B/Soul.
     - rid: 4248539754468999348
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -2332,7 +2332,7 @@ MonoBehaviour:
         response: {fileID: 11400000, guid: 1d72e81df42cfef459d5d26709154c56, type: 2}
         nextNode:
           rid: 4248539754468999399
-        text: Punk
+        text: Punk.
     - rid: 4248539754468999352
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -2350,7 +2350,7 @@ MonoBehaviour:
         response: {fileID: 11400000, guid: b931d2c7cface8f42961b1c3f65ff127, type: 2}
         nextNode:
           rid: 4248539754468999401
-        text: Vkei
+        text: Vkei.
     - rid: 4248539754468999354
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -2368,7 +2368,7 @@ MonoBehaviour:
         response: {fileID: 11400000, guid: 624b13f25b312924194b8f8434c20a20, type: 2}
         nextNode:
           rid: 4248539754468999403
-        text: Rap
+        text: Rap.
     - rid: 4248539754468999356
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -2386,7 +2386,7 @@ MonoBehaviour:
         response: {fileID: 11400000, guid: 8b54e3c31b2787f4cb63e60441fac860, type: 2}
         nextNode:
           rid: 4248539754468999405
-        text: Phonk
+        text: Phonk.
     - rid: 4248539754468999358
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -3493,7 +3493,7 @@ MonoBehaviour:
         response: {fileID: 11400000, guid: 4edbc98eb86015245b3516ad28a715f7, type: 2}
         nextNode:
           rid: 4248539754468999457
-        text: Red
+        text: Red.
     - rid: 4248539754468999426
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -3511,7 +3511,7 @@ MonoBehaviour:
         response: {fileID: 11400000, guid: fdd3bf03dfe46f64bbab2adbd8fea813, type: 2}
         nextNode:
           rid: 4248539754468999459
-        text: Orange
+        text: Orange.
     - rid: 4248539754468999428
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -3529,7 +3529,7 @@ MonoBehaviour:
         response: {fileID: 11400000, guid: 7b04c9f227ec6a84c8eb6f026e2fe6c1, type: 2}
         nextNode:
           rid: 4248539754468999461
-        text: Yellow
+        text: Yellow.
     - rid: 4248539754468999430
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -3547,7 +3547,7 @@ MonoBehaviour:
         response: {fileID: 11400000, guid: ca7ac077fd482154195c2ed5905a6b85, type: 2}
         nextNode:
           rid: 4248539754468999463
-        text: Green
+        text: Green.
     - rid: 4248539754468999432
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -3604,7 +3604,7 @@ MonoBehaviour:
         response: {fileID: 11400000, guid: af9a1a49e77eafa4592f7715c40ae96a, type: 2}
         nextNode:
           rid: 4248539754468999465
-        text: Blue
+        text: Blue.
     - rid: 4248539754468999438
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -3622,7 +3622,7 @@ MonoBehaviour:
         response: {fileID: 11400000, guid: 9ae02fedbcfca3f4195d1eddf1fb36e5, type: 2}
         nextNode:
           rid: 4248539754468999467
-        text: Purple
+        text: Purple.
     - rid: 4248539754468999440
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -3640,7 +3640,7 @@ MonoBehaviour:
         response: {fileID: 11400000, guid: 6857c74b03225dc4ba52796f1d12830d, type: 2}
         nextNode:
           rid: 4248539754468999469
-        text: Pink
+        text: Pink.
     - rid: 4248539754468999442
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -3658,7 +3658,7 @@ MonoBehaviour:
         response: {fileID: 11400000, guid: 30de14eabab960e4fb11a83f075bc7c1, type: 2}
         nextNode:
           rid: 4248539754468999471
-        text: Brown
+        text: Brown.
     - rid: 4248539754468999444
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -3714,7 +3714,7 @@ MonoBehaviour:
         response: {fileID: 11400000, guid: 6bacecd34e436734f903e6a076d7e655, type: 2}
         nextNode:
           rid: 4248539754468999473
-        text: White
+        text: White.
     - rid: 4248539754468999450
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -3732,7 +3732,7 @@ MonoBehaviour:
         response: {fileID: 11400000, guid: c1745621b7354124381c3796e9215539, type: 2}
         nextNode:
           rid: 4248539754468999475
-        text: Black
+        text: Black.
     - rid: 4248539754468999452
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -3750,7 +3750,7 @@ MonoBehaviour:
         response: {fileID: 11400000, guid: 3294a4babec7d7046b2db0589d1f8d78, type: 2}
         nextNode:
           rid: 4248539754468999477
-        text: Grey
+        text: Grey.
     - rid: 4248539754468999454
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -4503,8 +4503,8 @@ MonoBehaviour:
       data:
         nodeData:
           rid: 4248539754468999505
-        nodeX: 0
-        nodeY: 0
+        nodeX: 48405.723
+        nodeY: 5426.4595
         name: ResponseNode
         isUtilityNode: 0
         foldouts: []
