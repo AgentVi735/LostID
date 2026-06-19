@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 
@@ -24,8 +25,6 @@ public class ResponseButton : MonoBehaviour
         response = givenResponse;
         text.text = response.text;
         gameObject.SetActive(true);
-
-        rect.sizeDelta = text.GetPreferredValues() + paddedArea;
     }
 
     public void OnClick() => responseManager.GotResponse(response);

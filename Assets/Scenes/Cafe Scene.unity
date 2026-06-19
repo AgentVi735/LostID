@@ -13698,7 +13698,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 599684070}
-  - component: {fileID: 599684072}
+  - component: {fileID: 599684074}
   - component: {fileID: 599684071}
   - component: {fileID: 599684073}
   m_Layer: 5
@@ -13722,11 +13722,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 819841680}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -481.6, y: -173}
-  m_SizeDelta: {x: 0, y: 30}
-  m_Pivot: {x: 1, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 235, y: -167}
+  m_SizeDelta: {x: 484.3, y: 337.6127}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &599684071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13734,39 +13734,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 599684069}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.ContentSizeFitter
   m_HorizontalFit: 2
-  m_VerticalFit: 0
---- !u!114 &599684072
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 599684069}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.VerticalLayoutGroup
-  m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 0
-    m_Bottom: 0
-  m_ChildAlignment: 5
-  m_Spacing: 0
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
-  m_ChildControlWidth: 0
-  m_ChildControlHeight: 0
-  m_ChildScaleWidth: 0
-  m_ChildScaleHeight: 0
-  m_ReverseArrangement: 0
+  m_VerticalFit: 2
 --- !u!114 &599684073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13781,9 +13755,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ResponseManager
   dialogueManager: {fileID: 353638985}
   dialogueBox: {fileID: 1774139638}
-  buttonPrefab: {fileID: 7103405998526389898, guid: 6ab5b78f7e1cf7243b43620381600b5f, type: 3}
+  buttonPrefab: {fileID: 3101937155951367801, guid: 2d71cdcf395263441b5d5d405efbb8a7, type: 3}
   buttonHolder: {fileID: 599684070}
   buttonCount: 5
+--- !u!114 &599684074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599684069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GridLayoutGroup
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 6
+  m_StartCorner: 0
+  m_StartAxis: 1
+  m_CellSize: {x: 100, y: 100}
+  m_Spacing: {x: 0, y: -52.19}
+  m_Constraint: 1
+  m_ConstraintCount: 1
 --- !u!1 &601822510
 GameObject:
   m_ObjectHideFlags: 0

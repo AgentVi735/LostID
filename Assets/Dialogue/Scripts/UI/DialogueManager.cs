@@ -153,9 +153,7 @@ public class DialogueManager : MonoBehaviour
             bartManager.Setup(bartParent);
 
             characterManager.SetAnimation(CharacterAnimations.Sit, true);
-
-            yield return new WaitForSeconds(0.6f);
-
+            bartParent.SpawnAtChair();
             bartParent.SetBartSitPos();
         }
         else

@@ -14,15 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GraphController
   graph: {fileID: 11400000, guid: 86447cc49998f5444abeab847045c879, type: 2}
   character: {fileID: 11400000, guid: e1ecc8eb386d4a746a49ac2fe3b7c966, type: 2}
-  startingObj: {fileID: 11400000, guid: 8ab2ecb75ba147f438dfb1f1e209deec, type: 2}
+  startingObj: {fileID: 11400000, guid: 514bdf0257bfbb743845059737351a44, type: 2}
   dialogueObjs:
   - {fileID: 0}
-  - {fileID: 11400000, guid: 8ab2ecb75ba147f438dfb1f1e209deec, type: 2}
-  - {fileID: 11400000, guid: 6191d84258ee36f4c92037c8b9b10968, type: 2}
-  - {fileID: 11400000, guid: 0960095f06fcca14baf8f36e4aead52f, type: 2}
-  - {fileID: 11400000, guid: 4e6164411984d0c4998c28fc7cf69353, type: 2}
-  - {fileID: 11400000, guid: 830be93dd52e5684f95e1a4ef7bf2a34, type: 2}
-  - {fileID: 11400000, guid: 90bec48d8379187499851a34ae3174de, type: 2}
-  - {fileID: 11400000, guid: 7b8ecd1a56fbf944589375a806f2174b, type: 2}
-  - {fileID: 11400000, guid: ee2198d8690679348aa12a5f8902a0d2, type: 2}
-  - {fileID: 11400000, guid: 414416e9cf6af53449155a5c4fbba7a5, type: 2}
+  - {fileID: 11400000, guid: 514bdf0257bfbb743845059737351a44, type: 2}
+  - {fileID: 11400000, guid: fd68360cc8f44b44c95384fb6b4478f3, type: 2}
+  - {fileID: 11400000, guid: 599c1545bf892dc48ad041296e11c68e, type: 2}
+  - {fileID: 11400000, guid: fe4e86a6c5c44ee4b96a72e2119ca112, type: 2}
+  - {fileID: 11400000, guid: 7965be4df63ad5f40b353f7d2b38edbd, type: 2}
+  - {fileID: 11400000, guid: 233a020098a4c6f438159322e8be23a7, type: 2}
+  - {fileID: 11400000, guid: ac8864c08130fec4384de2e14217e653, type: 2}
+  - {fileID: 11400000, guid: 6912b27d7f0d9144eaa21ccb9b7de0a0, type: 2}
+  - {fileID: 11400000, guid: 77553341e44ec9944b4ff2d5b679511f, type: 2}
