@@ -234,9 +234,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ResponseButton
   text: {fileID: 108429153688733578}
-  rect: {fileID: 6542842846776088600}
-  layoutElement: {fileID: 730678021304429966}
-  defaultPreferredHeight: 40
 --- !u!114 &3625568282172890862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,7 +289,7 @@ MonoBehaviour:
   m_IgnoreLayout: 0
   m_MinWidth: 114.5
   m_MinHeight: 40.5
-  m_PreferredWidth: 484.3
+  m_PreferredWidth: -1
   m_PreferredHeight: -1
   m_FlexibleWidth: 0
   m_FlexibleHeight: 0

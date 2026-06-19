@@ -5229,7 +5229,7 @@ MonoBehaviour:
           hideDialogueBox: 0
           keepText: 0
           hidePortrait: 0
-          removeItems: 0
+          removeItems: 1
           delay: 0
           minigame: 1
           wonMinigameNode:

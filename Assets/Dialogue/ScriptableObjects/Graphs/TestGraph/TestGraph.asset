@@ -95,8 +95,8 @@ MonoBehaviour:
     utilityNodes: []
     tmpName: TestGraph
     viewportInitiallySet: 1
-    viewPosition: {x: -1256.7922, y: -255.1388, z: 0}
-    viewScale: {x: 1, y: 1, z: 1}
+    viewPosition: {x: -516.74756, y: 2.2365112, z: 0}
+    viewScale: {x: 0.57175326, y: 0.57175326, z: 1}
   references:
     version: 2
     RefIds:
