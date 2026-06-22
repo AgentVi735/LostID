@@ -91,7 +91,10 @@ public class PinHole : MonoBehaviour
         if (hasRedPin)
             hitState = BoatHitState.Hit;
         if (!isFromOpponent)
+        {
             Instantiate(hasRedPin ? redPinPrefab : whitePinPrefab, transform.position, transform.rotation, transform);
+            button.GetManager().PlayParticle(transform.position);
+        }
         else
             StartCoroutine(PlayInteractAnimation());
         if (boat != null && boat.Hit())
@@ -106,6 +109,7 @@ public class PinHole : MonoBehaviour
             pos += pinOffsetWhenBoat;
         yield return StartCoroutine(button.GetManager().PlayAnimation());
         Instantiate(hasRedPin ? redPinPrefab : whitePinPrefab, pos, transform.rotation, transform);
+        button.GetManager().PlayParticle(transform.position);
         yield return wait1Sec;
         button.GetManager().SwitchTurn();
     }

@@ -125,7 +125,7 @@ public class UNOCardObj : MonoBehaviour
         mousePositionAction = null;
         inputs = null;
         cam = null;
-        unoManager.PlayWildcard(this);
+        unoManager.PlayCard(this);
     }
 
     private void OnLeftClick(InputAction.CallbackContext context)

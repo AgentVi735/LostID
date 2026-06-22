@@ -25,6 +25,7 @@ public class Wallet : MonoBehaviour
 
     public IEnumerator StartSlide(bool showCharm)
     {
+        particle.transform.position = startPos;
         particle.Play(-1);
         charm.SetActive(showCharm);
         wallet.gameObject.SetActive(true);
@@ -40,6 +41,7 @@ public class Wallet : MonoBehaviour
         }
 
         wallet.position = endPos;
+        particle.transform.position = endPos;
 
         yield return waitDelayBeforePoof;
 

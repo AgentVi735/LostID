@@ -13,6 +13,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private DialogueBox dialogueBox;
     [SerializeField] private GameObject dialogueCanvas;
     [SerializeField] private Button continueButton;
+    [SerializeField] private Image continueImage;
     private SceneSwitcher sceneSwitcher;
 
     [Header("Graph")]
@@ -267,6 +268,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (isPhone) return;
         continueButton.interactable = toggle;
+        continueImage.color = toggle ? Color.white : Color.clear;
     }
 
     public void ShowCat()

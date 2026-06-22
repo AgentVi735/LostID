@@ -8,6 +8,7 @@ TagManager:
   - Wildcard Ball
   - Disposed Card
   - Boat
+  - Card Stack
   layers:
   - Default
   - TransparentFX

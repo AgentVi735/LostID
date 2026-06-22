@@ -11,6 +11,7 @@ public class BattleshipManager : MonoBehaviour
     [SerializeField] private Camera cam;
     [SerializeField] private CharacterParent characterManager;
     [SerializeField] private CharacterParent bartManager;
+    [SerializeField] private PoofParticle poofParticle;
 
     [Header("Board Settings")]
     [SerializeField] private int holesPerRow;
@@ -499,6 +500,12 @@ public class BattleshipManager : MonoBehaviour
     {
         characterManager.SetAnimation(CharacterAnimations.BattleshipInteraction, true);
         yield return waitInteractionAnimTime;
+    }
+
+    public void PlayParticle(Vector3 pos)
+    {
+        poofParticle.transform.position = pos;
+        poofParticle.Play(-1);
     }
 
     private void OnDestroy()

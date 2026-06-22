@@ -10,6 +10,7 @@ public class UNOManager : MonoBehaviour
 {
     [SerializeField] private Camera cam;
     [SerializeField] private DialogueManager dialogueManager;
+    [SerializeField] private PoofParticle poofParticle;
 
     [SerializeField] private UNOCardHolder cardHolder;
 
@@ -17,12 +18,15 @@ public class UNOManager : MonoBehaviour
     [SerializeField] private int startingCards;
 
     [SerializeField] private Transform cardsParent;
+    [SerializeField] private Vector3 playerCardsRot;
     [SerializeField] private Transform opponentCardsParent;
+    [SerializeField] private Vector3 opponentCardsRot;
     [SerializeField] private float distanceBetweenCards;
 
     [SerializeField] private string cardTag;
     [SerializeField] private string disposedCardTag;
     [SerializeField] private string wildcardBallTag;
+    [SerializeField] private string cardStackTag;
 
     [SerializeField] private Vector3 disposeStackPos;
     private UNOCardObj disposedStackCard;
@@ -118,49 +122,60 @@ public class UNOManager : MonoBehaviour
         {
             mousePos = mousePositionAction.ReadValue<Vector2>();
             Ray ray = cam.ScreenPointToRay(new Vector3(mousePos.x, mousePos.y, -10));
-            if (Physics.Raycast(ray, out RaycastHit hit) && (hit.collider.CompareTag(cardTag) || hit.collider.CompareTag(wildcardBallTag)))
+            if (Physics.Raycast(ray, out RaycastHit hit))
             {
-                if (!isLookingAtCard)
+                if (hit.collider.CompareTag(cardTag) || hit.collider.CompareTag(wildcardBallTag))
                 {
-                    leftClick.Enable();
-                    hasLeftClicked = false;
-                }
-
-                isLookingAtCard = true;
-                if (hasWildcardSelected && hit.collider.CompareTag(cardTag) &&
-                    hit.collider.gameObject != wildcard.gameObject)
-                {
-                    wildcard.ShowWildcardBalls(false);
-                    wildcard = null;
-                    hasWildcardSelected = false;
-                }
-
-                if (hasLeftClicked && !hasWildcardSelected)
-                {
-                    hasLeftClicked = false;
-                    UNOCardObj hitComponent = hit.collider.GetComponent<UNOCardObj>();
-                    if (hitComponent != null)
-                        card = hitComponent;
-                    if (card != null)
+                    if (!isLookingAtCard)
                     {
-                        bool isWildcard;
-                        if (card.card.type == UNOCardType.Wildcard)
-                        {
-                            isWildcard = true;
-                            hasWildcardSelected = true;
-                            wildcard = card;
-                        }
-                        else
-                            isWildcard = false;
+                        leftClick.Enable();
+                        hasLeftClicked = false;
+                    }
 
-                        bool canClick = card.canClick;
-                        if (canClick)
+                    isLookingAtCard = true;
+                    if (hasWildcardSelected && hit.collider.CompareTag(cardTag) &&
+                        hit.collider.gameObject != wildcard.gameObject)
+                    {
+                        wildcard.ShowWildcardBalls(false);
+                        wildcard = null;
+                        hasWildcardSelected = false;
+                    }
+
+                    if (hasLeftClicked && !hasWildcardSelected)
+                    {
+                        hasLeftClicked = false;
+                        UNOCardObj hitComponent = hit.collider.GetComponent<UNOCardObj>();
+                        if (hitComponent != null)
+                            card = hitComponent;
+                        if (card != null)
                         {
-                            if (!isWildcard)
-                                PlayCard(card);
+                            bool isWildcard;
+                            if (card.card.type == UNOCardType.Wildcard)
+                            {
+                                isWildcard = true;
+                                hasWildcardSelected = true;
+                                wildcard = card;
+                            }
                             else
-                                card.ShowWildcardBalls(true);
+                                isWildcard = false;
+
+                            bool canClick = card.canClick;
+                            if (canClick)
+                            {
+                                if (!isWildcard)
+                                    PlayCard(card);
+                                else
+                                    card.ShowWildcardBalls(true);
+                            }
                         }
+                    }
+                }
+                else if (hit.collider.CompareTag(cardStackTag))
+                {
+                    if (hasLeftClicked && !hasWildcardSelected)
+                    {
+                        hasLeftClicked = false;
+                        GrabCard(1, true);
                     }
                 }
 
@@ -185,9 +200,7 @@ public class UNOManager : MonoBehaviour
         }
     }
 
-    public void PlayWildcard(UNOCardObj card) => PlayCard(card);
-
-    private void PlayCard(UNOCardObj card)
+    public void PlayCard(UNOCardObj card)
     {
         if (lookingForCardsCoroutine != null)
             StopCoroutine(lookingForCardsCoroutine);
@@ -198,10 +211,13 @@ public class UNOManager : MonoBehaviour
         cardsObjs.Remove(card);
         card.transform.SetPositionAndRotation(disposeStackPos, Quaternion.identity);
         card.transform.SetParent(transform);
+        poofParticle.transform.position = disposeStackPos;
+        poofParticle.Play(-1);
         disposedStack.Add(disposedStackCard.card);
         Destroy(disposedStackCard.gameObject);
         disposedStackCard = card;
         bigDisposedStackCard.sprite = disposedStackCard.card.sprite;
+        disposedStackCard.tag = disposedCardTag;
         SortCards(turn == Turn.Player);
 
         if (disposedStackCard.card.type == UNOCardType.PlusTwo)
@@ -318,39 +334,58 @@ public class UNOManager : MonoBehaviour
 
     private void GrabStartCard()
     {
+        UNOCard card;
+        while (true)
+        {
+            card = cardsStack[0];
+            if (card.type is UNOCardType.Wildcard or UNOCardType.PlusTwo)
+                continue;
+            break;
+        }
+
         UNOCardObj obj = Instantiate(cardPrefab, disposeStackPos, Quaternion.identity, transform).GetComponent<UNOCardObj>();
 
-        obj.Load(cardsStack[0], null, false, null);
-        cardsStack.RemoveAt(0);
+        obj.Load(card, null, false, null);
+        cardsStack.Remove(card);
         disposedStackCard = obj;
         bigDisposedStackCard.sprite = disposedStackCard.card.sprite;
     }
 
     private void GrabCard(int amt, bool forPlayer)
     {
+        if (amt <= 0) return;
+
         List<UNOCard> cards = forPlayer ? playerCards : opponentCards;
 
+        UNOCardObj newestCard = null;
         for (int i = 0; i < amt; i++)
         {
-            cards.Add(cardsStack[0]);
-            SpawnCard(forPlayer, cardsStack[0]);
+            UNOCard card = cardsStack[0];
+            cards.Add(card);
+            newestCard = SpawnCard(forPlayer, card);
             cardsStack.RemoveAt(0);
             if (cardsStack.Count == 0)
                 ShuffleNewStack();
         }
 
         SortCards(forPlayer);
+
+        if (amt > 1) return;
+
+        poofParticle.transform.position = newestCard.transform.position;
+        poofParticle.Play(-1);
     }
 
-    private void SpawnCard(bool forPlayer, UNOCard card)
+    private UNOCardObj SpawnCard(bool forPlayer, UNOCard card)
     {
         List<UNOCardObj> cardsObjs = forPlayer ? playerCardObjs : opponentCardObjs;
         Transform parent = forPlayer ? cardsParent : opponentCardsParent;
-        Quaternion rotation = Quaternion.Euler(forPlayer ? new Vector3(-90,0,0) : new Vector3(-90, 0, 180)); // TODO: Set these in a variable!!!!!
+        Quaternion rotation = Quaternion.Euler(forPlayer ? playerCardsRot : opponentCardsRot);
 
         UNOCardObj obj = Instantiate(cardPrefab, parent.position, rotation, parent).GetComponent<UNOCardObj>();
         cardsObjs.Add(obj);
         obj.Load(card, inputs, forPlayer, this);
+        return obj;
     }
 
     private void SortCards(bool forPlayer)
