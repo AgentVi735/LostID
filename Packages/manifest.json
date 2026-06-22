@@ -3,6 +3,7 @@
     "com.gentlymad.graphviewbase": "https://github.com/Gentlymad-Studios/GraphViewBase.git",
     "com.gentlymad.newgraph": "https://github.com/Gentlymad-Studios/NewGraph.git",
     "com.gentlymad.odinserializer": "https://github.com/Gentlymad-Studios/OdinSerializer.git",
+    "com.luca3317.tmpeffects": "https://github.com/Luca3317/TMPEffects.git?path=/Package",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.ai.navigation": "2.0.12",
     "com.unity.collab-proxy": "2.12.4",

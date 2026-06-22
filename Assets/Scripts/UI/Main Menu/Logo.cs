@@ -1,10 +1,12 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
+using static UnityEditor.Rendering.MaterialUpgrader;
 
 public class Logo : MonoBehaviour
 {
+    [Header("Logo")]
     [SerializeField] private RectTransform rect;
-
     [SerializeField] private Vector2 startPos;
     [SerializeField] private Vector2 endPos;
     [SerializeField] private Vector2 endAnchor;
@@ -12,7 +14,21 @@ public class Logo : MonoBehaviour
     [SerializeField] private float timeUntilMoving;
     private WaitForSeconds waitTimeUntilMoving;
 
-    private void Awake() => waitTimeUntilMoving = new WaitForSeconds(timeUntilMoving);
+    [Header("Text")]
+    [SerializeField] private TMP_Text infoText;
+    [SerializeField] private string textToWrite;
+    [SerializeField] private float textSpeed;
+    private WaitForSeconds waitTextSpeed;
+    [SerializeField] private float delayUntilTextAppears;
+    private WaitForSeconds waitDelayUntilTextAppears;
+
+
+    private void Awake()
+    {
+        waitTimeUntilMoving = new WaitForSeconds(timeUntilMoving);
+        waitTextSpeed = new WaitForSeconds(textSpeed);
+        waitDelayUntilTextAppears = new WaitForSeconds(delayUntilTextAppears);
+    }
 
     private void Start() => StartCoroutine(Move());
 
@@ -30,6 +46,15 @@ public class Logo : MonoBehaviour
         {
             rect.anchoredPosition = Vector2.Lerp(startPos, endPos, i * moveTime);
             yield return null;
+        }
+
+        yield return waitDelayUntilTextAppears;
+
+        int textLength = textToWrite.Length;
+        for (int i = 0; i < textLength; i++)
+        {
+            infoText.text += textToWrite[i];
+            yield return waitTextSpeed;
         }
     }
 }
