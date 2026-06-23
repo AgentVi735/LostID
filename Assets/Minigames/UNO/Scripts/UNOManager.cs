@@ -14,6 +14,7 @@ public class UNOManager : MonoBehaviour
     [SerializeField] private PoofParticle discardedStackPoofParticle;
     [SerializeField] private PoofParticle stackPoofParticle;
     [SerializeField] private PoofParticle cardPoofParticle;
+    [SerializeField] private AudioSource sfxSource;
 
     [Header("UNO Settings")]
     [SerializeField] private UNOCardHolder cardHolder;
@@ -295,6 +296,7 @@ public class UNOManager : MonoBehaviour
         disposedStackCard = card;
         bigDisposedStackCard.sprite = disposedStackCard.card.sprite;
         disposedStackCard.tag = disposedCardTag;
+        AudioManager.PlayOneShot(Sounds.UnoLayDownCard, sfxSource);
         SortCards(isPlayerTurn);
 
         if (disposedStackCard.card.type == UNOCardType.PlusTwo)
@@ -402,6 +404,7 @@ public class UNOManager : MonoBehaviour
         }
 
         UNOCardObj obj = Instantiate(cardPrefab, disposeStackPos, Quaternion.identity, transform).GetComponent<UNOCardObj>();
+        AudioManager.PlayOneShot(Sounds.UnoGrabCard, sfxSource);
 
         obj.Load(card, null, false, null);
         cardsStack.Remove(card);
@@ -433,6 +436,7 @@ public class UNOManager : MonoBehaviour
                 ShuffleNewStack();
         }
 
+        AudioManager.PlayOneShot(Sounds.UnoGrabCard, sfxSource);
         SortCards(forPlayer);
 
         if (amt > 1 || newestCard == null) return;

@@ -236,8 +236,76 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ed258095a537e844af18577e71486e4, type: 3}
+--- !u!1 &1425234297
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1425234299}
+  - component: {fileID: 1425234298}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!114 &1425234298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425234297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bcfdb18238a0ab46baebf1cc49cd217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
+  trainArrival: {fileID: 0}
+  trainLeave: {fileID: 0}
+  trainPassBy: {fileID: 0}
+  backgroundTalking: {fileID: 0}
+  walletClick: {fileID: 0}
+  cardHover: {fileID: 0}
+  walk: {fileID: 0}
+  cafeBackgroundTalking: {fileID: 0}
+  click: {fileID: 0}
+  menuClick: {fileID: 0}
+  dialogueContinue: {fileID: 0}
+  responseClick: {fileID: 0}
+  phoneMessageReceive: {fileID: 0}
+  phoneMessageDelivered: {fileID: 0}
+  phoneTyping: {fileID: 0}
+  unoGrabCard: {fileID: 0}
+  unoLayDownCard: {fileID: 0}
+  battleshipGrabBoat: {fileID: 0}
+  battleshipSetBoat: {fileID: 0}
+  battleshipSetPin: {fileID: 0}
+  catPurr: {fileID: 0}
+  cafeBackgroundMusic: {fileID: 0}
+  itemsSpawn: {fileID: 0}
+--- !u!4 &1425234299
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425234297}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1144419819}
+  - {fileID: 1425234299}

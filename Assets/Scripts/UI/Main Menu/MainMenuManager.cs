@@ -17,6 +17,8 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private DialogueManager dialogueManager;
     [SerializeField] private Logo logo;
     [SerializeField] private Animator stationAnimator;
+    [SerializeField] private AudioSource sfxSource;
+    [SerializeField] private AudioSource bgmSource;
 
     [Header("Characters")]
     [SerializeField] private CharactersHolder characters;
@@ -99,6 +101,8 @@ public class MainMenuManager : MonoBehaviour
         leaveWallet.Disable();
         switchCharacter.performed += SwitchCharacter;
         switchCharacterIdx = -1;
+
+        AudioManager.PlaySound(Sounds.BackgroundTalking, bgmSource);
 
         ToggleCanSwitch(true);
     }
@@ -400,6 +404,7 @@ public class MainMenuManager : MonoBehaviour
         ToggleCanSwitch(false);
         smallWalletButton.interactable = false;
         stationAnimator.SetBool(ZoomAnimation, true);
+        AudioManager.PlayOneShot(Sounds.WalletClick, sfxSource);
     }
 
     private void LeaveWallet(InputAction.CallbackContext context) => StartCoroutine(Zoom(false));
@@ -534,4 +539,6 @@ public class MainMenuManager : MonoBehaviour
         saveSystem.ResetSave();
         sceneSwitcher.ChangeScene(Scenes.MainMenu, Scenes.MainMenu);
     }
+
+    public void PlayClickSound() => AudioManager.PlayOneShot(Sounds.Click, sfxSource);
 }

@@ -21,6 +21,7 @@ public class ItemSpawner : MonoBehaviour
     [SerializeField] private PoofParticle particle;
     [SerializeField] private float timeBetweenPoofAndSpawning;
     private WaitForSeconds waitTimeBetweenPoofAndSpawning;
+    [SerializeField] private AudioSource sfxSource;
 
     [Header("Items")]
     private GameObject[] plates;
@@ -56,6 +57,8 @@ public class ItemSpawner : MonoBehaviour
         items[2] = Instantiate(GetItem(npcDessert), parent.position, parent.rotation, parent);
         parent = drinkSpawns[1];
         items[3] = Instantiate(GetItem(npcDrink), parent.position, parent.rotation, parent);
+
+        AudioManager.PlayOneShot(Sounds.ItemsSpawn, sfxSource);
     }
 
     public void RemoveItems()

@@ -12,6 +12,7 @@ public class BattleshipManager : MonoBehaviour
     [SerializeField] private CharacterParent characterManager;
     [SerializeField] private CharacterParent bartManager;
     [SerializeField] private PoofParticle poofParticle;
+    [SerializeField] private AudioSource sfxSource;
 
     [Header("Board Settings")]
     [SerializeField] private int holesPerRow;
@@ -355,6 +356,7 @@ public class BattleshipManager : MonoBehaviour
         BoatHitState hitState = opponentHoles[GetIdx(coordinates)].Shoot(false);
         if (hitState == BoatHitState.Sunk)
             SunkBoat();
+        AudioManager.PlayOneShot(Sounds.BattleshipSetPin, sfxSource);
         SwitchTurn();
     }
 
@@ -363,6 +365,7 @@ public class BattleshipManager : MonoBehaviour
         BoatHitState hitState = playerHoles[idx].Shoot(true);
         if (hitState == BoatHitState.Sunk)
             SunkBoat();
+        AudioManager.PlayOneShot(Sounds.BattleshipSetPin, sfxSource);
         return hitState;
     }
 
@@ -466,6 +469,7 @@ public class BattleshipManager : MonoBehaviour
     private void BoatPickedUp()
     {
         boatsPutDown--;
+        AudioManager.PlayOneShot(Sounds.BattleshipGrabBoat, sfxSource);
         TryEnablingStartButton();
         startButton.SetActive(false);
     }
@@ -473,13 +477,16 @@ public class BattleshipManager : MonoBehaviour
     private void BoatPutDown()
     {
         boatsPutDown++;
+        AudioManager.PlayOneShot(Sounds.BattleshipSetBoat, sfxSource);
         TryEnablingStartButton();
     }
 
     public void PutBoatBack()
     {
-        if (selectedBoat != null)
-            selectedBoat.PutBack(boatsParent);
+        if (selectedBoat == null) return;
+
+        selectedBoat.PutBack(boatsParent);
+        AudioManager.PlayOneShot(Sounds.BattleshipSetBoat, sfxSource);
     }
 
     public void SwitchTurn()

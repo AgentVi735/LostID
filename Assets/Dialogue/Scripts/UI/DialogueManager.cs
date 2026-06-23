@@ -15,6 +15,9 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private Button continueButton;
     [SerializeField] private Image continueImage;
     private SceneSwitcher sceneSwitcher;
+    [SerializeField] private AudioSource sfxSource;
+    [SerializeField] private AudioSource bgmSource;
+    [SerializeField] private AudioSource crowdSource;
 
     [Header("Graph")]
     [SerializeField] private bool isPhone;
@@ -128,6 +131,12 @@ public class DialogueManager : MonoBehaviour
         pauseAction = inputs.FindAction("UI/Cancel");
         pauseAction.performed += OnEscapeButton;
 
+        if (!isPhone)
+        {
+            AudioManager.PlaySound(Sounds.CafeBackgroundMusic, bgmSource);
+            AudioManager.PlaySound(Sounds.CafeBackgroundTalking, crowdSource);
+        }
+
         dialogueBox.LoadObj(currentObj);
     }
 
@@ -224,6 +233,7 @@ public class DialogueManager : MonoBehaviour
     public void ContinueButton()
     {
         currentObj = currentObj.nextObj;
+        AudioManager.PlayOneShot(Sounds.DialogueContinue, sfxSource);
         Continue(currentObj);
     }
 
@@ -319,6 +329,8 @@ public class DialogueManager : MonoBehaviour
 
         bartManager = Instantiate(character.prefab, bartParent.transform.position, bartParent.transform.rotation, bartParent.transform)
             .GetComponent<CharacterManager>();
+
+        AudioManager.PlayOneShot(Sounds.CatPurr, sfxSource);
 
         bartManager.Setup(bartParent);
         bartManager.SetAnimation(CharacterAnimations.Walk, true);

@@ -11,6 +11,7 @@ public class Train : MonoBehaviour
     [SerializeField] private string animationString;
     [SerializeField] private int animationCount;
     [SerializeField] private Animator animator;
+    [SerializeField] private AudioSource sfxSource;
 
     private void Awake() => animator.SetInteger(animationString, -1);
 
@@ -30,4 +31,10 @@ public class Train : MonoBehaviour
     }
 
     public void FinishAnimation() => animator.SetInteger(animationString, -1);
+
+    public void PlayArriveSFX() => AudioManager.PlayOneShot(Sounds.TrainArrival, sfxSource);
+
+    public void PlayLeaveSFX() => AudioManager.PlayOneShot(Sounds.TrainLeave, sfxSource);
+
+    public void PlayPassBySFX() => AudioManager.PlayOneShot(Sounds.TrainPassBy, sfxSource);
 }

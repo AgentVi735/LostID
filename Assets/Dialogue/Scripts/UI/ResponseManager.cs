@@ -55,6 +55,8 @@ public class ResponseManager : MonoBehaviour
         foreach (ResponseButton button in buttons)
             button.gameObject.SetActive(false);
 
+        dialogueBox.PlayResponseSound();
+
         if (isPhone)
         {
             StartCoroutine(GotResponsePhone(response));

@@ -6,6 +6,7 @@ public class MenuCard : MonoBehaviour
     [Header("References")]
     [SerializeField] private ItemSpawner itemSpawner;
     [SerializeField] private DialogueBox dialogueBox;
+    [SerializeField] private AudioSource sfxSource;
 
     [Header("Menu")]
     [SerializeField] private GameObject card;
@@ -74,6 +75,7 @@ public class MenuCard : MonoBehaviour
                 itemHighlights[i].color = Color.clear;
 
         confirmButton.SetActive(selectedDrinks != MenuItems.None && selectedDessert != MenuItems.None);
+        AudioManager.PlayOneShot(Sounds.MenuClick, sfxSource);
     }
 
     public void OnConfirmButton()

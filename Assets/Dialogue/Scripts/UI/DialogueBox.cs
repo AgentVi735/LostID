@@ -10,6 +10,7 @@ public class DialogueBox : MonoBehaviour
     [SerializeField] private DialogueManager dialogueManager;
     [SerializeField] private ResponseManager responseManager;
     [SerializeField] private MenuCard menuCard;
+    [SerializeField] private AudioSource sfxSource;
 
     [Header("Objects")]
     [SerializeField] private Image dialogueBoxImage;
@@ -173,6 +174,7 @@ public class DialogueBox : MonoBehaviour
         }
 
         yield return StartCoroutine(newBubble.Load(this, dialogue.text, true));
+        AudioManager.PlayOneShot(Sounds.PhoneMessageReceive, sfxSource);
 
         hasSpaceForNewBubble = false;
         newBubble = null;
@@ -619,8 +621,14 @@ public class DialogueBox : MonoBehaviour
         sendButton.sprite = voiceImage;
 
         yield return StartCoroutine(bubble.Load(this, sentText, false));
+        AudioManager.PlayOneShot(Sounds.PhoneMessageDelivered, sfxSource);
 
         hasSpaceForNewBubble = false;
         newBubble = null;
+    }
+
+    public void PlayResponseSound()
+    {
+        AudioManager.PlayOneShot(Sounds.ResponseClick, sfxSource);
     }
 }

@@ -3,11 +3,14 @@ using UnityEngine.UI;
 
 public class PauseManager : MonoBehaviour
 {
+    [Header("References")]
     [SerializeField] private DialogueManager dialogueManager;
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject pauseHolder;
     [SerializeField] private GameObject settingsHolder;
+    [SerializeField] private AudioSource sfxSource;
 
+    [Header("Sliders")]
     [SerializeField] private Slider bgmSlider;
     [SerializeField] private Slider sfxSlider;
 
@@ -43,6 +46,8 @@ public class PauseManager : MonoBehaviour
         SaveSystem.save.bgmVolume = bgmSlider.value;
         SaveSystem.save.sfxVolume = sfxSlider.value;
     }
+
+    public void PlayClickSound() => AudioManager.PlayOneShot(Sounds.Click, sfxSource);
 
     public void OnQuit() => dialogueManager.GoToMainMenu(true, false);
 }
