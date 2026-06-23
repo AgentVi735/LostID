@@ -389,11 +389,15 @@ public class UNOManager : MonoBehaviour
     private void GrabStartCard()
     {
         UNOCard card;
+        int idx = 0;
         while (true)
         {
-            card = cardsStack[0];
+            card = cardsStack[idx];
             if (card.type is UNOCardType.Wildcard or UNOCardType.PlusTwo)
+            {
+                idx++;
                 continue;
+            }
             break;
         }
 
@@ -434,7 +438,6 @@ public class UNOManager : MonoBehaviour
         if (amt > 1 || newestCard == null) return;
 
         cardPoofParticle.transform.position = newestCard.transform.position;
-        Debug.Log(cardPoofParticle.transform.position);
         cardPoofParticle.Play();
         stackPoofParticle.Play();
     }
