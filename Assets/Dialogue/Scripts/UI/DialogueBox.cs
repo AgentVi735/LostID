@@ -11,6 +11,7 @@ public class DialogueBox : MonoBehaviour
     [SerializeField] private ResponseManager responseManager;
     [SerializeField] private MenuCard menuCard;
     [SerializeField] private AudioSource sfxSource;
+    [SerializeField] private AudioSource typingSource;
 
     [Header("Objects")]
     [SerializeField] private Image dialogueBoxImage;
@@ -561,6 +562,7 @@ public class DialogueBox : MonoBehaviour
 
     public IEnumerator CreatePlayerBubble(string sentText)
     {
+        AudioManager.PlaySound(Sounds.PhoneTyping, typingSource);
         int textLength = sentText.Length;
         sendButton.sprite = sendImage;
         for (int i = 1; i < textLength + 1; i++)
@@ -610,6 +612,8 @@ public class DialogueBox : MonoBehaviour
             dialogueText.text = text;
             yield return typingSpeedWait;
         }
+
+        typingSource.Stop();
 
         if (!hasSpaceForNewBubble)
             MoveBubblesUp(offsetForTypingBubble);

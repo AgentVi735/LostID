@@ -11,7 +11,6 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip backgroundTalking;
     [SerializeField] private AudioClip walletClick;
     [SerializeField] private AudioClip cardHover;
-    [SerializeField] private AudioClip walk;
     [SerializeField] private AudioClip cafeBackgroundTalking;
     [SerializeField] private AudioClip click;
     [SerializeField] private AudioClip menuClick;
@@ -74,8 +73,6 @@ public class AudioManager : MonoBehaviour
                 return walletClick;
             case Sounds.CardHover:
                 return cardHover;
-            case Sounds.Walk:
-                return walk;
             case Sounds.CafeBackgroundTalking:
                 return cafeBackgroundTalking;
             case Sounds.Click:

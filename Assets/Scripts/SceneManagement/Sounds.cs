@@ -7,7 +7,6 @@ public enum Sounds
     BackgroundTalking,
     WalletClick,
     CardHover,
-    Walk, // TODO
     CafeBackgroundTalking,
     Click,
     MenuClick,
@@ -15,7 +14,7 @@ public enum Sounds
     ResponseClick,
     PhoneMessageReceive,
     PhoneMessageDelivered,
-    PhoneTyping, // TODO
+    PhoneTyping,
     UnoGrabCard,
     UnoLayDownCard,
     BattleshipGrabBoat,
