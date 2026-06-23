@@ -3,9 +3,10 @@ using UnityEngine;
 public class CameraManager : MonoBehaviour
 {
     [SerializeField] private Camera cam;
+    [SerializeField] private Animator camAnimator;
+    [SerializeField] private DialogueManager dialogueManager;
 
-    [SerializeField] private Transform defaultCamPos;
-    [SerializeField] private Transform battleshipCamPos;
+    [SerializeField] private string battleshipAnim;
 
     private CameraPositions currentPosition;
 
@@ -20,15 +21,21 @@ public class CameraManager : MonoBehaviour
         if (currentPosition == newPos)
             return;
 
-        currentPosition = newPos;
-        cam.transform.parent = currentPosition switch
+        switch (newPos)
         {
-            CameraPositions.Default => defaultCamPos,
-            CameraPositions.Battleship => battleshipCamPos,
-            _ => cam.transform.parent
-        };
+            default:
+            case CameraPositions.Default:
+                if (currentPosition == CameraPositions.Battleship)
+                {
+                    dialogueManager.ShowFrame();
+                    camAnimator.SetBool(battleshipAnim, false);
+                }
+                break;
+            case CameraPositions.Battleship:
+                camAnimator.SetBool(battleshipAnim, true);
+                break;;
+        }
 
-        cam.transform.localPosition = Vector3.zero;
-        cam.transform.localEulerAngles = Vector3.zero;
+        currentPosition = newPos;
     }
 }

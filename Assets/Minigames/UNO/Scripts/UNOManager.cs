@@ -71,6 +71,8 @@ public class UNOManager : MonoBehaviour
     private WaitForSeconds waitLayCardAnimTime;
     [SerializeField] private float delayAfterPlayingCard;
     private WaitForSeconds waitDelayAfterPlayingCard;
+    [SerializeField] private float delayAfterGrabbingCard;
+    private WaitForSeconds waitDelayAfterGrabbingCard;
 
     private void Start() => StartCoroutine(Load());
 
@@ -93,6 +95,7 @@ public class UNOManager : MonoBehaviour
         waitGrabCardAnimTime = new WaitForSeconds(grabCardAnimTime);
         waitLayCardAnimTime = new WaitForSeconds(layCardAnimTime);
         waitDelayAfterPlayingCard = new WaitForSeconds(delayAfterPlayingCard);
+        waitDelayAfterGrabbingCard = new WaitForSeconds(delayAfterGrabbingCard);
 
         GrabCard(startingCards, true);
         characterManager.SetAnimation(CharacterAnimations.HoldCards, true);
@@ -499,7 +502,7 @@ public class UNOManager : MonoBehaviour
     {
         if (opponentCards.Count == 0)
         {
-            OpponentGrabCard();
+            StartCoroutine(OpponentGrabCard());
             return;
         }
 
@@ -530,7 +533,7 @@ public class UNOManager : MonoBehaviour
 
         if (playableCards.Count == 0)
         {
-            OpponentGrabCard();
+            StartCoroutine(OpponentGrabCard());
             return;
         }
 
@@ -581,7 +584,7 @@ public class UNOManager : MonoBehaviour
         }
 
         Debug.LogError("Couldn't play a card");
-        OpponentGrabCard();
+        StartCoroutine(OpponentGrabCard());
     }
 
     private IEnumerator OpponentPlayCard(UNOCardObj cardObj)
@@ -595,9 +598,10 @@ public class UNOManager : MonoBehaviour
         SwitchTurns();
     }
 
-    private void OpponentGrabCard()
+    private IEnumerator OpponentGrabCard()
     {
         GrabCard(1, false);
+        yield return waitDelayAfterGrabbingCard;
         OpponentEndTurn();
     }
 

@@ -14,6 +14,7 @@ public class SaveFile
         public bool choseBart;
         public bool isBartLaying;
         public bool hasCat;
+        public bool isShowingFrame;
     }
 
     public Dictionary<string, SaveData> saveData;

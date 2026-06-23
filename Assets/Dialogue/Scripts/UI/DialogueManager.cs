@@ -46,6 +46,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private string catLeaveAnim;
     [SerializeField] private string catSkipAnim;
     [SerializeField] private PoofParticle bartPoofParticle;
+    [SerializeField] private GameObject frame;
 
     public Character GetGraphCharacter() => graphController.character;
 
@@ -101,7 +102,7 @@ public class DialogueManager : MonoBehaviour
             }
 
             if (currentObj != null)
-                yield return StartCoroutine(SetupSavedCharacter());
+                yield return StartCoroutine(SetupSave());
         }
         else
             currentObj = graphController.startingObj;
@@ -130,7 +131,7 @@ public class DialogueManager : MonoBehaviour
         characterManager.Setup(characterParent);
     }
 
-    private IEnumerator SetupSavedCharacter()
+    private IEnumerator SetupSave()
     {
         if (SaveSystem.currentSave.isBartLaying)
         {
@@ -174,6 +175,9 @@ public class DialogueManager : MonoBehaviour
 
         if (SaveSystem.currentSave.hasItems)
             itemSpawner.SpawnItems(SaveSystem.currentSave.selectedDessert, SaveSystem.currentSave.selectedDrink, character.dessert, character.drink, false);
+
+        if (SaveSystem.currentSave.isShowingFrame)
+            ShowFrame();
     }
 
     private void SetupPhone()
@@ -275,12 +279,14 @@ public class DialogueManager : MonoBehaviour
     {
         catAnimator.SetTrigger(catShowAnim);
         SaveSystem.currentSave.hasCat = true;
+        SaveSystem.Save();
     }
 
     public void CatLeave()
     {
         catAnimator.SetTrigger(catLeaveAnim);
         SaveSystem.currentSave.hasCat = true;
+        SaveSystem.Save();
     }
 
     public void SwitchToBart()
@@ -288,6 +294,7 @@ public class DialogueManager : MonoBehaviour
         graphController = characters.bart.graph;
         SaveSystem.currentSave.choseBart = true;
         Continue(graphController.startingObj);
+        SaveSystem.Save();
     }
 
     public void SwitchSettingsToBart() => StartCoroutine(SpawnBart());
@@ -298,6 +305,7 @@ public class DialogueManager : MonoBehaviour
 
         Destroy(catAnimator.gameObject);
         SaveSystem.currentSave.hasCat = false;
+        SaveSystem.Save();
 
         character = characters.bart;
 
@@ -311,6 +319,7 @@ public class DialogueManager : MonoBehaviour
 
         SaveSystem.currentSave.isBartLaying = true;
         bartParent.ResetForBart();
+        SaveSystem.Save();
     }
 
     public IEnumerator BartSitDown()
@@ -330,6 +339,15 @@ public class DialogueManager : MonoBehaviour
 
         SaveSystem.currentSave.isBartLaying = false;
         bartParent.SetBartSitPos();
+        SaveSystem.Save();
+    }
+
+    public void ShowFrame()
+    {
+        if (!SaveSystem.currentSave.choseBart) return;
+        SaveSystem.currentSave.isShowingFrame = true;
+        frame.SetActive(true);
+        SaveSystem.Save();
     }
 
     private void OnDestroy()
