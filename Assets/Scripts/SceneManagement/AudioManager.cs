@@ -38,6 +38,7 @@ public class AudioManager : MonoBehaviour
 
     public static float PlaySound(Sounds soundToPlay, AudioSource source)
     {
+        if (instance == null) return -1;
         if (source.isPlaying)
             source.Stop();
 
@@ -49,6 +50,7 @@ public class AudioManager : MonoBehaviour
 
     public static float PlayOneShot(Sounds soundToPlay, AudioSource source)
     {
+        if (instance == null) return -1;
         AudioClip clip = instance.GetClip(soundToPlay);
         source.PlayOneShot(clip);
         return clip.length;

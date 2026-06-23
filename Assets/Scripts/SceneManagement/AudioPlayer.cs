@@ -9,6 +9,7 @@ public class AudioPlayer : MonoBehaviour
 
     private void Awake()
     {
+        if (SaveSystem.save == null) return;
         if (isSFX)
             audioSource.volume = SaveSystem.save.sfxVolume;
         else if (isBGM)
