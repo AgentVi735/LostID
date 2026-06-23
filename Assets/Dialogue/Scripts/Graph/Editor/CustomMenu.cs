@@ -325,6 +325,7 @@ public class CustomMenu : NewGraph.ContextMenu
         dialogue.text = dialogueData.text;
         dialogue.sprite = dialogueData.sprite;
         dialogue.overrideSprite = dialogueData.overrideSprite;
+        dialogue.overrideTextSpeed = dialogueData.overrideTextSpeed;
 
         return dialogue;
     }
@@ -693,6 +694,7 @@ public class CustomMenu : NewGraph.ContextMenu
             dialogueData.overrideCharacterName = dialogue.overrideCharacterName;
             dialogueData.text = dialogue.text;
             dialogueData.sprite = dialogue.sprite;
+            dialogueData.overrideTextSpeed = dialogue.overrideTextSpeed;
         }
 
         foreach (NodeModel node in responseNodes)

@@ -95,7 +95,7 @@ MonoBehaviour:
     utilityNodes: []
     tmpName: TestGraph
     viewportInitiallySet: 1
-    viewPosition: {x: -79.1853, y: 182.00757, z: 0}
+    viewPosition: {x: -1092.8013, y: -97.625244, z: 0}
     viewScale: {x: 1, y: 1, z: 1}
   references:
     version: 2
@@ -115,8 +115,8 @@ MonoBehaviour:
     - rid: 3518661610382033105
       type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -93321840
-        response: {fileID: 11400000, guid: 7daf851fa8f27f349a4b477ae831cd48, type: 2}
+        nodeName: 663599728
+        response: {fileID: 11400000, guid: 4eb134e03740f774faf34c123b6d05d6, type: 2}
         nextNode:
           rid: 3518661610382033189
         text: Minigames!!!
@@ -137,11 +137,11 @@ MonoBehaviour:
     - rid: 3518661610382033111
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: 385378944
+        nodeName: 1621001296
         nextNode:
           rid: -2
         eventData:
-          eventObj: {fileID: 11400000, guid: 304da4fa1bef9ba4daeeefdafb40e14e, type: 2}
+          eventObj: {fileID: 11400000, guid: 9aacc5d9f057fba42af60e8ed0f417ee, type: 2}
           eventType: 2
           disableSaving: 0
           hideDialogueBox: 1
@@ -172,11 +172,11 @@ MonoBehaviour:
     - rid: 3518661610382033113
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: 864079728
+        nodeName: 2099702080
         nextNode:
           rid: 3518661616588816518
         dialogueData:
-          dialogue: {fileID: 11400000, guid: 20530b4da4079654f85727ea03c7b66c, type: 2}
+          dialogue: {fileID: 11400000, guid: c2cd1660d06c93249ac4a474391c2f4d, type: 2}
           character: {fileID: 11400000, guid: 898b9173f16c76c42a03bbd1e459c7dd, type: 2}
           overrideCharacterName: 
           text: AWHHHH
@@ -200,11 +200,11 @@ MonoBehaviour:
     - rid: 3518661610382033115
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: 1342780512
+        nodeName: -1716564432
         nextNode:
           rid: 3518661616588816514
         dialogueData:
-          dialogue: {fileID: 11400000, guid: 310399e94c26a974b914998b1c3a8e10, type: 2}
+          dialogue: {fileID: 11400000, guid: e5f4dc5324a43904faf5bc263c3b01f5, type: 2}
           character: {fileID: 11400000, guid: 898b9173f16c76c42a03bbd1e459c7dd, type: 2}
           overrideCharacterName: 
           text: YIPPIEEEEE
@@ -224,8 +224,8 @@ MonoBehaviour:
     - rid: 3518661610382033189
       type: {class: ResponseHolderNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: 1821481296
-        responseHolder: {fileID: 11400000, guid: 252eeb5345276974bacdad6b80a526d9, type: 2}
+        nodeName: -1237863648
+        responseHolder: {fileID: 11400000, guid: a60dbe7b5814318428690ca5e2f1b5a1, type: 2}
         responses:
         - rid: 3518661610382033191
         - rid: 3518661812502397074
@@ -242,8 +242,8 @@ MonoBehaviour:
     - rid: 3518661610382033191
       type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -1994785216
-        response: {fileID: 11400000, guid: 722bac5654e17ba4b95560ba1da45548, type: 2}
+        nodeName: -759162864
+        response: {fileID: 11400000, guid: 0c4ef4977150c95458f86aa6fc8c0afe, type: 2}
         nextNode:
           rid: 3518661610382033111
         text: UNOOOO!!!
@@ -260,8 +260,8 @@ MonoBehaviour:
     - rid: 3518661610382033193
       type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -1516084432
-        response: {fileID: 11400000, guid: 1c101b681b3b4824caa148a4de16f6c7, type: 2}
+        nodeName: -280462080
+        response: {fileID: 11400000, guid: 2ecd7336e8109e24da93574cf591b39a, type: 2}
         nextNode:
           rid: 6056200488745173293
         text: AAAA
@@ -282,11 +282,11 @@ MonoBehaviour:
     - rid: 3518661610382033195
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -1037383648
+        nodeName: 198238704
         nextNode:
           rid: 3518661877473738843
         eventData:
-          eventObj: {fileID: 11400000, guid: d4ddfcdbd71328242a9133b1efa4ade8, type: 2}
+          eventObj: {fileID: 11400000, guid: 59209aa00e4398444974594700be12b1, type: 2}
           eventType: 8
           disableSaving: 0
           hideDialogueBox: 1
@@ -317,11 +317,11 @@ MonoBehaviour:
     - rid: 3518661616588816514
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -558682864
+        nodeName: 676939488
         nextNode:
           rid: 3518661812502397100
         dialogueData:
-          dialogue: {fileID: 11400000, guid: 5970740eed03e0744b940664b65feb78, type: 2}
+          dialogue: {fileID: 11400000, guid: da0f0d73ce7644f469ce47f1941d8202, type: 2}
           character: {fileID: 11400000, guid: 898b9173f16c76c42a03bbd1e459c7dd, type: 2}
           overrideCharacterName: 
           text: skill issue imo :)
@@ -345,11 +345,11 @@ MonoBehaviour:
     - rid: 3518661616588816518
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -79982080
+        nodeName: 1155640272
         nextNode:
           rid: 3518661812502397100
         dialogueData:
-          dialogue: {fileID: 11400000, guid: e5f43b1679480cf44b0c553af9a300ed, type: 2}
+          dialogue: {fileID: 11400000, guid: 62cf8ca8093d12f4cac40bb266f5ebbd, type: 2}
           character: {fileID: 11400000, guid: 898b9173f16c76c42a03bbd1e459c7dd, type: 2}
           overrideCharacterName: 
           text: I HATE YOU NOW!!
@@ -373,11 +373,11 @@ MonoBehaviour:
     - rid: 3518661616588816532
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -1407439904
+        nodeName: 1634341056
         nextNode:
           rid: 3518661877473738845
         eventData:
-          eventObj: {fileID: 11400000, guid: b2669805d6600704c805483cf160c0cb, type: 2}
+          eventObj: {fileID: 11400000, guid: cc216bd4163aedf41a690b1286aed09e, type: 2}
           eventType: 8
           disableSaving: 0
           hideDialogueBox: 1
@@ -404,8 +404,8 @@ MonoBehaviour:
     - rid: 3518661741492306658
       type: {class: ResponseHolderNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -928739120
-        responseHolder: {fileID: 11400000, guid: b60c542912743464da6ac7a6aa1c0765, type: 2}
+        nodeName: 2113041840
+        responseHolder: {fileID: 11400000, guid: 838dcbddf44e2ab419728e8ce317ee79, type: 2}
         responses:
         - rid: 3518661741492306660
         - rid: 3518661741492306662
@@ -423,8 +423,8 @@ MonoBehaviour:
     - rid: 3518661741492306660
       type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -450038336
-        response: {fileID: 11400000, guid: 8cffdb6aab204c941b99ceb950ed0b50, type: 2}
+        nodeName: -1703224672
+        response: {fileID: 11400000, guid: 9d591b0b2ca4abe4d84ad5a8ffda697a, type: 2}
         nextNode:
           rid: 3518661610382033195
         text: Leave
@@ -441,8 +441,8 @@ MonoBehaviour:
     - rid: 3518661741492306662
       type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: 28662448
-        response: {fileID: 11400000, guid: d0c339dee2950934fb1b123a147e7ad8, type: 2}
+        nodeName: -1224523888
+        response: {fileID: 11400000, guid: cb53d6255efd19643830425fca9c0ab5, type: 2}
         nextNode:
           rid: 3518661924126195834
         text: Switch
@@ -459,8 +459,8 @@ MonoBehaviour:
     - rid: 3518661812502397074
       type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: 507363232
-        response: {fileID: 11400000, guid: 93cd6a67eb3cce649ae5c93781068e34, type: 2}
+        nodeName: -745823104
+        response: {fileID: 11400000, guid: f146dca5119397946958c04137516d3d, type: 2}
         nextNode:
           rid: 3518661812502397076
         text: pew pew boooom
@@ -481,11 +481,11 @@ MonoBehaviour:
     - rid: 3518661812502397076
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: 986064016
+        nodeName: -267122320
         nextNode:
           rid: -2
         eventData:
-          eventObj: {fileID: 11400000, guid: 88d929199a3f77c479772557e71f552d, type: 2}
+          eventObj: {fileID: 11400000, guid: a099b0577f0f0e74797c6834709fcba5, type: 2}
           eventType: 2
           disableSaving: 0
           hideDialogueBox: 1
@@ -516,11 +516,11 @@ MonoBehaviour:
     - rid: 3518661812502397078
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: 1464764800
+        nodeName: 211578464
         nextNode:
           rid: 3518661812502397080
         dialogueData:
-          dialogue: {fileID: 11400000, guid: 03c4e577b49567d43bcbd8bacc0c62d0, type: 2}
+          dialogue: {fileID: 11400000, guid: 99ca4ecb1b7f6454fad86ff2a72e2c61, type: 2}
           character: {fileID: 11400000, guid: 898b9173f16c76c42a03bbd1e459c7dd, type: 2}
           overrideCharacterName: 
           text: WAHHHH
@@ -544,11 +544,11 @@ MonoBehaviour:
     - rid: 3518661812502397080
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: 1943465584
+        nodeName: 690279248
         nextNode:
           rid: 3518661812502397100
         dialogueData:
-          dialogue: {fileID: 11400000, guid: 0604de76508f398468242cb8b5064f6b, type: 2}
+          dialogue: {fileID: 11400000, guid: 2472c9069b92d394eaaa525c3c50222f, type: 2}
           character: {fileID: 11400000, guid: 898b9173f16c76c42a03bbd1e459c7dd, type: 2}
           overrideCharacterName: 
           text: :(
@@ -572,11 +572,11 @@ MonoBehaviour:
     - rid: 3518661812502397082
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -1872800928
+        nodeName: 1168980032
         nextNode:
           rid: 3518661812502397084
         dialogueData:
-          dialogue: {fileID: 11400000, guid: 4cb51458f1f53c1429b1630f3fbb06be, type: 2}
+          dialogue: {fileID: 11400000, guid: a248b9ae0f1b46247964def2d1543aaf, type: 2}
           character: {fileID: 11400000, guid: 898b9173f16c76c42a03bbd1e459c7dd, type: 2}
           overrideCharacterName: 
           text: YIPPEEEEEE
@@ -600,11 +600,11 @@ MonoBehaviour:
     - rid: 3518661812502397084
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -1394100144
+        nodeName: 1647680816
         nextNode:
           rid: 3518661812502397100
         dialogueData:
-          dialogue: {fileID: 11400000, guid: e3862352ce907d34ca9fe9dbd47036bf, type: 2}
+          dialogue: {fileID: 11400000, guid: 99c1561f5c7c56b429db8b0cb68024b9, type: 2}
           character: {fileID: 11400000, guid: 898b9173f16c76c42a03bbd1e459c7dd, type: 2}
           overrideCharacterName: 
           text: big ass skill issue :>
@@ -628,11 +628,11 @@ MonoBehaviour:
     - rid: 3518661812502397100
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -915399360
+        nodeName: 2126381600
         nextNode:
           rid: 6056200506423640138
         eventData:
-          eventObj: {fileID: 11400000, guid: 9e0585d55df57684381f7263610badbe, type: 2}
+          eventObj: {fileID: 11400000, guid: 80ca5d916790a2644b4417c501c5761c, type: 2}
           eventType: 1
           disableSaving: 0
           hideDialogueBox: 0
@@ -663,11 +663,11 @@ MonoBehaviour:
     - rid: 3518661812502397189
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -436698576
+        nodeName: -1689884912
         nextNode:
           rid: 6056200485695651915
         eventData:
-          eventObj: {fileID: 11400000, guid: cc01fadc04f75be4faf869d74b61344a, type: 2}
+          eventObj: {fileID: 11400000, guid: 01892dd313981ce4bbd4fc3860620003, type: 2}
           eventType: 5
           disableSaving: 0
           hideDialogueBox: 1
@@ -694,8 +694,8 @@ MonoBehaviour:
     - rid: 3518661877473738824
       type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: 42002208
-        response: {fileID: 11400000, guid: 4c8fdc3b47317204a9893f1f563405d2, type: 2}
+        nodeName: -1211184128
+        response: {fileID: 11400000, guid: 2f452e2c93408bb41a403ca4dad1fa0f, type: 2}
         nextNode:
           rid: 3518661877473738826
         text: bye
@@ -716,11 +716,11 @@ MonoBehaviour:
     - rid: 3518661877473738826
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: 520702992
+        nodeName: 318956272
         nextNode:
           rid: 3518661877473738828
         eventData:
-          eventObj: {fileID: 11400000, guid: 8a61dff3bf4196c4eb8764cd772bf06f, type: 2}
+          eventObj: {fileID: 11400000, guid: 21f71846b1782bf42bf7a625a7d03f3b, type: 2}
           eventType: 8
           disableSaving: 0
           hideDialogueBox: 1
@@ -751,11 +751,11 @@ MonoBehaviour:
     - rid: 3518661877473738828
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: 999403776
+        nodeName: 797657056
         nextNode:
           rid: -2
         eventData:
-          eventObj: {fileID: 11400000, guid: 95d34f66e53a12543bd342615e52474a, type: 2}
+          eventObj: {fileID: 11400000, guid: 4acf37e436535b64fb9bca0fa8bdfc3d, type: 2}
           eventType: 3
           disableSaving: 0
           hideDialogueBox: 0
@@ -786,11 +786,11 @@ MonoBehaviour:
     - rid: 3518661877473738843
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: 1478104560
+        nodeName: 1276357840
         nextNode:
           rid: -2
         eventData:
-          eventObj: {fileID: 11400000, guid: 542d86c2b7e8f6447aa08a12db3a307d, type: 2}
+          eventObj: {fileID: 11400000, guid: 9a5afa6360f67c842bda4aef37da48f4, type: 2}
           eventType: 3
           disableSaving: 0
           hideDialogueBox: 0
@@ -821,11 +821,11 @@ MonoBehaviour:
     - rid: 3518661877473738845
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: 1956805344
+        nodeName: 1755058624
         nextNode:
           rid: -2
         eventData:
-          eventObj: {fileID: 11400000, guid: 58a76be61a95e3148a7b4d56606eaa7d, type: 2}
+          eventObj: {fileID: 11400000, guid: 22192f7e2d5d47744a368817d04b3796, type: 2}
           eventType: 3
           disableSaving: 0
           hideDialogueBox: 0
@@ -852,8 +852,8 @@ MonoBehaviour:
     - rid: 3518661901817479238
       type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -1859461168
-        response: {fileID: 11400000, guid: c20ae2e2526f38e499a5e83836af1429, type: 2}
+        nodeName: -2061207888
+        response: {fileID: 11400000, guid: caf7849ae06b8a54cb020a87bce4fd50, type: 2}
         nextNode:
           rid: 3518661901817479240
         text: hangry
@@ -874,11 +874,11 @@ MonoBehaviour:
     - rid: 3518661901817479240
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -1380760384
+        nodeName: -1582507104
         nextNode:
           rid: 3518661901817479244
         eventData:
-          eventObj: {fileID: 11400000, guid: 93e048ed4f3d6e2468177a8b2dd50bcf, type: 2}
+          eventObj: {fileID: 11400000, guid: 370dcff60d18c28498c380aa30aab879, type: 2}
           eventType: 6
           disableSaving: 0
           hideDialogueBox: 0
@@ -909,11 +909,11 @@ MonoBehaviour:
     - rid: 3518661901817479244
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -902059600
+        nodeName: -1103806320
         nextNode:
           rid: 3518661901817479246
         dialogueData:
-          dialogue: {fileID: 11400000, guid: 96be41e36d6f57941ac3f92d5c157dc8, type: 2}
+          dialogue: {fileID: 11400000, guid: babf473880c89454990fcdc58bcfd06d, type: 2}
           character: {fileID: 11400000, guid: 898b9173f16c76c42a03bbd1e459c7dd, type: 2}
           overrideCharacterName: 
           text: yummy food
@@ -933,8 +933,8 @@ MonoBehaviour:
     - rid: 3518661901817479246
       type: {class: ResponseHolderNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -423358816
-        responseHolder: {fileID: 11400000, guid: 96a947128f4e9f948a45938ad51dde30, type: 2}
+        nodeName: -625105536
+        responseHolder: {fileID: 11400000, guid: 4d1b6a3dcc5dee64db0dae7ae8f07884, type: 2}
         responses:
         - rid: 3518661901817479248
         - rid: 3518661901817479250
@@ -951,8 +951,8 @@ MonoBehaviour:
     - rid: 3518661901817479248
       type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: 55341968
-        response: {fileID: 11400000, guid: f48d7670ca470e24ebb2c707e42ee9cd, type: 2}
+        nodeName: -146404752
+        response: {fileID: 11400000, guid: 33454c4420834004b9c46516800581f8, type: 2}
         nextNode:
           rid: 3518661901817479252
         text: NOM
@@ -969,8 +969,8 @@ MonoBehaviour:
     - rid: 3518661901817479250
       type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: 534042752
-        response: {fileID: 11400000, guid: 8e7e738d8f2738a40854c3529db316ff, type: 2}
+        nodeName: 332296032
+        response: {fileID: 11400000, guid: 16d81d30d5859484eae1e9b859cbb9d1, type: 2}
         nextNode:
           rid: 3518661901817479252
         text: nom nom nom
@@ -991,11 +991,11 @@ MonoBehaviour:
     - rid: 3518661901817479252
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: 1491444320
+        nodeName: 810996816
         nextNode:
           rid: 3518661901817479254
         eventData:
-          eventObj: {fileID: 11400000, guid: 2646e211e4543c448b2439f83a8e0e37, type: 2}
+          eventObj: {fileID: 11400000, guid: 8c9732059a7e12b469a46afc6dc48640, type: 2}
           eventType: 1
           disableSaving: 0
           hideDialogueBox: 1
@@ -1026,11 +1026,11 @@ MonoBehaviour:
     - rid: 3518661901817479254
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: 1970145104
+        nodeName: 1289697600
         nextNode:
           rid: 3518661901817479256
         dialogueData:
-          dialogue: {fileID: 11400000, guid: 5e08d485042edd94c9b2063ca361be27, type: 2}
+          dialogue: {fileID: 11400000, guid: a74e7d1c5145ecf48892b79558084c6c, type: 2}
           character: {fileID: 11400000, guid: 898b9173f16c76c42a03bbd1e459c7dd, type: 2}
           overrideCharacterName: 
           text: damn
@@ -1054,11 +1054,11 @@ MonoBehaviour:
     - rid: 3518661901817479256
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -1846121408
+        nodeName: 1768398384
         nextNode:
           rid: -2
         eventData:
-          eventObj: {fileID: 11400000, guid: a9904ddb6ade5eb4990e60c15e171394, type: 2}
+          eventObj: {fileID: 11400000, guid: 2a55df08b7573674ab91e842210efca3, type: 2}
           eventType: 3
           disableSaving: 0
           hideDialogueBox: 0
@@ -1103,8 +1103,8 @@ MonoBehaviour:
     - rid: 3518661901817479341
       type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -888719840
-        response: {fileID: 11400000, guid: a315ef2b1020cfa4b87ef6b94bff7dc2, type: 2}
+        nodeName: -1090466560
+        response: {fileID: 11400000, guid: d22988feb5f85c8429879ea93c07ea13, type: 2}
         nextNode:
           rid: 3518661901817479343
         text: boop
@@ -1121,8 +1121,8 @@ MonoBehaviour:
     - rid: 3518661901817479343
       type: {class: ResponseHolderNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -410019056
-        responseHolder: {fileID: 11400000, guid: df1f3081506f07b408d46a3d63b1d8a5, type: 2}
+        nodeName: -611765776
+        responseHolder: {fileID: 11400000, guid: 53f662212a4cd3848a748f4e67068d24, type: 2}
         responses:
         - rid: 3518661901817479345
         - rid: 3518661610382033105
@@ -1139,8 +1139,8 @@ MonoBehaviour:
     - rid: 3518661901817479345
       type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: 68681728
-        response: {fileID: 11400000, guid: b7a9ef5b5a12eb64ebf2aa968a1b65a5, type: 2}
+        nodeName: -133064992
+        response: {fileID: 11400000, guid: 8f42ac4b3101830489aab51e83f8abaa, type: 2}
         nextNode:
           rid: 3518661901817479347
         text: otter
@@ -1161,11 +1161,11 @@ MonoBehaviour:
     - rid: 3518661901817479347
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -2093243424
+        nodeName: 345635792
         nextNode:
           rid: 3518661901817479349
         eventData:
-          eventObj: {fileID: 11400000, guid: 550c7057ed801f04a8403a07fb8a047a, type: 2}
+          eventObj: {fileID: 11400000, guid: 782c4f05099038d438730bb8298a4dc8, type: 2}
           eventType: 7
           disableSaving: 0
           hideDialogueBox: 1
@@ -1196,11 +1196,11 @@ MonoBehaviour:
     - rid: 3518661901817479349
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -1135841856
+        nodeName: 824336576
         nextNode:
           rid: 6056200488745173284
         dialogueData:
-          dialogue: {fileID: 11400000, guid: 8fc927cfafd810344a9457dd5e686982, type: 2}
+          dialogue: {fileID: 11400000, guid: 504a6a72986c24741bf8dcd2dd65a610, type: 2}
           character: {fileID: 0}
           overrideCharacterName: 
           text: WOAH
@@ -1224,11 +1224,11 @@ MonoBehaviour:
     - rid: 3518661924126195834
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -178440288
+        nodeName: 1303037360
         nextNode:
           rid: 3518661924126195864
         eventData:
-          eventObj: {fileID: 11400000, guid: 3e6d526de33fd3b459131ce40a8acdad, type: 2}
+          eventObj: {fileID: 11400000, guid: 04f8192775d0688419cbdf611ffe5048, type: 2}
           eventType: 10
           disableSaving: 0
           hideDialogueBox: 1
@@ -1259,11 +1259,11 @@ MonoBehaviour:
     - rid: 3518661924126195836
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: 300260496
+        nodeName: 1781738144
         nextNode:
           rid: 3518661924126195838
         dialogueData:
-          dialogue: {fileID: 11400000, guid: 08d33f4af31d2ad43ac1e07fd59a8a2b, type: 2}
+          dialogue: {fileID: 11400000, guid: 6bf0ce04027699c43bbb474b74d4a358, type: 2}
           character: {fileID: 0}
           overrideCharacterName: ' '
           text: (This action will have consequences)
@@ -1283,8 +1283,8 @@ MonoBehaviour:
     - rid: 3518661924126195838
       type: {class: ResponseHolderNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: 778961280
-        responseHolder: {fileID: 11400000, guid: f7e4ff3db6be67a4cb994866d3217e27, type: 2}
+        nodeName: -2034528368
+        responseHolder: {fileID: 11400000, guid: e35f12f8df02d6e4a93572d99c4cfc68, type: 2}
         responses:
         - rid: 3518661924126195840
         - rid: 3518661924126195842
@@ -1301,8 +1301,8 @@ MonoBehaviour:
     - rid: 3518661924126195840
       type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: 1257662064
-        response: {fileID: 11400000, guid: bfac2d4119161ae4ab708cdd98e62ef6, type: 2}
+        nodeName: -1555827584
+        response: {fileID: 11400000, guid: fb04692f8fb6c4242a6d57daeffaeec2, type: 2}
         nextNode:
           rid: 3518661924126195844
         text: PET DA CAT
@@ -1319,8 +1319,8 @@ MonoBehaviour:
     - rid: 3518661924126195842
       type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: 1736362848
-        response: {fileID: 11400000, guid: bfa54536b82619b4cadfee158f19105c, type: 2}
+        nodeName: -1077126800
+        response: {fileID: 11400000, guid: d19e2904a157fcd41ac2c0f7d3a8321f, type: 2}
         nextNode:
           rid: 3518661924126196003
         text: ignore the cat :(
@@ -1341,11 +1341,11 @@ MonoBehaviour:
     - rid: 3518661924126195844
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -2079903664
+        nodeName: -598426016
         nextNode:
           rid: -2
         eventData:
-          eventObj: {fileID: 11400000, guid: 77d41920429d1d74c9a6653b5d70af73, type: 2}
+          eventObj: {fileID: 11400000, guid: 9a83305ed8804454ba9a1f00a27460f2, type: 2}
           eventType: 9
           disableSaving: 1
           hideDialogueBox: 1
@@ -1376,11 +1376,11 @@ MonoBehaviour:
     - rid: 3518661924126195864
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -1601202880
+        nodeName: -119725232
         nextNode:
           rid: 3518661924126195836
         eventData:
-          eventObj: {fileID: 11400000, guid: 8834e1099555db04e8011ee5fa720e26, type: 2}
+          eventObj: {fileID: 11400000, guid: 04c6aac68af81c044a2162b54d7920ea, type: 2}
           eventType: 1
           disableSaving: 0
           hideDialogueBox: 1
@@ -1411,11 +1411,11 @@ MonoBehaviour:
     - rid: 3518661924126196003
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -165100528
+        nodeName: 358975552
         nextNode:
           rid: 3518661924126196005
         dialogueData:
-          dialogue: {fileID: 11400000, guid: 522210719334409409c744602a9b8354, type: 2}
+          dialogue: {fileID: 11400000, guid: fa9bcc17ebc05284e995d4885166a699, type: 2}
           character: {fileID: 0}
           overrideCharacterName: 
           text: homo
@@ -1439,11 +1439,11 @@ MonoBehaviour:
     - rid: 3518661924126196005
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: 313600256
+        nodeName: 837676336
         nextNode:
           rid: 3518661924126196007
         eventData:
-          eventObj: {fileID: 11400000, guid: 4e405714fc89d694bacbc7d0cb18b780, type: 2}
+          eventObj: {fileID: 11400000, guid: 56d7b7033c9f92e4c9736a608e38a705, type: 2}
           eventType: 11
           disableSaving: 1
           hideDialogueBox: 1
@@ -1474,11 +1474,11 @@ MonoBehaviour:
     - rid: 3518661924126196007
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: 792301040
+        nodeName: 1316377120
         nextNode:
           rid: 6056200488745173284
         eventData:
-          eventObj: {fileID: 11400000, guid: c04994e625cd19f4c919ae67f77db79e, type: 2}
+          eventObj: {fileID: 11400000, guid: 99c05d9976541ac489e40fcbe7496745, type: 2}
           eventType: 1
           disableSaving: 0
           hideDialogueBox: 1
@@ -1505,8 +1505,8 @@ MonoBehaviour:
     - rid: 3518661945540739218
       type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: 583103120
-        response: {fileID: 11400000, guid: 6a2826359c832c349a081090602b170c, type: 2}
+        nodeName: 1795077904
+        response: {fileID: 11400000, guid: 0e56e6ab27089a44883e622f31780489, type: 2}
         nextNode:
           rid: 3518661945540739220
         text: So this is like a really long dialogue option that options.
@@ -1527,17 +1527,17 @@ MonoBehaviour:
     - rid: 3518661945540739220
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -1368578688
+        nodeName: -2021188608
         nextNode:
           rid: 6056200488745173284
         dialogueData:
-          dialogue: {fileID: 11400000, guid: d3b092b3927724d4885e932384c237a7, type: 2}
+          dialogue: {fileID: 11400000, guid: 94337691b55625f49a047e05fd20ae16, type: 2}
           character: {fileID: 0}
           overrideCharacterName: 
-          text: bleh
+          text: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
           sprite: 1
           overrideSprite: {fileID: 0}
-          overrideTextSpeed: 0
+          overrideTextSpeed: 0.01
     - rid: 6056200485695651914
       type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
       data:
@@ -1555,11 +1555,11 @@ MonoBehaviour:
     - rid: 6056200485695651915
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: 1271001824
+        nodeName: 609369840
         nextNode:
           rid: 6056200488745173284
         dialogueData:
-          dialogue: {fileID: 11400000, guid: 27031bcf4f8536c429cdb3d8d95323f5, type: 2}
+          dialogue: {fileID: 11400000, guid: 5f68c59dd864aa94d82a0d5bf68161c0, type: 2}
           character: {fileID: 11400000, guid: 898b9173f16c76c42a03bbd1e459c7dd, type: 2}
           overrideCharacterName: 
           text: test0
@@ -1583,11 +1583,11 @@ MonoBehaviour:
     - rid: 6056200485695651919
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: 1749702608
+        nodeName: 1088070624
         nextNode:
           rid: 6056200507354775666
         dialogueData:
-          dialogue: {fileID: 11400000, guid: ee58acc6048ec994f8019550b6849d93, type: 2}
+          dialogue: {fileID: 11400000, guid: 989cdd5dc8ffa9548abfc8ec2e3748fd, type: 2}
           character: {fileID: 11400000, guid: 898b9173f16c76c42a03bbd1e459c7dd, type: 2}
           overrideCharacterName: 
           text: Oh ok
@@ -1611,11 +1611,11 @@ MonoBehaviour:
     - rid: 6056200488745173284
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -2066563904
+        nodeName: 1566771408
         nextNode:
           rid: 6056200506423640138
         dialogueData:
-          dialogue: {fileID: 11400000, guid: d034b919497ecbe48b67c76b55cc393a, type: 2}
+          dialogue: {fileID: 11400000, guid: dd0ce8bc3bc924b45b112e4112075756, type: 2}
           character: {fileID: 11400000, guid: 898b9173f16c76c42a03bbd1e459c7dd, type: 2}
           overrideCharacterName: 
           text: test1
@@ -1639,11 +1639,11 @@ MonoBehaviour:
     - rid: 6056200488745173293
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -1587863120
+        nodeName: 2045472192
         nextNode:
           rid: 6056200507354775679
         dialogueData:
-          dialogue: {fileID: 11400000, guid: 0c61588a95f92d848bf3a226aca53d85, type: 2}
+          dialogue: {fileID: 11400000, guid: 127930eecdbcb334e8050b4b2d20d0e9, type: 2}
           character: {fileID: 11400000, guid: 898b9173f16c76c42a03bbd1e459c7dd, type: 2}
           overrideCharacterName: 
           text: owh...
@@ -1663,8 +1663,8 @@ MonoBehaviour:
     - rid: 6056200506423640138
       type: {class: ResponseHolderNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -1109162336
-        responseHolder: {fileID: 11400000, guid: a2a541a1f7bab7745a8a8f6f86ee24e3, type: 2}
+        nodeName: -1770794320
+        responseHolder: {fileID: 11400000, guid: f54c5b009c976684eb89deba6ce06466, type: 2}
         responses:
         - rid: 6056200506423640143
         - rid: 6056200506423640145
@@ -1683,8 +1683,8 @@ MonoBehaviour:
     - rid: 6056200506423640143
       type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -630461552
-        response: {fileID: 11400000, guid: cc3248289be095f4989f0df697f360e4, type: 2}
+        nodeName: -1292093536
+        response: {fileID: 11400000, guid: f0438fd4cfe63184b939f0e8c8a823d7, type: 2}
         nextNode:
           rid: 6056200485695651919
         text: nuh uh
@@ -1701,8 +1701,8 @@ MonoBehaviour:
     - rid: 6056200506423640145
       type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -151760768
-        response: {fileID: 11400000, guid: 2428ff5e95b55474fa74aef12b9f2a4b, type: 2}
+        nodeName: -813392752
+        response: {fileID: 11400000, guid: 03bff69c387684146919f5b21676ad6e, type: 2}
         nextNode:
           rid: 3518661741492306658
         text: bleh
@@ -1723,11 +1723,11 @@ MonoBehaviour:
     - rid: 6056200507354775666
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: 326940016
+        nodeName: -334691968
         nextNode:
           rid: 6056200507354775670
         dialogueData:
-          dialogue: {fileID: 11400000, guid: c35c91cd07fc09c48b425bdb551b526f, type: 2}
+          dialogue: {fileID: 11400000, guid: cdf8581e3cd374f4d91b93901fe656f9, type: 2}
           character: {fileID: 11400000, guid: 898b9173f16c76c42a03bbd1e459c7dd, type: 2}
           overrideCharacterName: Freddy
           text: nfiwafhwhiogwa
@@ -1747,8 +1747,8 @@ MonoBehaviour:
     - rid: 6056200507354775670
       type: {class: ResponseHolderNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: 805640800
-        responseHolder: {fileID: 11400000, guid: 92a85f95908460540bcc1e800ff1f2e1, type: 2}
+        nodeName: 144008816
+        responseHolder: {fileID: 11400000, guid: 155071e131366fb418f292398aafa057, type: 2}
         responses:
         - rid: 6056200507354775672
         - rid: 3518661610382033193
@@ -1766,8 +1766,8 @@ MonoBehaviour:
     - rid: 6056200507354775672
       type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: 1763042368
-        response: {fileID: 11400000, guid: c80777145696db648985b51395ccdbf4, type: 2}
+        nodeName: 622709600
+        response: {fileID: 11400000, guid: f80358e7d3e260643b1669fe5fd035fa, type: 2}
         nextNode:
           rid: 6056200507354775674
         text: wtf
@@ -1788,11 +1788,11 @@ MonoBehaviour:
     - rid: 6056200507354775674
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -2053224144
+        nodeName: 1101410384
         nextNode:
           rid: 6056200664907513929
         dialogueData:
-          dialogue: {fileID: 11400000, guid: 577beb8411e40d44a91a31d7b341ed3b, type: 2}
+          dialogue: {fileID: 11400000, guid: 0f19c0a0370a9f34c8e7c6e699be6a49, type: 2}
           character: {fileID: 11400000, guid: 898b9173f16c76c42a03bbd1e459c7dd, type: 2}
           overrideCharacterName: 
           text: :)
@@ -1812,8 +1812,8 @@ MonoBehaviour:
     - rid: 6056200507354775679
       type: {class: ResponseHolderNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -617121792
-        responseHolder: {fileID: 11400000, guid: f95c220614652094b86c5193d9406a0b, type: 2}
+        nodeName: 1580111168
+        responseHolder: {fileID: 11400000, guid: 4fc345782908bf74997e478d2e620466, type: 2}
         responses:
         - rid: 6056200507354775681
     - rid: 6056200507354775680
@@ -1829,8 +1829,8 @@ MonoBehaviour:
     - rid: 6056200507354775681
       type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -1419037968
-        response: {fileID: 11400000, guid: 51a10c37287b5fb48abf66bf0d824037, type: 2}
+        nodeName: 2058811952
+        response: {fileID: 11400000, guid: 1d1f80f4ddbdd7c4ebfbb7d1e4021d73, type: 2}
         nextNode:
           rid: 6056200507354775683
         text: wat
@@ -1851,11 +1851,11 @@ MonoBehaviour:
     - rid: 6056200507354775683
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -940337184
+        nodeName: -1757454560
         nextNode:
           rid: 6056200507354775679
         dialogueData:
-          dialogue: {fileID: 11400000, guid: 2ae4ee00560b4ab499f781308a12a378, type: 2}
+          dialogue: {fileID: 11400000, guid: 26f930b258ff0a34782df441349fd96e, type: 2}
           character: {fileID: 11400000, guid: 898b9173f16c76c42a03bbd1e459c7dd, type: 2}
           overrideCharacterName: 
           text: hm?
@@ -1879,11 +1879,11 @@ MonoBehaviour:
     - rid: 6056200664907513929
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -461636400
+        nodeName: -1278753776
         nextNode:
           rid: 6056200664907513939
         eventData:
-          eventObj: {fileID: 11400000, guid: 134ecdd7829939347baa98802ec118d4, type: 2}
+          eventObj: {fileID: 11400000, guid: 267ebe202295a6d4a9dfdc10580deb21, type: 2}
           eventType: 1
           disableSaving: 0
           hideDialogueBox: 1
@@ -1914,11 +1914,11 @@ MonoBehaviour:
     - rid: 6056200664907513939
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: 17064384
+        nodeName: -321352208
         nextNode:
           rid: 6056200664907513941
         dialogueData:
-          dialogue: {fileID: 11400000, guid: e2d99439e5a51004ca5994fbba3409ac, type: 2}
+          dialogue: {fileID: 11400000, guid: 4a7a0c343c806ba41b48c3570f480bb4, type: 2}
           character: {fileID: 11400000, guid: 898b9173f16c76c42a03bbd1e459c7dd, type: 2}
           overrideCharacterName: Frad
           text: AAAA
@@ -1942,11 +1942,11 @@ MonoBehaviour:
     - rid: 6056200664907513941
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: 495765168
+        nodeName: 157348576
         nextNode:
           rid: 6056200664907513943
         eventData:
-          eventObj: {fileID: 11400000, guid: f006789dd76ca274498d8c68029bfeed, type: 2}
+          eventObj: {fileID: 11400000, guid: 37433611fba1da342ad5f53c793567fb, type: 2}
           eventType: 1
           disableSaving: 0
           hideDialogueBox: 1
@@ -1977,11 +1977,11 @@ MonoBehaviour:
     - rid: 6056200664907513943
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: 974465952
+        nodeName: 636049360
         nextNode:
           rid: 6056200664907513945
         eventData:
-          eventObj: {fileID: 11400000, guid: 0dd8cbb55ae3d354aa80cb5efc692054, type: 2}
+          eventObj: {fileID: 11400000, guid: e42473f39b398e743a94e086793fe6fd, type: 2}
           eventType: 1
           disableSaving: 0
           hideDialogueBox: 0
@@ -2008,8 +2008,8 @@ MonoBehaviour:
     - rid: 6056200664907513945
       type: {class: ResponseHolderNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: 1453166736
-        responseHolder: {fileID: 11400000, guid: db96b8ef28c26d6418b8b154c2293fad, type: 2}
+        nodeName: 1114750144
+        responseHolder: {fileID: 11400000, guid: 77be99b694df8aa4e912f42073147f22, type: 2}
         responses:
         - rid: 6056200664907513947
         - rid: 6056200664907513949
@@ -2026,8 +2026,8 @@ MonoBehaviour:
     - rid: 6056200664907513947
       type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: 1931867520
-        response: {fileID: 11400000, guid: 0288ea1092c114c46be203b6ab22ad0a, type: 2}
+        nodeName: 1593450928
+        response: {fileID: 11400000, guid: 5c3367f6457ae6647852b1d1d342d01f, type: 2}
         nextNode:
           rid: 6056200664907513951
         text: A
@@ -2044,8 +2044,8 @@ MonoBehaviour:
     - rid: 6056200664907513949
       type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -1884398992
-        response: {fileID: 11400000, guid: a0f710f1741b3b447971ea7c30521c78, type: 2}
+        nodeName: 2072151712
+        response: {fileID: 11400000, guid: 6e59e0cb3da78e94693b2adf00008faf, type: 2}
         nextNode:
           rid: 6056200664907513955
         text: B
@@ -2066,11 +2066,11 @@ MonoBehaviour:
     - rid: 6056200664907513951
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -1405698208
+        nodeName: -1744114800
         nextNode:
           rid: 6056200664907513953
         eventData:
-          eventObj: {fileID: 11400000, guid: 0cd687556f01a2948bffac28a6929bac, type: 2}
+          eventObj: {fileID: 11400000, guid: d9fe3e2cb6e0800429a39f2baf396efb, type: 2}
           eventType: 1
           disableSaving: 0
           hideDialogueBox: 0
@@ -2101,11 +2101,11 @@ MonoBehaviour:
     - rid: 6056200664907513953
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -926997424
+        nodeName: -1265414016
         nextNode:
           rid: 3518661616588816532
         dialogueData:
-          dialogue: {fileID: 11400000, guid: 535806468eaa67849bf487f39b0a6981, type: 2}
+          dialogue: {fileID: 11400000, guid: 525dd818d60a96348aa49f6c77420307, type: 2}
           character: {fileID: 11400000, guid: 898b9173f16c76c42a03bbd1e459c7dd, type: 2}
           overrideCharacterName: 
           text: AAAAAAAa
@@ -2129,11 +2129,11 @@ MonoBehaviour:
     - rid: 6056200664907513955
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
-        nodeName: -448296640
+        nodeName: -786713232
         nextNode:
           rid: 3518661616588816532
         dialogueData:
-          dialogue: {fileID: 11400000, guid: 9c193123853f2064bb848dcffd8ce54b, type: 2}
+          dialogue: {fileID: 11400000, guid: a62f0839dbeb4b34bad2e0205f366964, type: 2}
           character: {fileID: 11400000, guid: 898b9173f16c76c42a03bbd1e459c7dd, type: 2}
           overrideCharacterName: 
           text: BBBB
