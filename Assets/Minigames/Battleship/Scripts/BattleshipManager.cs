@@ -505,7 +505,7 @@ public class BattleshipManager : MonoBehaviour
     public void PlayParticle(Vector3 pos)
     {
         poofParticle.transform.position = pos;
-        poofParticle.Play(-1);
+        poofParticle.Play();
     }
 
     private void OnDestroy()

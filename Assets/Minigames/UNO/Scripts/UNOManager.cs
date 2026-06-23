@@ -8,38 +8,45 @@ using Random = UnityEngine.Random;
 
 public class UNOManager : MonoBehaviour
 {
+    [Header("References")]
     [SerializeField] private Camera cam;
     [SerializeField] private DialogueManager dialogueManager;
-    [SerializeField] private PoofParticle poofParticle;
+    [SerializeField] private PoofParticle stackPoofParticle;
+    [SerializeField] private PoofParticle cardPoofParticle;
 
+    [Header("UNO Settings")]
     [SerializeField] private UNOCardHolder cardHolder;
-
-    [SerializeField] private GameObject cardPrefab;
     [SerializeField] private int startingCards;
 
+    [Header("Card Obj Settings")]
+    [SerializeField] private GameObject cardPrefab;
     [SerializeField] private Transform cardsParent;
     [SerializeField] private Vector3 playerCardsRot;
     [SerializeField] private Transform opponentCardsParent;
     [SerializeField] private Vector3 opponentCardsRot;
     [SerializeField] private float distanceBetweenCards;
+    [SerializeField] private Transform[] opponentCardPositions;
 
+    [Header("Tags")]
     [SerializeField] private string cardTag;
     [SerializeField] private string disposedCardTag;
     [SerializeField] private string wildcardBallTag;
     [SerializeField] private string cardStackTag;
 
+    [Header("Disposed Stack")]
     [SerializeField] private Vector3 disposeStackPos;
     private UNOCardObj disposedStackCard;
     [SerializeField] private Image bigDisposedStackCard;
 
+    [Header("Cards")]
     private List<UNOCard> playerCards;
     private List<UNOCardObj> playerCardObjs;
     private List<UNOCard> opponentCards;
     private List<UNOCardObj> opponentCardObjs;
-
     private List<UNOCard> cardsStack;
     private List<UNOCard> disposedStack;
 
+    [Header("Inputs")]
     [SerializeField] private InputActionAsset inputs;
     private InputAction grabCard;
     private InputAction mousePositionAction;
@@ -47,16 +54,57 @@ public class UNOManager : MonoBehaviour
     private InputAction leftClick;
     private bool hasLeftClicked;
 
+    [Header("Info")]
     private Turn turn;
-
     private Coroutine lookingForCardsCoroutine;
 
+    [Header("Opponent Settings")]
     [SerializeField] private int playerCardsThresholdForPlusCards;
     private bool isBart;
     [SerializeField] private CharacterParent characterManager;
     [SerializeField] private CharacterParent bartManager;
+    [SerializeField] private float holdCardsAnimTime;
+    private WaitForSeconds waitHoldCardsAnimTime;
+    [SerializeField] private float grabCardAnimTime;
+    private WaitForSeconds waitGrabCardAnimTime;
+    [SerializeField] private float layCardAnimTime;
+    private WaitForSeconds waitLayCardAnimTime;
+    [SerializeField] private float delayAfterPlayingCard;
+    private WaitForSeconds waitDelayAfterPlayingCard;
 
-    private void Start() => Load();
+    private void Start() => StartCoroutine(Load());
+
+    private IEnumerator Load()
+    {
+        isBart = SaveSystem.currentSave.choseBart;
+        if (isBart)
+            characterManager = bartManager;
+
+        playerCards = new List<UNOCard>();
+        playerCardObjs = new List<UNOCardObj>();
+        opponentCards = new List<UNOCard>();
+        opponentCardObjs = new List<UNOCardObj>();
+        cardsStack = new List<UNOCard>();
+        disposedStack = new List<UNOCard>();
+        cardsStack = cardHolder.cards.ToList();
+        cardsStack = cardsStack.OrderBy(_ => Random.value).ToList();
+
+        waitHoldCardsAnimTime = new WaitForSeconds(holdCardsAnimTime);
+        waitGrabCardAnimTime = new WaitForSeconds(grabCardAnimTime);
+        waitLayCardAnimTime = new WaitForSeconds(layCardAnimTime);
+        waitDelayAfterPlayingCard = new WaitForSeconds(delayAfterPlayingCard);
+
+        GrabCard(startingCards, true);
+        characterManager.SetAnimation(CharacterAnimations.HoldCards, true);
+        yield return waitHoldCardsAnimTime;
+        GrabCard(startingCards, false);
+
+        GrabStartCard();
+
+        LoadInput();
+
+        SetTurn(Turn.Player);
+    }
 
     private void LoadInput()
     {
@@ -176,6 +224,7 @@ public class UNOManager : MonoBehaviour
                     {
                         hasLeftClicked = false;
                         GrabCard(1, true);
+                        SwitchTurns();
                     }
                 }
 
@@ -200,28 +249,44 @@ public class UNOManager : MonoBehaviour
         }
     }
 
+    private void DisappearCard(UNOCardObj card)
+    {
+        opponentCards.Remove(card.card);
+        opponentCardObjs.Remove(card);
+        cardPoofParticle.transform.position = card.transform.position;
+        cardPoofParticle.Play();
+        card.transform.position = Vector3.down;
+        SortCards(false);
+    }
+
     public void PlayCard(UNOCardObj card)
     {
+        bool isPlayerTurn = turn == Turn.Player;
         if (lookingForCardsCoroutine != null)
             StopCoroutine(lookingForCardsCoroutine);
         card.OnPlay();
-        List<UNOCard> cards = turn == Turn.Player ? playerCards : opponentCards;
-        List<UNOCardObj> cardsObjs = turn == Turn.Player ? playerCardObjs : opponentCardObjs;
-        cards.Remove(card.card);
-        cardsObjs.Remove(card);
+        List<UNOCard> cards = isPlayerTurn ? playerCards : opponentCards;
+        if (isPlayerTurn)
+        {
+            cardPoofParticle.transform.position = card.transform.position;
+            cardPoofParticle.Play();
+            List<UNOCardObj> cardsObjs = playerCardObjs;
+            cards.Remove(card.card);
+            cardsObjs.Remove(card);
+        }
+        stackPoofParticle.transform.position = disposeStackPos;
+        stackPoofParticle.Play();
         card.transform.SetPositionAndRotation(disposeStackPos, Quaternion.identity);
         card.transform.SetParent(transform);
-        poofParticle.transform.position = disposeStackPos;
-        poofParticle.Play(-1);
         disposedStack.Add(disposedStackCard.card);
         Destroy(disposedStackCard.gameObject);
         disposedStackCard = card;
         bigDisposedStackCard.sprite = disposedStackCard.card.sprite;
         disposedStackCard.tag = disposedCardTag;
-        SortCards(turn == Turn.Player);
+        SortCards(isPlayerTurn);
 
         if (disposedStackCard.card.type == UNOCardType.PlusTwo)
-            GrabCard(2, turn != Turn.Player);
+            GrabCard(2, !isPlayerTurn);
         if (disposedStackCard.card.type == UNOCardType.Wildcard)
         {
             if (turn == Turn.Opponent)
@@ -274,12 +339,14 @@ public class UNOManager : MonoBehaviour
 
         if (cards.Count > 0)
         {
-            SwitchTurns();
+            if (isPlayerTurn)
+                SwitchTurns();
             return;
         }
 
+        characterManager.SetAnimation(CharacterAnimations.HoldCards, false);
         gameObject.SetActive(false);
-        dialogueManager.ExitMinigame(turn == Turn.Player);
+        dialogueManager.ExitMinigame(isPlayerTurn);
     }
 
     private void ShuffleNewStack()
@@ -305,31 +372,6 @@ public class UNOManager : MonoBehaviour
     {
         if (hasLeftClicked) return;
         hasLeftClicked = true;
-    }
-
-    private void Load()
-    {
-        isBart = SaveSystem.currentSave.choseBart;
-        if (isBart)
-            characterManager = bartManager;
-
-        playerCards = new List<UNOCard>();
-        playerCardObjs = new List<UNOCardObj>();
-        opponentCards = new List<UNOCard>();
-        opponentCardObjs = new List<UNOCardObj>();
-        cardsStack = new List<UNOCard>();
-        disposedStack = new List<UNOCard>();
-        cardsStack = cardHolder.cards.ToList();
-        cardsStack = cardsStack.OrderBy(_ => Random.value).ToList();
-
-        GrabCard(startingCards, true);
-        GrabCard(startingCards, false);
-
-        GrabStartCard();
-
-        LoadInput();
-
-        SetTurn(Turn.Player);
     }
 
     private void GrabStartCard()
@@ -370,10 +412,10 @@ public class UNOManager : MonoBehaviour
 
         SortCards(forPlayer);
 
-        if (amt > 1) return;
+        if (amt > 1 || newestCard == null) return;
 
-        poofParticle.transform.position = newestCard.transform.position;
-        poofParticle.Play(-1);
+        cardPoofParticle.transform.position = newestCard.transform.position;
+        cardPoofParticle.Play();
     }
 
     private UNOCardObj SpawnCard(bool forPlayer, UNOCard card)
@@ -421,14 +463,27 @@ public class UNOManager : MonoBehaviour
             cardsObjs = opponentCardObjs;
         }
 
-        Vector3 startingPoint = Vector3.zero;
-
-        startingPoint = new Vector3(startingPoint.x - distanceBetweenCards / 2 * cards.Count, startingPoint.y, startingPoint.z);
-
-        foreach (UNOCardObj card in cardsObjs)
+        if (forPlayer)
         {
-            card.transform.localPosition = startingPoint;
-            startingPoint = new Vector3(startingPoint.x + distanceBetweenCards, startingPoint.y, startingPoint.z);
+            Vector3 startingPoint = Vector3.zero;
+
+            startingPoint = new Vector3(startingPoint.x - distanceBetweenCards / 2 * cards.Count, startingPoint.y, startingPoint.z);
+
+            foreach (UNOCardObj card in cardsObjs)
+            {
+                card.transform.localPosition = startingPoint;
+                startingPoint = new Vector3(startingPoint.x + distanceBetweenCards, startingPoint.y, startingPoint.z);
+            }
+        }
+        else
+        {
+            for (int i = 0; i < cardsObjs.Count; i++)
+            {
+                UNOCardObj card = cardsObjs[i];
+                Transform trans = i < opponentCardPositions.Length ? opponentCardPositions[i] : opponentCardPositions[^1];
+                card.transform.SetPositionAndRotation(trans.position, trans.rotation);
+                card.transform.SetParent(trans);
+            }
         }
 
         CheckCards();
@@ -498,7 +553,7 @@ public class UNOManager : MonoBehaviour
 
                 if (cardToPlay != null)
                 {
-                    OpponentPlayCard(cardToPlay);
+                    StartCoroutine(OpponentPlayCard(cardToPlay));
                     return;
                 }
             }
@@ -510,7 +565,7 @@ public class UNOManager : MonoBehaviour
 
             if (cardToPlay != null)
             {
-                OpponentPlayCard(cardToPlay);
+                StartCoroutine(OpponentPlayCard(cardToPlay));
                 return;
             }
         }
@@ -521,7 +576,7 @@ public class UNOManager : MonoBehaviour
 
             int rnd = Random.Range(0, correctPlayableCards.Count - 1);
             UNOCardObj cardToPlay = correctPlayableCards[rnd];
-            OpponentPlayCard(cardToPlay);
+            StartCoroutine(OpponentPlayCard(cardToPlay));
             return;
         }
 
@@ -529,7 +584,16 @@ public class UNOManager : MonoBehaviour
         OpponentGrabCard();
     }
 
-    private void OpponentPlayCard(UNOCardObj cardObj) => PlayCard(cardObj);
+    private IEnumerator OpponentPlayCard(UNOCardObj cardObj)
+    {
+        characterManager.SetAnimation(CharacterAnimations.LayCardDown, true);
+        yield return waitGrabCardAnimTime;
+        DisappearCard(cardObj);
+        yield return waitLayCardAnimTime;
+        PlayCard(cardObj);
+        yield return waitDelayAfterPlayingCard;
+        SwitchTurns();
+    }
 
     private void OpponentGrabCard()
     {

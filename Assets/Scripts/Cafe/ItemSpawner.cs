@@ -34,7 +34,7 @@ public class ItemSpawner : MonoBehaviour
     private IEnumerator CreateItems(MenuItems dessert, MenuItems drink, MenuItems npcDessert, MenuItems npcDrink, bool poof)
     {
         if (poof)
-            particle.Play(-1);
+            particle.Play();
         hasSpawnedItems = true;
         plates = new GameObject[2];
         items = new GameObject[4];
@@ -61,7 +61,7 @@ public class ItemSpawner : MonoBehaviour
     public void RemoveItems()
     {
         if (!hasSpawnedItems) return;
-        particle.Play(-1);
+        particle.Play();
         foreach (GameObject item in items)
             Destroy(item);
         foreach (GameObject plate in plates)

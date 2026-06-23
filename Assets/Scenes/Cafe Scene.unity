@@ -8335,7 +8335,7 @@ MonoBehaviour:
   catShowAnim: CatIntro
   catLeaveAnim: CatOutro
   catSkipAnim: CatSkip
-  poofParticle: {fileID: 1078351752}
+  bartPoofParticle: {fileID: 1078351752}
 --- !u!4 &353638986
 Transform:
   m_ObjectHideFlags: 0
@@ -9628,10 +9628,13 @@ Transform:
   m_GameObject: {fileID: 432752459}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.035, y: 0.8179, z: 0.332}
+  m_LocalPosition: {x: -0.0323, y: 0.8872, z: 0.8788}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 699531429}
+  - {fileID: 1829125226}
+  - {fileID: 1988659803}
   m_Father: {fileID: 1886578722}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &437016026
@@ -16181,6 +16184,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8678f6cea7c7e0a4c8c97b6e94b5d25a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BattleshipBoardButton
+--- !u!1 &699531428
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 699531429}
+  m_Layer: 0
+  m_Name: Cards 0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &699531429
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699531428}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.09908244, y: 0.70013046, z: 0.70013046, w: -0.09908244}
+  m_LocalPosition: {x: -0.0262, y: -0.0015, z: 0.0022}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 432752460}
+  m_LocalEulerAnglesHint: {x: -73.89, y: -90, z: 270}
 --- !u!1001 &708978780
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22992,7 +23026,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9142298536414750544, guid: e7de18039e47acd43b8cc960e43fc45f, type: 3}
       propertyPath: m_Name
-      value: Poof Particles
+      value: Bart Poof Particles
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -29832,7 +29866,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9142298536414750544, guid: e7de18039e47acd43b8cc960e43fc45f, type: 3}
       propertyPath: m_Name
-      value: UNO Poof Particles
+      value: UNO Stack Poof Particles
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -37763,6 +37797,119 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8678f6cea7c7e0a4c8c97b6e94b5d25a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BattleshipBoardButton
+--- !u!1001 &1766327502
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1886578722}
+    m_Modifications:
+    - target: {fileID: 7035085535415585920, guid: e7de18039e47acd43b8cc960e43fc45f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.00524
+      objectReference: {fileID: 0}
+    - target: {fileID: 7035085535415585920, guid: e7de18039e47acd43b8cc960e43fc45f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.003910001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7035085535415585920, guid: e7de18039e47acd43b8cc960e43fc45f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.003420001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7035085535415585920, guid: e7de18039e47acd43b8cc960e43fc45f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7035085535415585920, guid: e7de18039e47acd43b8cc960e43fc45f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7035085535415585920, guid: e7de18039e47acd43b8cc960e43fc45f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7035085535415585920, guid: e7de18039e47acd43b8cc960e43fc45f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7035085535415585920, guid: e7de18039e47acd43b8cc960e43fc45f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7035085535415585920, guid: e7de18039e47acd43b8cc960e43fc45f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7035085535415585920, guid: e7de18039e47acd43b8cc960e43fc45f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7825203633654800752, guid: e7de18039e47acd43b8cc960e43fc45f, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7825203633654800752, guid: e7de18039e47acd43b8cc960e43fc45f, type: 3}
+      propertyPath: lengthInSec
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7825203633654800752, guid: e7de18039e47acd43b8cc960e43fc45f, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 7825203633654800752, guid: e7de18039e47acd43b8cc960e43fc45f, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7825203633654800752, guid: e7de18039e47acd43b8cc960e43fc45f, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9077568435895355235, guid: e7de18039e47acd43b8cc960e43fc45f, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9077568435895355235, guid: e7de18039e47acd43b8cc960e43fc45f, type: 3}
+      propertyPath: lengthInSec
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9077568435895355235, guid: e7de18039e47acd43b8cc960e43fc45f, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 9077568435895355235, guid: e7de18039e47acd43b8cc960e43fc45f, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9077568435895355235, guid: e7de18039e47acd43b8cc960e43fc45f, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9142298536414750544, guid: e7de18039e47acd43b8cc960e43fc45f, type: 3}
+      propertyPath: m_Name
+      value: UNO Card Poof Particles
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e7de18039e47acd43b8cc960e43fc45f, type: 3}
+--- !u!4 &1766327503 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7035085535415585920, guid: e7de18039e47acd43b8cc960e43fc45f, type: 3}
+  m_PrefabInstance: {fileID: 1766327502}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1766327504 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8673779324344916065, guid: e7de18039e47acd43b8cc960e43fc45f, type: 3}
+  m_PrefabInstance: {fileID: 1766327502}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 823c2d9e0652e714aad9d3d6a50945b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PoofParticle
 --- !u!1001 &1766610574
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39476,6 +39623,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4785049407103024054, guid: f263bc72b40858043b8efad07e4e6a45, type: 3}
   m_PrefabInstance: {fileID: 1829011197}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1829125225
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1829125226}
+  m_Layer: 0
+  m_Name: Cards 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &1829125226
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1829125225}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0.7071068, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 432752460}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 180}
 --- !u!1001 &1834826179
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40624,15 +40802,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UNOManager
   cam: {fileID: 330585545}
   dialogueManager: {fileID: 353638985}
-  poofParticle: {fileID: 1407638989}
+  stackPoofParticle: {fileID: 1407638989}
+  cardPoofParticle: {fileID: 1766327504}
   cardHolder: {fileID: 11400000, guid: f4ec9230b4f5c8a4dbfdc39ca83421b1, type: 2}
-  cardPrefab: {fileID: 3720065991838190569, guid: 6bcbacdd57f0fa94483fb77f934d67c8, type: 3}
   startingCards: 7
+  cardPrefab: {fileID: 3720065991838190569, guid: 6bcbacdd57f0fa94483fb77f934d67c8, type: 3}
   cardsParent: {fileID: 506650261}
   playerCardsRot: {x: -90, y: 0, z: 0}
   opponentCardsParent: {fileID: 432752460}
   opponentCardsRot: {x: -90, y: 0, z: 180}
   distanceBetweenCards: 0.07
+  opponentCardPositions:
+  - {fileID: 699531429}
+  - {fileID: 1829125226}
+  - {fileID: 1988659803}
   cardTag: UNO Card
   disposedCardTag: Disposed Card
   wildcardBallTag: Wildcard Ball
@@ -40643,6 +40826,10 @@ MonoBehaviour:
   playerCardsThresholdForPlusCards: 4
   characterManager: {fileID: 1669001223}
   bartManager: {fileID: 749496810}
+  holdCardsAnimTime: 0.25
+  grabCardAnimTime: 1.1
+  layCardAnimTime: 0.82
+  delayAfterPlayingCard: 0.5
 --- !u!4 &1886578722
 Transform:
   m_ObjectHideFlags: 0
@@ -40661,6 +40848,7 @@ Transform:
   - {fileID: 432752460}
   - {fileID: 852020476}
   - {fileID: 1407638988}
+  - {fileID: 1766327503}
   - {fileID: 692944976}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -43171,6 +43359,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8678f6cea7c7e0a4c8c97b6e94b5d25a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BattleshipBoardButton
+--- !u!1 &1988659802
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1988659803}
+  m_Layer: 0
+  m_Name: Cards 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &1988659803
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1988659802}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.08146901, y: 0.70239794, z: 0.70239794, w: 0.08146901}
+  m_LocalPosition: {x: 0.0339, y: -0.0052, z: -0.0025}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 432752460}
+  m_LocalEulerAnglesHint: {x: -76.768, y: 90, z: 90}
 --- !u!1001 &1990949253
 PrefabInstance:
   m_ObjectHideFlags: 0

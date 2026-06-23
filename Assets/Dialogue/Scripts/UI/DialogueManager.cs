@@ -45,7 +45,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private string catShowAnim;
     [SerializeField] private string catLeaveAnim;
     [SerializeField] private string catSkipAnim;
-    [SerializeField] private PoofParticle poofParticle;
+    [SerializeField] private PoofParticle bartPoofParticle;
 
     public Character GetGraphCharacter() => graphController.character;
 
@@ -294,7 +294,7 @@ public class DialogueManager : MonoBehaviour
 
     private IEnumerator SpawnBart()
     {
-        poofParticle.Play(3);
+        bartPoofParticle.Play();
 
         Destroy(catAnimator.gameObject);
         SaveSystem.currentSave.hasCat = false;
@@ -315,7 +315,7 @@ public class DialogueManager : MonoBehaviour
 
     public IEnumerator BartSitDown()
     {
-        poofParticle.Play(3);
+        bartPoofParticle.Play();
         bartParent.transform.position = Vector3.down * 2;
 
         yield return null;
