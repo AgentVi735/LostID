@@ -74,7 +74,6 @@ public class MainMenuManager : MonoBehaviour
 
     [Header("Other")]
     private bool hasLoaded;
-
     private readonly Color clearColour = new(255, 255, 255, 0);
 
     private void Awake()
@@ -101,7 +100,7 @@ public class MainMenuManager : MonoBehaviour
         switchCharacter.performed += SwitchCharacter;
         switchCharacterIdx = -1;
 
-        canSwitch = true;
+        ToggleCanSwitch(true);
     }
 
     private void SwitchCharacter(InputAction.CallbackContext context)
@@ -156,7 +155,7 @@ public class MainMenuManager : MonoBehaviour
 
     private IEnumerator FadeEmpty()
     {
-        canSwitch = false;
+        ToggleCanSwitch(false);
 
         List<Image> imagesToFade = new();
         List<CanvasGroup> groupsToFade = new();
@@ -244,14 +243,14 @@ public class MainMenuManager : MonoBehaviour
         yield return waitDelayBetweenSwitch;
 
         if (cardCharacter == character)
-            canSwitch = true;
+            ToggleCanSwitch(true);
         else
             LoadCharacter();
     }
 
     private IEnumerator FadeNew()
     {
-        canSwitch = false;
+        ToggleCanSwitch(false);
 
         Load();
 
@@ -341,7 +340,7 @@ public class MainMenuManager : MonoBehaviour
         yield return waitDelayBetweenSwitch;
 
         if (cardCharacter == character)
-            canSwitch = true;
+            ToggleCanSwitch(true);
         else
             UnloadCharacter();
     }
@@ -398,7 +397,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void OnSmallWallet()
     {
-        canSwitch = false;
+        ToggleCanSwitch(false);
         smallWalletButton.interactable = false;
         stationAnimator.SetBool(ZoomAnimation, true);
     }
@@ -407,7 +406,7 @@ public class MainMenuManager : MonoBehaviour
 
     public IEnumerator Zoom(bool toggle)
     {
-        canSwitch = false;
+        ToggleCanSwitch(false);
         stationCloseUpGroup.alpha = toggle ? 0 : 1;
         stationCloseUpGroup.interactable = false;
         stationCloseUp.SetActive(true);
@@ -423,7 +422,7 @@ public class MainMenuManager : MonoBehaviour
 
         stationCloseUpGroup.alpha = toggle ? 1 : 0;
         stationCloseUpGroup.interactable = toggle;
-        canSwitch = true;
+        ToggleCanSwitch(true);
         if (toggle)
             leaveWallet.Enable();
         else
@@ -433,6 +432,17 @@ public class MainMenuManager : MonoBehaviour
             smallWalletButton.interactable = true;
             stationCloseUp.SetActive(false);
         }
+    }
+
+    private void ToggleCanSwitch(bool toggle)
+    {
+        if (toggle == canSwitch) return;
+        canSwitch = toggle;
+        if (character == cardCharacter) return;
+        if (cardCharacter == characters.empty)
+            RemoveCharacter();
+        else if (cardCharacter != null)
+            LoadCharacter();
     }
 
     private void LoadSettings()
@@ -471,7 +481,7 @@ public class MainMenuManager : MonoBehaviour
     private IEnumerator ShowPhone()
     {
         leaveWallet.performed -= LeaveWallet;
-        canSwitch = false;
+        ToggleCanSwitch(false);
         wallet.alpha = 1;
         wallet.interactable = false;
 
