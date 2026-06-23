@@ -11,6 +11,7 @@ public class UNOManager : MonoBehaviour
     [Header("References")]
     [SerializeField] private Camera cam;
     [SerializeField] private DialogueManager dialogueManager;
+    [SerializeField] private PoofParticle discardedStackPoofParticle;
     [SerializeField] private PoofParticle stackPoofParticle;
     [SerializeField] private PoofParticle cardPoofParticle;
 
@@ -59,6 +60,7 @@ public class UNOManager : MonoBehaviour
     [Header("Info")]
     private Turn turn;
     private Coroutine lookingForCardsCoroutine;
+    private bool canGrab;
 
     [Header("Opponent Settings")]
     [SerializeField] private int playerCardsThresholdForPlusCards;
@@ -75,6 +77,8 @@ public class UNOManager : MonoBehaviour
     private WaitForSeconds waitDelayAfterPlayingCard;
     [SerializeField] private float delayAfterGrabbingCard;
     private WaitForSeconds waitDelayAfterGrabbingCard;
+    [SerializeField] private float delayAfterPlayerGrabbingCard;
+    private WaitForSeconds waitDelayAfterPlayerGrabbingCard;
 
     private void Start() => StartCoroutine(Load());
 
@@ -98,6 +102,7 @@ public class UNOManager : MonoBehaviour
         waitLayCardAnimTime = new WaitForSeconds(layCardAnimTime);
         waitDelayAfterPlayingCard = new WaitForSeconds(delayAfterPlayingCard);
         waitDelayAfterGrabbingCard = new WaitForSeconds(delayAfterGrabbingCard);
+        waitDelayAfterPlayerGrabbingCard = new WaitForSeconds(delayAfterPlayerGrabbingCard);
 
         GrabCard(startingCards, true);
         characterManager.SetAnimation(CharacterAnimations.HoldCards, true);
@@ -140,15 +145,18 @@ public class UNOManager : MonoBehaviour
         switch (turn)
         {
             case Turn.Player:
+                canGrab = true;
                 grabCard.Enable();
                 CheckCards();
                 lookingForCardsCoroutine = StartCoroutine(LookForCard());
                 break;
             case Turn.Opponent:
+                canGrab = false;
                 grabCard.Disable();
                 OpponentStart();
                 break;
             default:
+                canGrab = false;
                 grabCard.Disable();
                 break;
         }
@@ -228,8 +236,7 @@ public class UNOManager : MonoBehaviour
                     if (hasLeftClicked && !hasWildcardSelected)
                     {
                         hasLeftClicked = false;
-                        GrabCard(1, true);
-                        SwitchTurns();
+                        StartCoroutine(OnPlayerGrabCard());
                     }
                 }
 
@@ -279,8 +286,8 @@ public class UNOManager : MonoBehaviour
             cards.Remove(card.card);
             cardsObjs.Remove(card);
         }
-        stackPoofParticle.transform.position = disposeStackPos;
-        stackPoofParticle.Play();
+        discardedStackPoofParticle.transform.position = disposeStackPos;
+        discardedStackPoofParticle.Play();
         card.transform.SetPositionAndRotation(disposeStackPos, Quaternion.identity);
         card.transform.SetParent(transform);
         disposedStack.Add(disposedStackCard.card);
@@ -369,9 +376,8 @@ public class UNOManager : MonoBehaviour
 
     private void GrabCard(InputAction.CallbackContext context)
     {
-        if (turn != Turn.Player) return;
-        GrabCard(1, true);
-        SwitchTurns();
+        if (!canGrab) return;
+        StartCoroutine(OnPlayerGrabCard());
     }
 
     private void OnLeftClick(InputAction.CallbackContext context)
@@ -399,6 +405,13 @@ public class UNOManager : MonoBehaviour
         bigDisposedStackCard.sprite = disposedStackCard.card.sprite;
     }
 
+    private IEnumerator OnPlayerGrabCard()
+    {
+        GrabCard(1, true);
+        yield return waitDelayAfterPlayerGrabbingCard;
+        SwitchTurns();
+    }
+
     private void GrabCard(int amt, bool forPlayer)
     {
         if (amt <= 0) return;
@@ -421,7 +434,9 @@ public class UNOManager : MonoBehaviour
         if (amt > 1 || newestCard == null) return;
 
         cardPoofParticle.transform.position = newestCard.transform.position;
+        Debug.Log(cardPoofParticle.transform.position);
         cardPoofParticle.Play();
+        stackPoofParticle.Play();
     }
 
     private UNOCardObj SpawnCard(bool forPlayer, UNOCard card)
@@ -565,6 +580,16 @@ public class UNOManager : MonoBehaviour
             }
         }
 
+        if (correctColours > 0 || correctType > 0)
+        {
+            List<UNOCardObj> correctPlayableCards = playableCards.Where(card => (card.card.colour == disposedStackCard.card.colour && card.card.type != UNOCardType.Wildcard) || card.card.type == disposedStackCard.card.type).ToList();
+
+            int rnd = Random.Range(0, correctPlayableCards.Count - 1);
+            UNOCardObj cardToPlay = correctPlayableCards[rnd];
+            StartCoroutine(OpponentPlayCard(cardToPlay));
+            return;
+        }
+
         if (correctColours == 0 && correctType == 0 && hasWildcards > 0)
         {
             UNOCardObj cardToPlay = playableCards.FirstOrDefault(playableCard => playableCard.card.type == UNOCardType.Wildcard);
@@ -574,16 +599,6 @@ public class UNOManager : MonoBehaviour
                 StartCoroutine(OpponentPlayCard(cardToPlay));
                 return;
             }
-        }
-
-        if (correctColours > 0 || correctType > 0)
-        {
-            List<UNOCardObj> correctPlayableCards = playableCards.Where(card => (card.card.colour == disposedStackCard.card.colour && card.card.type != UNOCardType.Wildcard) || card.card.type == disposedStackCard.card.type).ToList();
-
-            int rnd = Random.Range(0, correctPlayableCards.Count - 1);
-            UNOCardObj cardToPlay = correctPlayableCards[rnd];
-            StartCoroutine(OpponentPlayCard(cardToPlay));
-            return;
         }
 
         Debug.LogError("Couldn't play a card");

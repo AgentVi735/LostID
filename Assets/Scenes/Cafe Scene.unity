@@ -8327,6 +8327,8 @@ MonoBehaviour:
   continueImage: {fileID: 510207661}
   isPhone: 0
   editorPathToLoad: 0
+  editorUseTestGraph: 1
+  editorTestGraph: {fileID: 11400000, guid: 14b8b1f4c301e2b41ba84a2504be1342, type: 2}
   unoManager: {fileID: 1886578721}
   battleshipManager: {fileID: 482847783}
   inputs: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
@@ -29869,7 +29871,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9142298536414750544, guid: e7de18039e47acd43b8cc960e43fc45f, type: 3}
       propertyPath: m_Name
-      value: UNO Stack Poof Particles
+      value: UNO Discarded Poof Particles
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -32557,6 +32559,119 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13a9c530174b0fc44926cf5c42701694, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PinHole
+--- !u!1001 &1541277550
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1886578722}
+    m_Modifications:
+    - target: {fileID: 7035085535415585920, guid: e7de18039e47acd43b8cc960e43fc45f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 7035085535415585920, guid: e7de18039e47acd43b8cc960e43fc45f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.7587
+      objectReference: {fileID: 0}
+    - target: {fileID: 7035085535415585920, guid: e7de18039e47acd43b8cc960e43fc45f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7035085535415585920, guid: e7de18039e47acd43b8cc960e43fc45f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7035085535415585920, guid: e7de18039e47acd43b8cc960e43fc45f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7035085535415585920, guid: e7de18039e47acd43b8cc960e43fc45f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7035085535415585920, guid: e7de18039e47acd43b8cc960e43fc45f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7035085535415585920, guid: e7de18039e47acd43b8cc960e43fc45f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7035085535415585920, guid: e7de18039e47acd43b8cc960e43fc45f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7035085535415585920, guid: e7de18039e47acd43b8cc960e43fc45f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7825203633654800752, guid: e7de18039e47acd43b8cc960e43fc45f, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7825203633654800752, guid: e7de18039e47acd43b8cc960e43fc45f, type: 3}
+      propertyPath: lengthInSec
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7825203633654800752, guid: e7de18039e47acd43b8cc960e43fc45f, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 7825203633654800752, guid: e7de18039e47acd43b8cc960e43fc45f, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7825203633654800752, guid: e7de18039e47acd43b8cc960e43fc45f, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9077568435895355235, guid: e7de18039e47acd43b8cc960e43fc45f, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9077568435895355235, guid: e7de18039e47acd43b8cc960e43fc45f, type: 3}
+      propertyPath: lengthInSec
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9077568435895355235, guid: e7de18039e47acd43b8cc960e43fc45f, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 9077568435895355235, guid: e7de18039e47acd43b8cc960e43fc45f, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9077568435895355235, guid: e7de18039e47acd43b8cc960e43fc45f, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9142298536414750544, guid: e7de18039e47acd43b8cc960e43fc45f, type: 3}
+      propertyPath: m_Name
+      value: UNO Stack Poof Particles
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e7de18039e47acd43b8cc960e43fc45f, type: 3}
+--- !u!4 &1541277551 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7035085535415585920, guid: e7de18039e47acd43b8cc960e43fc45f, type: 3}
+  m_PrefabInstance: {fileID: 1541277550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1541277552 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8673779324344916065, guid: e7de18039e47acd43b8cc960e43fc45f, type: 3}
+  m_PrefabInstance: {fileID: 1541277550}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 823c2d9e0652e714aad9d3d6a50945b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PoofParticle
 --- !u!1001 &1542326386
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40806,15 +40921,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UNOManager
   cam: {fileID: 330585545}
   dialogueManager: {fileID: 353638985}
-  stackPoofParticle: {fileID: 1407638989}
+  discardedStackPoofParticle: {fileID: 1407638989}
+  stackPoofParticle: {fileID: 1541277552}
   cardPoofParticle: {fileID: 1766327504}
   cardHolder: {fileID: 11400000, guid: f4ec9230b4f5c8a4dbfdc39ca83421b1, type: 2}
   startingCards: 7
   wildcardTextures:
-  - {fileID: 2800000, guid: 7aadd699894c3494b97ec4f33e5066f0, type: 3}
-  - {fileID: 2800000, guid: babbe266515c4ee42ae1bfa2e001536d, type: 3}
-  - {fileID: 2800000, guid: 5bb2cb083e25a7741ab8d6ed2f60170b, type: 3}
-  - {fileID: 2800000, guid: 98c14910d8d10004ca477f6631d0cf66, type: 3}
+  - {fileID: 2800000, guid: d1b6d53c3def2f94d8f164bcad4e2b11, type: 3}
+  - {fileID: 2800000, guid: 3ae0a9564ff157e458cb6347d3cf71ae, type: 3}
+  - {fileID: 2800000, guid: 42dcf533813a8eb4691d5b987c8536d8, type: 3}
+  - {fileID: 2800000, guid: 0fe56b70ad8d1ac4b9a2ff38099db26a, type: 3}
   wildcardSprites:
   - {fileID: 21300000, guid: 7aadd699894c3494b97ec4f33e5066f0, type: 3}
   - {fileID: 21300000, guid: babbe266515c4ee42ae1bfa2e001536d, type: 3}
@@ -40844,7 +40960,8 @@ MonoBehaviour:
   grabCardAnimTime: 1.1
   layCardAnimTime: 0.82
   delayAfterPlayingCard: 0.5
-  delayAfterGrabbingCard: 0
+  delayAfterGrabbingCard: 0.5
+  delayAfterPlayerGrabbingCard: 0.5
 --- !u!4 &1886578722
 Transform:
   m_ObjectHideFlags: 0
@@ -40863,6 +40980,7 @@ Transform:
   - {fileID: 432752460}
   - {fileID: 852020476}
   - {fileID: 1407638988}
+  - {fileID: 1541277551}
   - {fileID: 1766327503}
   - {fileID: 692944976}
   m_Father: {fileID: 0}

@@ -22,6 +22,8 @@ public class DialogueManager : MonoBehaviour
     private GenericObj currentObj;
 #if UNITY_EDITOR
     [SerializeField] private int editorPathToLoad;
+    [SerializeField] private bool editorUseTestGraph;
+    [SerializeField] private GraphController editorTestGraph;
 #endif
 
     [Header("Minigames")]
@@ -90,6 +92,12 @@ public class DialogueManager : MonoBehaviour
             character = characters.bart;
 
         graphController = character.graph;
+
+#if UNITY_EDITOR
+        if (editorUseTestGraph && editorTestGraph != null)
+            graphController = editorTestGraph;
+#endif
+
         dialogueBox.Setup(false, characterManager);
         string savedObj = save.currentNode;
         if (!string.IsNullOrEmpty(savedObj))
