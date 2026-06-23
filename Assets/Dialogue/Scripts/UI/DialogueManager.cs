@@ -36,6 +36,8 @@ public class DialogueManager : MonoBehaviour
     [Header("Inputs")]
     [SerializeField] private InputActionAsset inputs;
     private InputAction pauseAction;
+    private bool canContinue;
+    private bool canClickForFast;
 
     [Header("Character")]
     [SerializeField] private CharactersHolder characters;
@@ -232,9 +234,17 @@ public class DialogueManager : MonoBehaviour
 
     public void ContinueButton()
     {
-        currentObj = currentObj.nextObj;
-        AudioManager.PlayOneShot(Sounds.DialogueContinue, sfxSource);
-        Continue(currentObj);
+        if (canClickForFast)
+        {
+            dialogueBox.FastTyping();
+            ToggleFastButton(false);
+        }
+        else if (canContinue)
+        {
+            currentObj = currentObj.nextObj;
+            AudioManager.PlayOneShot(Sounds.DialogueContinue, sfxSource);
+            Continue(currentObj);
+        }
     }
 
     public void Continue(GenericObj obj)
@@ -289,8 +299,14 @@ public class DialogueManager : MonoBehaviour
     public void ToggleContinueButton(bool toggle)
     {
         if (isPhone) return;
-        continueButton.interactable = toggle;
+        canContinue = toggle;
         continueImage.color = toggle ? Color.white : Color.clear;
+    }
+
+    public void ToggleFastButton(bool toggle)
+    {
+        if (isPhone) return;
+        canClickForFast = toggle;
     }
 
     public void ShowCat()

@@ -178,8 +178,8 @@ MonoBehaviour:
   m_MinHeight: 36.8
   m_PreferredWidth: -1
   m_PreferredHeight: -1
-  m_FlexibleWidth: -1
-  m_FlexibleHeight: -1
+  m_FlexibleWidth: 0
+  m_FlexibleHeight: 0
   m_LayoutPriority: 1
 --- !u!1 &3101937155951367801
 GameObject:
@@ -289,7 +289,7 @@ MonoBehaviour:
   m_IgnoreLayout: 0
   m_MinWidth: 114.5
   m_MinHeight: 40.5
-  m_PreferredWidth: -1
+  m_PreferredWidth: 677.39
   m_PreferredHeight: -1
   m_FlexibleWidth: 0
   m_FlexibleHeight: 0

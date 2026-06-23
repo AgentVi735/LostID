@@ -8489,7 +8489,7 @@ MonoBehaviour:
   isPhone: 0
   editorPathToLoad: 0
   editorUseTestGraph: 1
-  editorTestGraph: {fileID: 11400000, guid: f67a43359ecd10b4690f4da959b78cf9, type: 2}
+  editorTestGraph: {fileID: 11400000, guid: 03a54fdf08babe249b4b807b10cc7eca, type: 2}
   unoManager: {fileID: 1886578721}
   battleshipManager: {fileID: 482847783}
   inputs: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
@@ -14194,7 +14194,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 8
-  m_Spacing: 0
+  m_Spacing: 5
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 1
@@ -38897,6 +38897,7 @@ MonoBehaviour:
   characterImage: {fileID: 398657870}
   wallet: {fileID: 452641796}
   defaultTypingSpeed: 0.04
+  fastTypingSpeed: 0.01
   bubblePrefab: {fileID: 0}
   bubbleParent: {fileID: 0}
   bubbleSpawnPos: {x: 0, y: 0}

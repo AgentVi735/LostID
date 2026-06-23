@@ -22,6 +22,7 @@ public class DialogueBox : MonoBehaviour
 
     [Header("Typing Animation")]
     [SerializeField] private float defaultTypingSpeed;
+    [SerializeField] private float fastTypingSpeed;
     private WaitForSeconds typingSpeedWait;
 
     [Header("Characters")]
@@ -134,6 +135,7 @@ public class DialogueBox : MonoBehaviour
         typingSpeedWait = new WaitForSeconds(typingSpeed);
         string fullText = dialogue.text;
         int textLength = fullText.Length;
+        dialogueManager.ToggleFastButton(true);
         for (int i = 1; i < textLength + 1; i++)
         {
             string text = fullText[..i];
@@ -157,6 +159,8 @@ public class DialogueBox : MonoBehaviour
             dialogueText.text = text;
             yield return typingSpeedWait;
         }
+
+        dialogueManager.ToggleFastButton(false);
 
         if (dialogue.nextObj != null)
             dialogueManager.ToggleContinueButton(true);
@@ -635,4 +639,6 @@ public class DialogueBox : MonoBehaviour
     {
         AudioManager.PlayOneShot(Sounds.ResponseClick, sfxSource);
     }
+
+    public void FastTyping() => typingSpeedWait = new WaitForSeconds(fastTypingSpeed);
 }
