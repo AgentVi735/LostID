@@ -17,6 +17,8 @@ public class UNOManager : MonoBehaviour
     [Header("UNO Settings")]
     [SerializeField] private UNOCardHolder cardHolder;
     [SerializeField] private int startingCards;
+    [SerializeField] private Texture[] wildcardTextures;
+    [SerializeField] private Sprite[] wildcardSprites;
 
     [Header("Card Obj Settings")]
     [SerializeField] private GameObject cardPrefab;
@@ -334,10 +336,11 @@ public class UNOManager : MonoBehaviour
                     highestColour = UNOCardColor.Green;
 
                 disposedStackCard.card.colour = highestColour;
-                Debug.Log("Opponent: changed colour to: " + highestColour);
             }
 
-            disposedStackCard.ShowWildcardColour();
+            int colour = (int)disposedStackCard.card.colour - 1;
+            disposedStackCard.ChangeWildcardTexture(wildcardTextures[colour]);
+            bigDisposedStackCard.sprite = wildcardSprites[colour];
         }
 
         if (cards.Count > 0)

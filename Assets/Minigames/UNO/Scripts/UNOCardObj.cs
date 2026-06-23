@@ -69,14 +69,7 @@ public class UNOCardObj : MonoBehaviour
             lookForBalls = false;
     }
 
-    public void ShowWildcardColour()
-    {
-        foreach (GameObject ball in colourBalls)
-            ball.SetActive(false);
-
-        colourBalls[(int)card.colour - 1].SetActive(true);
-        wildcardBalls.SetActive(true);
-    }
+    public void ChangeWildcardTexture(Texture texture) => mesh.material.mainTexture = texture;
 
     private IEnumerator LookForBalls()
     {
