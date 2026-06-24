@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a740f0bb9d889a347ac93554fdc30ae3, type: 3}
+  m_Name: -1171807856
+  m_EditorClassIdentifier: Assembly-CSharp::Dialogue
+  type: 1
+  nextObj: {fileID: 11400000, guid: 7a6aae6b1babc2b4aaeec0af3b1ea1a3, type: 2}
+  character: {fileID: 0}
+  overrideCharacterName: 
+  text: I knew I had battleship with me.
+  sprite: 2
+  overrideSprite: {fileID: 0}
+  overrideTextSpeed: 0
