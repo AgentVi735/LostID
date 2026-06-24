@@ -9186,6 +9186,7 @@ MonoBehaviour:
   phone: {fileID: 54083842}
   smallWallet: {fileID: 57002229}
   smallWalletButton: {fileID: 1256546316}
+  volumeToRemovePerStep: 7
   membershipCard: {fileID: 914809478}
   debitCard: {fileID: 1868920055}
   transportCard: {fileID: 1578125949}

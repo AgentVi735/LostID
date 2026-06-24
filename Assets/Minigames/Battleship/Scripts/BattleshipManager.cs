@@ -356,7 +356,7 @@ public class BattleshipManager : MonoBehaviour
         BoatHitState hitState = opponentHoles[GetIdx(coordinates)].Shoot(false);
         if (hitState == BoatHitState.Sunk)
             SunkBoat();
-        AudioManager.PlayOneShot(Sounds.BattleshipSetPin, sfxSource);
+        AudioManager.PlayOneShot(hitState == BoatHitState.Miss ? Sounds.BattleshipSetWhitePin : Sounds.BattleshipSetRedPin, sfxSource);
         SwitchTurn();
     }
 
@@ -365,7 +365,7 @@ public class BattleshipManager : MonoBehaviour
         BoatHitState hitState = playerHoles[idx].Shoot(true);
         if (hitState == BoatHitState.Sunk)
             SunkBoat();
-        AudioManager.PlayOneShot(Sounds.BattleshipSetPin, sfxSource);
+        AudioManager.PlayOneShot(hitState == BoatHitState.Miss ? Sounds.BattleshipSetWhitePin : Sounds.BattleshipSetRedPin, sfxSource);
         return hitState;
     }
 

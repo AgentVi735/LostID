@@ -8,6 +8,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip trainArrival;
     [SerializeField] private AudioClip trainLeave;
     [SerializeField] private AudioClip trainPassBy;
+    [SerializeField] private AudioClip trainWhistle;
+    [SerializeField] private AudioClip trainDoorsOpen;
     [SerializeField] private AudioClip backgroundTalking;
     [SerializeField] private AudioClip walletClick;
     [SerializeField] private AudioClip cardHover;
@@ -23,10 +25,12 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip unoLayDownCard;
     [SerializeField] private AudioClip battleshipGrabBoat;
     [SerializeField] private AudioClip battleshipSetBoat;
-    [SerializeField] private AudioClip battleshipSetPin;
+    [SerializeField] private AudioClip battleshipSetWhitePin;
+    [SerializeField] private AudioClip battleshipSetRedPin;
     [SerializeField] private AudioClip catPurr;
     [SerializeField] private AudioClip cafeBackgroundMusic;
     [SerializeField] private AudioClip itemsSpawn;
+    [SerializeField] private AudioClip catMeow;
 
     private void Awake()
     {
@@ -79,6 +83,10 @@ public class AudioManager : MonoBehaviour
                 return trainLeave;
             case Sounds.TrainPassBy:
                 return trainPassBy;
+            case Sounds.TrainWhistle:
+                return trainWhistle;
+            case Sounds.TrainDoorsOpen:
+                return trainDoorsOpen;
             case Sounds.BackgroundTalking:
                 return backgroundTalking;
             case Sounds.WalletClick:
@@ -109,14 +117,18 @@ public class AudioManager : MonoBehaviour
                 return battleshipGrabBoat;
             case Sounds.BattleshipSetBoat:
                 return battleshipSetBoat;
-            case Sounds.BattleshipSetPin:
-                return battleshipSetPin;
+            case Sounds.BattleshipSetWhitePin:
+                return battleshipSetWhitePin;
+            case Sounds.BattleshipSetRedPin:
+                return battleshipSetRedPin;
             case Sounds.CatPurr:
                 return catPurr;
             case Sounds.CafeBackgroundMusic:
                 return cafeBackgroundMusic;
             case Sounds.ItemsSpawn:
                 return itemsSpawn;
+            case Sounds.CatMeow:
+                return catMeow;
         }
     }
 

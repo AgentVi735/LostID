@@ -4,6 +4,8 @@ public enum Sounds
     TrainArrival,
     TrainLeave,
     TrainPassBy,
+    TrainWhistle,
+    TrainDoorsOpen,
     BackgroundTalking,
     WalletClick,
     CardHover,
@@ -19,8 +21,10 @@ public enum Sounds
     UnoLayDownCard,
     BattleshipGrabBoat,
     BattleshipSetBoat,
-    BattleshipSetPin,
+    BattleshipSetWhitePin,
+    BattleshipSetRedPin,
     CatPurr,
     CafeBackgroundMusic,
-    ItemsSpawn
+    ItemsSpawn,
+    CatMeow
 }

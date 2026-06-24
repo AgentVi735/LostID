@@ -265,28 +265,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bcfdb18238a0ab46baebf1cc49cd217, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
-  trainArrival: {fileID: 0}
-  trainLeave: {fileID: 0}
-  trainPassBy: {fileID: 0}
-  backgroundTalking: {fileID: 0}
-  walletClick: {fileID: 0}
-  cardHover: {fileID: 0}
-  cafeBackgroundTalking: {fileID: 0}
-  click: {fileID: 0}
-  menuClick: {fileID: 0}
-  dialogueContinue: {fileID: 0}
-  responseClick: {fileID: 0}
-  phoneMessageReceive: {fileID: 0}
-  phoneMessageDelivered: {fileID: 0}
-  phoneTyping: {fileID: 0}
-  unoGrabCard: {fileID: 0}
-  unoLayDownCard: {fileID: 0}
-  battleshipGrabBoat: {fileID: 0}
-  battleshipSetBoat: {fileID: 0}
-  battleshipSetPin: {fileID: 0}
-  catPurr: {fileID: 0}
-  cafeBackgroundMusic: {fileID: 0}
-  itemsSpawn: {fileID: 0}
+  trainArrival: {fileID: 8300000, guid: 81424b6284731bf4bb70d168f4b84b26, type: 3}
+  trainLeave: {fileID: 8300000, guid: ad3875171fd369246a4899e3154ced41, type: 3}
+  trainPassBy: {fileID: 8300000, guid: d64418de6935e99438d77c5e92f06931, type: 3}
+  trainWhistle: {fileID: 8300000, guid: 4dae2fab2ccd2374f82e76ffd6f3a93c, type: 3}
+  trainDoorsOpen: {fileID: 8300000, guid: 9f4d1e40b234e264ebf7a4c5d5420f50, type: 3}
+  backgroundTalking: {fileID: 8300000, guid: 51961bcd8f1a685499cba6f739762fdd, type: 3}
+  walletClick: {fileID: 8300000, guid: ff7835cd0d00e6f41852b1335f8a784b, type: 3}
+  cardHover: {fileID: 8300000, guid: 10af530745a0d8e47ab7352b7a9ef013, type: 3}
+  cafeBackgroundTalking: {fileID: 8300000, guid: d0b41c18ff810cb47ab87873af89f473, type: 3}
+  click: {fileID: 8300000, guid: 880ac77e1d03f3e43a93bd724f9a9ad1, type: 3}
+  menuClick: {fileID: 8300000, guid: 8a47ddb5eb9ef9f4f9544655ab16d801, type: 3}
+  dialogueContinue: {fileID: 8300000, guid: 6695b8472005c1e4dbd19236a04b3b2f, type: 3}
+  responseClick: {fileID: 8300000, guid: 8b5a4ef61f2218e4288c56a553cf6170, type: 3}
+  phoneMessageReceive: {fileID: 8300000, guid: e3edfdd43cce21d49a0d58b976af0621, type: 3}
+  phoneMessageDelivered: {fileID: 8300000, guid: 9bf9a14a039d95f428eb8e11efda015d, type: 3}
+  phoneTyping: {fileID: 8300000, guid: 709706215d3098e4eb9205320e6c30ec, type: 3}
+  unoGrabCard: {fileID: 8300000, guid: 3a5d8a97bc763014ea5cc92114d21f6a, type: 3}
+  unoLayDownCard: {fileID: 8300000, guid: 0a38f0ca677cc6c47b71089f8fd4d166, type: 3}
+  battleshipGrabBoat: {fileID: 8300000, guid: f54108ed3df554e4fa42eb717052fa1b, type: 3}
+  battleshipSetBoat: {fileID: 8300000, guid: f54108ed3df554e4fa42eb717052fa1b, type: 3}
+  battleshipSetWhitePin: {fileID: 8300000, guid: 5cb6a70876ccad14e906789f94518503, type: 3}
+  battleshipSetRedPin: {fileID: 8300000, guid: 3d4ec80fd0f7c4547a9b54b765f38257, type: 3}
+  catPurr: {fileID: 8300000, guid: 65ca61a509320be49bf15560116c0925, type: 3}
+  cafeBackgroundMusic: {fileID: 8300000, guid: 0ed4a878aaa9e9148bfdb214e69b4842, type: 3}
+  itemsSpawn: {fileID: 8300000, guid: 4fb1290120267d143999ede57aad407a, type: 3}
+  catMeow: {fileID: 8300000, guid: 4caf549d759a7484d9c9a258c8726bcb, type: 3}
 --- !u!4 &1425234299
 Transform:
   m_ObjectHideFlags: 0

@@ -9,8 +9,6 @@ using UnityEngine.UI;
 
 public class MainMenuManager : MonoBehaviour
 {
-    private static readonly int ZoomAnimation = Animator.StringToHash("Zoom");
-
     [Header("References")]
     private SceneSwitcher sceneSwitcher;
     [SerializeField] private SaveSystem saveSystem;
@@ -38,6 +36,7 @@ public class MainMenuManager : MonoBehaviour
     [Header("Station")]
     [SerializeField] private Image smallWallet;
     [SerializeField] private Button smallWalletButton;
+    [SerializeField] private float volumeToRemovePerStep;
 
     [Header("Wallet")]
     [SerializeField] private Image membershipCard;
@@ -77,6 +76,7 @@ public class MainMenuManager : MonoBehaviour
     [Header("Other")]
     private bool hasLoaded;
     private readonly Color clearColour = new(255, 255, 255, 0);
+    private static readonly int ZoomAnimation = Animator.StringToHash("Zoom");
 
     private void Awake()
     {
@@ -416,12 +416,22 @@ public class MainMenuManager : MonoBehaviour
         stationCloseUpGroup.interactable = false;
         stationCloseUp.SetActive(true);
 
+        float fadeVolumeToAdd = stationCloseUpFade / SaveSystem.save.bgmVolume;
+
         for (float i = 0; i < stationCloseUpFade; i += Time.deltaTime)
         {
+            float amt = i / stationCloseUpFade;
             if (toggle)
-                stationCloseUpGroup.alpha = i / stationCloseUpFade;
+            {
+                stationCloseUpGroup.alpha = amt;
+                bgmSource.volume -= fadeVolumeToAdd;
+                Debug.Log(bgmSource.volume + " | " + fadeVolumeToAdd);
+            }
             else
-                stationCloseUpGroup.alpha = 1 - i / stationCloseUpFade;
+            {
+                stationCloseUpGroup.alpha = 1 - amt;
+                bgmSource.volume += fadeVolumeToAdd;
+            }
             yield return null;
         }
 

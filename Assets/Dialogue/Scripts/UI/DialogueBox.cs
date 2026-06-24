@@ -58,8 +58,11 @@ public class DialogueBox : MonoBehaviour
         if (phone)
             bubbles = new List<Bubble>();
         typingSpeedWait = new WaitForSeconds(defaultTypingSpeed);
-        defaultDialogueTextWidth = dialogueText.rectTransform.sizeDelta.x;
-        defaultNameTextWidth = nameText.rectTransform.sizeDelta.x;
+        if (!isPhone)
+        {
+            defaultDialogueTextWidth = dialogueText.rectTransform.sizeDelta.x;
+            defaultNameTextWidth = nameText.rectTransform.sizeDelta.x;
+        }
         responseManager.Setup(phone);
     }
 
