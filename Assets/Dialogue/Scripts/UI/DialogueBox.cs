@@ -24,6 +24,8 @@ public class DialogueBox : MonoBehaviour
     [SerializeField] private float defaultTypingSpeed;
     [SerializeField] private float fastTypingSpeed;
     private WaitForSeconds typingSpeedWait;
+    private float defaultDialogueTextWidth;
+    private float defaultNameTextWidth;
 
     [Header("Characters")]
     private Character character;
@@ -56,6 +58,8 @@ public class DialogueBox : MonoBehaviour
         if (phone)
             bubbles = new List<Bubble>();
         typingSpeedWait = new WaitForSeconds(defaultTypingSpeed);
+        defaultDialogueTextWidth = dialogueText.rectTransform.sizeDelta.x;
+        defaultNameTextWidth = nameText.rectTransform.sizeDelta.x;
         responseManager.Setup(phone);
     }
 
@@ -96,6 +100,10 @@ public class DialogueBox : MonoBehaviour
         }
         else
             character = dialogue.character;
+
+        float overrideTextWidth = character.overrideTextWidth;
+        dialogueText.rectTransform.sizeDelta = new Vector2(defaultDialogueTextWidth - overrideTextWidth, dialogueText.rectTransform.sizeDelta.y);
+        nameText.rectTransform.sizeDelta = new Vector2(defaultNameTextWidth - overrideTextWidth, nameText.rectTransform.sizeDelta.y);
 
         string charName = character.characterName;
         if (dialogue.overrideCharacterName != "")

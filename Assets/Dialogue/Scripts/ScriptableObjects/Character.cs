@@ -35,4 +35,5 @@ public class Character : ScriptableObject
     [Header("Other Info")]
     public MenuItems dessert;
     public MenuItems drink;
+    public float overrideTextWidth;
 }
