@@ -316,6 +316,7 @@ MonoBehaviour:
   characterImage: {fileID: 0}
   wallet: {fileID: 0}
   defaultTypingSpeed: 0.09
+  fastTypingSpeed: 0
   bubblePrefab: {fileID: 3243001830548971941, guid: e4ae27d201b9c7b4f8ba1576e7832681, type: 3}
   bubbleParent: {fileID: 1015607752}
   bubbleSpawnPos: {x: 1554, y: 0}
@@ -2451,7 +2452,7 @@ MonoBehaviour:
   m_text: <wave>
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a23e0818a48fde346aec3ab30a0e7630, type: 2}
-  m_sharedMaterial: {fileID: -8400695427780586137, guid: a23e0818a48fde346aec3ab30a0e7630, type: 2}
+  m_sharedMaterial: {fileID: -7004524640648699987, guid: a23e0818a48fde346aec3ab30a0e7630, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3532,7 +3533,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &777650814
@@ -3964,7 +3965,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: -5.335327, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &817988037
@@ -5960,7 +5961,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1210831127
@@ -5987,7 +5988,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1220968354
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7444,7 +7445,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1550570111
@@ -7742,7 +7743,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1624787117
@@ -8202,7 +8203,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1713928958
@@ -8426,6 +8427,10 @@ PrefabInstance:
     - target: {fileID: 5555149654884333781, guid: e4ae27d201b9c7b4f8ba1576e7832681, type: 3}
       propertyPath: m_text
       value: Do you think you can meet me there in an hour?
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555149654884333781, guid: e4ae27d201b9c7b4f8ba1576e7832681, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6107481060302444055, guid: e4ae27d201b9c7b4f8ba1576e7832681, type: 3}
       propertyPath: m_IsActive
@@ -9695,6 +9700,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Do you think you can meet me there in an hour?
       objectReference: {fileID: 0}
+    - target: {fileID: 5555149654884333781, guid: e4ae27d201b9c7b4f8ba1576e7832681, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6107481060302444055, guid: e4ae27d201b9c7b4f8ba1576e7832681, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -9953,6 +9962,10 @@ PrefabInstance:
       propertyPath: m_text
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5555149654884333781, guid: e4ae27d201b9c7b4f8ba1576e7832681, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6107481060302444055, guid: e4ae27d201b9c7b4f8ba1576e7832681, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -10118,6 +10131,10 @@ PrefabInstance:
     - target: {fileID: 5051953965484010778, guid: e65a33a2b6887b24c82a5c9230488c12, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -48.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 6698631083506488259, guid: e65a33a2b6887b24c82a5c9230488c12, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8071408341556518332, guid: e65a33a2b6887b24c82a5c9230488c12, type: 3}
       propertyPath: m_AnchorMax.y

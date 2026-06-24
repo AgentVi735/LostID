@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 165e4b18a0028d84e9e9919ca6b6c9a9
+guid: 8565d1285c40a264fa3b339958654727
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Dani Font 1
+  - Font1
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

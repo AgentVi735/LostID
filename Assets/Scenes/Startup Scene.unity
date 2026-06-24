@@ -271,7 +271,6 @@ MonoBehaviour:
   backgroundTalking: {fileID: 0}
   walletClick: {fileID: 0}
   cardHover: {fileID: 0}
-  walk: {fileID: 0}
   cafeBackgroundTalking: {fileID: 0}
   click: {fileID: 0}
   menuClick: {fileID: 0}

@@ -43,6 +43,11 @@ public class AudioManager : MonoBehaviour
             source.Stop();
 
         AudioClip clip = instance.GetClip(soundToPlay);
+        if (clip == null)
+        {
+            Debug.LogError("Audio clip " + soundToPlay + " has no audio clip");
+            return -1;
+        }
         source.clip = clip;
         source.Play();
         return clip.length;
@@ -52,6 +57,11 @@ public class AudioManager : MonoBehaviour
     {
         if (instance == null) return -1;
         AudioClip clip = instance.GetClip(soundToPlay);
+        if (clip == null)
+        {
+            Debug.LogError("Audio clip " + soundToPlay + " has no audio clip");
+            return -1;
+        }
         source.PlayOneShot(clip);
         return clip.length;
     }
