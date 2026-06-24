@@ -65,9 +65,7 @@ public class UNOManager : MonoBehaviour
 
     [Header("Opponent Settings")]
     [SerializeField] private int playerCardsThresholdForPlusCards;
-    private bool isBart;
     [SerializeField] private CharacterParent characterManager;
-    [SerializeField] private CharacterParent bartManager;
     [SerializeField] private float holdCardsAnimTime;
     private WaitForSeconds waitHoldCardsAnimTime;
     [SerializeField] private float grabCardAnimTime;
@@ -85,10 +83,6 @@ public class UNOManager : MonoBehaviour
 
     private IEnumerator Load()
     {
-        isBart = SaveSystem.currentSave.choseBart;
-        if (isBart)
-            characterManager = bartManager;
-
         playerCards = new List<UNOCard>();
         playerCardObjs = new List<UNOCardObj>();
         opponentCards = new List<UNOCard>();
