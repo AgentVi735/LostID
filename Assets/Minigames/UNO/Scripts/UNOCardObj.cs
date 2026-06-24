@@ -41,6 +41,9 @@ public class UNOCardObj : MonoBehaviour
         mousePositionAction = inputs.FindAction("Player/MousePos");
 
         leftClick.performed += OnLeftClick;
+
+        leftClick.Enable();
+        mousePositionAction.Enable();
     }
 
     public void OnPlay() => wildcardBalls.SetActive(false);

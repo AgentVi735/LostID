@@ -119,6 +119,10 @@ public class UNOManager : MonoBehaviour
 
         grabCard.performed += GrabCard;
         leftClick.performed += OnLeftClick;
+
+        leftClick.Enable();
+        grabCard.Disable();
+        mousePositionAction.Enable();
     }
 
     private void SwitchTurns()

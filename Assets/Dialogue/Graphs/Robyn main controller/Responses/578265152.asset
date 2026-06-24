@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7441054a736fab84c8bbb82f651adf29, type: 3}
+  m_Name: 578265152
+  m_EditorClassIdentifier: Assembly-CSharp::Response
+  type: 3
+  nextObj: {fileID: 11400000, guid: 82d9ce6d216e883439e8d8fc1ea0e59d, type: 2}
+  text: Speaking of UNO...

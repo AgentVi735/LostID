@@ -132,6 +132,7 @@ public class DialogueManager : MonoBehaviour
 
         pauseAction = inputs.FindAction("UI/Cancel");
         pauseAction.performed += OnEscapeButton;
+        pauseAction.Enable();
 
         if (!isPhone)
         {
@@ -216,6 +217,7 @@ public class DialogueManager : MonoBehaviour
 
         pauseAction = inputs.FindAction("UI/Cancel");
         pauseAction.performed += OnEscapeButtonPhone;
+        pauseAction.Enable();
 
         dialogueBox.LoadObj(currentObj);
     }

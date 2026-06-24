@@ -11,6 +11,8 @@ public class TrainMiddle : MonoBehaviour
 
     [SerializeField] private float openDoorsTime;
 
+    [SerializeField] private AudioSource sfxSource;
+
     public IEnumerator ToggleDoors(bool toggle)
     {
         Vector2 startPosL = toggle ? Vector2.zero : leftDoorOpenPos;
@@ -18,6 +20,9 @@ public class TrainMiddle : MonoBehaviour
 
         Vector2 endPosL = toggle ? leftDoorOpenPos : Vector2.zero;
         Vector2 endPosR = toggle ? rightDoorOpenPos : Vector2.zero;
+
+        if (toggle)
+            AudioManager.PlayOneShot(Sounds.TrainDoorsOpen, sfxSource);
 
         for (float i = 0; i < openDoorsTime; i += Time.deltaTime)
         {

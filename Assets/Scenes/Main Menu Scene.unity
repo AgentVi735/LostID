@@ -872,6 +872,7 @@ MonoBehaviour:
   leftDoorOpenPos: {x: -161, y: 0}
   rightDoorOpenPos: {x: 161, y: 0}
   openDoorsTime: 1.2
+  sfxSource: {fileID: 1146928248}
 --- !u!1 &322347096
 GameObject:
   m_ObjectHideFlags: 0
@@ -2824,7 +2825,7 @@ MonoBehaviour:
   animationString: Anim
   animationCount: 3
   animator: {fileID: 670701454}
-  sfxSource: {fileID: 0}
+  sfxSource: {fileID: 1146928248}
 --- !u!95 &670701454
 Animator:
   serializedVersion: 7
@@ -4173,6 +4174,7 @@ MonoBehaviour:
   leftDoorOpenPos: {x: -161, y: 0}
   rightDoorOpenPos: {x: 161, y: 0}
   openDoorsTime: 1.2
+  sfxSource: {fileID: 1146928248}
 --- !u!114 &828075006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4834,7 +4836,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TrainManager
   mainMenuManager: {fileID: 1930642229}
   train: {fileID: 670701453}
-  timeBetweenTrains: {x: 30, y: 120}
+  timeBetweenTrains: {x: 30, y: 60}
 --- !u!1 &914809476
 GameObject:
   m_ObjectHideFlags: 0
@@ -6305,6 +6307,7 @@ MonoBehaviour:
   leftDoorOpenPos: {x: -161, y: 0}
   rightDoorOpenPos: {x: 161, y: 0}
   openDoorsTime: 1.2
+  sfxSource: {fileID: 1146928248}
 --- !u!114 &1270610370
 MonoBehaviour:
   m_ObjectHideFlags: 0

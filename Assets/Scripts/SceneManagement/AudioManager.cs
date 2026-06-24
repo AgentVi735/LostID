@@ -6,6 +6,7 @@ public class AudioManager : MonoBehaviour
 
     [Header("Sounds")]
     [SerializeField] private AudioClip trainArrival;
+    [SerializeField] private AudioClip trainArrivalLong;
     [SerializeField] private AudioClip trainLeave;
     [SerializeField] private AudioClip trainPassBy;
     [SerializeField] private AudioClip trainWhistle;

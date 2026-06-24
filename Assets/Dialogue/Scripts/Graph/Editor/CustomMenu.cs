@@ -327,6 +327,9 @@ public class CustomMenu : NewGraph.ContextMenu
         dialogue.overrideSprite = dialogueData.overrideSprite;
         dialogue.overrideTextSpeed = dialogueData.overrideTextSpeed;
 
+        if (dialogue.sprite == CharacterSprite.None)
+            Debug.LogWarning("Node " + dialogueNode.nodeName + " has no sprite selected.");
+
         return dialogue;
     }
 
@@ -419,6 +422,16 @@ public class CustomMenu : NewGraph.ContextMenu
             };
 
         eventObj.imageToSend = eventData.imageToSend;
+
+        switch (eventObj.eventType)
+        {
+            case EventType.None:
+                Debug.LogWarning("Node " + eventNode.nodeName + " has no eventType selected.");
+                break;
+            case EventType.Delay when eventObj.delay <= 0:
+                Debug.LogWarning("Node " + eventNode.nodeName + " has a delay event type but has 0 seconds delay");
+                break;
+        }
 
         return eventObj;
     }

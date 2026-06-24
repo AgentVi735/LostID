@@ -646,10 +646,7 @@ public class DialogueBox : MonoBehaviour
         newBubble = null;
     }
 
-    public void PlayResponseSound()
-    {
-        AudioManager.PlayOneShot(Sounds.ResponseClick, sfxSource);
-    }
+    public void PlayResponseSound() => AudioManager.PlayOneShot(Sounds.ResponseClick, sfxSource);
 
     public void FastTyping() => typingSpeedWait = new WaitForSeconds(fastTypingSpeed);
 }

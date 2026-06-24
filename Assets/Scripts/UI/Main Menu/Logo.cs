@@ -1,7 +1,6 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
-using static UnityEditor.Rendering.MaterialUpgrader;
 
 public class Logo : MonoBehaviour
 {

@@ -266,6 +266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
   trainArrival: {fileID: 8300000, guid: 81424b6284731bf4bb70d168f4b84b26, type: 3}
+  trainArrivalLong: {fileID: 8300000, guid: f57e8cc181847d94784532333f124ac4, type: 3}
   trainLeave: {fileID: 8300000, guid: ad3875171fd369246a4899e3154ced41, type: 3}
   trainPassBy: {fileID: 8300000, guid: d64418de6935e99438d77c5e92f06931, type: 3}
   trainWhistle: {fileID: 8300000, guid: 4dae2fab2ccd2374f82e76ffd6f3a93c, type: 3}

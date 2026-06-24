@@ -2,6 +2,7 @@ public enum Sounds
 {
     None,
     TrainArrival,
+    TrainArrivalLong,
     TrainLeave,
     TrainPassBy,
     TrainWhistle,

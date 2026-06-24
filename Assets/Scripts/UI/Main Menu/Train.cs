@@ -34,7 +34,11 @@ public class Train : MonoBehaviour
 
     public void PlayArriveSFX() => AudioManager.PlayOneShot(Sounds.TrainArrival, sfxSource);
 
+    public void PlayArriveLongSFX() => AudioManager.PlayOneShot(Sounds.TrainArrivalLong, sfxSource);
+
     public void PlayLeaveSFX() => AudioManager.PlayOneShot(Sounds.TrainLeave, sfxSource);
 
     public void PlayPassBySFX() => AudioManager.PlayOneShot(Sounds.TrainPassBy, sfxSource);
+
+    public void PlayWhistleSFX() => AudioManager.PlayOneShot(Sounds.TrainWhistle, sfxSource);
 }

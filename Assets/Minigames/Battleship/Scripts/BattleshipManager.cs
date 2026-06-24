@@ -68,6 +68,9 @@ public class BattleshipManager : MonoBehaviour
         leftClick.canceled += OnLeftClickRelease;
         rightClick.started += OnRightClick;
 
+        leftClick.Enable();
+        rightClick.Enable();
+
         startButton.SetActive(false);
         totalBoats = boats2.Length + boats3.Length;
         currentRotation = BoatRotation.Up;
@@ -356,7 +359,15 @@ public class BattleshipManager : MonoBehaviour
         BoatHitState hitState = opponentHoles[GetIdx(coordinates)].Shoot(false);
         if (hitState == BoatHitState.Sunk)
             SunkBoat();
-        AudioManager.PlayOneShot(hitState == BoatHitState.Miss ? Sounds.BattleshipSetWhitePin : Sounds.BattleshipSetRedPin, sfxSource);
+        switch (hitState)
+        {
+            case BoatHitState.Miss:
+                AudioManager.PlayOneShot(Sounds.BattleshipSetWhitePin, sfxSource);
+                break;
+            case BoatHitState.Hit or BoatHitState.Sunk:
+                AudioManager.PlayOneShot(Sounds.BattleshipSetRedPin, sfxSource);
+                break;
+        }
         SwitchTurn();
     }
 
@@ -365,7 +376,15 @@ public class BattleshipManager : MonoBehaviour
         BoatHitState hitState = playerHoles[idx].Shoot(true);
         if (hitState == BoatHitState.Sunk)
             SunkBoat();
-        AudioManager.PlayOneShot(hitState == BoatHitState.Miss ? Sounds.BattleshipSetWhitePin : Sounds.BattleshipSetRedPin, sfxSource);
+        switch (hitState)
+        {
+            case BoatHitState.Miss:
+                AudioManager.PlayOneShot(Sounds.BattleshipSetWhitePin, sfxSource);
+                break;
+            case BoatHitState.Hit or BoatHitState.Sunk:
+                AudioManager.PlayOneShot(Sounds.BattleshipSetRedPin, sfxSource);
+                break;
+        }
         return hitState;
     }
 

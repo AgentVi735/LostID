@@ -102,6 +102,9 @@ public class MainMenuManager : MonoBehaviour
         switchCharacter.performed += SwitchCharacter;
         switchCharacterIdx = -1;
 
+        leaveWallet.Enable();
+        switchCharacter.Enable();
+
         AudioManager.PlaySound(Sounds.BackgroundTalking, bgmSource);
 
         ToggleCanSwitch(true);
@@ -416,22 +419,15 @@ public class MainMenuManager : MonoBehaviour
         stationCloseUpGroup.interactable = false;
         stationCloseUp.SetActive(true);
 
-        float fadeVolumeToAdd = stationCloseUpFade / SaveSystem.save.bgmVolume;
+        StartCoroutine(FadeAudio(toggle));
 
         for (float i = 0; i < stationCloseUpFade; i += Time.deltaTime)
         {
             float amt = i / stationCloseUpFade;
             if (toggle)
-            {
                 stationCloseUpGroup.alpha = amt;
-                bgmSource.volume -= fadeVolumeToAdd;
-                Debug.Log(bgmSource.volume + " | " + fadeVolumeToAdd);
-            }
             else
-            {
                 stationCloseUpGroup.alpha = 1 - amt;
-                bgmSource.volume += fadeVolumeToAdd;
-            }
             yield return null;
         }
 
@@ -447,6 +443,37 @@ public class MainMenuManager : MonoBehaviour
             smallWalletButton.interactable = true;
             stationCloseUp.SetActive(false);
         }
+    }
+
+    private IEnumerator FadeAudio(bool toggle)
+    {
+        float maxVol = SaveSystem.save.bgmVolume;
+        float fadeVolumeToAdd;
+        if (toggle)
+            fadeVolumeToAdd = bgmSource.volume / 10;
+        else
+            fadeVolumeToAdd = SaveSystem.save.bgmVolume / 10;
+        WaitForSeconds delay = new(0.1f);
+
+        for (int i = 0; i < 6; i++)
+        {
+            if (toggle)
+                bgmSource.volume -= fadeVolumeToAdd;
+            else
+            {
+                bgmSource.volume += fadeVolumeToAdd;
+                if (bgmSource.volume > maxVol)
+                {
+                    bgmSource.volume = maxVol;
+                    break;
+                }
+            }
+
+            yield return delay;
+        }
+
+        if (!toggle)
+            bgmSource.volume = SaveSystem.save.bgmVolume;
     }
 
     private void ToggleCanSwitch(bool toggle)
