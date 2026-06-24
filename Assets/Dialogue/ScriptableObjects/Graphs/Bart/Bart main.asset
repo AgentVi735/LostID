@@ -22,13 +22,147 @@ MonoBehaviour:
     - rid: 3518661924126195924
     - rid: 3518661924126195929
     - rid: 3518661924126195967
-    - rid: 3518661924126195969
     - rid: 3518661924126195972
+    - rid: 4248539871647367426
+    - rid: 4248539871647367428
+    - rid: 4248539871647367430
+    - rid: 4248539871647367432
+    - rid: 4248539871647367434
+    - rid: 4248539871647367436
+    - rid: 4248539871647367438
+    - rid: 4248539871647367440
+    - rid: 4248539871647367442
+    - rid: 4248539871647367444
+    - rid: 4248539871647367446
+    - rid: 4248539871647367448
+    - rid: 4248539871647367450
+    - rid: 4248539871647367452
+    - rid: 4248539871647367454
+    - rid: 4248539871647367456
+    - rid: 4248539871647367458
+    - rid: 4248539871647367460
+    - rid: 4248539871647367462
+    - rid: 4248539871647367464
+    - rid: 4248539871647367466
+    - rid: 4248539871647367468
+    - rid: 4248539871647367470
+    - rid: 4248539871647367472
+    - rid: 4248539871647367474
+    - rid: 4248539871647367476
+    - rid: 4248539871647367478
+    - rid: 4248539871647367480
+    - rid: 4248539871647367482
+    - rid: 4248539871647367484
+    - rid: 4248539871647367486
+    - rid: 4248539871647367488
+    - rid: 4248539871647367490
+    - rid: 4248539871647367492
+    - rid: 4248539871647367494
+    - rid: 4248539871647367496
+    - rid: 4248539871647367498
+    - rid: 4248539871647367500
+    - rid: 4248539871647367502
+    - rid: 4248539871647367504
+    - rid: 4248539871647367506
+    - rid: 4248539871647367508
+    - rid: 4248539871647367510
+    - rid: 4248539871647367512
+    - rid: 4248539871647367514
+    - rid: 4248539871647367516
+    - rid: 4248539871647367518
+    - rid: 4248539871647367520
+    - rid: 4248539871647367522
+    - rid: 4248539871647367524
+    - rid: 4248539871647367526
+    - rid: 4248539871647367528
+    - rid: 4248539871647367530
+    - rid: 4248539871647367532
+    - rid: 4248539871647367534
+    - rid: 4248539871647367536
+    - rid: 4248539871647367538
+    - rid: 4248539871647367540
+    - rid: 4248539871647367542
+    - rid: 4248539871647367544
+    - rid: 4248539871647367546
+    - rid: 4248539871647367548
+    - rid: 4248539871647367550
+    - rid: 4248539871647367552
+    - rid: 4248539871647367554
+    - rid: 4248539871647367556
+    - rid: 4248539871647367558
+    - rid: 4248539871647367560
+    - rid: 4248539871647367562
+    - rid: 4248539871647367564
+    - rid: 4248539871647367566
+    - rid: 4248539871647367568
+    - rid: 4248539871647367570
+    - rid: 4248539871647367572
+    - rid: 4248539871647367574
+    - rid: 4248539871647367576
+    - rid: 4248539871647367578
+    - rid: 4248539871647367580
+    - rid: 4248539871647367582
+    - rid: 4248539871647367584
+    - rid: 4248539871647367586
+    - rid: 4248539871647367588
+    - rid: 4248539871647367590
+    - rid: 4248539871647367592
+    - rid: 4248539871647367594
+    - rid: 4248539871647367596
+    - rid: 4248539871647367598
+    - rid: 4248539871647367600
+    - rid: 4248539871647367602
+    - rid: 4248539871647367604
+    - rid: 4248539871647367606
+    - rid: 4248539871647367608
+    - rid: 4248539871647367610
+    - rid: 4248539871647367612
+    - rid: 4248539871647367614
+    - rid: 4248539871647367616
+    - rid: 4248539871647367618
+    - rid: 4248539871647367620
+    - rid: 4248539871647367622
+    - rid: 4248539871647367624
+    - rid: 4248539871647367626
+    - rid: 4248539871647367628
+    - rid: 4248539871647367630
+    - rid: 4248539871647367632
+    - rid: 4248539871647367634
+    - rid: 4248539871647367636
+    - rid: 4248539871647367638
+    - rid: 4248539871647367640
+    - rid: 4248539871647367642
+    - rid: 4248539871647367644
+    - rid: 4248539871647367646
+    - rid: 4248539871647367648
+    - rid: 4248539871647367650
+    - rid: 4248539871647367652
+    - rid: 4248539871647367654
+    - rid: 4248539871647367656
+    - rid: 4248539871647367658
+    - rid: 4248539871647367660
+    - rid: 4248539871647367662
+    - rid: 4248539871647367664
+    - rid: 4248539871647367666
+    - rid: 4248539871647367668
+    - rid: 4248539871647367670
+    - rid: 4248539871647367672
+    - rid: 4248539871647367674
+    - rid: 4248539871647367676
+    - rid: 4248539871647367678
+    - rid: 4248539871647367680
+    - rid: 4248539871647367682
+    - rid: 4248539871647367684
+    - rid: 4248539871647367686
+    - rid: 4248539871647367688
+    - rid: 4248539871647367690
+    - rid: 4248539871647367692
+    - rid: 4248539871647367694
     utilityNodes: []
     tmpName: Bart main
     viewportInitiallySet: 1
-    viewPosition: {x: -114.01547, y: 204.89853, z: 0}
-    viewScale: {x: 0.49717674, y: 0.49717674, z: 1}
+    viewPosition: {x: -16481.441, y: -676.4994, z: 0}
+    viewScale: {x: 1, y: 1, z: 1}
   references:
     version: 2
     RefIds:
@@ -145,7 +279,7 @@ MonoBehaviour:
         dialogueData:
           dialogue: {fileID: 11400000, guid: 5b3db4eb556acb840b55db774bfef1d1, type: 2}
           character: {fileID: 0}
-          overrideCharacterName: 
+          overrideCharacterName: ???
           text: Meeeeooowww~
           sprite: 1
           overrideSprite: {fileID: 0}
@@ -260,8 +394,8 @@ MonoBehaviour:
       data:
         nodeData:
           rid: 3518661924126195968
-        nodeX: 2337.3455
-        nodeY: 457.04053
+        nodeX: 2287.3455
+        nodeY: 463.04053
         name: DialogueNode
         isUtilityNode: 0
         foldouts:
@@ -274,41 +408,13 @@ MonoBehaviour:
       data:
         nodeName: -2071737520
         nextNode:
-          rid: 3518661924126195970
+          rid: 4248539871647367427
         dialogueData:
           dialogue: {fileID: 11400000, guid: d851fbae3c28b0f45be6a8e6b1e32887, type: 2}
           character: {fileID: 0}
-          overrideCharacterName: 
-          text: GRRR
-          sprite: 3
-          overrideSprite: {fileID: 0}
-          overrideTextSpeed: 0
-    - rid: 3518661924126195969
-      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
-      data:
-        nodeData:
-          rid: 3518661924126195970
-        nodeX: 2566.345
-        nodeY: 453.04053
-        name: DialogueNode
-        isUtilityNode: 0
-        foldouts:
-        - relativePropertyPathHash: 2139912289
-          isExpanded: 1
-        - relativePropertyPathHash: 147499731
-          isExpanded: 1
-    - rid: 3518661924126195970
-      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
-      data:
-        nodeName: -1593036736
-        nextNode:
-          rid: -2
-        dialogueData:
-          dialogue: {fileID: 11400000, guid: cfb3f3f3c9c0c6343b0ee6c353364418, type: 2}
-          character: {fileID: 0}
-          overrideCharacterName: 
-          text: :(
-          sprite: 4
+          overrideCharacterName: ???
+          text: Hello gorgeous~
+          sprite: 2
           overrideSprite: {fileID: 0}
           overrideTextSpeed: 0
     - rid: 3518661924126195972
@@ -340,6 +446,3261 @@ MonoBehaviour:
           hidePortrait: 1
           removeItems: 0
           delay: 2
+          minigame: 0
+          wonMinigameNode:
+            rid: -2
+          loseMinigameNode:
+            rid: -2
+          imageToSend: {fileID: 0}
+    - rid: 4248539871647367426
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367427
+        nodeX: 2504.492
+        nodeY: 466.05835
+        name: EventNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367427
+      type: {class: EventNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367429
+        eventData:
+          eventObj: {fileID: 0}
+          eventType: 1
+          disableSaving: 0
+          hideDialogueBox: 0
+          keepText: 0
+          hidePortrait: 0
+          removeItems: 0
+          delay: 0.4
+          minigame: 0
+          wonMinigameNode:
+            rid: -2
+          loseMinigameNode:
+            rid: -2
+          imageToSend: {fileID: 0}
+    - rid: 4248539871647367428
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367429
+        nodeX: 2720.492
+        nodeY: 471.05835
+        name: ResponseHolderNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367429
+      type: {class: ResponseHolderNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        responseHolder: {fileID: 0}
+        responses:
+        - rid: 4248539871647367431
+    - rid: 4248539871647367430
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367431
+        nodeX: 2937.492
+        nodeY: 475.05835
+        name: ResponseNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367431
+      type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        response: {fileID: 0}
+        nextNode:
+          rid: 4248539871647367433
+        text: What..?
+    - rid: 4248539871647367432
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367433
+        nodeX: 3154.492
+        nodeY: 474.05835
+        name: EventNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367433
+      type: {class: EventNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367435
+        eventData:
+          eventObj: {fileID: 0}
+          eventType: 1
+          disableSaving: 0
+          hideDialogueBox: 0
+          keepText: 0
+          hidePortrait: 0
+          removeItems: 0
+          delay: 0.4
+          minigame: 0
+          wonMinigameNode:
+            rid: -2
+          loseMinigameNode:
+            rid: -2
+          imageToSend: {fileID: 0}
+    - rid: 4248539871647367434
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367435
+        nodeX: 3378.7007
+        nodeY: 476.05835
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367435
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367437
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: ???
+          text: What, what?
+          sprite: 1
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367436
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367437
+        nodeX: 3587.492
+        nodeY: 477.05835
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367437
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367439
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: ???
+          text: You've never seen a cat boy before?
+          sprite: 1
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367438
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367439
+        nodeX: 3803.492
+        nodeY: 481.05835
+        name: EventNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367439
+      type: {class: EventNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367441
+        eventData:
+          eventObj: {fileID: 0}
+          eventType: 1
+          disableSaving: 0
+          hideDialogueBox: 0
+          keepText: 0
+          hidePortrait: 0
+          removeItems: 0
+          delay: 0.4
+          minigame: 0
+          wonMinigameNode:
+            rid: -2
+          loseMinigameNode:
+            rid: -2
+          imageToSend: {fileID: 0}
+    - rid: 4248539871647367440
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367441
+        nodeX: 4018.492
+        nodeY: 489.05835
+        name: ResponseHolderNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367441
+      type: {class: ResponseHolderNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        responseHolder: {fileID: 0}
+        responses:
+        - rid: 4248539871647367443
+        - rid: 4248539871647367445
+        - rid: 4248539871647367447
+    - rid: 4248539871647367442
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367443
+        nodeX: 4252.492
+        nodeY: 421.05835
+        name: ResponseNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367443
+      type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        response: {fileID: 0}
+        nextNode:
+          rid: 4248539871647367449
+        text: I'm just so confused right now...
+    - rid: 4248539871647367444
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367445
+        nodeX: 4256.492
+        nodeY: 522.05835
+        name: ResponseNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367445
+      type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        response: {fileID: 0}
+        nextNode:
+          rid: 4248539871647367457
+        text: I have but...
+    - rid: 4248539871647367446
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367447
+        nodeX: 4256.492
+        nodeY: 615.05835
+        name: ResponseNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367447
+      type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        response: {fileID: 0}
+        nextNode:
+          rid: 4248539871647367459
+        text: No???
+    - rid: 4248539871647367448
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367449
+        nodeX: 4489.492
+        nodeY: 353.05835
+        name: EventNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367449
+      type: {class: EventNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367451
+        eventData:
+          eventObj: {fileID: 0}
+          eventType: 1
+          disableSaving: 0
+          hideDialogueBox: 0
+          keepText: 0
+          hidePortrait: 0
+          removeItems: 0
+          delay: 0.4
+          minigame: 0
+          wonMinigameNode:
+            rid: -2
+          loseMinigameNode:
+            rid: -2
+          imageToSend: {fileID: 0}
+    - rid: 4248539871647367450
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367451
+        nodeX: 4718.492
+        nodeY: 352.05835
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367451
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367453
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: ???
+          text: What's there to be confused about?
+          sprite: 1
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367452
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367453
+        nodeX: 4934.492
+        nodeY: 354.05835
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367453
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367455
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: ???
+          text: No wait, don't answer.
+          sprite: 1
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367454
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367455
+        nodeX: 5153.492
+        nodeY: 356.05835
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367455
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367467
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: ???
+          text: Let me explain.
+          sprite: 1
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367456
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367457
+        nodeX: 4490.492
+        nodeY: 501.51605
+        name: EventNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367457
+      type: {class: EventNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367461
+        eventData:
+          eventObj: {fileID: 0}
+          eventType: 1
+          disableSaving: 0
+          hideDialogueBox: 0
+          keepText: 0
+          hidePortrait: 0
+          removeItems: 0
+          delay: 0.4
+          minigame: 0
+          wonMinigameNode:
+            rid: -2
+          loseMinigameNode:
+            rid: -2
+          imageToSend: {fileID: 0}
+    - rid: 4248539871647367458
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367459
+        nodeX: 4488.492
+        nodeY: 648.77466
+        name: EventNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367459
+      type: {class: EventNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367465
+        eventData:
+          eventObj: {fileID: 0}
+          eventType: 1
+          disableSaving: 0
+          hideDialogueBox: 0
+          keepText: 0
+          hidePortrait: 0
+          removeItems: 0
+          delay: 0.4
+          minigame: 0
+          wonMinigameNode:
+            rid: -2
+          loseMinigameNode:
+            rid: -2
+          imageToSend: {fileID: 0}
+    - rid: 4248539871647367460
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367461
+        nodeX: 4719.492
+        nodeY: 513.77466
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367461
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367463
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: ???
+          text: Then why so shocked???
+          sprite: 1
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367462
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367463
+        nodeX: 4937.492
+        nodeY: 513.77466
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367463
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367467
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: ???
+          text: Anyway, let me tell you something.
+          sprite: 1
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367464
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367465
+        nodeX: 4719.492
+        nodeY: 674.44635
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367465
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367467
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: ???
+          text: Then let me explain.
+          sprite: 1
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367466
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367467
+        nodeX: 5617.492
+        nodeY: 529.4463
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367467
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367469
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: ???
+          text: I used to be a sad little kitten, out on the streets all on my own.
+          sprite: 4
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367468
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367469
+        nodeX: 5832.492
+        nodeY: 531.4463
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367469
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367471
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: ???
+          text: 'My mom abandoned me when i was still young. '
+          sprite: 4
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367470
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367471
+        nodeX: 6046.492
+        nodeY: 532.4463
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367471
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367473
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: ???
+          text: I had no home, no food, no friends, no name.
+          sprite: 4
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367472
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367473
+        nodeX: 6263.701
+        nodeY: 535.4463
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367473
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367475
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: ???
+          text: Then the owner of this cafe found me.
+          sprite: 1
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367474
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367475
+        nodeX: 6479.701
+        nodeY: 537.4463
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367475
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367477
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: ???
+          text: He took me with him
+          sprite: 2
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367476
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367477
+        nodeX: 6696.701
+        nodeY: 541.4463
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367477
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367479
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: ???
+          text: He gave me a home, food, friends and a name.
+          sprite: 1
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367478
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367479
+        nodeX: 6913.701
+        nodeY: 542.4463
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367479
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367481
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: 
+          text: Purrincess!
+          sprite: 2
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367480
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367481
+        nodeX: 7130.701
+        nodeY: 542.4463
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367481
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367483
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: 
+          text: Now I am living my best life ever!
+          sprite: 1
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367482
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367483
+        nodeX: 7347.701
+        nodeY: 544.4463
+        name: EventNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367483
+      type: {class: EventNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367485
+        eventData:
+          eventObj: {fileID: 0}
+          eventType: 1
+          disableSaving: 0
+          hideDialogueBox: 0
+          keepText: 0
+          hidePortrait: 0
+          removeItems: 0
+          delay: 0.4
+          minigame: 0
+          wonMinigameNode:
+            rid: -2
+          loseMinigameNode:
+            rid: -2
+          imageToSend: {fileID: 0}
+    - rid: 4248539871647367484
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367485
+        nodeX: 7562.701
+        nodeY: 542.4463
+        name: ResponseHolderNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367485
+      type: {class: ResponseHolderNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        responseHolder: {fileID: 0}
+        responses:
+        - rid: 4248539871647367487
+        - rid: 4248539871647367489
+    - rid: 4248539871647367486
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367487
+        nodeX: 7808.2007
+        nodeY: 477.4463
+        name: ResponseNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367487
+      type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        response: {fileID: 0}
+        nextNode:
+          rid: 4248539871647367491
+        text: That does not explain why you are a human now.
+    - rid: 4248539871647367488
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367489
+        nodeX: 7807.2007
+        nodeY: 709.7648
+        name: ResponseNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367489
+      type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        response: {fileID: 0}
+        nextNode:
+          rid: 4248539871647367493
+        text: That's... good for you.
+    - rid: 4248539871647367490
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367491
+        nodeX: 8028.2007
+        nodeY: 475.7647
+        name: EventNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367491
+      type: {class: EventNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367495
+        eventData:
+          eventObj: {fileID: 0}
+          eventType: 1
+          disableSaving: 0
+          hideDialogueBox: 0
+          keepText: 0
+          hidePortrait: 0
+          removeItems: 0
+          delay: 0.4
+          minigame: 0
+          wonMinigameNode:
+            rid: -2
+          loseMinigameNode:
+            rid: -2
+          imageToSend: {fileID: 0}
+    - rid: 4248539871647367492
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367493
+        nodeX: 8027.2007
+        nodeY: 710.7647
+        name: EventNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367493
+      type: {class: EventNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367501
+        eventData:
+          eventObj: {fileID: 0}
+          eventType: 1
+          disableSaving: 0
+          hideDialogueBox: 0
+          keepText: 0
+          hidePortrait: 0
+          removeItems: 0
+          delay: 0.4
+          minigame: 0
+          wonMinigameNode:
+            rid: -2
+          loseMinigameNode:
+            rid: -2
+          imageToSend: {fileID: 0}
+    - rid: 4248539871647367494
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367495
+        nodeX: 8244.201
+        nodeY: 475.7647
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367495
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367497
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: 
+          text: Oh, yeah.
+          sprite: 1
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367496
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367497
+        nodeX: 8457.201
+        nodeY: 474.7647
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367497
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367499
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: 
+          text: I don't know why I can do that.
+          sprite: 1
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367498
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367499
+        nodeX: 8672.201
+        nodeY: 477.7647
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367499
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367503
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: 
+          text: I just sneezed one day and figured out I coud do this!
+          sprite: 2
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367500
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367501
+        nodeX: 8248.201
+        nodeY: 709.7647
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367501
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367503
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: 
+          text: 'Thanks! '
+          sprite: 2
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367502
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367503
+        nodeX: 8982.684
+        nodeY: 636.7647
+        name: EventNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367503
+      type: {class: EventNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367505
+        eventData:
+          eventObj: {fileID: 0}
+          eventType: 1
+          disableSaving: 0
+          hideDialogueBox: 0
+          keepText: 0
+          hidePortrait: 0
+          removeItems: 0
+          delay: 0.4
+          minigame: 0
+          wonMinigameNode:
+            rid: -2
+          loseMinigameNode:
+            rid: -2
+          imageToSend: {fileID: 0}
+    - rid: 4248539871647367504
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367505
+        nodeX: 9221.684
+        nodeY: 634.7647
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367505
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367507
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: 
+          text: So I saw you doing a thing with cards earlier with the other person.
+          sprite: 1
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367506
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367507
+        nodeX: 9441.684
+        nodeY: 636.7647
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367507
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367509
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: 
+          text: So what was that?
+          sprite: 1
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367508
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367509
+        nodeX: 9660.684
+        nodeY: 643.7647
+        name: EventNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367509
+      type: {class: EventNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367511
+        eventData:
+          eventObj: {fileID: 0}
+          eventType: 1
+          disableSaving: 0
+          hideDialogueBox: 0
+          keepText: 0
+          hidePortrait: 0
+          removeItems: 0
+          delay: 0.4
+          minigame: 0
+          wonMinigameNode:
+            rid: -2
+          loseMinigameNode:
+            rid: -2
+          imageToSend: {fileID: 0}
+    - rid: 4248539871647367510
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367511
+        nodeX: 9881.684
+        nodeY: 650.7647
+        name: ResponseHolderNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367511
+      type: {class: ResponseHolderNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        responseHolder: {fileID: 0}
+        responses:
+        - rid: 4248539871647367513
+    - rid: 4248539871647367512
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367513
+        nodeX: 10095.684
+        nodeY: 646.7647
+        name: ResponseNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367513
+      type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        response: {fileID: 0}
+        nextNode:
+          rid: 4248539871647367515
+        text: A game.
+    - rid: 4248539871647367514
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367515
+        nodeX: 10314.684
+        nodeY: 648.7647
+        name: EventNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367515
+      type: {class: EventNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367517
+        eventData:
+          eventObj: {fileID: 0}
+          eventType: 1
+          disableSaving: 0
+          hideDialogueBox: 0
+          keepText: 0
+          hidePortrait: 0
+          removeItems: 0
+          delay: 0.4
+          minigame: 0
+          wonMinigameNode:
+            rid: -2
+          loseMinigameNode:
+            rid: -2
+          imageToSend: {fileID: 0}
+    - rid: 4248539871647367516
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367517
+        nodeX: 10532.684
+        nodeY: 649.7647
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367517
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367519
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: 
+          text: A game?!
+          sprite: 2
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367518
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367519
+        nodeX: 10748.684
+        nodeY: 651.7647
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367519
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367521
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: 
+          text: I love games!
+          sprite: 1
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367520
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367521
+        nodeX: 10965.684
+        nodeY: 651.7647
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367521
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367523
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: 
+          text: Play a game with me!
+          sprite: 1
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367522
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367523
+        nodeX: 11182.684
+        nodeY: 655.7647
+        name: EventNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367523
+      type: {class: EventNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367525
+        eventData:
+          eventObj: {fileID: 0}
+          eventType: 1
+          disableSaving: 0
+          hideDialogueBox: 0
+          keepText: 0
+          hidePortrait: 0
+          removeItems: 0
+          delay: 0.4
+          minigame: 0
+          wonMinigameNode:
+            rid: -2
+          loseMinigameNode:
+            rid: -2
+          imageToSend: {fileID: 0}
+    - rid: 4248539871647367524
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367525
+        nodeX: 11396.684
+        nodeY: 656.7647
+        name: ResponseHolderNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367525
+      type: {class: ResponseHolderNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        responseHolder: {fileID: 0}
+        responses:
+        - rid: 4248539871647367527
+    - rid: 4248539871647367526
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367527
+        nodeX: 11609.336
+        nodeY: 659.7647
+        name: ResponseNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367527
+      type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        response: {fileID: 0}
+        nextNode:
+          rid: 4248539871647367529
+        text: I have battleship.
+    - rid: 4248539871647367528
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367529
+        nodeX: 11825.155
+        nodeY: 664.9188
+        name: EventNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367529
+      type: {class: EventNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367531
+        eventData:
+          eventObj: {fileID: 0}
+          eventType: 1
+          disableSaving: 0
+          hideDialogueBox: 0
+          keepText: 0
+          hidePortrait: 0
+          removeItems: 0
+          delay: 0.4
+          minigame: 0
+          wonMinigameNode:
+            rid: -2
+          loseMinigameNode:
+            rid: -2
+          imageToSend: {fileID: 0}
+    - rid: 4248539871647367530
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367531
+        nodeX: 12039.155
+        nodeY: 665.9188
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367531
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367533
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: 
+          text: I don't know what that is, but let's play!
+          sprite: 2
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367532
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367533
+        nodeX: 12256.155
+        nodeY: 669.9188
+        name: EventNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367533
+      type: {class: EventNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: -2
+        eventData:
+          eventObj: {fileID: 0}
+          eventType: 2
+          disableSaving: 0
+          hideDialogueBox: 0
+          keepText: 0
+          hidePortrait: 0
+          removeItems: 0
+          delay: 0
+          minigame: 2
+          wonMinigameNode:
+            rid: 4248539871647367535
+          loseMinigameNode:
+            rid: 4248539871647367537
+          imageToSend: {fileID: 0}
+    - rid: 4248539871647367534
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367535
+        nodeX: 12506.155
+        nodeY: 571.9188
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367535
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367539
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: 
+          text: So THAT'S how you play.
+          sprite: 1
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367536
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367537
+        nodeX: 12507.155
+        nodeY: 764.9188
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367537
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367559
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: 
+          text: I think I understand it!
+          sprite: 0
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367538
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367539
+        nodeX: 12730.638
+        nodeY: 571.9188
+        name: EventNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367539
+      type: {class: EventNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367541
+        eventData:
+          eventObj: {fileID: 0}
+          eventType: 1
+          disableSaving: 0
+          hideDialogueBox: 0
+          keepText: 0
+          hidePortrait: 0
+          removeItems: 0
+          delay: 0.4
+          minigame: 0
+          wonMinigameNode:
+            rid: -2
+          loseMinigameNode:
+            rid: -2
+          imageToSend: {fileID: 0}
+    - rid: 4248539871647367540
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367541
+        nodeX: 12949.638
+        nodeY: 575.9188
+        name: ResponseHolderNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367541
+      type: {class: ResponseHolderNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        responseHolder: {fileID: 0}
+        responses:
+        - rid: 4248539871647367543
+        - rid: 4248539871647367545
+    - rid: 4248539871647367542
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367543
+        nodeX: 13195.638
+        nodeY: 505.91882
+        name: ResponseNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367543
+      type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        response: {fileID: 0}
+        nextNode:
+          rid: 4248539871647367549
+        text: Yeah.
+    - rid: 4248539871647367544
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367545
+        nodeX: 13196.638
+        nodeY: 722.9188
+        name: ResponseNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367545
+      type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        response: {fileID: 0}
+        nextNode:
+          rid: 4248539871647367553
+        text: You did good too!
+    - rid: 4248539871647367546
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367547
+        nodeX: 0
+        nodeY: 0
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367547
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: -2
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: 
+          text: 
+          sprite: 0
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367548
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367549
+        nodeX: 13415.638
+        nodeY: 508.91882
+        name: EventNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367549
+      type: {class: EventNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367551
+        eventData:
+          eventObj: {fileID: 0}
+          eventType: 1
+          disableSaving: 0
+          hideDialogueBox: 0
+          keepText: 0
+          hidePortrait: 0
+          removeItems: 0
+          delay: 0.4
+          minigame: 0
+          wonMinigameNode:
+            rid: -2
+          loseMinigameNode:
+            rid: -2
+          imageToSend: {fileID: 0}
+    - rid: 4248539871647367550
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367551
+        nodeX: 13631.638
+        nodeY: 510.91882
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367551
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367577
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: 
+          text: You did good!
+          sprite: 1
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367552
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367553
+        nodeX: 0
+        nodeY: 0
+        name: EventNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367553
+      type: {class: EventNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367555
+        eventData:
+          eventObj: {fileID: 0}
+          eventType: 1
+          disableSaving: 0
+          hideDialogueBox: 0
+          keepText: 0
+          hidePortrait: 0
+          removeItems: 0
+          delay: 0.4
+          minigame: 0
+          wonMinigameNode:
+            rid: -2
+          loseMinigameNode:
+            rid: -2
+          imageToSend: {fileID: 0}
+    - rid: 4248539871647367554
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367555
+        nodeX: 13641.638
+        nodeY: 763.8044
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367555
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367557
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: 
+          text: Really?!
+          sprite: 2
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367556
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367557
+        nodeX: 13855.638
+        nodeY: 765.80444
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367557
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367577
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: 
+          text: Thank you.
+          sprite: 1
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367558
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367559
+        nodeX: 12756.994
+        nodeY: 945.703
+        name: EventNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367559
+      type: {class: EventNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367561
+        eventData:
+          eventObj: {fileID: 0}
+          eventType: 1
+          disableSaving: 0
+          hideDialogueBox: 0
+          keepText: 0
+          hidePortrait: 0
+          removeItems: 0
+          delay: 0.4
+          minigame: 0
+          wonMinigameNode:
+            rid: -2
+          loseMinigameNode:
+            rid: -2
+          imageToSend: {fileID: 0}
+    - rid: 4248539871647367560
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367561
+        nodeX: 12974.087
+        nodeY: 949.8559
+        name: ResponseHolderNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367561
+      type: {class: ResponseHolderNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        responseHolder: {fileID: 0}
+        responses:
+        - rid: 4248539871647367563
+        - rid: 4248539871647367565
+    - rid: 4248539871647367562
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367563
+        nodeX: 0
+        nodeY: 0
+        name: ResponseNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367563
+      type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        response: {fileID: 0}
+        nextNode:
+          rid: 4248539871647367567
+        text: You litteraly won.
+    - rid: 4248539871647367564
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367565
+        nodeX: 13218.087
+        nodeY: 1083.856
+        name: ResponseNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367565
+      type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        response: {fileID: 0}
+        nextNode:
+          rid: 4248539871647367573
+        text: You do, well done.
+    - rid: 4248539871647367566
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367567
+        nodeX: 13438.087
+        nodeY: 930.85596
+        name: EventNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367567
+      type: {class: EventNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367569
+        eventData:
+          eventObj: {fileID: 0}
+          eventType: 1
+          disableSaving: 0
+          hideDialogueBox: 0
+          keepText: 0
+          hidePortrait: 0
+          removeItems: 0
+          delay: 0.4
+          minigame: 0
+          wonMinigameNode:
+            rid: -2
+          loseMinigameNode:
+            rid: -2
+          imageToSend: {fileID: 0}
+    - rid: 4248539871647367568
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367569
+        nodeX: 13651.087
+        nodeY: 929.8559
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367569
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367571
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: 
+          text: I guess I did.
+          sprite: 1
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367570
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367571
+        nodeX: 13867.087
+        nodeY: 928.8559
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367571
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367577
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: 
+          text: This game is fune!
+          sprite: 2
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367572
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367573
+        nodeX: 13438.087
+        nodeY: 1090.901
+        name: EventNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367573
+      type: {class: EventNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367575
+        eventData:
+          eventObj: {fileID: 0}
+          eventType: 1
+          disableSaving: 0
+          hideDialogueBox: 0
+          keepText: 0
+          hidePortrait: 0
+          removeItems: 0
+          delay: 0.4
+          minigame: 0
+          wonMinigameNode:
+            rid: -2
+          loseMinigameNode:
+            rid: -2
+          imageToSend: {fileID: 0}
+    - rid: 4248539871647367574
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367575
+        nodeX: 13656.087
+        nodeY: 1094.9009
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367575
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367577
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: 
+          text: Thanks!!!
+          sprite: 2
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367576
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367577
+        nodeX: 14613.38
+        nodeY: 912.46484
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367577
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367579
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: 
+          text: I want to play games with you more often, it is fun!
+          sprite: 2
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367578
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367579
+        nodeX: 14830.441
+        nodeY: 913.4994
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367579
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367581
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: 
+          text: Do you want to play another game?
+          sprite: 1
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367580
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367581
+        nodeX: 15045.441
+        nodeY: 915.4994
+        name: EventNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367581
+      type: {class: EventNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367583
+        eventData:
+          eventObj: {fileID: 0}
+          eventType: 1
+          disableSaving: 0
+          hideDialogueBox: 0
+          keepText: 0
+          hidePortrait: 0
+          removeItems: 0
+          delay: 0.4
+          minigame: 0
+          wonMinigameNode:
+            rid: -2
+          loseMinigameNode:
+            rid: -2
+          imageToSend: {fileID: 0}
+    - rid: 4248539871647367582
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367583
+        nodeX: 15260.441
+        nodeY: 919.4994
+        name: ResponseHolderNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367583
+      type: {class: ResponseHolderNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        responseHolder: {fileID: 0}
+        responses:
+        - rid: 4248539871647367585
+    - rid: 4248539871647367584
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367585
+        nodeX: 15476.441
+        nodeY: 921.4994
+        name: ResponseNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367585
+      type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        response: {fileID: 0}
+        nextNode:
+          rid: 4248539871647367587
+        text: It is actually getting late and I have to go home soon.
+    - rid: 4248539871647367586
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367587
+        nodeX: 15692.441
+        nodeY: 920.4994
+        name: EventNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367587
+      type: {class: EventNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367589
+        eventData:
+          eventObj: {fileID: 0}
+          eventType: 1
+          disableSaving: 0
+          hideDialogueBox: 0
+          keepText: 0
+          hidePortrait: 0
+          removeItems: 0
+          delay: 0.4
+          minigame: 0
+          wonMinigameNode:
+            rid: -2
+          loseMinigameNode:
+            rid: -2
+          imageToSend: {fileID: 0}
+    - rid: 4248539871647367588
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367589
+        nodeX: 15910.441
+        nodeY: 924.4994
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367589
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367591
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: 
+          text: Oh...
+          sprite: 4
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367590
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367591
+        nodeX: 16129.441
+        nodeY: 927.4994
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367591
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367593
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: 
+          text: Really?
+          sprite: 4
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367592
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367593
+        nodeX: 16346.441
+        nodeY: 930.4994
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367593
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367595
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: 
+          text: Can't you stay a bit longer?
+          sprite: 4
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367594
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367595
+        nodeX: 16562.441
+        nodeY: 934.4994
+        name: EventNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367595
+      type: {class: EventNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367599
+        eventData:
+          eventObj: {fileID: 0}
+          eventType: 1
+          disableSaving: 0
+          hideDialogueBox: 0
+          keepText: 0
+          hidePortrait: 0
+          removeItems: 0
+          delay: 0.4
+          minigame: 0
+          wonMinigameNode:
+            rid: -2
+          loseMinigameNode:
+            rid: -2
+          imageToSend: {fileID: 0}
+    - rid: 4248539871647367596
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367597
+        nodeX: 0
+        nodeY: 0
+        name: GenericNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367597
+      type: {class: GenericNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+    - rid: 4248539871647367598
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367599
+        nodeX: 16774.441
+        nodeY: 939.4994
+        name: ResponseHolderNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367599
+      type: {class: ResponseHolderNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        responseHolder: {fileID: 0}
+        responses:
+        - rid: 4248539871647367601
+        - rid: 4248539871647367603
+    - rid: 4248539871647367600
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367601
+        nodeX: 17013.441
+        nodeY: 916.4994
+        name: ResponseNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367601
+      type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        response: {fileID: 0}
+        nextNode:
+          rid: 4248539871647367605
+        text: No, sorry.
+    - rid: 4248539871647367602
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367603
+        nodeX: 17014.607
+        nodeY: 1077.4994
+        name: ResponseNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367603
+      type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        response: {fileID: 0}
+        nextNode:
+          rid: 4248539871647367605
+        text: No.
+    - rid: 4248539871647367604
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367605
+        nodeX: 17285.607
+        nodeY: 995.4994
+        name: EventNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367605
+      type: {class: EventNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367607
+        eventData:
+          eventObj: {fileID: 0}
+          eventType: 1
+          disableSaving: 0
+          hideDialogueBox: 0
+          keepText: 0
+          hidePortrait: 0
+          removeItems: 0
+          delay: 0.4
+          minigame: 0
+          wonMinigameNode:
+            rid: -2
+          loseMinigameNode:
+            rid: -2
+          imageToSend: {fileID: 0}
+    - rid: 4248539871647367606
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367607
+        nodeX: 17515.607
+        nodeY: 996.4994
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367607
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367609
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: 
+          text: Will you at least come back again?
+          sprite: 4
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367608
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367609
+        nodeX: 17737.607
+        nodeY: 999.4994
+        name: EventNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367609
+      type: {class: EventNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367611
+        eventData:
+          eventObj: {fileID: 0}
+          eventType: 1
+          disableSaving: 0
+          hideDialogueBox: 0
+          keepText: 0
+          hidePortrait: 0
+          removeItems: 0
+          delay: 0.4
+          minigame: 0
+          wonMinigameNode:
+            rid: -2
+          loseMinigameNode:
+            rid: -2
+          imageToSend: {fileID: 0}
+    - rid: 4248539871647367610
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367611
+        nodeX: 17954.607
+        nodeY: 1003.4994
+        name: ResponseHolderNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367611
+      type: {class: ResponseHolderNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        responseHolder: {fileID: 0}
+        responses:
+        - rid: 4248539871647367613
+        - rid: 4248539871647367615
+    - rid: 4248539871647367612
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367613
+        nodeX: 18187.607
+        nodeY: 965.4994
+        name: ResponseNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367613
+      type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        response: {fileID: 0}
+        nextNode:
+          rid: 4248539871647367617
+        text: Yes!
+    - rid: 4248539871647367614
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367615
+        nodeX: 18206.607
+        nodeY: 1193.7635
+        name: ResponseNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367615
+      type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        response: {fileID: 0}
+        nextNode:
+          rid: 4248539871647367619
+        text: Nah.
+    - rid: 4248539871647367616
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367617
+        nodeX: 18403.607
+        nodeY: 969.7635
+        name: EventNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367617
+      type: {class: EventNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367621
+        eventData:
+          eventObj: {fileID: 0}
+          eventType: 1
+          disableSaving: 0
+          hideDialogueBox: 0
+          keepText: 0
+          hidePortrait: 0
+          removeItems: 0
+          delay: 0.4
+          minigame: 0
+          wonMinigameNode:
+            rid: -2
+          loseMinigameNode:
+            rid: -2
+          imageToSend: {fileID: 0}
+    - rid: 4248539871647367618
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367619
+        nodeX: 18424.607
+        nodeY: 1194.2605
+        name: EventNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367619
+      type: {class: EventNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367671
+        eventData:
+          eventObj: {fileID: 0}
+          eventType: 1
+          disableSaving: 0
+          hideDialogueBox: 0
+          keepText: 0
+          hidePortrait: 0
+          removeItems: 0
+          delay: 0.4
+          minigame: 0
+          wonMinigameNode:
+            rid: -2
+          loseMinigameNode:
+            rid: -2
+          imageToSend: {fileID: 0}
+    - rid: 4248539871647367620
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367621
+        nodeX: 18621.607
+        nodeY: 974.26056
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367621
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367623
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: 
+          text: YES!
+          sprite: 2
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367622
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367623
+        nodeX: 18838.607
+        nodeY: 974.26056
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367623
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367625
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: 
+          text: I will wait for you!
+          sprite: 1
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367624
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367625
+        nodeX: 19053.607
+        nodeY: 980.26056
+        name: EventNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367625
+      type: {class: EventNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367627
+        eventData:
+          eventObj: {fileID: 0}
+          eventType: 1
+          disableSaving: 0
+          hideDialogueBox: 0
+          keepText: 0
+          hidePortrait: 0
+          removeItems: 0
+          delay: 0.4
+          minigame: 0
+          wonMinigameNode:
+            rid: -2
+          loseMinigameNode:
+            rid: -2
+          imageToSend: {fileID: 0}
+    - rid: 4248539871647367626
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367627
+        nodeX: 19266.607
+        nodeY: 986.2605
+        name: ResponseHolderNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367627
+      type: {class: ResponseHolderNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        responseHolder: {fileID: 0}
+        responses:
+        - rid: 4248539871647367629
+    - rid: 4248539871647367628
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367629
+        nodeX: 19481.607
+        nodeY: 983.2605
+        name: ResponseNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367629
+      type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        response: {fileID: 0}
+        nextNode:
+          rid: 4248539871647367631
+        text: I can't wait.
+    - rid: 4248539871647367630
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367631
+        nodeX: 19694.607
+        nodeY: 983.2605
+        name: EventNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367631
+      type: {class: EventNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367633
+        eventData:
+          eventObj: {fileID: 0}
+          eventType: 1
+          disableSaving: 0
+          hideDialogueBox: 0
+          keepText: 0
+          hidePortrait: 0
+          removeItems: 0
+          delay: 0.4
+          minigame: 0
+          wonMinigameNode:
+            rid: -2
+          loseMinigameNode:
+            rid: -2
+          imageToSend: {fileID: 0}
+    - rid: 4248539871647367632
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367633
+        nodeX: 19909.607
+        nodeY: 987.26056
+        name: ResponseHolderNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367633
+      type: {class: ResponseHolderNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        responseHolder: {fileID: 0}
+        responses:
+        - rid: 4248539871647367635
+    - rid: 4248539871647367634
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367635
+        nodeX: 20124.607
+        nodeY: 988.26056
+        name: ResponseNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367635
+      type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        response: {fileID: 0}
+        nextNode:
+          rid: 4248539871647367637
+        text: I have to pay now.
+    - rid: 4248539871647367636
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367637
+        nodeX: 20340.607
+        nodeY: 989.2605
+        name: EventNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367637
+      type: {class: EventNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367639
+        eventData:
+          eventObj: {fileID: 0}
+          eventType: 1
+          disableSaving: 0
+          hideDialogueBox: 0
+          keepText: 0
+          hidePortrait: 0
+          removeItems: 0
+          delay: 0.4
+          minigame: 0
+          wonMinigameNode:
+            rid: -2
+          loseMinigameNode:
+            rid: -2
+          imageToSend: {fileID: 0}
+    - rid: 4248539871647367638
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367639
+        nodeX: 20558.607
+        nodeY: 989.2605
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367639
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367641
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: 
+          text: Pay?
+          sprite: 1
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367640
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367641
+        nodeX: 20772.607
+        nodeY: 990.2605
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367641
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367643
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: 
+          text: Don't worry, I know the owner.
+          sprite: 1
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367642
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367643
+        nodeX: 20986.607
+        nodeY: 989.2605
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367643
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367645
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: 
+          text: It's fine!
+          sprite: 2
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367644
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367645
+        nodeX: 21199.607
+        nodeY: 993.2605
+        name: EventNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367645
+      type: {class: EventNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367647
+        eventData:
+          eventObj: {fileID: 0}
+          eventType: 1
+          disableSaving: 0
+          hideDialogueBox: 0
+          keepText: 0
+          hidePortrait: 0
+          removeItems: 0
+          delay: 0.4
+          minigame: 0
+          wonMinigameNode:
+            rid: -2
+          loseMinigameNode:
+            rid: -2
+          imageToSend: {fileID: 0}
+    - rid: 4248539871647367646
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367647
+        nodeX: 21415.607
+        nodeY: 995.26056
+        name: ResponseHolderNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367647
+      type: {class: ResponseHolderNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        responseHolder: {fileID: 0}
+        responses:
+        - rid: 4248539871647367649
+        - rid: 4248539871647367651
+    - rid: 4248539871647367648
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367649
+        nodeX: 21653.607
+        nodeY: 945.26056
+        name: ResponseNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367649
+      type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        response: {fileID: 0}
+        nextNode:
+          rid: 4248539871647367653
+        text: Really?
+    - rid: 4248539871647367650
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367651
+        nodeX: 21657.607
+        nodeY: 1172.8373
+        name: ResponseNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367651
+      type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        response: {fileID: 0}
+        nextNode:
+          rid: 4248539871647367653
+        text: Are you sure?
+    - rid: 4248539871647367652
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367653
+        nodeX: 21950.607
+        nodeY: 1053.8374
+        name: EventNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367653
+      type: {class: EventNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367655
+        eventData:
+          eventObj: {fileID: 0}
+          eventType: 1
+          disableSaving: 0
+          hideDialogueBox: 0
+          keepText: 0
+          hidePortrait: 0
+          removeItems: 0
+          delay: 0.4
+          minigame: 0
+          wonMinigameNode:
+            rid: -2
+          loseMinigameNode:
+            rid: -2
+          imageToSend: {fileID: 0}
+    - rid: 4248539871647367654
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367655
+        nodeX: 22179.607
+        nodeY: 1057.1458
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367655
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367657
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: 
+          text: Yes!
+          sprite: 2
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367656
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367657
+        nodeX: 22398.607
+        nodeY: 1056.1458
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367657
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367659
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: 
+          text: Don't worry about it!
+          sprite: 1
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367658
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367659
+        nodeX: 22615.607
+        nodeY: 1061.1458
+        name: EventNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367659
+      type: {class: EventNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367661
+        eventData:
+          eventObj: {fileID: 0}
+          eventType: 1
+          disableSaving: 0
+          hideDialogueBox: 0
+          keepText: 0
+          hidePortrait: 0
+          removeItems: 0
+          delay: 0.4
+          minigame: 0
+          wonMinigameNode:
+            rid: -2
+          loseMinigameNode:
+            rid: -2
+          imageToSend: {fileID: 0}
+    - rid: 4248539871647367660
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367661
+        nodeX: 22831.607
+        nodeY: 1064.1458
+        name: ResponseHolderNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367661
+      type: {class: ResponseHolderNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        responseHolder: {fileID: 0}
+        responses:
+        - rid: 4248539871647367663
+    - rid: 4248539871647367662
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367663
+        nodeX: 23049.607
+        nodeY: 1064.1458
+        name: ResponseNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367663
+      type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        response: {fileID: 0}
+        nextNode:
+          rid: 4248539871647367665
+        text: Thanks.
+    - rid: 4248539871647367664
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367665
+        nodeX: 23265.607
+        nodeY: 1066.1458
+        name: EventNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367665
+      type: {class: EventNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367667
+        eventData:
+          eventObj: {fileID: 0}
+          eventType: 1
+          disableSaving: 0
+          hideDialogueBox: 0
+          keepText: 0
+          hidePortrait: 0
+          removeItems: 0
+          delay: 0.4
+          minigame: 0
+          wonMinigameNode:
+            rid: -2
+          loseMinigameNode:
+            rid: -2
+          imageToSend: {fileID: 0}
+    - rid: 4248539871647367666
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367667
+        nodeX: 23481.607
+        nodeY: 1068.1458
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367667
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367669
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: 
+          text: Goodbye pretty!
+          sprite: 1
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367668
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367669
+        nodeX: 23698.607
+        nodeY: 1071.1458
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367669
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367695
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: 
+          text: 'See you next time. '
+          sprite: 1
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367670
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367671
+        nodeX: 18640.34
+        nodeY: 1197.6509
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367671
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367673
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: 
+          text: Oh...
+          sprite: 4
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367672
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367673
+        nodeX: 18858.34
+        nodeY: 1199.6509
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367673
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367675
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: 
+          text: So mean.
+          sprite: 3
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367674
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367675
+        nodeX: 19072.34
+        nodeY: 1201.6509
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367675
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367677
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: 
+          text: 'Don''t forget to pay. '
+          sprite: 1
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367676
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367677
+        nodeX: 19288.34
+        nodeY: 1206.6509
+        name: EventNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367677
+      type: {class: EventNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367679
+        eventData:
+          eventObj: {fileID: 0}
+          eventType: 1
+          disableSaving: 0
+          hideDialogueBox: 0
+          keepText: 0
+          hidePortrait: 0
+          removeItems: 0
+          delay: 0.4
+          minigame: 0
+          wonMinigameNode:
+            rid: -2
+          loseMinigameNode:
+            rid: -2
+          imageToSend: {fileID: 0}
+    - rid: 4248539871647367678
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367679
+        nodeX: 19502.34
+        nodeY: 1212.6509
+        name: ResponseHolderNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367679
+      type: {class: ResponseHolderNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        responseHolder: {fileID: 0}
+        responses:
+        - rid: 4248539871647367681
+    - rid: 4248539871647367680
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367681
+        nodeX: 19717.34
+        nodeY: 1211.6509
+        name: ResponseNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367681
+      type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        response: {fileID: 0}
+        nextNode:
+          rid: 4248539871647367683
+        text: You won't pay for me?
+    - rid: 4248539871647367682
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367683
+        nodeX: 19932.34
+        nodeY: 1210.6509
+        name: EventNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367683
+      type: {class: EventNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367685
+        eventData:
+          eventObj: {fileID: 0}
+          eventType: 1
+          disableSaving: 0
+          hideDialogueBox: 0
+          keepText: 0
+          hidePortrait: 0
+          removeItems: 0
+          delay: 0.4
+          minigame: 0
+          wonMinigameNode:
+            rid: -2
+          loseMinigameNode:
+            rid: -2
+          imageToSend: {fileID: 0}
+    - rid: 4248539871647367684
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367685
+        nodeX: 20148.34
+        nodeY: 1215.6509
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367685
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367687
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: 
+          text: Nah.
+          sprite: 1
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367686
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367687
+        nodeX: 20362.34
+        nodeY: 1217.6509
+        name: DialogueNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367687
+      type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367689
+        dialogueData:
+          dialogue: {fileID: 0}
+          character: {fileID: 0}
+          overrideCharacterName: 
+          text: I'm a cat, how am I supposed to pay?
+          sprite: 1
+          overrideSprite: {fileID: 0}
+          overrideTextSpeed: 0
+    - rid: 4248539871647367688
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367689
+        nodeX: 20580.34
+        nodeY: 1218.6509
+        name: EventNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367689
+      type: {class: EventNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: 4248539871647367691
+        eventData:
+          eventObj: {fileID: 0}
+          eventType: 1
+          disableSaving: 0
+          hideDialogueBox: 0
+          keepText: 0
+          hidePortrait: 0
+          removeItems: 0
+          delay: 0.4
+          minigame: 0
+          wonMinigameNode:
+            rid: -2
+          loseMinigameNode:
+            rid: -2
+          imageToSend: {fileID: 0}
+    - rid: 4248539871647367690
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367691
+        nodeX: 20800.34
+        nodeY: 1218.6509
+        name: ResponseHolderNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367691
+      type: {class: ResponseHolderNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        responseHolder: {fileID: 0}
+        responses:
+        - rid: 4248539871647367693
+    - rid: 4248539871647367692
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367693
+        nodeX: 21018.34
+        nodeY: 1223.6509
+        name: ResponseNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367693
+      type: {class: ResponseNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        response: {fileID: 0}
+        nextNode:
+          rid: 4248539871647367695
+        text: Fair point.
+    - rid: 4248539871647367694
+      type: {class: NodeModel, ns: NewGraph, asm: NewGraph}
+      data:
+        nodeData:
+          rid: 4248539871647367695
+        nodeX: 24326.4
+        nodeY: 1444.0317
+        name: EventNode
+        isUtilityNode: 0
+        foldouts: []
+    - rid: 4248539871647367695
+      type: {class: EventNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeName: 
+        nextNode:
+          rid: -2
+        eventData:
+          eventObj: {fileID: 0}
+          eventType: 3
+          disableSaving: 0
+          hideDialogueBox: 0
+          keepText: 0
+          hidePortrait: 0
+          removeItems: 0
+          delay: 0
           minigame: 0
           wonMinigameNode:
             rid: -2

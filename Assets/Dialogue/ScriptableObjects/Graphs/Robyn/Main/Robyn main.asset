@@ -388,8 +388,8 @@ MonoBehaviour:
     utilityNodes: []
     tmpName: Robyn main
     viewportInitiallySet: 1
-    viewPosition: {x: -65405.12, y: -4378.966, z: 0}
-    viewScale: {x: 1, y: 1, z: 1}
+    viewPosition: {x: -69142.75, y: -4270.5107, z: 0}
+    viewScale: {x: 0.8695652, y: 0.8695652, z: 1}
   references:
     version: 2
     RefIds:
@@ -5440,7 +5440,11 @@ MonoBehaviour:
         nodeY: 0
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539868075393954
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -5464,7 +5468,11 @@ MonoBehaviour:
         nodeY: 3979.8015
         name: EventNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
     - rid: 4248539868075393956
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -5549,7 +5557,11 @@ MonoBehaviour:
         nodeY: 3934.6675
         name: EventNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
     - rid: 4248539868075393964
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -5580,7 +5592,11 @@ MonoBehaviour:
         nodeY: 4189.3647
         name: EventNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
     - rid: 4248539868075393966
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -5611,7 +5627,11 @@ MonoBehaviour:
         nodeY: 3930.3647
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539868075393968
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -5635,7 +5655,11 @@ MonoBehaviour:
         nodeY: 4188.8423
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539868075393970
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -5659,7 +5683,11 @@ MonoBehaviour:
         nodeY: 3786.4563
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539868075393972
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -5683,7 +5711,11 @@ MonoBehaviour:
         nodeY: 3788.4563
         name: EventNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
     - rid: 4248539868075393974
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -5768,7 +5800,11 @@ MonoBehaviour:
         nodeY: 3585.4563
         name: EventNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
     - rid: 4248539868075393982
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -5799,7 +5835,11 @@ MonoBehaviour:
         nodeY: 3748.4563
         name: EventNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
     - rid: 4248539868075393984
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -5830,7 +5870,11 @@ MonoBehaviour:
         nodeY: 3564.4563
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539868075393986
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -5854,7 +5898,11 @@ MonoBehaviour:
         nodeY: 3750.4563
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539868075393988
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -5878,7 +5926,11 @@ MonoBehaviour:
         nodeY: 3888.462
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539868075393990
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -5902,7 +5954,11 @@ MonoBehaviour:
         nodeY: 3891.3235
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539868075393992
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -5926,7 +5982,11 @@ MonoBehaviour:
         nodeY: 3892.3235
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539868075393994
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -5950,7 +6010,11 @@ MonoBehaviour:
         nodeY: 3898.3235
         name: EventNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
     - rid: 4248539868075393996
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -6035,7 +6099,11 @@ MonoBehaviour:
         nodeY: 3831.2632
         name: EventNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
     - rid: 4248539868075394004
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -6066,7 +6134,11 @@ MonoBehaviour:
         nodeY: 4350.382
         name: EventNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
     - rid: 4248539868075394006
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -6097,7 +6169,11 @@ MonoBehaviour:
         nodeY: 3830.299
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539868075394008
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -6121,7 +6197,11 @@ MonoBehaviour:
         nodeY: 3836.299
         name: EventNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
     - rid: 4248539868075394010
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -6244,7 +6324,11 @@ MonoBehaviour:
         nodeY: 3715.2698
         name: EventNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
     - rid: 4248539868075394022
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -6275,7 +6359,11 @@ MonoBehaviour:
         nodeY: 3861.2698
         name: EventNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
     - rid: 4248539868075394024
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -6306,7 +6394,11 @@ MonoBehaviour:
         nodeY: 4007.2698
         name: EventNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
     - rid: 4248539868075394026
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -6337,7 +6429,11 @@ MonoBehaviour:
         nodeY: 4155.2695
         name: EventNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
     - rid: 4248539868075394028
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -6368,7 +6464,11 @@ MonoBehaviour:
         nodeY: 3717.2698
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539868075394030
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -6392,7 +6492,11 @@ MonoBehaviour:
         nodeY: 3875.2698
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539868075394032
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -6416,7 +6520,11 @@ MonoBehaviour:
         nodeY: 4036.8135
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539868075394034
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -6440,7 +6548,11 @@ MonoBehaviour:
         nodeY: 4193.8135
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539868075394036
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -6464,7 +6576,11 @@ MonoBehaviour:
         nodeY: 3718.8135
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539868075394038
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -6488,7 +6604,11 @@ MonoBehaviour:
         nodeY: 3724.8135
         name: EventNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
     - rid: 4248539868075394040
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -6592,7 +6712,11 @@ MonoBehaviour:
         nodeY: 3591.8135
         name: EventNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
     - rid: 4248539871647367170
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -6623,7 +6747,11 @@ MonoBehaviour:
         nodeY: 3745.8135
         name: EventNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
     - rid: 4248539871647367172
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -6654,7 +6782,11 @@ MonoBehaviour:
         nodeY: 3904.55
         name: EventNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
     - rid: 4248539871647367174
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -6685,7 +6817,11 @@ MonoBehaviour:
         nodeY: 3549.55
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539871647367176
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -6709,7 +6845,11 @@ MonoBehaviour:
         nodeY: 3728.55
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539871647367178
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -6733,7 +6873,11 @@ MonoBehaviour:
         nodeY: 3909.0322
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539871647367180
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -6757,7 +6901,11 @@ MonoBehaviour:
         nodeY: 3552.0322
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539871647367182
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -6781,7 +6929,11 @@ MonoBehaviour:
         nodeY: 3724.9695
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539871647367184
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -6805,7 +6957,11 @@ MonoBehaviour:
         nodeY: 3907.716
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539871647367186
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -6829,7 +6985,11 @@ MonoBehaviour:
         nodeY: 3746.716
         name: EventNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
     - rid: 4248539871647367188
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -6914,7 +7074,11 @@ MonoBehaviour:
         nodeY: 3805.643
         name: EventNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
     - rid: 4248539871647367196
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -6945,7 +7109,11 @@ MonoBehaviour:
         nodeY: 4032.265
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539871647367198
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -6969,7 +7137,11 @@ MonoBehaviour:
         nodeY: 4215.0293
         name: EventNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
     - rid: 4248539871647367200
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -7000,7 +7172,11 @@ MonoBehaviour:
         nodeY: 4210.759
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539871647367202
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -7097,7 +7273,11 @@ MonoBehaviour:
         nodeY: 0
         name: EventNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
     - rid: 4248539871647367212
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -7128,7 +7308,11 @@ MonoBehaviour:
         nodeY: 4349.634
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539871647367214
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -7152,7 +7336,11 @@ MonoBehaviour:
         nodeY: 4349.634
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539871647367216
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -7230,7 +7418,11 @@ MonoBehaviour:
         nodeY: 4565.404
         name: EventNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
     - rid: 4248539871647367224
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -7261,7 +7453,11 @@ MonoBehaviour:
         nodeY: 4780.8174
         name: EventNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
     - rid: 4248539871647367226
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -7292,7 +7488,11 @@ MonoBehaviour:
         nodeY: 4564.8174
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539871647367228
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -7316,7 +7516,11 @@ MonoBehaviour:
         nodeY: 4786.166
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539871647367230
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -7340,7 +7544,11 @@ MonoBehaviour:
         nodeY: 4785.892
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539871647367232
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -7364,7 +7572,11 @@ MonoBehaviour:
         nodeY: 4784.593
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539871647367234
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -7388,7 +7600,11 @@ MonoBehaviour:
         nodeY: 4633.278
         name: EventNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
     - rid: 4248539871647367236
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -7419,7 +7635,11 @@ MonoBehaviour:
         nodeY: 4633.7163
         name: EventNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
     - rid: 4248539871647367238
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -7450,7 +7670,11 @@ MonoBehaviour:
         nodeY: 4634.966
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539871647367240
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -7528,7 +7752,11 @@ MonoBehaviour:
         nodeY: 4551.989
         name: EventNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
     - rid: 4248539871647367248
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -7559,7 +7787,11 @@ MonoBehaviour:
         nodeY: 4802.196
         name: EventNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
     - rid: 4248539871647367250
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -7590,7 +7822,11 @@ MonoBehaviour:
         nodeY: 4802.7627
         name: EventNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
     - rid: 4248539871647367252
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -7621,7 +7857,11 @@ MonoBehaviour:
         nodeY: 4804.7627
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539871647367254
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -7645,7 +7885,11 @@ MonoBehaviour:
         nodeY: 4803.7627
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539871647367256
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -7669,7 +7913,11 @@ MonoBehaviour:
         nodeY: 4803.7627
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539871647367258
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -7693,7 +7941,11 @@ MonoBehaviour:
         nodeY: 4802.7627
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539871647367260
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -7717,7 +7969,11 @@ MonoBehaviour:
         nodeY: 4805.7627
         name: EventNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
     - rid: 4248539871647367262
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -7821,7 +8077,11 @@ MonoBehaviour:
         nodeY: 4667.7627
         name: EventNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
     - rid: 4248539871647367272
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -7852,7 +8112,11 @@ MonoBehaviour:
         nodeY: 4862.7627
         name: EventNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
     - rid: 4248539871647367274
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -7883,7 +8147,11 @@ MonoBehaviour:
         nodeY: 4663.7627
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539871647367276
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -7907,7 +8175,11 @@ MonoBehaviour:
         nodeY: 4666.7627
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539871647367278
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -7931,7 +8203,11 @@ MonoBehaviour:
         nodeY: 4867.3994
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539871647367280
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -7955,7 +8231,11 @@ MonoBehaviour:
         nodeY: 0
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539871647367282
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -7979,7 +8259,11 @@ MonoBehaviour:
         nodeY: 4844.3994
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539871647367284
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -8003,7 +8287,11 @@ MonoBehaviour:
         nodeY: 4848.3994
         name: EventNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
     - rid: 4248539871647367286
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -8088,7 +8376,11 @@ MonoBehaviour:
         nodeY: 4811.9136
         name: EventNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
     - rid: 4248539871647367294
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -8119,7 +8411,11 @@ MonoBehaviour:
         nodeY: 5011.4062
         name: EventNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
     - rid: 4248539871647367296
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -8150,7 +8446,11 @@ MonoBehaviour:
         nodeY: 4813.4062
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539871647367298
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -8174,7 +8474,11 @@ MonoBehaviour:
         nodeY: 5012.7646
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539871647367300
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -8198,7 +8502,11 @@ MonoBehaviour:
         nodeY: 5016.7646
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539871647367302
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -8222,7 +8530,11 @@ MonoBehaviour:
         nodeY: 4922.7646
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539871647367304
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -8246,7 +8558,11 @@ MonoBehaviour:
         nodeY: 4924.7646
         name: EventNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
     - rid: 4248539871647367306
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -8277,7 +8593,11 @@ MonoBehaviour:
         nodeY: 4845.7646
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539871647367308
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -8301,7 +8621,11 @@ MonoBehaviour:
         nodeY: 4850.7646
         name: EventNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
     - rid: 4248539871647367310
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -8386,7 +8710,11 @@ MonoBehaviour:
         nodeY: 4818.7646
         name: EventNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
     - rid: 4248539871647367318
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -8417,7 +8745,11 @@ MonoBehaviour:
         nodeY: 5004.7646
         name: EventNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
     - rid: 4248539871647367320
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -8448,7 +8780,11 @@ MonoBehaviour:
         nodeY: 4820.7646
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539871647367322
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -8472,7 +8808,11 @@ MonoBehaviour:
         nodeY: 5007.1177
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539871647367324
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -8496,7 +8836,11 @@ MonoBehaviour:
         nodeY: 5067.676
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539871647367326
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -8520,7 +8864,11 @@ MonoBehaviour:
         nodeY: 5070.6904
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539871647367328
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -8544,7 +8892,11 @@ MonoBehaviour:
         nodeY: 0
         name: EventNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
     - rid: 4248539871647367330
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -8629,7 +8981,11 @@ MonoBehaviour:
         nodeY: 5268.87
         name: EventNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
     - rid: 4248539871647367338
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -8660,7 +9016,11 @@ MonoBehaviour:
         nodeY: 5445.8643
         name: EventNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
     - rid: 4248539871647367340
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -8691,7 +9051,11 @@ MonoBehaviour:
         nodeY: 5271.666
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539871647367342
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -8715,7 +9079,11 @@ MonoBehaviour:
         nodeY: 5436.879
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539871647367344
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -8739,7 +9107,11 @@ MonoBehaviour:
         nodeY: 5439.371
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539871647367346
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -8763,7 +9135,11 @@ MonoBehaviour:
         nodeY: 5102.222
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539871647367348
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -8787,7 +9163,11 @@ MonoBehaviour:
         nodeY: 5105.222
         name: EventNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
     - rid: 4248539871647367350
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -8872,7 +9252,11 @@ MonoBehaviour:
         nodeY: 5051.506
         name: EventNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
     - rid: 4248539871647367358
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -8903,7 +9287,11 @@ MonoBehaviour:
         nodeY: 5278.964
         name: EventNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
     - rid: 4248539871647367360
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -8934,7 +9322,11 @@ MonoBehaviour:
         nodeY: 5050.964
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539871647367362
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -8958,7 +9350,11 @@ MonoBehaviour:
         nodeY: 5281.1235
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539871647367364
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -8982,7 +9378,11 @@ MonoBehaviour:
         nodeY: 5281.1235
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539871647367366
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -9006,7 +9406,11 @@ MonoBehaviour:
         nodeY: 5186.1235
         name: EventNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
     - rid: 4248539871647367368
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -9091,7 +9495,11 @@ MonoBehaviour:
         nodeY: 5106.705
         name: EventNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
     - rid: 4248539871647367376
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -9122,7 +9530,11 @@ MonoBehaviour:
         nodeY: 5292.034
         name: EventNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
     - rid: 4248539871647367378
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -9153,7 +9565,11 @@ MonoBehaviour:
         nodeY: 5103.034
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539871647367380
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -9177,7 +9593,11 @@ MonoBehaviour:
         nodeY: 5104.034
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539871647367382
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -9201,7 +9621,11 @@ MonoBehaviour:
         nodeY: 5113.034
         name: EventNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
     - rid: 4248539871647367384
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -9267,7 +9691,11 @@ MonoBehaviour:
         nodeY: 5121.034
         name: EventNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
     - rid: 4248539871647367390
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -9298,7 +9726,11 @@ MonoBehaviour:
         nodeY: 5120.034
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539871647367392
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -9322,7 +9754,11 @@ MonoBehaviour:
         nodeY: 5121.034
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539871647367394
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -9346,7 +9782,11 @@ MonoBehaviour:
         nodeY: 5120.034
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539871647367396
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -9370,7 +9810,11 @@ MonoBehaviour:
         nodeY: 5120.034
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539871647367398
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -9395,7 +9839,11 @@ MonoBehaviour:
         nodeY: 5124.034
         name: EventNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
     - rid: 4248539871647367400
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -9480,7 +9928,11 @@ MonoBehaviour:
         nodeY: 5162.6606
         name: EventNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
     - rid: 4248539871647367408
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -9511,7 +9963,11 @@ MonoBehaviour:
         nodeY: 5166.6606
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539871647367410
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -9535,7 +9991,11 @@ MonoBehaviour:
         nodeY: 5167.6606
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539871647367412
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -9559,7 +10019,11 @@ MonoBehaviour:
         nodeY: 0
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539871647367414
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -9583,7 +10047,11 @@ MonoBehaviour:
         nodeY: 5331.388
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539871647367416
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -9607,7 +10075,11 @@ MonoBehaviour:
         nodeY: 5330.4478
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539871647367418
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -9631,7 +10103,11 @@ MonoBehaviour:
         nodeY: 5331.4478
         name: DialogueNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 2139912289
+          isExpanded: 1
+        - relativePropertyPathHash: 147499731
+          isExpanded: 1
     - rid: 4248539871647367420
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data:
@@ -9655,7 +10131,11 @@ MonoBehaviour:
         nodeY: 5346.738
         name: EventNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
     - rid: 4248539871647367422
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
@@ -9686,7 +10166,11 @@ MonoBehaviour:
         nodeY: 5349.238
         name: EventNode
         isUtilityNode: 0
-        foldouts: []
+        foldouts:
+        - relativePropertyPathHash: 500389349
+          isExpanded: 1
+        - relativePropertyPathHash: -867945469
+          isExpanded: 1
     - rid: 4248539871647367424
       type: {class: EventNode, ns: , asm: Assembly-CSharp}
       data:
